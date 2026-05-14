@@ -1,0 +1,139 @@
+---
+import { type Lang, t, getLocalizedPath } from '../../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const platforms = [
+  { key: 'home.platform.florenceegi', name: 'FlorenceEGI', href: 'https://florenceegi.com' },
+  { key: 'home.platform.hub', name: 'EGI-HUB', href: 'https://hub.florenceegi.com' },
+  { key: 'home.platform.natan', name: 'NATAN', href: 'https://natan-loc.florenceegi.com' },
+  { key: 'home.platform.sigillo', name: 'Sigillo', href: 'https://egi-sigillo.florenceegi.com' },
+  { key: 'home.platform.credential', name: 'Credential', href: 'https://egi-credential.florenceegi.com' },
+  { key: 'home.platform.info', name: 'EGI-INFO', href: 'https://info.florenceegi.com' },
+] as const;
+---
+
+<!-- HERO — charcoal -->
+<section class="flex min-h-dvh items-center px-(--spacing-md) py-(--spacing-2xl)">
+  <div class="mx-auto max-w-(--width-container) w-full">
+    <p class="meta mb-(--spacing-sm) uppercase tracking-widest text-accent">
+      {t(lang, 'home.heroLabel')}
+    </p>
+    <h1 class="mb-(--spacing-md) max-w-4xl">
+      {t(lang, 'home.heroTitle1')}<br />
+      <span class="text-accent">{t(lang, 'home.heroTitle2')}</span>
+    </h1>
+    <p class="max-w-(--width-prose) text-text-muted text-lg leading-relaxed mb-(--spacing-lg)">
+      {t(lang, 'home.heroSub')}
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a
+        href={getLocalizedPath(lang, '/oracode')}
+        class="inline-block rounded-sm bg-accent px-6 py-3 text-sm font-medium uppercase tracking-wider text-bg-deep transition-colors duration-150 hover:bg-accent-light"
+      >
+        {t(lang, 'home.ctaOracode')}
+      </a>
+      <a
+        href={getLocalizedPath(lang, '/contatto')}
+        class="inline-block rounded-sm border border-accent/40 px-6 py-3 text-sm font-medium uppercase tracking-wider text-accent transition-colors duration-150 hover:border-accent hover:text-accent-light"
+      >
+        {t(lang, 'home.ctaContact')}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM INTRO — crema -->
+<section class="bg-bg-warm px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <div class="grid gap-(--spacing-lg) md:grid-cols-5">
+      <div class="md:col-span-2">
+        <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'home.ecosystemTitle')}</p>
+        <h2 class="text-text-dark">FlorenceEGI</h2>
+      </div>
+      <div class="md:col-span-3 max-w-(--width-prose)">
+        <p class="text-text-dark leading-relaxed mb-(--spacing-md)">
+          {t(lang, 'home.ecosystemText1')}
+        </p>
+        <p class="text-text-dark-muted leading-relaxed">
+          {t(lang, 'home.ecosystemText2')}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS — charcoal -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'home.platformsTitle')}</p>
+    <h2 class="mb-(--spacing-lg)">{t(lang, 'home.platformsSubtitle')}</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {platforms.map((p) => (
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-sm border border-border-subtle bg-bg-surface p-6 transition-all duration-300 hover:border-accent/30"
+        >
+          <p class="mb-2 font-body text-sm font-semibold uppercase tracking-wider text-accent">
+            {p.name}
+          </p>
+          <p class="text-text-muted text-sm leading-relaxed group-hover:text-text-ivory transition-colors duration-150">
+            {t(lang, p.key)}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- STATS — crema -->
+<section class="bg-bg-warm px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container) text-center">
+    <p class="font-display text-6xl font-bold text-text-dark md:text-8xl">1.000.000+</p>
+    <p class="mt-4 text-text-dark-muted text-lg">{t(lang, 'home.statLabel')}</p>
+    <p class="mt-2 text-text-dark-muted text-sm">{t(lang, 'home.statDescription')}</p>
+  </div>
+</section>
+
+<!-- VISION — charcoal -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <div class="grid gap-(--spacing-lg) md:grid-cols-5">
+      <div class="md:col-span-2">
+        <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'home.visionTitle')}</p>
+      </div>
+      <div class="md:col-span-3 max-w-(--width-prose)">
+        <blockquote class="accent-line">
+          <p class="font-display text-xl leading-relaxed text-text-ivory md:text-2xl">
+            {t(lang, 'home.visionQuote')}
+          </p>
+        </blockquote>
+        <p class="mt-(--spacing-md) text-text-muted leading-relaxed">
+          {t(lang, 'home.visionText')}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE — charcoal, accent -->
+<section class="px-(--spacing-md) py-(--spacing-2xl) text-center reveal">
+  <div class="mx-auto max-w-xl">
+    <h2 class="mb-(--spacing-md)">
+      {t(lang, 'home.ctaFinal1')}<br />
+      <span class="text-accent">{t(lang, 'home.ctaFinal2')}</span>
+    </h2>
+    <a
+      href={getLocalizedPath(lang, '/contatto')}
+      class="inline-block rounded-sm bg-accent px-8 py-4 text-sm font-medium uppercase tracking-wider text-bg-deep transition-colors duration-150 hover:bg-accent-light"
+    >
+      {t(lang, 'home.ctaContact')}
+    </a>
+  </div>
+</section>
