@@ -1,0 +1,11 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AboutContent from '../../../components/pages/AboutContent.astro';
+import { getLangFromUrl } from '../../../i18n/translations';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<Layout title="Chi sono — Fabio Cherici">
+  <AboutContent lang={lang} />
+</Layout>
