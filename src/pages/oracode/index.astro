@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import OracodeContent from '../../components/pages/OracodeContent.astro';
+import { getLangFromUrl } from '../../i18n/translations';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<Layout title="Oracode — Fabio Cherici">
+  <OracodeContent lang={lang} />
+</Layout>

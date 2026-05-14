@@ -1,0 +1,242 @@
+---
+import { type Lang, t, getLocalizedPath } from '../../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const pillars = [
+  { name: 'Intenzionalità Esplicita', desc: 'Ogni scelta ha un perché dichiarato. Nessun codice esiste senza uno scopo esplicito.' },
+  { name: 'Semplicità Potenziante', desc: 'Nessuna sovra-astrazione, nessuna ottimizzazione prematura. La semplicità che amplifica, non riduce.' },
+  { name: 'Coerenza Semantica', desc: 'Un termine significa una cosa sola, ovunque. La terminologia è unificata in tutto il codice.' },
+  { name: 'Circolarità Virtuosa', desc: 'Ogni bug genera un test. Ogni feature genera un pattern. Il sistema impara da sé stesso.' },
+  { name: 'Evoluzione Ricorsiva', desc: 'La documentazione è parte viva del codice. Non si aggiorna dopo — si aggiorna insieme.' },
+  { name: 'Sicurezza Proattiva', desc: 'GDPR, autenticazione, autorizzazione. La sicurezza non è un layer aggiunto — è nel DNA.' },
+  { name: 'Regola Zero', desc: 'Se non sai, chiedi. Mai dedurre, mai assumere, mai inventare. Questa è la regola che genera tutte le altre.' },
+];
+
+const platforms = [
+  { name: 'FlorenceEGI', key: 'home.platform.florenceegi', href: 'https://florenceegi.com' },
+  { name: 'EGI-HUB', key: 'home.platform.hub', href: 'https://hub.florenceegi.com' },
+  { name: 'NATAN', key: 'home.platform.natan', href: 'https://natan-loc.florenceegi.com' },
+  { name: 'Sigillo', key: 'home.platform.sigillo', href: 'https://egi-sigillo.florenceegi.com' },
+  { name: 'Credential', key: 'home.platform.credential', href: 'https://egi-credential.florenceegi.com' },
+  { name: 'EGI-INFO', key: 'home.platform.info', href: 'https://info.florenceegi.com' },
+];
+---
+
+<!-- 1. HERO — charcoal, centrato -->
+<section class="flex min-h-[70vh] items-center justify-center px-(--spacing-md) py-(--spacing-2xl) text-center">
+  <div>
+    <h1 class="mb-4">Oracode</h1>
+    <p class="font-body text-lg text-text-muted italic mb-(--spacing-sm)">{t(lang, 'oracode.pronunciation')}</p>
+    <p class="max-w-(--width-prose) mx-auto text-text-muted text-lg leading-relaxed">
+      {t(lang, 'oracode.definition')}
+    </p>
+  </div>
+</section>
+
+<!-- 2. COS'È — charcoal, colonna 680px -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-prose)">
+    <h2 class="mb-(--spacing-lg)">{t(lang, 'oracode.whatTitle')}</h2>
+    <p class="leading-relaxed mb-(--spacing-md)">{t(lang, 'oracode.what1')}</p>
+    <p class="leading-relaxed mb-(--spacing-md)">{t(lang, 'oracode.what2')}</p>
+    <p class="leading-relaxed mb-(--spacing-md) text-text-muted">{t(lang, 'oracode.what3')}</p>
+    <p class="leading-relaxed text-text-muted">{t(lang, 'oracode.what4')}</p>
+  </div>
+</section>
+
+<!-- 3. COME NASCE — crema, grid 2/5, collapsibile -->
+<section class="bg-bg-warm px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <div class="grid gap-(--spacing-lg) md:grid-cols-5">
+      <div class="md:col-span-2">
+        <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'oracode.originTitle')}</p>
+        <h2 class="text-text-dark">31 anni</h2>
+      </div>
+      <div class="md:col-span-3 max-w-(--width-prose)">
+        <p class="text-text-dark leading-relaxed mb-(--spacing-md)">{t(lang, 'oracode.origin1')}</p>
+        <p class="text-text-dark leading-relaxed mb-(--spacing-md)">{t(lang, 'oracode.origin2')}</p>
+        <p class="text-text-dark-muted leading-relaxed mb-(--spacing-md)">{t(lang, 'oracode.origin3')}</p>
+        <blockquote class="border-l-2 border-accent pl-(--spacing-sm)">
+          <p class="text-text-dark italic leading-relaxed">{t(lang, 'oracode.why')}</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PILASTRI — charcoal, card collassabili -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'oracode.pillarsTitle')}</p>
+    <h2 class="mb-(--spacing-lg)">Oracode System</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {pillars.map((p, i) => (
+        <details class="group rounded-sm border border-border-subtle bg-bg-surface">
+          <summary class="flex cursor-pointer items-center justify-between p-5 text-accent font-medium">
+            <span class="flex items-center gap-3">
+              <span class="text-text-muted text-sm">{i < 6 ? i + 1 : '0'}</span>
+              {p.name}
+            </span>
+            <span class="text-text-muted transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <div class="px-5 pb-5 text-text-muted text-sm leading-relaxed">
+            {p.desc}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 5. SISTEMA NERVOSO — charcoal, colonna 680px, collapsibile -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-prose)">
+    <h2 class="mb-(--spacing-lg)">{t(lang, 'oracode.nervousTitle')}</h2>
+    <p class="leading-relaxed mb-(--spacing-md)">
+      L'organismo ha un sistema nervoso reale. Hook che intercettano ogni azione prima e dopo l'esecuzione.
+      Agenti autonomi che verificano, diagnosticano, e correggono.
+    </p>
+    <details class="group rounded-sm border border-border-subtle bg-bg-surface mb-4">
+      <summary class="flex cursor-pointer items-center justify-between p-5 text-accent font-medium">
+        Hook attivi
+        <span class="text-text-muted transition-transform duration-200 group-open:rotate-45">+</span>
+      </summary>
+      <div class="px-5 pb-5 text-text-muted text-sm leading-relaxed space-y-2">
+        <p>12 hook PreToolUse e PostToolUse che intercettano ogni operazione: controllo stack bannati, validazione commit, sicurezza credenziali, conformità documentale.</p>
+        <p>Ogni violazione viene segnalata in tempo reale — l'organismo sente dolore e lo comunica.</p>
+      </div>
+    </details>
+    <details class="group rounded-sm border border-border-subtle bg-bg-surface">
+      <summary class="flex cursor-pointer items-center justify-between p-5 text-accent font-medium">
+        Agenti diagnostici
+        <span class="text-text-muted transition-transform duration-200 group-open:rotate-45">+</span>
+      </summary>
+      <div class="px-5 pb-5 text-text-muted text-sm leading-relaxed space-y-2">
+        <p>4 agenti specializzati: gap evolutivi, allineamento semantico, sincronizzazione documentale, verifica sangue (Egili).</p>
+        <p>Operano autonomamente, producono report, non modificano mai codice senza approvazione.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 6. ECOSISTEMA ORGANI — crema, card grid -->
+<section class="bg-bg-warm px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <p class="meta mb-2 uppercase tracking-widest text-accent">{t(lang, 'oracode.organsTitle')}</p>
+    <h2 class="text-text-dark mb-(--spacing-lg)">{t(lang, 'home.platformsSubtitle')}</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {platforms.map((p) => (
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-sm border border-border-warm bg-white/50 p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-sm"
+        >
+          <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">{p.name}</p>
+          <p class="text-text-dark-muted text-sm leading-relaxed group-hover:text-text-dark transition-colors duration-150">
+            {t(lang, p.key)}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 7. STRATEGIA DELTA — charcoal, collapsibile -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-prose)">
+    <h2 class="mb-(--spacing-lg)">{t(lang, 'oracode.deltaTitle')}</h2>
+    <p class="leading-relaxed mb-(--spacing-md)">
+      Due regole. Nessuna eccezione.
+    </p>
+    <div class="space-y-4">
+      <div class="accent-line">
+        <p class="font-medium text-accent mb-1">Codice nuovo</p>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Tutte le regole OS3. Configurazione nasce su EGI-HUB. File mai oltre 500 righe. Documentazione sincronizzata.
+        </p>
+      </div>
+      <div class="accent-line">
+        <p class="font-medium text-accent mb-1">Codice legacy</p>
+        <p class="text-text-muted text-sm leading-relaxed">
+          Resta dove è. Si migra solo quando si tocca per altra ragione. Mai refactoring di principio su codice production funzionante. Ogni migrazione: piano approvato + test before/after.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. EGILI ECONOMY — charcoal, collapsibile -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-prose)">
+    <h2 class="mb-(--spacing-lg)">{t(lang, 'oracode.egiliTitle')}</h2>
+    <p class="leading-relaxed mb-(--spacing-md)">
+      Gli Egili sono la linfa dell'organismo. Punti premio interni che misurano l'engagement — non il denaro.
+    </p>
+    <details class="group rounded-sm border border-border-subtle bg-bg-surface">
+      <summary class="flex cursor-pointer items-center justify-between p-5 text-accent font-medium">
+        Come funziona
+        <span class="text-text-muted transition-transform duration-200 group-open:rotate-45">+</span>
+      </summary>
+      <div class="px-5 pb-5 text-text-muted text-sm leading-relaxed space-y-2">
+        <p>Zero valore monetario. Zero conversione in euro. Zero legame con i prezzi. Completamente MiCA-safe.</p>
+        <p>Si vendono prodotti e servizi. L'utente riceve Egili come credito interno per accedere a funzionalità premium.</p>
+        <p>Quando finiscono, engagement wall — non paywall. L'organismo invita a partecipare, non blocca.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 9. NUMERI — crema, stat counter -->
+<section class="bg-bg-warm px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container)">
+    <p class="meta mb-(--spacing-sm) uppercase tracking-widest text-accent text-center">{t(lang, 'oracode.statsTitle')}</p>
+    <div class="grid gap-(--spacing-lg) sm:grid-cols-3 text-center mt-(--spacing-lg)">
+      <div>
+        <p class="font-display text-4xl font-bold text-text-dark md:text-5xl">1.000.000+</p>
+        <p class="mt-2 text-text-dark-muted text-sm">{t(lang, 'home.statLabel')}</p>
+      </div>
+      <div>
+        <p class="font-display text-4xl font-bold text-text-dark md:text-5xl">9</p>
+        <p class="mt-2 text-text-dark-muted text-sm">organi operativi</p>
+      </div>
+      <div>
+        <p class="font-display text-4xl font-bold text-text-dark md:text-5xl">1</p>
+        <p class="mt-2 text-text-dark-muted text-sm">{t(lang, 'home.statDescription')}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. VISIONE — charcoal, serif grande -->
+<section class="px-(--spacing-md) py-(--spacing-xl) reveal">
+  <div class="mx-auto max-w-(--width-container) text-center">
+    <p class="meta mb-(--spacing-sm) uppercase tracking-widest text-accent">{t(lang, 'oracode.visionTitle')}</p>
+    <blockquote class="max-w-(--width-prose) mx-auto mt-(--spacing-md)">
+      <p class="font-display text-2xl leading-relaxed md:text-3xl">
+        {t(lang, 'home.visionQuote')}
+      </p>
+    </blockquote>
+    <p class="mt-(--spacing-md) text-text-muted max-w-(--width-prose) mx-auto leading-relaxed">
+      {t(lang, 'home.visionText')}
+    </p>
+  </div>
+</section>
+
+<!-- 11. CTA — charcoal, accent -->
+<section class="px-(--spacing-md) py-(--spacing-2xl) text-center reveal">
+  <div class="mx-auto max-w-xl">
+    <h2 class="mb-(--spacing-md)">{t(lang, 'oracode.ctaTitle')}</h2>
+    <a
+      href={getLocalizedPath(lang, '/contatto')}
+      class="inline-block rounded-sm bg-accent px-8 py-4 text-sm font-medium uppercase tracking-wider text-bg-deep transition-colors duration-150 hover:bg-accent-light"
+    >
+      {t(lang, 'home.ctaContact')}
+    </a>
+  </div>
+</section>
