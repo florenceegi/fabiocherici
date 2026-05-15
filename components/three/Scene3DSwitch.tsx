@@ -9,7 +9,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useScene, type SceneId } from '@/lib/hooks/useScene';
+import { useScene, type SceneId } from '@/lib/scene-context';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 
 function Placeholder() {
@@ -23,6 +23,8 @@ const scenes: Record<Exclude<SceneId, 'none'>, ReturnType<typeof dynamic>> = {
   'noise-terrain': dynamic(() => import('@/components/three/scenes/NoiseTerrain'), { ssr: false, loading: () => <Placeholder /> }),
   smoke: dynamic(() => import('@/components/three/scenes/Smoke'), { ssr: false, loading: () => <Placeholder /> }),
   'ribbon-flow': dynamic(() => import('@/components/three/scenes/RibbonFlow'), { ssr: false, loading: () => <Placeholder /> }),
+  'wave-grid': dynamic(() => import('@/components/three/scenes/WaveGrid'), { ssr: false, loading: () => <Placeholder /> }),
+  'particle-sphere': dynamic(() => import('@/components/three/scenes/ParticleSphere'), { ssr: false, loading: () => <Placeholder /> }),
 };
 
 export function Scene3DSwitch() {
