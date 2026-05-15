@@ -1,8 +1,8 @@
 /**
  * @package fabiocherici.com — ScrollReveal
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 6.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-15
+ * @version 7.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-05-16
  * @purpose Scroll-triggered reveal via IntersectionObserver + GSAP (dynamic import). Re-animates ALL elements on preset change.
  */
 
@@ -11,11 +11,13 @@
 import { useEffect, useRef } from 'react';
 import { usePathname } from '@/lib/i18n/routing';
 import { useAnimation } from '@/lib/animation-context';
+import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 import type { AnimationPreset } from '@/lib/animation';
 
 export function ScrollReveal() {
   const preset = useAnimation();
   const pathname = usePathname();
+  const reducedMotion = useReducedMotion();
   const prevPresetIdRef = useRef<string>(preset.id);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -27,7 +29,6 @@ export function ScrollReveal() {
     import('gsap').then(({ default: gsap }) => {
       if (cancelled) return;
 
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const presetChanged = prevPresetIdRef.current !== preset.id;
       prevPresetIdRef.current = preset.id;
 
@@ -90,7 +91,7 @@ export function ScrollReveal() {
       cancelled = true;
       observerRef.current?.disconnect();
     };
-  }, [preset, pathname]);
+  }, [preset, pathname, reducedMotion]);
 
   return null;
 }
