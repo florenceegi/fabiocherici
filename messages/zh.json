@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "首页",
+    "oracode": "Oracode",
+    "prove": "证据",
+    "ecosistema": "生态系统",
+    "contatti": "联系",
+    "skip": "跳至内容",
+    "main": "主导航",
+    "menu": "菜单",
+    "preferences": "偏好设置"
+  },
+  "footer": {
+    "rights": "保留所有权利。",
+    "contact": "联系",
+    "built_with": "使用 Oracode + Next.js 15 构建"
+  },
+  "preferences": {
+    "title": "你希望如何浏览本站？",
+    "close": "关闭",
+    "theme": "主题",
+    "theme_dark": "深色",
+    "theme_light": "浅色",
+    "theme_ambient": "环境光",
+    "language": "语言",
+    "animation": "动画",
+    "scene3d": "3D 场景",
+    "accessibility": "无障碍",
+    "font_size": "字体大小",
+    "high_contrast": "高对比度",
+    "dyslexia_font": "阅读障碍字体",
+    "reduced_motion": "减少动画",
+    "reset_a11y": "重置设置",
+    "current_slot": "当前时段"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Oracode",
+      "claim": "一个约束人工智能、使其产出经得起时间考验的软件的范式。",
+      "sub1": "它不是框架，不是工具。它是一套由约束条件、机械式钩子和验证协议构成的系统，将人类与 AI 的协作从即兴发挥转化为工程实践。",
+      "sub2": "由 Fabio Cherici 设计，并在超过一百万行生产代码上经过验证。目前正在作为开放协议进行形式化。"
+    },
+    "problem": {
+      "title": "问题",
+      "p1": "2026 年，任何人都能用 AI 生成代码。速度不再是优势——它已成为基本能力。",
+      "p2": "问题在于之后会发生什么。没有约束的代码生成，以产出功能的同等速度累积技术债务。没有文档，项目之间毫无一致性，今天的代码无法保证不会破坏明天的。",
+      "p3": "这叫 vibe coding。它很快，但无法规模化。"
+    },
+    "produces": {
+      "title": "Oracode 产出什么",
+      "intro": "Oracode 不会拖慢 AI，而是约束它。",
+      "stats": "13 条 P0 阻断规则。20 个在每次写入前介入的机械式钩子。8 个专业代理。一个四级优先级系统，区分会破坏系统的问题与可以等待的问题。",
+      "result_title": "结果：",
+      "result_gdpr": "每个项目天生 GDPR 合规——审计追踪、同意管理、数据导出、删除权",
+      "result_i18n": "每个界面天生支持 6 种语言——意大利语、英语、德语、西班牙语、法语、葡萄牙语",
+      "result_errors": "每个错误都经过统一处理器——不是被遗忘的日志，而是结构化的响应",
+      "result_trace": "每个文件都有签名、日期，可追溯到生成它的决策",
+      "closing": "这不是事后添加的质量，而是无法被移除的质量。"
+    },
+    "organism": {
+      "title": "前沿：软件有机体",
+      "p1": "用 Oracode 构建的项目可以成为任何框架都无法产出的东西：一个认识自己的软件有机体。",
+      "p2": "149 份 SSOT 文档与代码自动同步。每次代码变更都会更新对应的文档——不是依靠人的意志，而是通过一个文档神经系统（DOC-SYNC v2），分析语义差异并应用补丁。",
+      "p3": "这些文档被索引到 RAG 中，可通过每个平台内置的 AI 聊天进行查询。结果：软件能回答关于自身的问题。",
+      "quote": "\"哪些端点涉及 Egili 交易？\"——基于真实文档的回答，而非数月前训练的模型。",
+      "stats": "136 个已追踪任务。482 个监视模式。39% 的生态系统处于自动文档覆盖之下——且仍在增长。"
+    },
+    "proof": {
+      "title": "证据",
+      "numbers_title": "数据",
+      "numbers": "1,002,558 行代码。9 个生产平台。11 种语言。5,354 个文件。8,686 个已编目的公共符号。",
+      "numbers_person": "一个人。",
+      "concurrent_title": "并行开发",
+      "concurrent_dates": "2026 年 3 月 24 日 — 5 月 11 日",
+      "concurrent_desc": "48 天内在 13 个仓库上提交约 2,000 次。一个人。同时进行。",
+      "sigillo_title": "Sigillo",
+      "sigillo_subtitle": "区块链文件认证",
+      "sigillo_hours": "38-44 小时",
+      "sigillo_lines": "17,100 行",
+      "sigillo_what": "客户端 SHA-256 + Algorand + TSA RFC 3161",
+      "sigillo_compare": "传统团队：4-6 名开发人员，6-12 个月。",
+      "credential_title": "EGI-Credential",
+      "credential_subtitle": "W3C 专业凭证钱包",
+      "credential_hours": "约 78 小时 30 分钟",
+      "credential_lines": "5 个组件共 45,400 行",
+      "credential_standards": "实现了 11 项标准",
+      "credential_overlap": "18 天内同日在 Sigillo 和 Credential 上均有提交",
+      "credential_compare": "合规水平与 Microsoft Entra Verified ID 相当——后者是 50-100 名工程师的团队，耗时 3 年以上。",
+      "gialloro_title": "Gialloro Firenze",
+      "gialloro_subtitle": "奢侈品电商 + 无头 CMS",
+      "gialloro_hours": "16 小时 17 分钟",
+      "gialloro_lines": "18,455 行",
+      "gialloro_calendar": "3 天",
+      "gialloro_compare": "两天构建，一天完成 SEO、无障碍和部署。"
+    },
+    "protocol": {
+      "title": "为什么是协议",
+      "p1": "这些成果是在 Oracode 尚未完成时取得的。三月时 20 个钩子并非全部存在。DOC-SYNC v2 五月才投入运行。每个平台既是产品也是试验场。",
+      "p2_intro": "这意味着：",
+      "p2_point1": "以上数据来自一个不完整的版本",
+      "p2_point2": "Oracode 不是理论——它是在负载下锻造的，每当缺失的约束产生真实错误时就会被修正",
+      "p3": "正在进行的工作：将今天存在于 20 个钩子、13 条规则、8 个代理和 149 份文档中的内容，转化为一个开放、有文档、可复制的协议。"
+    },
+    "closing": {
+      "text": "源代码、提交记录、日期、时间：一切都是公开的或可应要求验证的。",
+      "emphasis": "本页面上没有任何声明不附带对应的证据。"
+    }
+  },
+  "oracode": {
+    "title": "Oracode",
+    "subtitle": "范式",
+    "intro": "一个基于 LLM 的软件开发系统，为追求持久的构建者而设计。"
+  },
+  "prove": {
+    "title": "证据",
+    "subtitle": "可验证的数据、git log 链接、完整审计。"
+  },
+  "ecosistema": {
+    "title": "生态系统",
+    "subtitle": "9 个平台，一个有机体。FlorenceEGI。",
+    "organ_label": "器官"
+  },
+  "contatti": {
+    "title": "联系",
+    "subtitle": "写信给我。",
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "留言",
+    "send": "发送",
+    "success": "消息已发送。",
+    "error": "发送失败，请重试。"
+  },
+  "not_found": {
+    "title": "404",
+    "message": "页面未找到。",
+    "back": "返回首页"
+  },
+  "meta": {
+    "home_title": "Fabio Cherici — Oracode",
+    "home_description": "Oracode：一个约束 AI 以产出经得起时间考验的软件的范式。超过 100 万行代码，9 个平台，一个人。",
+    "oracode_title": "Oracode — 范式",
+    "prove_title": "证据 — 可验证的数据",
+    "ecosistema_title": "FlorenceEGI 生态系统",
+    "contatti_title": "联系"
+  }
+}

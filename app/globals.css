@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   fabiocherici.com — Grafite + Bronzo Luxury Palette
+   Theme system: dark (default) / light / ambient (7 slots)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Dark (default) ─── */
+:root,
+[data-theme="dark"] {
+  --bg: #111111;
+  --bg-elevated: #1a1a1a;
+  --bg-card: #1f1f1f;
+  --bg-hover: #262626;
+  --border: #2a2a2a;
+  --border-accent: #3a3a3a;
+
+  --text-primary: #f0ebe3;
+  --text-secondary: #a8a29e;
+  --text-muted: #6b6560;
+
+  --accent: #C8A96E;
+  --accent-hover: #D4BA82;
+  --accent-muted: rgba(200, 169, 110, 0.15);
+  --accent-glow: rgba(200, 169, 110, 0.08);
+
+  --surface-glass: rgba(17, 17, 17, 0.85);
+
+  color-scheme: dark;
+}
+
+/* ─── Light ─── */
+[data-theme="light"] {
+  --bg: #faf8f5;
+  --bg-elevated: #ffffff;
+  --bg-card: #f5f0eb;
+  --bg-hover: #ede7df;
+  --border: #e0d8cf;
+  --border-accent: #d1c7ba;
+
+  --text-primary: #1a1715;
+  --text-secondary: #57524d;
+  --text-muted: #8c857e;
+
+  --accent: #9A7B4F;
+  --accent-hover: #7D6340;
+  --accent-muted: rgba(154, 123, 79, 0.12);
+  --accent-glow: rgba(154, 123, 79, 0.06);
+
+  --surface-glass: rgba(250, 248, 245, 0.85);
+
+  color-scheme: light;
+}
+
+/* ─── Ambient slots ─── */
+[data-theme="ambient-dawn"] {
+  --bg: #1a1520;
+  --bg-elevated: #221c2a;
+  --bg-card: #271f30;
+  --text-primary: #e8d5c4;
+  --text-secondary: #a08e7e;
+  --accent: #d4a574;
+  --accent-hover: #e0b888;
+  --surface-glass: rgba(26, 21, 32, 0.85);
+  color-scheme: dark;
+}
+
+[data-theme="ambient-morning"] {
+  --bg: #1a1610;
+  --bg-elevated: #231e16;
+  --bg-card: #28221a;
+  --text-primary: #f0e6d8;
+  --text-secondary: #b0a090;
+  --accent: #d4a55a;
+  --accent-hover: #e0b870;
+  --surface-glass: rgba(26, 22, 16, 0.85);
+  color-scheme: dark;
+}
+
+[data-theme="ambient-day"] {
+  --bg: #f8f5f0;
+  --bg-elevated: #ffffff;
+  --bg-card: #f0ebe3;
+  --text-primary: #1a1715;
+  --text-secondary: #5a554f;
+  --accent: #9A7B4F;
+  --accent-hover: #7D6340;
+  --surface-glass: rgba(248, 245, 240, 0.85);
+  color-scheme: light;
+}
+
+[data-theme="ambient-golden"] {
+  --bg: #1a1508;
+  --bg-elevated: #23200f;
+  --bg-card: #282412;
+  --text-primary: #f0e0c0;
+  --text-secondary: #b0a080;
+  --accent: #d4a040;
+  --accent-hover: #e0b050;
+  --surface-glass: rgba(26, 21, 8, 0.85);
+  color-scheme: dark;
+}
+
+[data-theme="ambient-sunset"] {
+  --bg: #1a100a;
+  --bg-elevated: #231510;
+  --bg-card: #281a14;
+  --text-primary: #f0d8c0;
+  --text-secondary: #a88870;
+  --accent: #d48050;
+  --accent-hover: #e09060;
+  --surface-glass: rgba(26, 16, 10, 0.85);
+  color-scheme: dark;
+}
+
+[data-theme="ambient-evening"] {
+  --bg: #0f0f14;
+  --bg-elevated: #16161c;
+  --bg-card: #1a1a22;
+  --text-primary: #d8d0e0;
+  --text-secondary: #8880a0;
+  --accent: #b0a0c0;
+  --accent-hover: #c0b0d0;
+  --surface-glass: rgba(15, 15, 20, 0.85);
+  color-scheme: dark;
+}
+
+[data-theme="ambient-night"] {
+  --bg: #0a0a0e;
+  --bg-elevated: #111116;
+  --bg-card: #16161c;
+  --text-primary: #c0c0d0;
+  --text-secondary: #707088;
+  --accent: #8888b0;
+  --accent-hover: #9898c0;
+  --surface-glass: rgba(10, 10, 14, 0.85);
+  color-scheme: dark;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   A11y overrides
+   ═══════════════════════════════════════════════════════════ */
+
+.a11y-font-large { font-size: 112.5%; }
+.a11y-font-xlarge { font-size: 125%; }
+
+.a11y-high-contrast {
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #c0c0c0;
+  --accent: #ffd700;
+  --accent-hover: #ffe44d;
+  --border: #555555;
+}
+
+[data-theme="light"].a11y-high-contrast {
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --text-muted: #333333;
+  --accent: #7D5A00;
+  --accent-hover: #5A4000;
+  --border: #666666;
+}
+
+.a11y-dyslexia {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Base styles
+   ═══════════════════════════════════════════════════════════ */
+
+html {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* ─── Scroll reveal base ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

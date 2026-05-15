@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "home": "Home",
+    "oracode": "Oracode",
+    "prove": "Prove",
+    "ecosistema": "Ecosistema",
+    "contatti": "Contatti",
+    "skip": "Vai al contenuto",
+    "main": "Navigazione principale",
+    "menu": "Menu",
+    "preferences": "Preferenze"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati.",
+    "contact": "Contatti",
+    "built_with": "Costruito con Oracode + Next.js 15"
+  },
+  "preferences": {
+    "title": "Come vuoi vedere questo sito?",
+    "close": "Chiudi",
+    "theme": "Tema",
+    "theme_dark": "Scuro",
+    "theme_light": "Chiaro",
+    "theme_ambient": "Ambientale",
+    "language": "Lingua",
+    "animation": "Animazione",
+    "scene3d": "Scena 3D",
+    "accessibility": "Accessibilita",
+    "font_size": "Dimensione testo",
+    "high_contrast": "Alto contrasto",
+    "dyslexia_font": "Font dislessia",
+    "reduced_motion": "Animazioni ridotte",
+    "reset_a11y": "Ripristina impostazioni",
+    "current_slot": "Fascia oraria attuale"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Oracode",
+      "claim": "Un paradigma che disciplina l'intelligenza artificiale per produrre software che regge il tempo.",
+      "sub1": "Non e' un framework. Non e' un tool. E' un sistema di vincoli, hook meccanici e protocolli di verifica che trasforma la collaborazione umano-AI da improvvisazione a ingegneria.",
+      "sub2": "Progettato da Fabio Cherici e testato su oltre un milione di righe di codice in produzione. Ora in fase di formalizzazione come protocollo aperto."
+    },
+    "problem": {
+      "title": "Il problema",
+      "p1": "Nel 2026 chiunque puo generare codice con l'AI. La velocita non e' piu un vantaggio — e' una commodity.",
+      "p2": "Il problema e' cosa succede dopo. Codice generato senza vincoli produce debito tecnico alla stessa velocita con cui produce feature. Nessuna documentazione. Nessuna coerenza tra progetti. Nessuna garanzia che il codice di oggi non rompa quello di domani.",
+      "p3": "Questa si chiama vibe coding. E' veloce. E non scala."
+    },
+    "produces": {
+      "title": "Cosa produce Oracode",
+      "intro": "Oracode non rallenta l'AI. La vincola.",
+      "stats": "13 regole P0 bloccanti. 20 hook meccanici che intervengono prima di ogni scrittura. 8 agenti specializzati. Un sistema di priorita a 4 livelli che distingue cio che rompe il sistema da cio che puo attendere.",
+      "result_title": "Il risultato:",
+      "result_gdpr": "Ogni progetto nasce GDPR-compliant by design — audit trail, consensi, data export, right to erasure",
+      "result_i18n": "Ogni interfaccia nasce in 6 lingue — italiano, inglese, tedesco, spagnolo, francese, portoghese",
+      "result_errors": "Ogni errore passa per un gestore unificato — non un log dimenticato, una risposta strutturata",
+      "result_trace": "Ogni file e' firmato, datato, tracciabile fino alla decisione che lo ha generato",
+      "closing": "Non e' qualita aggiunta dopo. E' qualita che non puo essere rimossa."
+    },
+    "organism": {
+      "title": "La frontiera: organismi software",
+      "p1": "Un progetto costruito con Oracode puo diventare qualcosa che nessun framework produce: un organismo software che si conosce.",
+      "p2": "149 documenti SSOT sincronizzati automaticamente con il codice. Ogni modifica al codice aggiorna la documentazione corrispondente — non tramite volonta umana, ma tramite un sistema nervoso documentale (DOC-SYNC v2) che analizza il diff semantico e applica patch.",
+      "p3": "Questa documentazione viene indicizzata in un RAG consultabile via chat AI integrata in ogni piattaforma. Il risultato: il software sa rispondere a domande su se stesso.",
+      "quote": "\"Quali endpoint toccano le transazioni Egili?\" — Risposta fondata sulla documentazione reale, non su un modello addestrato mesi fa.",
+      "stats": "136 missioni tracciate. 482 pattern di watch. 39% dell'ecosistema sotto copertura documentale automatica — e in crescita."
+    },
+    "proof": {
+      "title": "Le prove",
+      "numbers_title": "I numeri",
+      "numbers": "1.002.558 righe di codice. 9 piattaforme in produzione. 11 linguaggi. 5.354 file. 8.686 simboli pubblici catalogati.",
+      "numbers_person": "Una persona.",
+      "concurrent_title": "Sviluppo concorrente",
+      "concurrent_dates": "24 mar — 11 mag 2026",
+      "concurrent_desc": "~2.000 commit su 13 repository in 48 giorni. Una persona. Contemporaneamente.",
+      "sigillo_title": "Sigillo",
+      "sigillo_subtitle": "Certificazione blockchain di file",
+      "sigillo_hours": "38-44h",
+      "sigillo_lines": "17.100 righe",
+      "sigillo_what": "SHA-256 client-side + Algorand + TSA RFC 3161",
+      "sigillo_compare": "Un team tradizionale: 4-6 sviluppatori, 6-12 mesi.",
+      "credential_title": "EGI-Credential",
+      "credential_subtitle": "Wallet credenziali professionali W3C",
+      "credential_hours": "~78h 30min",
+      "credential_lines": "45.400 righe su 5 componenti",
+      "credential_standards": "11 standard implementati",
+      "credential_overlap": "18 giorni con commit su Sigillo E Credential nello stesso giorno",
+      "credential_compare": "Stesso livello di compliance di Microsoft Entra Verified ID — team di 50-100 ingegneri, 3+ anni.",
+      "gialloro_title": "Gialloro Firenze",
+      "gialloro_subtitle": "E-commerce luxury + CMS headless",
+      "gialloro_hours": "16h 17min",
+      "gialloro_lines": "18.455 righe",
+      "gialloro_calendar": "3 giorni",
+      "gialloro_compare": "Due giorni per costruire. Un giorno per SEO, accessibility e deploy."
+    },
+    "protocol": {
+      "title": "Perche un protocollo",
+      "p1": "I risultati sono stati ottenuti con Oracode in costruzione. I 20 hook non esistevano tutti a marzo. DOC-SYNC v2 e' diventato operativo a maggio. Ogni piattaforma e' stata sia prodotto sia banco di prova.",
+      "p2_intro": "Questo significa:",
+      "p2_point1": "i numeri sopra sono con versione incompleta",
+      "p2_point2": "Oracode non e' una teoria — e' forgiato sotto carico, corretto ogni volta che un vincolo mancante ha prodotto un errore reale",
+      "p3": "Il lavoro in corso: trasformare cio che oggi vive in 20 hook, 13 regole, 8 agenti e 149 documenti in un protocollo aperto, documentato, replicabile."
+    },
+    "closing": {
+      "text": "Il codice sorgente, i commit, le date, le ore: tutto e' pubblico o verificabile su richiesta.",
+      "emphasis": "Nessun claim su questa pagina esiste senza una prova corrispondente."
+    }
+  },
+  "oracode": {
+    "title": "Oracode",
+    "subtitle": "Il paradigma",
+    "intro": "Un sistema di sviluppo software con LLM, pensato per chi costruisce per durare."
+  },
+  "prove": {
+    "title": "Le prove",
+    "subtitle": "Numeri verificabili, link a git log, audit completi."
+  },
+  "ecosistema": {
+    "title": "Ecosistema",
+    "subtitle": "9 piattaforme, un organismo. FlorenceEGI.",
+    "organ_label": "Organi"
+  },
+  "contatti": {
+    "title": "Contatti",
+    "subtitle": "Scrivimi.",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia",
+    "success": "Messaggio inviato.",
+    "error": "Errore nell'invio. Riprova."
+  },
+  "not_found": {
+    "title": "404",
+    "message": "Pagina non trovata.",
+    "back": "Torna alla home"
+  },
+  "meta": {
+    "home_title": "Fabio Cherici — Oracode",
+    "home_description": "Oracode: un paradigma che disciplina l'AI per produrre software che regge il tempo. Oltre 1 milione di righe di codice, 9 piattaforme, una persona.",
+    "oracode_title": "Oracode — Il Paradigma",
+    "prove_title": "Le Prove — Numeri Verificabili",
+    "ecosistema_title": "Ecosistema FlorenceEGI",
+    "contatti_title": "Contatti"
+  }
+}
