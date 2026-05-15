@@ -1,12 +1,15 @@
 /**
  * @package fabiocherici.com — Prove Page
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
+ * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
  * @date 2026-05-15
- * @purpose Detailed evidence page — numbers, audit links, methodology
+ * @purpose Detailed evidence page — numbers, audit links, methodology. All content via i18n.
  */
 
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+const STAT_IDS = ['lines', 'platforms', 'languages', 'files', 'symbols', 'person'] as const;
+const PROJECT_IDS = ['sigillo', 'credential', 'gialloro'] as const;
 
 export default async function ProvePage({
   params,
@@ -16,45 +19,6 @@ export default async function ProvePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('prove');
-
-  const bigNumbers = [
-    { value: '1.002.558', label: 'Righe di codice' },
-    { value: '9', label: 'Piattaforme in produzione' },
-    { value: '11', label: 'Linguaggi' },
-    { value: '5.354', label: 'File' },
-    { value: '8.686', label: 'Simboli pubblici catalogati' },
-    { value: '1', label: 'Persona' },
-  ];
-
-  const projects = [
-    {
-      name: 'Sigillo',
-      what: 'Certificazione blockchain di file — SHA-256 + Algorand + TSA RFC 3161',
-      hours: '38-44h effettive',
-      lines: '17.100 righe',
-      integrations: 'Algorand, Stripe, IPFS, TSA, AI advisor',
-      firstCommit: '23 marzo 2026',
-      comparison: 'Un team tradizionale: 4-6 sviluppatori, 6-12 mesi.',
-    },
-    {
-      name: 'EGI-Credential',
-      what: 'Wallet credenziali professionali W3C — 11 standard (SD-JWT, OID4VCI, EdDSA, DID:web, eIDAS 2.0)',
-      hours: '~78h 30min (54 sessioni misurate)',
-      lines: '45.400 righe su 5 componenti',
-      integrations: '11 standard implementati',
-      firstCommit: '24 marzo 2026',
-      comparison: 'Stesso livello di compliance di Microsoft Entra Verified ID — team 50-100 ingegneri, 3+ anni.',
-    },
-    {
-      name: 'Gialloro Firenze',
-      what: 'E-commerce luxury + CMS headless — Laravel + React + MariaDB',
-      hours: '16h 17min (21 commit, 4 sessioni)',
-      lines: '18.455 righe',
-      integrations: 'SEO ottimizzato, WCAG AA, deploy completo',
-      firstCommit: '3 giorni calendario',
-      comparison: 'Due giorni per costruire. Un giorno per SEO, accessibility e deploy.',
-    },
-  ];
 
   return (
     <div className="pt-24">
@@ -69,17 +33,17 @@ export default async function ProvePage({
         </div>
       </section>
 
-      {/* Big numbers grid */}
       <section className="py-16 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
+          <h2 className="sr-only">{t('stats_title')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {bigNumbers.map((n) => (
-              <div key={n.label} className="reveal text-center">
+            {STAT_IDS.map((id) => (
+              <div key={id} className="reveal text-center">
                 <span className="block text-4xl md:text-5xl font-light font-mono text-[var(--accent)]">
-                  {n.value}
+                  {t(`stat_${id}_value`)}
                 </span>
                 <span className="text-sm text-[var(--text-muted)] uppercase tracking-wider mt-2 block">
-                  {n.label}
+                  {t(`stat_${id}_label`)}
                 </span>
               </div>
             ))}
@@ -87,35 +51,50 @@ export default async function ProvePage({
         </div>
       </section>
 
-      {/* Project details */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-4xl px-6 space-y-16">
-          {projects.map((p) => (
-            <div key={p.name} className="reveal border-l-2 border-[var(--accent)] pl-8">
-              <h3 className="text-2xl font-[family-name:var(--font-display)] text-[var(--accent)] mb-2">{p.name}</h3>
-              <p className="text-base text-[var(--text-secondary)] mb-6">{p.what}</p>
+          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)]">
+            {t('projects_title')}
+          </h2>
+          {PROJECT_IDS.map((id) => (
+            <div key={id} className="reveal border-l-2 border-[var(--accent)] pl-8">
+              <h3 className="text-2xl font-[family-name:var(--font-display)] text-[var(--accent)] mb-2">
+                {t(`proj_${id}_name`)}
+              </h3>
+              <p className="text-base text-[var(--text-secondary)] mb-6">{t(`proj_${id}_what`)}</p>
               <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                <div><span className="text-[var(--text-muted)]">Ore effettive:</span> <span className="text-[var(--text-primary)]">{p.hours}</span></div>
-                <div><span className="text-[var(--text-muted)]">Codice:</span> <span className="text-[var(--text-primary)]">{p.lines}</span></div>
-                <div><span className="text-[var(--text-muted)]">Integrazioni:</span> <span className="text-[var(--text-primary)]">{p.integrations}</span></div>
-                <div><span className="text-[var(--text-muted)]">Primo commit:</span> <span className="text-[var(--text-primary)]">{p.firstCommit}</span></div>
+                <div>
+                  <span className="text-[var(--text-muted)]">{t('label_hours')}</span>{' '}
+                  <span className="text-[var(--text-primary)]">{t(`proj_${id}_hours`)}</span>
+                </div>
+                <div>
+                  <span className="text-[var(--text-muted)]">{t('label_code')}</span>{' '}
+                  <span className="text-[var(--text-primary)]">{t(`proj_${id}_lines`)}</span>
+                </div>
+                <div>
+                  <span className="text-[var(--text-muted)]">{t('label_integrations')}</span>{' '}
+                  <span className="text-[var(--text-primary)]">{t(`proj_${id}_integrations`)}</span>
+                </div>
+                <div>
+                  <span className="text-[var(--text-muted)]">{t('label_first_commit')}</span>{' '}
+                  <span className="text-[var(--text-primary)]">{t(`proj_${id}_first_commit`)}</span>
+                </div>
               </div>
-              <p className="mt-6 text-sm text-[var(--text-secondary)] italic">{p.comparison}</p>
+              <p className="mt-6 text-sm text-[var(--text-secondary)] italic">{t(`proj_${id}_compare`)}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Methodology */}
       <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            Metodologia
+            {t('methodology_title')}
           </h2>
           <div className="reveal space-y-4 text-base text-[var(--text-secondary)] leading-relaxed">
-            <p>Tutte le ore sono misurate da sessioni git verificabili: primo commit — ultimo commit per sessione, con tolleranza di 15 minuti pre/post.</p>
-            <p>Le righe di codice sono contate con cloc su codebase pulite (esclusi node_modules, vendor, build artifacts).</p>
-            <p>I dati di confronto con team tradizionali sono stime conservative basate su industry benchmarks pubblici per progetti di complessita equivalente.</p>
+            <p>{t('methodology_p1')}</p>
+            <p>{t('methodology_p2')}</p>
+            <p>{t('methodology_p3')}</p>
           </div>
         </div>
       </section>

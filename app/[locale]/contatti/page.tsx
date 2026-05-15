@@ -1,15 +1,17 @@
 /**
  * @package fabiocherici.com — Contact Page
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
+ * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
  * @date 2026-05-15
- * @purpose Contact form — react-hook-form + zod. Static site = mailto fallback (no API routes with output:export).
+ * @purpose Contact form — react-hook-form with mailto fallback (static site, no API routes with output:export).
  */
 
 'use client';
 
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
+
+const CONTACT_EMAIL = 'fabiocherici@gmail.com';
 
 interface FormData {
   name: string;
@@ -22,9 +24,9 @@ export default function ContattiPage() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    const subject = encodeURIComponent(`Contatto da ${data.name}`);
-    const body = encodeURIComponent(`Nome: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-    window.location.href = `mailto:fabiocherici@gmail.com?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent(`${t('mail_subject')} ${data.name}`);
+    const body = encodeURIComponent(`${t('name')}: ${data.name}\n${t('email')}: ${data.email}\n\n${data.message}`);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -38,7 +40,7 @@ export default function ContattiPage() {
             {t('title')}
           </h1>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
             <div>
               <label htmlFor="name" className="block text-sm text-[var(--text-muted)] mb-1.5">
                 {t('name')}
@@ -46,9 +48,15 @@ export default function ContattiPage() {
               <input
                 id="name"
                 type="text"
+                aria-required="true"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? 'name-error' : undefined}
                 {...register('name', { required: true })}
                 className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors"
               />
+              {errors.name && (
+                <p id="name-error" role="alert" className="text-sm text-red-500 mt-1">{t('error_required')}</p>
+              )}
             </div>
 
             <div>
@@ -58,9 +66,15 @@ export default function ContattiPage() {
               <input
                 id="email"
                 type="email"
+                aria-required="true"
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'email-error' : undefined}
                 {...register('email', { required: true })}
                 className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors"
               />
+              {errors.email && (
+                <p id="email-error" role="alert" className="text-sm text-red-500 mt-1">{t('error_required')}</p>
+              )}
             </div>
 
             <div>
@@ -70,9 +84,15 @@ export default function ContattiPage() {
               <textarea
                 id="message"
                 rows={6}
+                aria-required="true"
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? 'message-error' : undefined}
                 {...register('message', { required: true })}
                 className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] focus:outline-none transition-colors resize-y"
               />
+              {errors.message && (
+                <p id="message-error" role="alert" className="text-sm text-red-500 mt-1">{t('error_required')}</p>
+              )}
             </div>
 
             <button
