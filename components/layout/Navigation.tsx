@@ -41,6 +41,7 @@ export function Navigation({ locale }: { locale: string }) {
           className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
           aria-label={t('nav.main')}
         >
+          {/* P0-FC-4 exception: proper noun (site brand) */}
           <Link
             href="/"
             className="font-[var(--font-display)] text-lg font-semibold tracking-tight text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
@@ -87,6 +88,7 @@ export function Navigation({ locale }: { locale: string }) {
             className="md:hidden text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
             aria-label={t('nav.menu')}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
@@ -101,16 +103,17 @@ export function Navigation({ locale }: { locale: string }) {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-md">
+          <div id="mobile-nav" className="md:hidden border-t border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-md">
             <ul className="flex flex-col gap-1 px-6 py-4">
               {NAV_ITEMS.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
                 return (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`block py-2 text-sm ${isActive ? 'text-[var(--accent)]' : 'text-[var(--text-secondary)]'}`}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`block py-2 text-sm ${isActive ? 'text-[var(--accent)] font-medium' : 'text-[var(--text-secondary)]'}`}
                     >
                       {t(item.labelKey)}
                     </Link>

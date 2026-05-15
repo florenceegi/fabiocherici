@@ -13,7 +13,10 @@
   "footer": {
     "rights": "保留所有权利。",
     "contact": "联系",
-    "built_with": "使用 Oracode + Next.js 15 构建"
+    "built_with": "使用 Oracode + Next.js 15 构建",
+    "protected_by_sigillo": "本站受 Sigillo 保护",
+    "nav_label": "页脚链接",
+    "opens_new_tab": "在新标签页中打开"
   },
   "preferences": {
     "title": "你希望如何浏览本站？",
@@ -27,18 +30,43 @@
     "scene3d": "3D 场景",
     "accessibility": "无障碍",
     "font_size": "字体大小",
+    "font_size_normal": "正常字体大小",
+    "font_size_large": "大字体",
+    "font_size_xlarge": "超大字体",
     "high_contrast": "高对比度",
     "dyslexia_font": "阅读障碍字体",
     "reduced_motion": "减少动画",
     "reset_a11y": "重置设置",
-    "current_slot": "当前时段"
+    "current_slot": "当前时段",
+    "scene_aurora": "极光",
+    "scene_morph_sphere": "变形球体",
+    "scene_crystal": "水晶",
+    "scene_noise_terrain": "噪声地形",
+    "scene_smoke": "烟雾",
+    "scene_ribbon_flow": "丝带流动",
+    "scene_wave_grid": "波浪网格",
+    "scene_particle_sphere": "粒子球体",
+    "scene_none": "无 3D 场景",
+    "anim_minimal": "极简",
+    "anim_cinematic": "电影感",
+    "anim_energetic": "充满活力",
+    "anim_editorial": "编辑风格",
+    "anim_fluid": "流畅",
+    "anim_none": "无动画",
+    "anim_desc_minimal": "微妙的渐变，干净的入场",
+    "anim_desc_cinematic": "缓慢展现，视差效果，幕帘效果",
+    "anim_desc_energetic": "弹跳，快速交错，缩放弹出",
+    "anim_desc_editorial": "裁剪路径展现，文字遮罩，几何风格",
+    "anim_desc_fluid": "柔和的变形，波浪交错，轻柔的缓动",
+    "anim_desc_none": "零动画，即时显示"
   },
   "home": {
     "hero": {
       "tagline": "Oracode",
-      "claim": "一个约束人工智能、使其产出经得起时间考验的软件的范式。",
+      "claim": "一种用于管理 AI 代理编写生产代码的软件生态系统的正式方法论。一套由规则、机械钩子、专业代理和审计组成的系统，在 AI 共同编写代码时确保一致性、安全性和可追溯性。",
       "sub1": "它不是框架，不是工具。它是一套由约束条件、机械式钩子和验证协议构成的系统，将人类与 AI 的协作从即兴发挥转化为工程实践。",
-      "sub2": "由 Fabio Cherici 设计，并在超过一百万行生产代码上经过验证。目前正在作为开放协议进行形式化。"
+      "sub2": "由 Fabio Cherici 设计，并在超过一百万行生产代码上经过验证。目前正在作为开放协议进行形式化。",
+      "cta": "查看证明"
     },
     "problem": {
       "title": "问题",
@@ -91,7 +119,9 @@
       "gialloro_hours": "16 小时 17 分钟",
       "gialloro_lines": "18,455 行",
       "gialloro_calendar": "3 天",
-      "gialloro_compare": "两天构建，一天完成 SEO、无障碍和部署。"
+      "gialloro_compare": "两天构建，一天完成 SEO、无障碍和部署。",
+      "label_hours": "小时",
+      "label_code": "代码"
     },
     "protocol": {
       "title": "为什么是协议",

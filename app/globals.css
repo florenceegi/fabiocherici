@@ -57,10 +57,16 @@
   --bg: #1a1520;
   --bg-elevated: #221c2a;
   --bg-card: #271f30;
+  --bg-hover: #2e2538;
+  --border: #352c40;
+  --border-accent: #453a52;
   --text-primary: #e8d5c4;
   --text-secondary: #a08e7e;
+  --text-muted: #6e5f52;
   --accent: #d4a574;
   --accent-hover: #e0b888;
+  --accent-muted: rgba(212, 165, 116, 0.15);
+  --accent-glow: rgba(212, 165, 116, 0.08);
   --surface-glass: rgba(26, 21, 32, 0.85);
   color-scheme: dark;
 }
@@ -69,10 +75,16 @@
   --bg: #1a1610;
   --bg-elevated: #231e16;
   --bg-card: #28221a;
+  --bg-hover: #302920;
+  --border: #352e24;
+  --border-accent: #453c30;
   --text-primary: #f0e6d8;
   --text-secondary: #b0a090;
+  --text-muted: #7a6c5c;
   --accent: #d4a55a;
   --accent-hover: #e0b870;
+  --accent-muted: rgba(212, 165, 90, 0.15);
+  --accent-glow: rgba(212, 165, 90, 0.08);
   --surface-glass: rgba(26, 22, 16, 0.85);
   color-scheme: dark;
 }
@@ -81,10 +93,16 @@
   --bg: #f8f5f0;
   --bg-elevated: #ffffff;
   --bg-card: #f0ebe3;
+  --bg-hover: #e8e1d8;
+  --border: #ddd5cb;
+  --border-accent: #cdc3b6;
   --text-primary: #1a1715;
   --text-secondary: #5a554f;
+  --text-muted: #8a847d;
   --accent: #9A7B4F;
   --accent-hover: #7D6340;
+  --accent-muted: rgba(154, 123, 79, 0.12);
+  --accent-glow: rgba(154, 123, 79, 0.06);
   --surface-glass: rgba(248, 245, 240, 0.85);
   color-scheme: light;
 }
@@ -93,10 +111,16 @@
   --bg: #1a1508;
   --bg-elevated: #23200f;
   --bg-card: #282412;
+  --bg-hover: #302b18;
+  --border: #352f1c;
+  --border-accent: #453e28;
   --text-primary: #f0e0c0;
   --text-secondary: #b0a080;
+  --text-muted: #7a6e54;
   --accent: #d4a040;
   --accent-hover: #e0b050;
+  --accent-muted: rgba(212, 160, 64, 0.15);
+  --accent-glow: rgba(212, 160, 64, 0.08);
   --surface-glass: rgba(26, 21, 8, 0.85);
   color-scheme: dark;
 }
@@ -105,10 +129,16 @@
   --bg: #1a100a;
   --bg-elevated: #231510;
   --bg-card: #281a14;
+  --bg-hover: #30201a;
+  --border: #35251e;
+  --border-accent: #45332a;
   --text-primary: #f0d8c0;
   --text-secondary: #a88870;
+  --text-muted: #755e4c;
   --accent: #d48050;
   --accent-hover: #e09060;
+  --accent-muted: rgba(212, 128, 80, 0.15);
+  --accent-glow: rgba(212, 128, 80, 0.08);
   --surface-glass: rgba(26, 16, 10, 0.85);
   color-scheme: dark;
 }
@@ -117,10 +147,16 @@
   --bg: #0f0f14;
   --bg-elevated: #16161c;
   --bg-card: #1a1a22;
+  --bg-hover: #22222c;
+  --border: #282834;
+  --border-accent: #363644;
   --text-primary: #d8d0e0;
   --text-secondary: #8880a0;
+  --text-muted: #5c5672;
   --accent: #b0a0c0;
   --accent-hover: #c0b0d0;
+  --accent-muted: rgba(176, 160, 192, 0.15);
+  --accent-glow: rgba(176, 160, 192, 0.08);
   --surface-glass: rgba(15, 15, 20, 0.85);
   color-scheme: dark;
 }
@@ -129,10 +165,16 @@
   --bg: #0a0a0e;
   --bg-elevated: #111116;
   --bg-card: #16161c;
+  --bg-hover: #1e1e26;
+  --border: #24242e;
+  --border-accent: #32323e;
   --text-primary: #c0c0d0;
   --text-secondary: #707088;
+  --text-muted: #4e4e64;
   --accent: #8888b0;
   --accent-hover: #9898c0;
+  --accent-muted: rgba(136, 136, 176, 0.15);
+  --accent-glow: rgba(136, 136, 176, 0.08);
   --surface-glass: rgba(10, 10, 14, 0.85);
   color-scheme: dark;
 }
@@ -188,19 +230,24 @@ body {
   color: var(--accent);
 }
 
-/* ─── Scroll reveal base ─── */
-.reveal {
+/* ─── Scroll reveal — progressive enhancement ───
+   Default: testo VISIBILE (P0-FC-2). JS aggiunge .reveal-ready e nasconde.
+   Senza JS il sito funziona al 100%. */
+.reveal-ready .reveal {
   opacity: 0;
-  transform: translateY(24px);
 }
 
-.reveal.is-visible {
+.reveal-ready .reveal.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-ready .reveal {
     opacity: 1;
     transform: none;
   }

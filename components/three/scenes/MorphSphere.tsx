@@ -18,7 +18,7 @@ function Sphere() {
   const originalPositions = useRef<Float32Array | null>(null);
 
   const geo = useMemo(() => {
-    const g = new THREE.IcosahedronGeometry(2.5, 64);
+    const g = new THREE.IcosahedronGeometry(2.5, 5);
     originalPositions.current = new Float32Array(g.attributes.position.array);
     return g;
   }, []);

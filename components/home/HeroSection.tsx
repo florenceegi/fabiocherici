@@ -40,7 +40,7 @@ export function HeroSection() {
             href="#proof"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent-muted)] px-8 py-3 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-all duration-300"
           >
-            {t.rich('tagline', { children: () => null }) ? 'Le prove' : 'Le prove'}
+            {t('cta')}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>

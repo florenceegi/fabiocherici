@@ -13,7 +13,10 @@
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "contact": "Kontakt",
-    "built_with": "Entwickelt mit Oracode + Next.js 15"
+    "built_with": "Entwickelt mit Oracode + Next.js 15",
+    "protected_by_sigillo": "Seite geschuetzt durch Sigillo",
+    "nav_label": "Footer-Links",
+    "opens_new_tab": "oeffnet in neuem Tab"
   },
   "preferences": {
     "title": "Wie moechtest du diese Seite sehen?",
@@ -27,18 +30,43 @@
     "scene3d": "3D-Szene",
     "accessibility": "Barrierefreiheit",
     "font_size": "Schriftgroesse",
+    "font_size_normal": "Normale Schriftgroesse",
+    "font_size_large": "Grosse Schriftgroesse",
+    "font_size_xlarge": "Sehr grosse Schriftgroesse",
     "high_contrast": "Hoher Kontrast",
     "dyslexia_font": "Legasthenie-Schrift",
     "reduced_motion": "Reduzierte Animationen",
     "reset_a11y": "Einstellungen zuruecksetzen",
-    "current_slot": "Aktuelle Zeitzone"
+    "current_slot": "Aktuelle Zeitzone",
+    "scene_aurora": "Aurora",
+    "scene_morph_sphere": "Morphende Kugel",
+    "scene_crystal": "Kristall",
+    "scene_noise_terrain": "Rausch-Terrain",
+    "scene_smoke": "Rauch",
+    "scene_ribbon_flow": "Bandfluss",
+    "scene_wave_grid": "Wellengitter",
+    "scene_particle_sphere": "Partikelkugel",
+    "scene_none": "Keine 3D-Szene",
+    "anim_minimal": "Minimal",
+    "anim_cinematic": "Filmisch",
+    "anim_energetic": "Energetisch",
+    "anim_editorial": "Redaktionell",
+    "anim_fluid": "Fliessend",
+    "anim_none": "Keine Animation",
+    "anim_desc_minimal": "Dezente Ueberblendungen, saubere Eintritte",
+    "anim_desc_cinematic": "Langsame Enthuellung, Parallaxe, Vorhangeffekte",
+    "anim_desc_energetic": "Federnd, schnelle Staffelung, Skalierungspops",
+    "anim_desc_editorial": "Clip-Path-Enthuellung, Textmasken, geometrisch",
+    "anim_desc_fluid": "Sanfte Morphs, Wellenaufloesung, weiches Easing",
+    "anim_desc_none": "Keine Animationen, sofortige Anzeige"
   },
   "home": {
     "hero": {
       "tagline": "Oracode",
-      "claim": "Ein Paradigma, das kuenstliche Intelligenz diszipliniert, um Software zu produzieren, die der Zeit standhaelt.",
+      "claim": "Eine formale Methodik zur Steuerung von Software-Ökosystemen, in denen KI-Agenten Produktionscode schreiben. Ein System aus Regeln, mechanischen Hooks, spezialisierten Agenten und Audits, das Kohärenz, Sicherheit und Rückverfolgbarkeit gewährleistet, wenn KI den Code mitschreibt.",
       "sub1": "Kein Framework. Kein Tool. Ein System aus Einschraenkungen, mechanischen Hooks und Verifikationsprotokollen, das die Zusammenarbeit zwischen Mensch und AI von Improvisation in Ingenieurswesen verwandelt.",
-      "sub2": "Entworfen von Fabio Cherici und getestet an ueber einer Million Zeilen Produktionscode. Wird derzeit als offenes Protokoll formalisiert."
+      "sub2": "Entworfen von Fabio Cherici und getestet an ueber einer Million Zeilen Produktionscode. Wird derzeit als offenes Protokoll formalisiert.",
+      "cta": "Beweis sehen"
     },
     "problem": {
       "title": "Das Problem",
@@ -91,7 +119,9 @@
       "gialloro_hours": "16 Std. 17 Min.",
       "gialloro_lines": "18.455 Zeilen",
       "gialloro_calendar": "3 Tage",
-      "gialloro_compare": "Zwei Tage zum Bauen. Ein Tag fuer SEO, Barrierefreiheit und Deploy."
+      "gialloro_compare": "Zwei Tage zum Bauen. Ein Tag fuer SEO, Barrierefreiheit und Deploy.",
+      "label_hours": "Stunden",
+      "label_code": "Code"
     },
     "protocol": {
       "title": "Warum ein Protokoll",

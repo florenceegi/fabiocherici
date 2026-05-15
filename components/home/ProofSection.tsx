@@ -80,8 +80,8 @@ export function ProofSection() {
             title={t('sigillo_title')}
             subtitle={t('sigillo_subtitle')}
             stats={[
-              { label: 'Ore', value: t('sigillo_hours') },
-              { label: 'Codice', value: t('sigillo_lines') },
+              { label: t('label_hours'), value: t('sigillo_hours') },
+              { label: t('label_code'), value: t('sigillo_lines') },
             ]}
             comparison={t('sigillo_compare')}
           />
@@ -90,8 +90,8 @@ export function ProofSection() {
             title={t('credential_title')}
             subtitle={t('credential_subtitle')}
             stats={[
-              { label: 'Ore', value: t('credential_hours') },
-              { label: 'Codice', value: t('credential_lines') },
+              { label: t('label_hours'), value: t('credential_hours') },
+              { label: t('label_code'), value: t('credential_lines') },
             ]}
             comparison={t('credential_compare')}
           />
@@ -100,8 +100,8 @@ export function ProofSection() {
             title={t('gialloro_title')}
             subtitle={t('gialloro_subtitle')}
             stats={[
-              { label: 'Ore', value: t('gialloro_hours') },
-              { label: 'Codice', value: t('gialloro_lines') },
+              { label: t('label_hours'), value: t('gialloro_hours') },
+              { label: t('label_code'), value: t('gialloro_lines') },
             ]}
             comparison={t('gialloro_compare')}
           />

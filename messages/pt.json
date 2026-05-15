@@ -13,7 +13,10 @@
   "footer": {
     "rights": "Todos os direitos reservados.",
     "contact": "Contacto",
-    "built_with": "Construido com Oracode + Next.js 15"
+    "built_with": "Construido com Oracode + Next.js 15",
+    "protected_by_sigillo": "Site protegido por Sigillo",
+    "nav_label": "Links do rodape",
+    "opens_new_tab": "abre num novo separador"
   },
   "preferences": {
     "title": "Como queres ver este site?",
@@ -27,18 +30,43 @@
     "scene3d": "Cena 3D",
     "accessibility": "Acessibilidade",
     "font_size": "Tamanho do texto",
+    "font_size_normal": "Tamanho de texto normal",
+    "font_size_large": "Tamanho de texto grande",
+    "font_size_xlarge": "Tamanho de texto muito grande",
     "high_contrast": "Alto contraste",
     "dyslexia_font": "Fonte para dislexia",
     "reduced_motion": "Animacoes reduzidas",
     "reset_a11y": "Repor definicoes",
-    "current_slot": "Faixa horaria atual"
+    "current_slot": "Faixa horaria atual",
+    "scene_aurora": "Aurora",
+    "scene_morph_sphere": "Esfera morfologica",
+    "scene_crystal": "Cristal",
+    "scene_noise_terrain": "Terreno de ruido",
+    "scene_smoke": "Fumo",
+    "scene_ribbon_flow": "Fluxo de fitas",
+    "scene_wave_grid": "Grelha de ondas",
+    "scene_particle_sphere": "Esfera de particulas",
+    "scene_none": "Sem cena 3D",
+    "anim_minimal": "Minimo",
+    "anim_cinematic": "Cinematografico",
+    "anim_energetic": "Energetico",
+    "anim_editorial": "Editorial",
+    "anim_fluid": "Fluido",
+    "anim_none": "Sem animacao",
+    "anim_desc_minimal": "Desvanecimentos subtis, entradas limpas",
+    "anim_desc_cinematic": "Revelacoes lentas, parallax, efeitos de cortina",
+    "anim_desc_energetic": "Ressaltos, escalonamento rapido, pops de escala",
+    "anim_desc_editorial": "Revelacoes clip-path, mascaras de texto, geometricas",
+    "anim_desc_fluid": "Morphs suaves, escalonamento ondulado, easing delicado",
+    "anim_desc_none": "Zero animacoes, exibicao instantanea"
   },
   "home": {
     "hero": {
       "tagline": "Oracode",
-      "claim": "Um paradigma que disciplina a inteligencia artificial para produzir software que resiste ao tempo.",
+      "claim": "Uma metodologia formal para governar ecossistemas de software onde agentes de IA escrevem código em produção. Um sistema de regras, hooks mecânicos, agentes especializados e auditorias que garantem coerência, segurança e rastreabilidade quando a IA é coautora do código.",
       "sub1": "Nao e um framework. Nao e uma ferramenta. E um sistema de restricoes, hooks mecanicos e protocolos de verificacao que transforma a colaboracao humano-AI de improvisacao em engenharia.",
-      "sub2": "Concebido por Fabio Cherici e testado em mais de um milhao de linhas de codigo em producao. Atualmente em fase de formalizacao como protocolo aberto."
+      "sub2": "Concebido por Fabio Cherici e testado em mais de um milhao de linhas de codigo em producao. Atualmente em fase de formalizacao como protocolo aberto.",
+      "cta": "Ver provas"
     },
     "problem": {
       "title": "O problema",
@@ -91,7 +119,9 @@
       "gialloro_hours": "16h 17min",
       "gialloro_lines": "18.455 linhas",
       "gialloro_calendar": "3 dias",
-      "gialloro_compare": "Dois dias para construir. Um dia para SEO, acessibilidade e deploy."
+      "gialloro_compare": "Dois dias para construir. Um dia para SEO, acessibilidade e deploy.",
+      "label_hours": "Horas",
+      "label_code": "Código"
     },
     "protocol": {
       "title": "Porque um protocolo",

@@ -6,19 +6,14 @@
  * @purpose 3D scene selection — localStorage only (static export, no cookies). 6 scenes selected from CREATOR-STAGING.
  */
 
-export type SceneId = 'aurora' | 'morph-sphere' | 'crystal' | 'noise-terrain' | 'smoke' | 'ribbon-flow' | 'none';
+export type SceneId = 'aurora' | 'morph-sphere' | 'crystal' | 'noise-terrain' | 'smoke' | 'ribbon-flow' | 'wave-grid' | 'particle-sphere' | 'none';
 
-export const SCENE_NAMES: Record<SceneId, string> = {
-  aurora: 'Aurora',
-  'morph-sphere': 'Morphing Sphere',
-  crystal: 'Crystal',
-  'noise-terrain': 'Noise Terrain',
-  smoke: 'Smoke',
-  'ribbon-flow': 'Ribbon Flow',
-  none: 'No 3D',
-};
+export const SCENE_IDS: readonly SceneId[] = [
+  'aurora', 'morph-sphere', 'crystal', 'noise-terrain',
+  'smoke', 'ribbon-flow', 'wave-grid', 'particle-sphere', 'none',
+] as const;
 
-const VALID: Set<string> = new Set(Object.keys(SCENE_NAMES));
+const VALID: Set<string> = new Set(SCENE_IDS);
 const STORAGE_KEY = 'fabio-scene3d';
 const DEFAULT_SCENE: SceneId = 'aurora';
 

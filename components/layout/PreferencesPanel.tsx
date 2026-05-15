@@ -1,9 +1,9 @@
 /**
  * @package fabiocherici.com — Preferences Panel
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
+ * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
  * @date 2026-05-15
- * @purpose Visitor preferences — theme, animation, 3D scene, a11y. The killer feature: no other personal site offers this.
+ * @purpose Visitor preferences — theme, animation, 3D scene, a11y. Focus-trapped modal dialog (WCAG 2.4.3).
  */
 
 'use client';
@@ -11,13 +11,27 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useTheme, type ThemeMode } from '@/lib/theme-context';
-import { useA11y, type A11yFontSize, type A11yContrast, type A11yReducedMotion, type A11yDyslexiaFont } from '@/lib/a11y-context';
-import { useScene, type SceneId } from '@/lib/hooks/useScene';
-import { SCENE_NAMES } from '@/lib/scene3d';
-import { ANIMATION_NAMES, ANIMATION_DESCRIPTIONS, type AnimationId, getStoredAnimation, persistAnimation } from '@/lib/animation';
+import { useA11y, type A11yFontSize } from '@/lib/a11y-context';
+import { useScene } from '@/lib/scene-context';
+import { useAnimationId } from '@/lib/animation-context';
+import { SCENE_IDS, type SceneId } from '@/lib/scene3d';
+import { ANIMATION_IDS, type AnimationId } from '@/lib/animation';
 import { usePathname, useRouter } from '@/lib/i18n/routing';
 import { localeNames, locales, type Locale } from '@/lib/i18n/config';
-import { useState } from 'react';
+
+function sceneKey(id: SceneId): string {
+  return `scene_${id.replace(/-/g, '_')}`;
+}
+
+function animKey(id: AnimationId): string {
+  return `anim_${id}`;
+}
+
+function animDescKey(id: AnimationId): string {
+  return `anim_desc_${id}`;
+}
+
+const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
 interface Props {
   open: boolean;
@@ -31,14 +45,9 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
   const { mode, setMode, ambientSlot, isAmbientActive } = useTheme();
   const a11y = useA11y();
   const [sceneId, setScene] = useScene();
-  const [animId, setAnimId] = useState<AnimationId>(() => getStoredAnimation());
+  const [animId, setAnimation] = useAnimationId();
   const pathname = usePathname();
   const router = useRouter();
-
-  const handleAnimChange = useCallback((id: AnimationId) => {
-    setAnimId(id);
-    persistAnimation(id);
-  }, []);
 
   const handleLocaleChange = useCallback((newLocale: string) => {
     router.replace(pathname, { locale: newLocale as Locale });
@@ -46,11 +55,34 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
 
   useEffect(() => {
     if (!open) return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { onClose(); return; }
+      if (e.key !== 'Tab') return;
+
+      const focusable = panel.querySelectorAll<HTMLElement>(FOCUSABLE);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
   }, [open, onClose]);
 
   useEffect(() => {
@@ -67,8 +99,8 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
     { id: 'ambient', label: t('theme_ambient') },
   ];
 
-  const sceneOptions = Object.entries(SCENE_NAMES) as [SceneId, string][];
-  const animOptions = Object.entries(ANIMATION_NAMES) as [AnimationId, string][];
+  const sceneOptions = SCENE_IDS;
+  const animOptions = ANIMATION_IDS;
 
   return (
     <>
@@ -150,10 +182,10 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
           {/* Animation */}
           <Section title={t('animation')}>
             <div className="space-y-2">
-              {animOptions.map(([id, name]) => (
+              {animOptions.map((id) => (
                 <button
                   key={id}
-                  onClick={() => handleAnimChange(id)}
+                  onClick={() => setAnimation(id)}
                   className={`w-full text-left rounded-lg px-3 py-2 border transition-all ${
                     animId === id
                       ? 'border-[var(--accent)] bg-[var(--accent-muted)]'
@@ -161,10 +193,10 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
                   }`}
                 >
                   <span className={`text-sm ${animId === id ? 'text-[var(--accent)]' : 'text-[var(--text-primary)]'}`}>
-                    {name}
+                    {t(animKey(id))}
                   </span>
                   <span className="block text-xs text-[var(--text-muted)] mt-0.5">
-                    {ANIMATION_DESCRIPTIONS[id]}
+                    {t(animDescKey(id))}
                   </span>
                 </button>
               ))}
@@ -174,7 +206,7 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
           {/* 3D Scene */}
           <Section title={t('scene3d')}>
             <div className="grid grid-cols-2 gap-2">
-              {sceneOptions.map(([id, name]) => (
+              {sceneOptions.map((id) => (
                 <button
                   key={id}
                   onClick={() => setScene(id)}
@@ -184,7 +216,7 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
                       : 'border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--border-accent)]'
                   }`}
                 >
-                  {name}
+                  {t(sceneKey(id))}
                 </button>
               ))}
             </div>
@@ -200,6 +232,7 @@ export function PreferencesPanel({ open, onClose, locale }: Props) {
                     <button
                       key={v}
                       onClick={() => a11y.setFontSize(v)}
+                      aria-label={t(`font_size_${v}`)}
                       className={`flex-1 rounded-lg px-2 py-1.5 text-sm border transition-all ${
                         a11y.fontSize === v ? 'border-[var(--accent)] text-[var(--accent)]' : 'border-[var(--border)] text-[var(--text-secondary)]'
                       }`}

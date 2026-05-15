@@ -13,7 +13,10 @@
   "footer": {
     "rights": "Tutti i diritti riservati.",
     "contact": "Contatti",
-    "built_with": "Costruito con Oracode + Next.js 15"
+    "built_with": "Costruito con Oracode + Next.js 15",
+    "protected_by_sigillo": "Sito protetto da Sigillo",
+    "nav_label": "Link footer",
+    "opens_new_tab": "si apre in una nuova scheda"
   },
   "preferences": {
     "title": "Come vuoi vedere questo sito?",
@@ -27,18 +30,43 @@
     "scene3d": "Scena 3D",
     "accessibility": "Accessibilita",
     "font_size": "Dimensione testo",
+    "font_size_normal": "Dimensione testo normale",
+    "font_size_large": "Dimensione testo grande",
+    "font_size_xlarge": "Dimensione testo molto grande",
     "high_contrast": "Alto contrasto",
     "dyslexia_font": "Font dislessia",
     "reduced_motion": "Animazioni ridotte",
     "reset_a11y": "Ripristina impostazioni",
-    "current_slot": "Fascia oraria attuale"
+    "current_slot": "Fascia oraria attuale",
+    "scene_aurora": "Aurora",
+    "scene_morph_sphere": "Sfera morfologica",
+    "scene_crystal": "Cristallo",
+    "scene_noise_terrain": "Terreno rumore",
+    "scene_smoke": "Fumo",
+    "scene_ribbon_flow": "Flusso nastri",
+    "scene_wave_grid": "Griglia d'onda",
+    "scene_particle_sphere": "Sfera di punti",
+    "scene_none": "Nessuna scena 3D",
+    "anim_minimal": "Minimale",
+    "anim_cinematic": "Cinematografico",
+    "anim_energetic": "Energetico",
+    "anim_editorial": "Editoriale",
+    "anim_fluid": "Fluido",
+    "anim_none": "Nessuna animazione",
+    "anim_desc_minimal": "Dissolvenze sottili, entrate pulite",
+    "anim_desc_cinematic": "Rivelazioni lente, parallasse, effetti sipario",
+    "anim_desc_energetic": "Rimbalzi, stagger veloce, pop di scala",
+    "anim_desc_editorial": "Rivelazioni clip-path, maschere testo, geometriche",
+    "anim_desc_fluid": "Morphing morbidi, stagger ondulati, easing delicato",
+    "anim_desc_none": "Zero animazioni, visualizzazione istantanea"
   },
   "home": {
     "hero": {
       "tagline": "Oracode",
-      "claim": "Un paradigma che disciplina l'intelligenza artificiale per produrre software che regge il tempo.",
+      "claim": "Una metodologia formale per governare ecosistemi software dove agenti AI scrivono codice in produzione. Un sistema di regole, hook meccanici, agenti specializzati e audit che garantiscono coerenza, sicurezza e tracciabilità quando l'AI è co-autore del codice.",
       "sub1": "Non e' un framework. Non e' un tool. E' un sistema di vincoli, hook meccanici e protocolli di verifica che trasforma la collaborazione umano-AI da improvvisazione a ingegneria.",
-      "sub2": "Progettato da Fabio Cherici e testato su oltre un milione di righe di codice in produzione. Ora in fase di formalizzazione come protocollo aperto."
+      "sub2": "Progettato da Fabio Cherici e testato su oltre un milione di righe di codice in produzione. Ora in fase di formalizzazione come protocollo aperto.",
+      "cta": "Le prove"
     },
     "problem": {
       "title": "Il problema",
@@ -91,7 +119,9 @@
       "gialloro_hours": "16h 17min",
       "gialloro_lines": "18.455 righe",
       "gialloro_calendar": "3 giorni",
-      "gialloro_compare": "Due giorni per costruire. Un giorno per SEO, accessibility e deploy."
+      "gialloro_compare": "Due giorni per costruire. Un giorno per SEO, accessibility e deploy.",
+      "label_hours": "Ore",
+      "label_code": "Codice"
     },
     "protocol": {
       "title": "Perche un protocollo",
