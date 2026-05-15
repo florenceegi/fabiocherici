@@ -1,11 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import WriterContent from '../../components/pages/WriterContent.astro';
-import { getLangFromUrl } from '../../i18n/translations';
+import { getLangFromUrl, t } from '../../i18n/translations';
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title="Scrittore — Fabio Cherici">
+<Layout title="Scrittore — Fabio Cherici" description={t(lang, 'meta.writerDescription')} slug="scrittore">
   <WriterContent lang={lang} />
 </Layout>

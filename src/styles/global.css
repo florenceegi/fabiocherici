@@ -166,6 +166,26 @@ small, .meta {
   padding-left: var(--spacing-sm);
 }
 
+/* === REDUCED MOTION === */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* === MOBILE OVERRIDES === */
 
 @media (max-width: 767px) {

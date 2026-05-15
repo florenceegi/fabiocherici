@@ -1,11 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContactContent from '../../components/pages/ContactContent.astro';
-import { getLangFromUrl } from '../../i18n/translations';
+import { getLangFromUrl, t } from '../../i18n/translations';
 
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title="Contatto — Fabio Cherici">
+<Layout title="Contatto — Fabio Cherici" description={t(lang, 'meta.contactDescription')} slug="contatto">
   <ContactContent lang={lang} />
 </Layout>

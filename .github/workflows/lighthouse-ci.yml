@@ -1,0 +1,50 @@
+name: "Lighthouse CI — fabiocherici.com"
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'public/**', 'astro.config.*']
+  pull_request:
+    branches: [main]
+    paths: ['src/**', 'public/**', 'astro.config.*']
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: "Audit homepage — Perf/A11y/SEO/BP"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.14.x
+
+      - name: Run Lighthouse CI (prod URL)
+        run: |
+          lhci collect \
+            --url=https://fabiocherici.com/ \
+            --numberOfRuns=3 \
+            --settings.preset=desktop \
+            --settings.throttlingMethod=simulate
+          lhci assert \
+            --assertions.categories:performance=0.90 \
+            --assertions.categories:accessibility=1.0 \
+            --assertions.categories:best-practices=1.0 \
+            --assertions.categories:seo=1.0 \
+            --aggregationMethod=median
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 14
