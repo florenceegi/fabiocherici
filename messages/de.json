@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "Der Quellcode, die Commits, die Daten, die Stunden: alles ist oeffentlich oder auf Anfrage ueberpruefbar.",
-      "emphasis": "Keine Behauptung auf dieser Seite existiert ohne einen entsprechenden Beleg."
+      "emphasis": "Keine Behauptung auf dieser Seite existiert ohne einen entsprechenden Beleg.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "oeffnet in neuem Tab"
     }
   },
   "oracode": {

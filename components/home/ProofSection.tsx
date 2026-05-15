@@ -14,19 +14,21 @@ function ProofCard({
   title,
   subtitle,
   stats,
+  detail,
   comparison,
 }: {
   title: string;
   subtitle: string;
   stats: { label: string; value: string }[];
+  detail?: string;
   comparison: string;
 }) {
   return (
     <div className="reveal rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-8 hover:border-[var(--accent-muted)] transition-colors">
-      <h4 className="text-xl font-semibold text-[var(--accent)] mb-1">{title}</h4>
+      <h3 className="text-xl font-semibold text-[var(--accent)] mb-1">{title}</h3>
       <p className="text-sm text-[var(--text-muted)] mb-6">{subtitle}</p>
 
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-2 gap-4 mb-4">
         {stats.map((s) => (
           <div key={s.label}>
             <span className="block text-2xl font-light font-mono text-[var(--text-primary)]">{s.value}</span>
@@ -34,6 +36,10 @@ function ProofCard({
           </div>
         ))}
       </div>
+
+      {detail && (
+        <p className="text-xs text-[var(--text-muted)] mb-4">{detail}</p>
+      )}
 
       <p className="text-sm text-[var(--text-secondary)] italic border-t border-[var(--border)] pt-4">
         {comparison}
@@ -83,6 +89,7 @@ export function ProofSection() {
               { label: t('label_hours'), value: t('sigillo_hours') },
               { label: t('label_code'), value: t('sigillo_lines') },
             ]}
+            detail={t('sigillo_what')}
             comparison={t('sigillo_compare')}
           />
 
@@ -93,6 +100,7 @@ export function ProofSection() {
               { label: t('label_hours'), value: t('credential_hours') },
               { label: t('label_code'), value: t('credential_lines') },
             ]}
+            detail={`${t('credential_standards')}. ${t('credential_overlap')}`}
             comparison={t('credential_compare')}
           />
 
@@ -103,6 +111,7 @@ export function ProofSection() {
               { label: t('label_hours'), value: t('gialloro_hours') },
               { label: t('label_code'), value: t('gialloro_lines') },
             ]}
+            detail={t('gialloro_calendar')}
             comparison={t('gialloro_compare')}
           />
         </div>

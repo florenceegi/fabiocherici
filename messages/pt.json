@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "O codigo-fonte, os commits, as datas, as horas: tudo e publico ou verificavel mediante pedido.",
-      "emphasis": "Nenhuma afirmacao nesta pagina existe sem uma prova correspondente."
+      "emphasis": "Nenhuma afirmacao nesta pagina existe sem uma prova correspondente.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "abre num novo separador"
     }
   },
   "oracode": {

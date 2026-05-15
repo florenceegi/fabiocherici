@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "Le code source, les commits, les dates, les heures : tout est public ou verifiable sur demande.",
-      "emphasis": "Aucune affirmation sur cette page n'existe sans preuve correspondante."
+      "emphasis": "Aucune affirmation sur cette page n'existe sans preuve correspondante.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "s'ouvre dans un nouvel onglet"
     }
   },
   "oracode": {

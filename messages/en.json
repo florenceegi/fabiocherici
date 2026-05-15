@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "The source code, the commits, the dates, the hours: everything is public or verifiable on request.",
-      "emphasis": "No claim on this page exists without corresponding proof."
+      "emphasis": "No claim on this page exists without corresponding proof.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "opens in a new tab"
     }
   },
   "oracode": {

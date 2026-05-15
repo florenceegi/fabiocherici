@@ -26,7 +26,7 @@ export function WhyProtocol() {
 
         <div className="reveal mb-8">
           <p className="text-base text-[var(--text-secondary)] mb-4">{t('p2_intro')}</p>
-          <ol className="space-y-3 ml-6">
+          <ol className="list-none space-y-3 ml-6">
             <li className="flex items-start gap-3">
               <span className="text-[var(--accent)] font-mono text-sm mt-1">(1)</span>
               <span className="text-base text-[var(--text-secondary)]">{t('p2_point1')}</span>

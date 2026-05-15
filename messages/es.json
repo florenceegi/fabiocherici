@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "El codigo fuente, los commits, las fechas, las horas: todo es publico o verificable bajo peticion.",
-      "emphasis": "Ninguna afirmacion en esta pagina existe sin una prueba correspondiente."
+      "emphasis": "Ninguna afirmacion en esta pagina existe sin una prueba correspondiente.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "se abre en una nueva pestana"
     }
   },
   "oracode": {

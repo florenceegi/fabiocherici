@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "源代码、提交记录、日期、时间：一切都是公开的或可应要求验证的。",
-      "emphasis": "本页面上没有任何声明不附带对应的证据。"
+      "emphasis": "本页面上没有任何声明不附带对应的证据。",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "在新标签页中打开"
     }
   },
   "oracode": {

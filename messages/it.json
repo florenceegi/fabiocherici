@@ -133,7 +133,9 @@
     },
     "closing": {
       "text": "Il codice sorgente, i commit, le date, le ore: tutto e' pubblico o verificabile su richiesta.",
-      "emphasis": "Nessun claim su questa pagina esiste senza una prova corrispondente."
+      "emphasis": "Nessun claim su questa pagina esiste senza una prova corrispondente.",
+      "github_link": "GitHub — florenceegi",
+      "opens_new_tab": "si apre in una nuova scheda"
     }
   },
   "oracode": {
