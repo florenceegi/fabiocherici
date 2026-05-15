@@ -6,7 +6,17 @@
  * @purpose Detailed evidence page — numbers, audit links, methodology. All content via i18n.
  */
 
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  return {
+    title: t('prove_title'),
+    openGraph: { title: t('prove_title'), type: 'website', locale },
+  };
+}
 
 const STAT_IDS = ['lines', 'platforms', 'languages', 'files', 'symbols', 'person'] as const;
 const PROJECT_IDS = ['sigillo', 'credential', 'gialloro'] as const;

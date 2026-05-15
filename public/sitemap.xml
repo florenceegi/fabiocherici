@@ -1,178 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fabiocherici.com/it</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/en</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/fr</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/de</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/es</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/pt</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/zh</loc>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh"/>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fabiocherici.com/it/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/en/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/fr/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/de/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/es/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/pt/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/zh/oracode</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/oracode"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/oracode"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/oracode"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/oracode"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/oracode"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/oracode"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/oracode"/>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fabiocherici.com/it/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/en/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/fr/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/de/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/es/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/pt/prove</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/zh/prove</loc>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/prove"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/prove"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/prove"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/prove"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/prove"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/prove"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/prove"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fabiocherici.com/it/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/en/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/fr/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/de/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/es/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/pt/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/zh/ecosistema</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/ecosistema"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/ecosistema"/>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fabiocherici.com/it/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/en/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/fr/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/de/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/es/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/pt/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fabiocherici.com/zh/contatti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/contatti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/contatti"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/contatti"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/contatti"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/contatti"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/contatti"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/contatti"/>
+    <priority>0.5</priority>
   </url>
 </urlset>

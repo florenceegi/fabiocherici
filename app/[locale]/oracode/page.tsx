@@ -6,7 +6,18 @@
  * @purpose Oracode paradigm deep-dive — pillars, P0 levels, 4 application tiers. All content via i18n.
  */
 
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  return {
+    title: t('oracode_title'),
+    description: t('home_description'),
+    openGraph: { title: t('oracode_title'), type: 'website', locale },
+  };
+}
 
 const PILLAR_IDS = ['1', '2', '3', '4', '5', '6'] as const;
 const LEVEL_IDS = ['1', '2', '3', '4'] as const;

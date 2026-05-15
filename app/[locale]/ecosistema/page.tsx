@@ -6,7 +6,17 @@
  * @purpose The 9 FlorenceEGI organs — what they do, how they connect. All content via i18n.
  */
 
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  return {
+    title: t('ecosistema_title'),
+    openGraph: { title: t('ecosistema_title'), type: 'website', locale },
+  };
+}
 
 const ORGAN_IDS = ['egi', 'hub', 'hub_home', 'natan', 'credential', 'sigillo', 'bottega', 'info', 'staging'] as const;
 

@@ -31,6 +31,29 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className={fontVariables}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'WebSite',
+                  name: 'Fabio Cherici — Oracode',
+                  url: 'https://fabiocherici.com',
+                },
+                {
+                  '@type': 'Person',
+                  name: 'Fabio Cherici',
+                  url: 'https://fabiocherici.com',
+                  sameAs: ['https://github.com/florenceegi'],
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className="bg-[var(--bg)] text-[var(--text-primary)] antialiased">
         <NextIntlClientProvider messages={messages}>
           <Providers>
