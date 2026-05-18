@@ -468,24 +468,18 @@ body {
   pointer-events: none;
   transition: opacity 0.4s ease;
   z-index: 1;
-}
-
-.circle-desc::before {
-  content: '';
-  position: absolute;
-  inset: -1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(17, 17, 17, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 50%;
-  z-index: -1;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 60px 30px rgba(17, 17, 17, 0.7);
 }
 
-/* TU fades to ghost when any door label is hovered */
+/* TU fades to ghost when any door label is hovered —
+   !important needed: animation-fill-mode:forwards on tu-grow
+   locks opacity:1, normal CSS rules can't override it */
 .circle-stage:has(.circle-label:hover) .circle-tu {
-  opacity: 0.06;
+  opacity: 0.06 !important;
   transition: opacity 0.3s ease;
 }
 
