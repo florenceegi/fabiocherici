@@ -1,18 +1,34 @@
 {
   "nav": {
     "home": "Home",
+    "ceo": "CEO",
     "oracode": "Oracode",
-    "prove": "Belege",
-    "ecosistema": "Oekosystem",
-    "contatti": "Kontakt",
+    "scrittore": "Schriftsteller",
+    "orisphaera": "Orisphaera",
+    "egi": "EGI",
+    "epp": "EPP",
     "skip": "Zum Inhalt springen",
     "main": "Hauptnavigation",
     "menu": "Menue",
     "preferences": "Einstellungen"
   },
+  "navbar_quotes": {
+    "q1": "Der hoechste Zweck eines Menschen in dieser Welt ist seine Faehigkeit, beizutragen.",
+    "q2": "Denen Anerkennung zu geben, die mir geholfen haben, ist das Tiefste in mir.",
+    "q3": "Siegen oder beim Versuch sterben, niemals aufgeben.",
+    "q4": "Ich delegiere etwas erst, wenn ich es so gut beherrsche, dass ich es lehren kann.",
+    "q5": "Ein Mensch im Werden.",
+    "q6": "Mit Worten malen.",
+    "q7": "Ich suchte eine Kohaerenz, die ich schwer zum Vorschein bringen konnte, auf die ich aber nicht verzichten konnte.",
+    "q8": "Woerter aendern ihr Gewicht je nach Kontext. Kann der Kontext mit der Schwerkraft verglichen werden?",
+    "q9": "Wenn ich mich an die Arbeit mache, verliere ich teilweise jene Wahrheiten, die auftauchen, als ob mein rationales Handeln sie verwässerte.",
+    "q10": "Ich will die gesamte Saga erzeugen, wie man ein Puzzle zusammensetzt."
+  },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "contact": "Kontakt",
+    "prove": "Belege",
+    "ecosistema": "Oekosystem",
     "built_with": "Entwickelt mit Oracode + Next.js 15",
     "protected_by_sigillo": "Seite geschuetzt durch Sigillo",
     "nav_label": "Footer-Links",
@@ -61,82 +77,21 @@
     "anim_desc_none": "Keine Animationen, sofortige Anzeige"
   },
   "home": {
-    "hero": {
-      "tagline": "Oracode",
-      "claim": "Eine formale Methodik zur Steuerung von Software-Ökosystemen, in denen KI-Agenten Produktionscode schreiben. Ein System aus Regeln, mechanischen Hooks, spezialisierten Agenten und Audits, das Kohärenz, Sicherheit und Rückverfolgbarkeit gewährleistet, wenn KI den Code mitschreibt.",
-      "sub1": "Kein Framework. Kein Tool. Ein System aus Einschraenkungen, mechanischen Hooks und Verifikationsprotokollen, das die Zusammenarbeit zwischen Mensch und AI von Improvisation in Ingenieurswesen verwandelt.",
-      "sub2": "Entworfen von Fabio Cherici und getestet an ueber einer Million Zeilen Produktionscode. Wird derzeit als offenes Protokoll formalisiert.",
-      "cta": "Beweis sehen"
-    },
-    "problem": {
-      "title": "Das Problem",
-      "p1": "2026 kann jeder Code mit AI generieren. Geschwindigkeit ist kein Vorteil mehr — sie ist eine Commodity.",
-      "p2": "Das Problem ist, was danach passiert. Code, der ohne Einschraenkungen generiert wird, produziert technische Schulden genauso schnell wie Features. Keine Dokumentation. Keine Konsistenz zwischen Projekten. Keine Garantie, dass der Code von heute den von morgen nicht bricht.",
-      "p3": "Das nennt man Vibe Coding. Es ist schnell. Und es skaliert nicht."
-    },
-    "produces": {
-      "title": "Was Oracode produziert",
-      "intro": "Oracode bremst die AI nicht. Es bindet sie.",
-      "stats": "13 blockierende P0-Regeln. 20 mechanische Hooks, die vor jedem Schreibvorgang eingreifen. 8 spezialisierte Agenten. Ein 4-stufiges Prioritaetssystem, das unterscheidet, was das System bricht, von dem, was warten kann.",
-      "result_title": "Das Ergebnis:",
-      "result_gdpr": "Jedes Projekt ist von Anfang an GDPR-konform by Design — Audit-Trail, Einwilligungen, Datenexport, Recht auf Loeschung",
-      "result_i18n": "Jede Oberflaeche entsteht in 6 Sprachen — Italienisch, Englisch, Deutsch, Spanisch, Franzoesisch, Portugiesisch",
-      "result_errors": "Jeder Fehler durchlaeuft einen einheitlichen Handler — kein vergessenes Log, sondern eine strukturierte Antwort",
-      "result_trace": "Jede Datei ist signiert, datiert, rueckverfolgbar bis zur Entscheidung, die sie erzeugt hat",
-      "closing": "Das ist keine nachtraeglich hinzugefuegte Qualitaet. Es ist Qualitaet, die nicht entfernt werden kann."
-    },
-    "organism": {
-      "title": "Die Grenze: Software-Organismen",
-      "p1": "Ein mit Oracode gebautes Projekt kann zu etwas werden, das kein Framework hervorbringt: ein Software-Organismus, der sich selbst kennt.",
-      "p2": "149 SSOT-Dokumente, automatisch mit dem Code synchronisiert. Jede Codeaenderung aktualisiert die entsprechende Dokumentation — nicht durch menschlichen Willen, sondern durch ein dokumentarisches Nervensystem (DOC-SYNC v2), das den semantischen Diff analysiert und Patches anwendet.",
-      "p3": "Diese Dokumentation wird in einem RAG indexiert, das ueber einen in jede Plattform integrierten AI-Chat abfragbar ist. Das Ergebnis: Die Software kann Fragen ueber sich selbst beantworten.",
-      "quote": "\"Welche Endpoints beruehren Egili-Transaktionen?\" — Eine Antwort, die auf realer Dokumentation basiert, nicht auf einem vor Monaten trainierten Modell.",
-      "stats": "136 verfolgte Missionen. 482 Watch-Patterns. 39% des Oekosystems unter automatischer Dokumentationsabdeckung — Tendenz steigend."
-    },
-    "proof": {
-      "title": "Die Belege",
-      "numbers_title": "Die Zahlen",
-      "numbers": "1.002.558 Zeilen Code. 9 Plattformen in Produktion. 11 Sprachen. 5.354 Dateien. 8.686 oeffentliche Symbole katalogisiert.",
-      "numbers_person": "Eine Person.",
-      "concurrent_title": "Parallele Entwicklung",
-      "concurrent_dates": "24. Maerz — 11. Mai 2026",
-      "concurrent_desc": "~2.000 Commits ueber 13 Repositories in 48 Tagen. Eine Person. Gleichzeitig.",
-      "sigillo_title": "Sigillo",
-      "sigillo_subtitle": "Blockchain-Dateizertifizierung",
-      "sigillo_hours": "38-44 Std.",
-      "sigillo_lines": "17.100 Zeilen",
-      "sigillo_what": "SHA-256 Client-seitig + Algorand + TSA RFC 3161",
-      "sigillo_compare": "Ein traditionelles Team: 4-6 Entwickler, 6-12 Monate.",
-      "credential_title": "EGI-Credential",
-      "credential_subtitle": "W3C-Wallet fuer professionelle Credentials",
-      "credential_hours": "~78 Std. 30 Min.",
-      "credential_lines": "45.400 Zeilen ueber 5 Komponenten",
-      "credential_standards": "11 implementierte Standards",
-      "credential_overlap": "18 Tage mit Commits auf Sigillo UND Credential am selben Tag",
-      "credential_compare": "Gleiches Compliance-Niveau wie Microsoft Entra Verified ID — ein Team von 50-100 Ingenieuren, 3+ Jahre.",
-      "gialloro_title": "Gialloro Firenze",
-      "gialloro_subtitle": "Luxury-E-Commerce + Headless-CMS",
-      "gialloro_hours": "16 Std. 17 Min.",
-      "gialloro_lines": "18.455 Zeilen",
-      "gialloro_calendar": "3 Tage",
-      "gialloro_compare": "Zwei Tage zum Bauen. Ein Tag fuer SEO, Barrierefreiheit und Deploy.",
-      "label_hours": "Stunden",
-      "label_code": "Code"
-    },
-    "protocol": {
-      "title": "Warum ein Protokoll",
-      "p1": "Diese Ergebnisse wurden mit Oracode im Aufbau erzielt. Nicht alle 20 Hooks existierten im Maerz. DOC-SYNC v2 wurde im Mai operativ. Jede Plattform war sowohl Produkt als auch Pruefstand.",
-      "p2_intro": "Das bedeutet:",
-      "p2_point1": "die obigen Zahlen stammen aus einer unvollstaendigen Version",
-      "p2_point2": "Oracode ist keine Theorie — es wurde unter Last geschmiedet, korrigiert jedes Mal, wenn ein fehlender Constraint einen realen Fehler verursacht hat",
-      "p3": "Die laufende Arbeit: das, was heute in 20 Hooks, 13 Regeln, 8 Agenten und 149 Dokumenten lebt, in ein offenes, dokumentiertes, replizierbares Protokoll zu verwandeln."
-    },
-    "closing": {
-      "text": "Der Quellcode, die Commits, die Daten, die Stunden: alles ist oeffentlich oder auf Anfrage ueberpruefbar.",
-      "emphasis": "Keine Behauptung auf dieser Seite existiert ohne einen entsprechenden Beleg.",
-      "github_link": "GitHub — florenceegi",
-      "opens_new_tab": "oeffnet in neuem Tab"
-    }
+    "tu": "DU",
+    "quote": "Der hoechste Zweck eines Menschen in dieser Welt ist seine Faehigkeit, beizutragen.",
+    "nav_label": "Sechs Tueren",
+    "door_ceo": "CEO",
+    "door_oracode": "Oracode",
+    "door_scrittore": "Schriftsteller",
+    "door_orisphaera": "Orisphaera",
+    "door_egi": "EGI",
+    "door_epp": "EPP"
+  },
+  "under_construction": {
+    "subtitle": "Im Aufbau",
+    "message": "Diese Seite nimmt Form an. Jede Tuer oeffnet sich zur richtigen Zeit.",
+    "back": "Zurueck zur Startseite",
+    "see_ecosystem": "Das Oekosystem entdecken"
   },
   "oracode": {
     "title": "Oracode",
@@ -278,11 +233,16 @@
     "back": "Zurueck zur Startseite"
   },
   "meta": {
-    "home_title": "Fabio Cherici — Oracode",
-    "home_description": "Oracode: ein Paradigma, das AI diszipliniert, um Software zu produzieren, die der Zeit standhaelt. Ueber 1 Million Zeilen Code, 9 Plattformen, eine Person.",
+    "home_title": "Fabio Cherici",
+    "home_description": "CEO, Schoepfer von Oracode, Schriftsteller, Gruender FlorenceEGI. Sechs Tueren, eine Vision.",
     "oracode_title": "Oracode — Das Paradigma",
     "prove_title": "Die Belege — Ueberpruefbare Zahlen",
     "ecosistema_title": "FlorenceEGI-Oekosystem",
-    "contatti_title": "Kontakt"
+    "contatti_title": "Kontakt",
+    "ceo_title": "CEO",
+    "scrittore_title": "Schriftsteller",
+    "orisphaera_title": "Orisphaera",
+    "egi_title": "FlorenceEGI",
+    "epp_title": "EPP"
   }
 }

@@ -24,10 +24,10 @@ export function ScrollReveal() {
   useEffect(() => {
     let cancelled = false;
 
-    document.documentElement.classList.add('reveal-ready');
-
     import('gsap').then(({ default: gsap }) => {
       if (cancelled) return;
+
+      document.documentElement.classList.add('reveal-ready');
 
       const presetChanged = prevPresetIdRef.current !== preset.id;
       prevPresetIdRef.current = preset.id;

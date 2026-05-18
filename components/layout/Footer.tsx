@@ -1,9 +1,9 @@
 /**
  * @package fabiocherici.com — Footer
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-15
- * @purpose Footer — Sigillo protection badge, navigation links, copyright, Oracode badge.
+ * @version 3.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-05-18
+ * @purpose Footer — Sigillo badge, internal page links (Oracode/Prove/Ecosistema/Contatti), external links, copyright.
  */
 
 import Image from 'next/image';
@@ -30,6 +30,19 @@ export function Footer({ locale }: { locale: string }) {
           </div>
 
           <nav aria-label={t('nav_label')} className="flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--text-secondary)]">
+            <Link href="/oracode" className="hover:text-[var(--accent)] transition-colors">
+              Oracode
+            </Link>
+            <Link href="/prove" className="hover:text-[var(--accent)] transition-colors">
+              {t('prove')}
+            </Link>
+            <Link href="/ecosistema" className="hover:text-[var(--accent)] transition-colors">
+              {t('ecosistema')}
+            </Link>
+            <Link href="/contatti" className="hover:text-[var(--accent)] transition-colors">
+              {t('contact')}
+            </Link>
+            <span className="text-[var(--border)]" aria-hidden="true">|</span>
             {/* P0-FC-4 exception: proper nouns */}
             <a
               href="https://florenceegi.com"
@@ -49,9 +62,6 @@ export function Footer({ locale }: { locale: string }) {
               GitHub
               <span className="sr-only"> ({t('opens_new_tab')})</span>
             </a>
-            <Link href="/contatti" className="hover:text-[var(--accent)] transition-colors">
-              {t('contact')}
-            </Link>
           </nav>
 
           <div className="flex flex-col items-center gap-2">

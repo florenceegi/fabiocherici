@@ -276,3 +276,208 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Home circle — CSS-only entrance animation
+   ═══════════════════════════════════════════════════════════ */
+
+.home-circle {
+  --circle-size: min(80vw, 520px);
+  --circle-r: calc(var(--circle-size) * 0.425);
+}
+
+.circle-stage {
+  position: relative;
+  width: var(--circle-size);
+  aspect-ratio: 1;
+}
+
+.circle-stage nav {
+  display: contents;
+}
+
+/* Ring draws itself */
+.circle-ring-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.5;
+  opacity: 0.35;
+  stroke-dasharray: 1068;
+  stroke-dashoffset: 1068;
+  animation: ring-draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards,
+             ring-breathe 2s ease-in-out 2.2s;
+}
+
+@keyframes ring-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ring-breathe {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.6; }
+}
+
+/* Orbit containers — items converge from their angle direction */
+.circle-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: rotate(var(--a)) translateY(calc(var(--circle-r) * -3));
+  animation: orbit-converge 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
+}
+
+@keyframes orbit-converge {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--a)) translateY(calc(var(--circle-r) * -3));
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(var(--a)) translateY(calc(var(--circle-r) * -1));
+  }
+}
+
+/* Door labels — counter-rotated to stay upright */
+.circle-label {
+  display: block;
+  transform: rotate(calc(-1 * var(--a))) translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: clamp(0.7rem, 2.5vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.circle-label:hover,
+.circle-label:focus-visible {
+  color: var(--accent-hover);
+  text-shadow: 0 0 30px var(--accent-muted);
+  background-color: var(--accent-glow);
+}
+
+/* TU — center, overshoot bounce */
+.circle-tu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-weight: 200;
+  letter-spacing: 0.3em;
+  margin-left: 0.15em;
+  color: var(--text-primary);
+  animation: tu-reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s forwards;
+}
+
+@keyframes tu-reveal {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Quote — fades up after everything settles */
+.circle-quote {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: quote-rise 0.9s ease-out 1.6s forwards;
+  max-width: 32rem;
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(0.875rem, 2.5vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+@keyframes quote-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3D scene fades in as ambient background after CSS animation */
+.scene-backdrop {
+  opacity: 0;
+  animation: scene-emerge 2s ease-out 2.5s forwards;
+}
+
+@keyframes scene-emerge {
+  to { opacity: 0.5; }
+}
+
+/* ─── Navbar quote rotator ─── */
+.navbar-quotes {
+  position: relative;
+  overflow: hidden;
+  height: 1.5em;
+  flex: 1;
+  margin: 0 1.5rem;
+}
+
+.navbar-quotes span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: quote-crossfade var(--cycle) linear infinite;
+  animation-delay: var(--qd);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@keyframes quote-crossfade {
+  0%, 8% { opacity: 0; }
+  10%, 20% { opacity: 1; }
+  22%, 100% { opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Reduced motion — show everything immediately
+   ═══════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .circle-ring-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .circle-orbit {
+    animation: none;
+    opacity: 1;
+    transform: rotate(var(--a)) translateY(calc(var(--circle-r) * -1));
+  }
+  .circle-tu {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .circle-quote {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .scene-backdrop {
+    animation: none;
+    opacity: 0.5;
+  }
+  .navbar-quotes span {
+    animation: none;
+  }
+  .navbar-quotes span:first-child {
+    opacity: 1;
+  }
+}

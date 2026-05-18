@@ -1,18 +1,34 @@
 {
   "nav": {
     "home": "Home",
+    "ceo": "CEO",
     "oracode": "Oracode",
-    "prove": "Proof",
-    "ecosistema": "Ecosystem",
-    "contatti": "Contact",
+    "scrittore": "Writer",
+    "orisphaera": "Orisphaera",
+    "egi": "EGI",
+    "epp": "EPP",
     "skip": "Skip to content",
     "main": "Main navigation",
     "menu": "Menu",
     "preferences": "Preferences"
   },
+  "navbar_quotes": {
+    "q1": "The highest purpose of a man in this world is his ability to contribute.",
+    "q2": "Giving recognition to those who helped me is the deepest thing in me.",
+    "q3": "Win or die trying, never give up.",
+    "q4": "I only delegate something when I know it so well that I can teach someone to lead it.",
+    "q5": "A man in the making.",
+    "q6": "Painting with words.",
+    "q7": "I was searching for a coherence I struggled to bring out but could not give up on.",
+    "q8": "Words change weight depending on context. Can context be compared to gravity?",
+    "q9": "When I start working I partly lose those truths that emerge, as if my rational effort diluted them.",
+    "q10": "I want to generate the entire saga the way you build a puzzle."
+  },
   "footer": {
     "rights": "All rights reserved.",
     "contact": "Contact",
+    "prove": "Proof",
+    "ecosistema": "Ecosystem",
     "built_with": "Built with Oracode + Next.js 15",
     "protected_by_sigillo": "Site protected by Sigillo",
     "nav_label": "Footer links",
@@ -61,82 +77,21 @@
     "anim_desc_none": "Zero animations, instant display"
   },
   "home": {
-    "hero": {
-      "tagline": "Oracode",
-      "claim": "A formal methodology for governing software ecosystems where AI agents write production code. A system of rules, mechanical hooks, specialized agents and audits that ensure coherence, security and traceability when AI co-authors the code.",
-      "sub1": "It's not a framework. It's not a tool. It's a system of constraints, mechanical hooks, and verification protocols that transforms human-AI collaboration from improvisation into engineering.",
-      "sub2": "Designed by Fabio Cherici and tested on over one million lines of production code. Now being formalized as an open protocol.",
-      "cta": "See the proof"
-    },
-    "problem": {
-      "title": "The problem",
-      "p1": "In 2026 anyone can generate code with AI. Speed is no longer an advantage — it's a commodity.",
-      "p2": "The problem is what happens next. Code generated without constraints produces technical debt at the same speed it produces features. No documentation. No consistency across projects. No guarantee that today's code won't break tomorrow's.",
-      "p3": "This is called vibe coding. It's fast. And it doesn't scale."
-    },
-    "produces": {
-      "title": "What Oracode produces",
-      "intro": "Oracode doesn't slow AI down. It constrains it.",
-      "stats": "13 blocking P0 rules. 20 mechanical hooks that intervene before every write. 8 specialized agents. A 4-level priority system that distinguishes what breaks the system from what can wait.",
-      "result_title": "The result:",
-      "result_gdpr": "Every project is born GDPR-compliant by design — audit trail, consent management, data export, right to erasure",
-      "result_i18n": "Every interface is born in 6 languages — Italian, English, German, Spanish, French, Portuguese",
-      "result_errors": "Every error goes through a unified handler — not a forgotten log, a structured response",
-      "result_trace": "Every file is signed, dated, traceable back to the decision that generated it",
-      "closing": "This isn't quality added after the fact. It's quality that cannot be removed."
-    },
-    "organism": {
-      "title": "The frontier: software organisms",
-      "p1": "A project built with Oracode can become something no framework produces: a software organism that knows itself.",
-      "p2": "149 SSOT documents automatically synchronized with the code. Every code change updates the corresponding documentation — not through human willpower, but through a documentary nervous system (DOC-SYNC v2) that analyzes the semantic diff and applies patches.",
-      "p3": "This documentation is indexed into a RAG queryable via AI chat integrated into every platform. The result: the software can answer questions about itself.",
-      "quote": "\"Which endpoints touch Egili transactions?\" — An answer grounded in real documentation, not a model trained months ago.",
-      "stats": "136 tracked missions. 482 watch patterns. 39% of the ecosystem under automatic documentation coverage — and growing."
-    },
-    "proof": {
-      "title": "The proof",
-      "numbers_title": "The numbers",
-      "numbers": "1,002,558 lines of code. 9 platforms in production. 11 languages. 5,354 files. 8,686 public symbols cataloged.",
-      "numbers_person": "One person.",
-      "concurrent_title": "Concurrent development",
-      "concurrent_dates": "Mar 24 — May 11, 2026",
-      "concurrent_desc": "~2,000 commits across 13 repositories in 48 days. One person. Simultaneously.",
-      "sigillo_title": "Sigillo",
-      "sigillo_subtitle": "Blockchain file certification",
-      "sigillo_hours": "38-44h",
-      "sigillo_lines": "17,100 lines",
-      "sigillo_what": "SHA-256 client-side + Algorand + TSA RFC 3161",
-      "sigillo_compare": "A traditional team: 4-6 developers, 6-12 months.",
-      "credential_title": "EGI-Credential",
-      "credential_subtitle": "W3C professional credential wallet",
-      "credential_hours": "~78h 30min",
-      "credential_lines": "45,400 lines across 5 components",
-      "credential_standards": "11 standards implemented",
-      "credential_overlap": "18 days with commits on both Sigillo and Credential on the same day",
-      "credential_compare": "Same compliance level as Microsoft Entra Verified ID — a team of 50-100 engineers, 3+ years.",
-      "gialloro_title": "Gialloro Firenze",
-      "gialloro_subtitle": "Luxury e-commerce + headless CMS",
-      "gialloro_hours": "16h 17min",
-      "gialloro_lines": "18,455 lines",
-      "gialloro_calendar": "3 days",
-      "gialloro_compare": "Two days to build. One day for SEO, accessibility, and deploy.",
-      "label_hours": "Hours",
-      "label_code": "Code"
-    },
-    "protocol": {
-      "title": "Why a protocol",
-      "p1": "These results were achieved with Oracode still under construction. Not all 20 hooks existed in March. DOC-SYNC v2 became operational in May. Every platform was both a product and a proving ground.",
-      "p2_intro": "This means:",
-      "p2_point1": "the numbers above are with an incomplete version",
-      "p2_point2": "Oracode is not a theory — it's forged under load, corrected every time a missing constraint produced a real error",
-      "p3": "The work in progress: transforming what today lives in 20 hooks, 13 rules, 8 agents, and 149 documents into an open, documented, replicable protocol."
-    },
-    "closing": {
-      "text": "The source code, the commits, the dates, the hours: everything is public or verifiable on request.",
-      "emphasis": "No claim on this page exists without corresponding proof.",
-      "github_link": "GitHub — florenceegi",
-      "opens_new_tab": "opens in a new tab"
-    }
+    "tu": "YOU",
+    "quote": "The highest purpose of a man in this world is his ability to contribute.",
+    "nav_label": "Six doors",
+    "door_ceo": "CEO",
+    "door_oracode": "Oracode",
+    "door_scrittore": "Writer",
+    "door_orisphaera": "Orisphaera",
+    "door_egi": "EGI",
+    "door_epp": "EPP"
+  },
+  "under_construction": {
+    "subtitle": "Under construction",
+    "message": "This page is taking shape. Every door will open at the right time.",
+    "back": "Back to home",
+    "see_ecosystem": "Explore the ecosystem"
   },
   "oracode": {
     "title": "Oracode",
@@ -278,11 +233,16 @@
     "back": "Back to home"
   },
   "meta": {
-    "home_title": "Fabio Cherici — Oracode",
-    "home_description": "Oracode: a paradigm that disciplines AI to produce software that stands the test of time. Over 1 million lines of code, 9 platforms, one person.",
+    "home_title": "Fabio Cherici",
+    "home_description": "CEO, creator of Oracode, writer, founder of FlorenceEGI. Six doors, one vision.",
     "oracode_title": "Oracode — The Paradigm",
     "prove_title": "The Proof — Verifiable Numbers",
     "ecosistema_title": "FlorenceEGI Ecosystem",
-    "contatti_title": "Contact"
+    "contatti_title": "Contact",
+    "ceo_title": "CEO",
+    "scrittore_title": "Writer",
+    "orisphaera_title": "Orisphaera",
+    "egi_title": "FlorenceEGI",
+    "epp_title": "EPP"
   }
 }
