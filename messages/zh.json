@@ -85,7 +85,13 @@
     "door_scrittore": "作家",
     "door_orisphaera": "Orisphaera",
     "door_egi": "EGI",
-    "door_epp": "EPP"
+    "door_epp": "EPP",
+    "desc_ceo": "愿景、战略和方向——一个从佛罗伦萨建立的技术生态系统。",
+    "desc_oracode": "将软件转化为自我纠正的活体有机体的范式。",
+    "desc_scrittore": "一部科幻史诗——技术化为叙事，叙事化为代码。",
+    "desc_orisphaera": "愿景在此获得几何形态，思想在此化为空间。",
+    "desc_egi": "九个平台，一个有机体。FlorenceEGI 是未来的数字基础设施。",
+    "desc_epp": "认证、衡量并使每项专业能力可验证的协议。"
   },
   "under_construction": {
     "subtitle": "建设中",

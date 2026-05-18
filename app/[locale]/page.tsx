@@ -62,32 +62,29 @@ export default async function HomePage({
           >
             <circle className="circle-inner-ring" cx="200" cy="200" r="148" />
             <circle className="circle-ring-path" cx="200" cy="200" r="170" />
-            {DOORS.map((door, i) => {
-              const rad = (door.angle * Math.PI) / 180;
-              const x = 200 + 170 * Math.sin(rad);
-              const y = 200 - 170 * Math.cos(rad);
-              return (
-                <circle
-                  key={`node-${door.id}`}
-                  className="circle-node"
-                  cx={Math.round(x * 10) / 10}
-                  cy={Math.round(y * 10) / 10}
-                  r="3"
-                  style={{ '--nd': `${1.0 + i * 0.12}s` } as React.CSSProperties}
-                />
-              );
-            })}
           </svg>
 
           <span className="circle-tu" aria-hidden="true">
             {t('tu')}
           </span>
 
+          {DOORS.map((door) => (
+            <span
+              key={`desc-${door.id}`}
+              className="circle-desc"
+              data-desc={door.id}
+              aria-hidden="true"
+            >
+              {t(`desc_${door.id}`)}
+            </span>
+          ))}
+
           <nav aria-label={t('nav_label')}>
             {DOORS.map((door, i) => (
               <div
                 key={door.id}
                 className="circle-orbit"
+                data-door={door.id}
                 style={
                   {
                     '--a': `${door.angle}deg`,

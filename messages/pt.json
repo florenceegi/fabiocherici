@@ -85,7 +85,13 @@
     "door_scrittore": "Escritor",
     "door_orisphaera": "Orisphaera",
     "door_egi": "EGI",
-    "door_epp": "EPP"
+    "door_epp": "EPP",
+    "desc_ceo": "Visao, estrategia e direcao de um ecossistema tecnologico construido a partir de Florenca.",
+    "desc_oracode": "O paradigma que transforma o software num organismo vivo e autocorretivo.",
+    "desc_scrittore": "Uma saga de ficcao cientifica onde a tecnologia se torna narrativa e a narrativa se torna codigo.",
+    "desc_orisphaera": "O lugar onde a visao toma forma geometrica e o pensamento se torna espaco.",
+    "desc_egi": "Nove plataformas, um organismo. FlorenceEGI e a infraestrutura digital do futuro.",
+    "desc_epp": "O protocolo que certifica, mede e torna verificavel cada competencia profissional."
   },
   "under_construction": {
     "subtitle": "Em construcao",

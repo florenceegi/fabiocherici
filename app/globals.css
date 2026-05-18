@@ -382,9 +382,10 @@ body {
   display: block;
   transform: rotate(calc(-1 * var(--a))) translate(-50%, -50%);
   white-space: nowrap;
-  font-size: clamp(1.05rem, 3.5vw, 1.4rem);
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
   text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
@@ -449,6 +450,38 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+/* Door descriptions — appear inside circle on hover, replacing TU */
+.circle-desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  max-width: 65%;
+  text-align: center;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Hide TU when any door label is hovered */
+.circle-stage:has(.circle-label:hover) .circle-tu {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Show matching description */
+.circle-stage:has([data-door="ceo"] .circle-label:hover) .circle-desc[data-desc="ceo"],
+.circle-stage:has([data-door="oracode"] .circle-label:hover) .circle-desc[data-desc="oracode"],
+.circle-stage:has([data-door="scrittore"] .circle-label:hover) .circle-desc[data-desc="scrittore"],
+.circle-stage:has([data-door="orisphaera"] .circle-label:hover) .circle-desc[data-desc="orisphaera"],
+.circle-stage:has([data-door="egi"] .circle-label:hover) .circle-desc[data-desc="egi"],
+.circle-stage:has([data-door="epp"] .circle-label:hover) .circle-desc[data-desc="epp"] {
+  opacity: 1;
 }
 
 /* Quote — appears big after TU settles, then shrinks to reading size */
@@ -557,6 +590,9 @@ body {
   .scene-backdrop {
     animation: none;
     opacity: 0.5;
+  }
+  .circle-desc {
+    transition: none;
   }
   .navbar-quotes span {
     animation: none;
