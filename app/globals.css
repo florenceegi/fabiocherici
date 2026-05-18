@@ -460,17 +460,19 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0;
   max-width: 70%;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 3rem;
   text-align: center;
   font-size: clamp(1.1rem, 3vw, 1.4rem);
   line-height: 1.7;
   color: var(--text-primary);
   pointer-events: none;
   transition: opacity 0.4s ease;
-  background: radial-gradient(ellipse at center, var(--surface-glass) 40%, transparent 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.5rem;
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%);
 }
 
 /* TU fades to ghost when any door label is hovered */
