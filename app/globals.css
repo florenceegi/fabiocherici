@@ -282,8 +282,8 @@ body {
    ═══════════════════════════════════════════════════════════ */
 
 .home-circle {
-  --circle-size: min(80vw, 520px);
-  --circle-r: calc(var(--circle-size) * 0.425);
+  --circle-size: min(85vw, 640px);
+  --circle-r: calc(var(--circle-size) * 0.46);
 }
 
 .circle-stage {
@@ -296,25 +296,59 @@ body {
   display: contents;
 }
 
-/* Ring draws itself */
+/* Main ring — draws itself, glows softly */
 .circle-ring-path {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 0.5;
-  opacity: 0.35;
+  stroke-width: 1;
+  opacity: 0;
   stroke-dasharray: 1068;
   stroke-dashoffset: 1068;
-  animation: ring-draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards,
-             ring-breathe 2s ease-in-out 2.2s;
+  filter: drop-shadow(0 0 8px var(--accent-muted)) drop-shadow(0 0 20px var(--accent-glow));
+  animation: ring-draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards,
+             ring-glow 4s ease-in-out 2.4s infinite;
 }
 
 @keyframes ring-draw {
-  to { stroke-dashoffset: 0; }
+  0% { stroke-dashoffset: 1068; opacity: 0; }
+  15% { opacity: 0.6; }
+  100% { stroke-dashoffset: 0; opacity: 0.55; }
 }
 
-@keyframes ring-breathe {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 0.6; }
+@keyframes ring-glow {
+  0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 8px var(--accent-muted)) drop-shadow(0 0 20px var(--accent-glow)); }
+  50% { opacity: 0.75; filter: drop-shadow(0 0 12px var(--accent-muted)) drop-shadow(0 0 32px var(--accent-glow)); }
+}
+
+/* Inner decorative ring — layering depth */
+.circle-inner-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.3;
+  opacity: 0;
+  animation: inner-ring-reveal 1s ease-out 1.2s forwards;
+}
+
+@keyframes inner-ring-reveal {
+  to { opacity: 0.12; }
+}
+
+/* Node dots at door positions — energy points */
+.circle-node {
+  fill: var(--accent);
+  opacity: 0;
+  animation: node-appear 0.5s ease-out var(--nd) forwards,
+             node-pulse 3s ease-in-out var(--nd) infinite;
+}
+
+@keyframes node-appear {
+  0% { opacity: 0; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
 }
 
 /* Orbit containers — items converge from their angle direction */
@@ -348,9 +382,9 @@ body {
   display: block;
   transform: rotate(calc(-1 * var(--a))) translate(-50%, -50%);
   white-space: nowrap;
-  font-size: clamp(0.7rem, 2.5vw, 0.875rem);
+  font-size: clamp(0.85rem, 3vw, 1.125rem);
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
@@ -374,10 +408,10 @@ body {
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
   font-family: var(--font-display), serif;
-  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-size: clamp(3.5rem, 14vw, 6rem);
   font-weight: 200;
-  letter-spacing: 0.3em;
-  margin-left: 0.15em;
+  letter-spacing: 0.35em;
+  margin-left: 0.18em;
   color: var(--text-primary);
   animation: tu-reveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s forwards;
 }
@@ -437,13 +471,13 @@ body {
   text-overflow: ellipsis;
   font-style: italic;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 @keyframes quote-crossfade {
-  0%, 8% { opacity: 0; }
-  10%, 20% { opacity: 1; }
-  22%, 100% { opacity: 0; }
+  0% { opacity: 0; }
+  2%, 8% { opacity: 1; }
+  10%, 100% { opacity: 0; }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -454,6 +488,15 @@ body {
   .circle-ring-path {
     animation: none;
     stroke-dashoffset: 0;
+    opacity: 0.55;
+  }
+  .circle-inner-ring {
+    animation: none;
+    opacity: 0.12;
+  }
+  .circle-node {
+    animation: none;
+    opacity: 0.7;
   }
   .circle-orbit {
     animation: none;
