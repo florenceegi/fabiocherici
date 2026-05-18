@@ -452,26 +452,31 @@ body {
   }
 }
 
-/* Door descriptions — appear inside circle on hover, replacing TU */
+/* Door descriptions — appear inside circle on hover */
 .circle-desc {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  max-width: 65%;
+  max-width: 70%;
+  padding: 2rem 2.5rem;
   text-align: center;
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-  line-height: 1.6;
-  color: var(--text-secondary);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.7;
+  color: var(--text-primary);
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(ellipse at center, var(--surface-glass) 40%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50%;
 }
 
-/* Hide TU when any door label is hovered */
+/* TU fades to ghost when any door label is hovered */
 .circle-stage:has(.circle-label:hover) .circle-tu {
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  opacity: 0.06;
+  transition: opacity 0.3s ease;
 }
 
 /* Show matching description */
