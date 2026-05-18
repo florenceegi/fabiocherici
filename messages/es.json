@@ -4,7 +4,7 @@
     "ceo": "CEO",
     "oracode": "Oracode",
     "scrittore": "Escritor",
-    "orisphaera": "Orisphaera",
+    "ai_nous": "AI-Nous",
     "egi": "EGI",
     "epp": "EPP",
     "skip": "Ir al contenido",
@@ -83,13 +83,13 @@
     "door_ceo": "CEO",
     "door_oracode": "Oracode",
     "door_scrittore": "Escritor",
-    "door_orisphaera": "Orisphaera",
+    "door_ai-nous": "AI-Nous",
     "door_egi": "EGI",
     "door_epp": "EPP",
     "desc_ceo": "Vision, estrategia y direccion de un ecosistema tecnologico construido desde Florencia.",
     "desc_oracode": "El paradigma que transforma el software en un organismo vivo y autocorrectivo.",
     "desc_scrittore": "Una saga de ciencia ficcion donde la tecnologia se convierte en narracion y la narracion en codigo.",
-    "desc_orisphaera": "Mi estudio de un alfabeto que tienda un puente entre la mente humana y la inteligencia artificial.",
+    "desc_ai-nous": "Mi estudio de un alfabeto que tienda un puente entre la mente humana y la inteligencia artificial.",
     "desc_egi": "Nueve plataformas, un organismo. FlorenceEGI es la infraestructura digital del futuro.",
     "desc_epp": "El protocolo que certifica, mide y hace verificable cada competencia profesional."
   },
@@ -247,7 +247,7 @@
     "contatti_title": "Contacto",
     "ceo_title": "CEO",
     "scrittore_title": "Escritor",
-    "orisphaera_title": "Orisphaera",
+    "ai_nous_title": "AI-Nous",
     "egi_title": "FlorenceEGI",
     "epp_title": "EPP"
   }

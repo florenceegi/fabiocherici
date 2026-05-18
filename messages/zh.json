@@ -4,7 +4,7 @@
     "ceo": "CEO",
     "oracode": "Oracode",
     "scrittore": "作家",
-    "orisphaera": "Orisphaera",
+    "ai_nous": "AI-Nous",
     "egi": "EGI",
     "epp": "EPP",
     "skip": "跳至内容",
@@ -83,13 +83,13 @@
     "door_ceo": "CEO",
     "door_oracode": "Oracode",
     "door_scrittore": "作家",
-    "door_orisphaera": "Orisphaera",
+    "door_ai-nous": "AI-Nous",
     "door_egi": "EGI",
     "door_epp": "EPP",
     "desc_ceo": "愿景、战略和方向——一个从佛罗伦萨建立的技术生态系统。",
     "desc_oracode": "将软件转化为自我纠正的活体有机体的范式。",
     "desc_scrittore": "一部科幻史诗——技术化为叙事，叙事化为代码。",
-    "desc_orisphaera": "我对一种在人类心智与人工智能之间架起桥梁的字母表的研究。",
+    "desc_ai-nous": "我对一种在人类心智与人工智能之间架起桥梁的字母表的研究。",
     "desc_egi": "九个平台，一个有机体。FlorenceEGI 是未来的数字基础设施。",
     "desc_epp": "认证、衡量并使每项专业能力可验证的协议。"
   },
@@ -247,7 +247,7 @@
     "contatti_title": "联系",
     "ceo_title": "CEO",
     "scrittore_title": "作家",
-    "orisphaera_title": "Orisphaera",
+    "ai_nous_title": "AI-Nous",
     "egi_title": "FlorenceEGI",
     "epp_title": "EPP"
   }

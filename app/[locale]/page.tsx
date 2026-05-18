@@ -15,7 +15,7 @@ const DOORS = [
   { id: 'ceo', angle: 0 },
   { id: 'oracode', angle: 60 },
   { id: 'scrittore', angle: 120 },
-  { id: 'orisphaera', angle: 180 },
+  { id: 'ai-nous', angle: 180 },
   { id: 'egi', angle: 240 },
   { id: 'epp', angle: 300 },
 ] as const;

@@ -488,7 +488,7 @@ body {
 .circle-stage:has([data-door="ceo"] .circle-label:hover) .circle-desc[data-desc="ceo"],
 .circle-stage:has([data-door="oracode"] .circle-label:hover) .circle-desc[data-desc="oracode"],
 .circle-stage:has([data-door="scrittore"] .circle-label:hover) .circle-desc[data-desc="scrittore"],
-.circle-stage:has([data-door="orisphaera"] .circle-label:hover) .circle-desc[data-desc="orisphaera"],
+.circle-stage:has([data-door="ai-nous"] .circle-label:hover) .circle-desc[data-desc="ai-nous"],
 .circle-stage:has([data-door="egi"] .circle-label:hover) .circle-desc[data-desc="egi"],
 .circle-stage:has([data-door="epp"] .circle-label:hover) .circle-desc[data-desc="epp"] {
   opacity: 1;
