@@ -401,8 +401,7 @@ body {
 }
 
 /* TU — grows from inside the circle AFTER skills are in place.
-   Sequence: invisible → explodes big (fills circle) → contracts → pulses → settles.
-   Meaning: all skills surround YOU — you are the center of everything. */
+   Slow, deliberate: invisible → grows huge (fills circle) → contracts → pulses → settles. */
 .circle-tu {
   position: absolute;
   top: 50%;
@@ -415,7 +414,7 @@ body {
   letter-spacing: 0.35em;
   margin-left: 0.18em;
   color: var(--text-primary);
-  animation: tu-grow 2.4s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+  animation: tu-grow 4s ease-out 2.4s forwards;
 }
 
 @keyframes tu-grow {
@@ -423,24 +422,28 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
   }
-  8% {
-    opacity: 1;
+  5% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.3);
   }
-  25% {
+  20% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(3.5);
   }
-  50% {
-    transform: translate(-50%, -50%) scale(1);
+  45% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  55% {
+    transform: translate(-50%, -50%) scale(1.12);
   }
   65% {
-    transform: translate(-50%, -50%) scale(1.18);
+    transform: translate(-50%, -50%) scale(0.96);
   }
-  78% {
-    transform: translate(-50%, -50%) scale(0.95);
+  75% {
+    transform: translate(-50%, -50%) scale(1.05);
   }
-  90% {
-    transform: translate(-50%, -50%) scale(1.06);
+  85% {
+    transform: translate(-50%, -50%) scale(0.98);
   }
   100% {
     opacity: 1;
@@ -448,27 +451,38 @@ body {
   }
 }
 
-/* Quote — fades up after TU settles */
+/* Quote — appears big after TU settles, then shrinks to reading size */
 .circle-quote {
   opacity: 0;
-  transform: translateY(24px);
-  animation: quote-rise 1s ease-out 4.8s forwards;
-  max-width: 32rem;
+  transform: scale(1.6);
+  animation: quote-emerge 2s ease-out 6.6s forwards;
+  max-width: 36rem;
   text-align: center;
   font-style: italic;
-  font-size: clamp(0.875rem, 2.5vw, 1.0625rem);
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
   line-height: 1.7;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
-@keyframes quote-rise {
-  to { opacity: 1; transform: translateY(0); }
+@keyframes quote-emerge {
+  0% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* 3D scene fades in as ambient background after full sequence */
 .scene-backdrop {
   opacity: 0;
-  animation: scene-emerge 2s ease-out 5.5s forwards;
+  animation: scene-emerge 2s ease-out 8s forwards;
 }
 
 @keyframes scene-emerge {
@@ -538,7 +552,7 @@ body {
   .circle-quote {
     animation: none;
     opacity: 1;
-    transform: none;
+    transform: scale(1);
   }
   .scene-backdrop {
     animation: none;
