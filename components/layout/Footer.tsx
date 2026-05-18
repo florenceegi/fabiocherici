@@ -68,8 +68,15 @@ export function Footer({ locale }: { locale: string }) {
             <p className="text-xs text-[var(--text-muted)] font-mono">
               {t('built_with')}
             </p>
-            <p className="text-xs text-[var(--text-muted)]">
-              © {year} Fabio Cherici. {t('rights')}
+            <p className="text-xs text-[var(--text-muted)] flex items-center gap-1.5">
+              <Image
+                src="/sigillo-logo.png"
+                alt="Sigillo"
+                width={14}
+                height={14}
+                className="opacity-50"
+              />
+              {year} Fabio Cherici. {t('rights')}
             </p>
           </div>
         </div>
