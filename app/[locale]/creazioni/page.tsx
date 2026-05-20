@@ -21,28 +21,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const MARKET_PRODUCTS = [
-  { key: 'art', name: 'Florence EGI / ArtFlorenceEGI' },
-  { key: 'sigillo', name: 'Sigillo' },
-  { key: 'credential', name: 'EGI-Credential' },
-  { key: 'natan', name: 'NATAN_LOC' },
-  { key: 'staging', name: 'Creator-Staging' },
+  { key: 'art', name: 'Florence EGI / ArtFlorenceEGI', url: 'https://art.florenceegi.com' },
+  { key: 'sigillo', name: 'Sigillo', url: 'https://egi-sigillo.florenceegi.com' },
+  { key: 'credential', name: 'EGI-Credential', url: 'https://egi-credential.florenceegi.com' },
+  { key: 'natan', name: 'NATAN_LOC', url: 'https://natan-loc.florenceegi.com' },
+  { key: 'staging', name: 'Creator-Staging', url: 'https://creator-staging.florenceegi.com' },
 ] as const;
 
 const INFRA = [
-  { key: 'ultra', name: 'Famiglia Ultra' },
-  { key: 'council', name: 'The Council (NPE)' },
-  { key: 'hub', name: 'EGI-HUB' },
+  { key: 'ultra', name: 'Famiglia Ultra', url: '' },
+  { key: 'council', name: 'The Council (NPE)', url: '' },
+  { key: 'hub', name: 'EGI-HUB', url: 'https://hub.florenceegi.com' },
 ] as const;
 
 const SHOWCASE = [
-  { key: 'hub_home', name: 'EGI-HUB-HOME' },
-  { key: 'info', name: 'EGI-INFO' },
+  { key: 'hub_home', name: 'EGI-HUB-HOME', url: 'https://florenceegi.com' },
+  { key: 'info', name: 'EGI-INFO', url: 'https://info.florenceegi.com' },
 ] as const;
 
-const rich = {
-  b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
-  i: (chunks: ReactNode) => <em className="italic text-[var(--text-secondary)]">{chunks}</em>,
-};
+const linkClass = 'text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4 transition-colors';
 
 export default async function CreazioniPage({
   params,
@@ -52,6 +49,13 @@ export default async function CreazioniPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('creazioni');
+
+  const rich = {
+    b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
+    i: (chunks: ReactNode) => <em className="italic text-[var(--text-secondary)]">{chunks}</em>,
+    oralink: (chunks: ReactNode) => <Link href={`/${locale}/oracode`} className={linkClass}>{chunks}</Link>,
+    egilink: (chunks: ReactNode) => <a href="https://florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
+  };
 
   return (
     <div className="pt-24">
@@ -108,10 +112,13 @@ export default async function CreazioniPage({
                   {t('market_title')}
                 </h4>
                 <ul className="space-y-4">
-                  {MARKET_PRODUCTS.map(({ key, name }) => (
+                  {MARKET_PRODUCTS.map(({ key, name, url }) => (
                     <li key={key} className="reveal flex gap-3 text-base text-[var(--text-secondary)]">
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
-                      <span><strong className="text-[var(--text-primary)] font-medium">{name}</strong> — {t(`prod_${key}`)}</span>
+                      <span>
+                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                        {' — '}{t(`prod_${key}`)}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -122,10 +129,17 @@ export default async function CreazioniPage({
                   {t('infra_title')}
                 </h4>
                 <ul className="space-y-4">
-                  {INFRA.map(({ key, name }) => (
+                  {INFRA.map(({ key, name, url }) => (
                     <li key={key} className="reveal flex gap-3 text-base text-[var(--text-secondary)]">
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
-                      <span><strong className="text-[var(--text-primary)] font-medium">{name}</strong> — {t(`infra_${key}`)}</span>
+                      <span>
+                        {url ? (
+                          <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                        ) : (
+                          <strong className="text-[var(--text-primary)] font-medium">{name}</strong>
+                        )}
+                        {' — '}{t(`infra_${key}`)}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -136,10 +150,13 @@ export default async function CreazioniPage({
                   {t('showcase_title')}
                 </h4>
                 <ul className="space-y-4">
-                  {SHOWCASE.map(({ key, name }) => (
+                  {SHOWCASE.map(({ key, name, url }) => (
                     <li key={key} className="reveal flex gap-3 text-base text-[var(--text-secondary)]">
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
-                      <span><strong className="text-[var(--text-primary)] font-medium">{name}</strong> — {t(`showcase_${key}`)}</span>
+                      <span>
+                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                        {' — '}{t(`showcase_${key}`)}
+                      </span>
                     </li>
                   ))}
                 </ul>
