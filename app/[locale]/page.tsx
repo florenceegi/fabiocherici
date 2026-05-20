@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { HeroScene } from '@/components/home/HeroScene';
 
 const DOORS = [
-  { id: 'ceo', angle: 0 },
+  { id: 'creazioni', angle: 0 },
   { id: 'oracode', angle: 60 },
   { id: 'scrittore', angle: 120 },
   { id: 'ai-nous', angle: 180 },
