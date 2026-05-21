@@ -62,6 +62,42 @@ export function Footer({ locale }: { locale: string }) {
               GitHub
               <span className="sr-only"> ({t('opens_new_tab')})</span>
             </a>
+            <span className="text-[var(--border)]" aria-hidden="true">|</span>
+            <a
+              href="https://www.instagram.com/fabiocherici/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--accent)] transition-colors"
+              aria-label={`Instagram ${t('opens_new_tab')}`}
+            >
+              <svg className="inline-block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/fabiochericiscrittore/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--accent)] transition-colors"
+              aria-label={`Facebook Scrittore ${t('opens_new_tab')}`}
+            >
+              <svg className="inline-block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/fabioWOWcherici/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--accent)] transition-colors"
+              aria-label={`Facebook FlorenceEGI ${t('opens_new_tab')}`}
+            >
+              <svg className="inline-block h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
           </nav>
 
           <div className="flex flex-col items-center gap-2">
