@@ -128,7 +128,7 @@
     "showcase_hub_home": "montra publica com interface 3D (React SPA).",
     "showcase_info": "SPA informativa de produto.",
     "perf_label": "Performance verificavel",
-    "perf_desc": "um site de um cliente real, construido em cerca de 16 horas de trabalho. Pontuacoes Lighthouse entre 91 e 100. Git log disponivel a pedido.",
+    "perf_desc": "um site demonstrativo cem por cento funcional, com CMS integrado, construido em cerca de 16 horas de trabalho. Pontuacoes Lighthouse entre 91 e 100. Git log disponivel a pedido.",
     "cta": "Se queres ver como trabalho, entra em",
     "cta_link": "Oracode"
   },

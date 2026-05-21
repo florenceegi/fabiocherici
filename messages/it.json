@@ -128,7 +128,7 @@
     "showcase_hub_home": "vetrina pubblica con interfaccia 3D (React SPA).",
     "showcase_info": "SPA informativa di prodotto.",
     "perf_label": "Performance verificabile",
-    "perf_desc": "un sito di un cliente reale, costruito in circa 16 ore di lavoro. Punteggi Lighthouse tra 91 e 100. Git log fornibile su richiesta.",
+    "perf_desc": "un sito dimostrativo al cento per cento funzionante, con CMS integrato, costruito in circa 16 ore di lavoro. Punteggi Lighthouse tra 91 e 100. Git log fornibile su richiesta.",
     "cta": "Se vuoi vedere come lavoro, entra in",
     "cta_link": "Oracode"
   },

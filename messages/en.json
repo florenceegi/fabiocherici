@@ -128,7 +128,7 @@
     "showcase_hub_home": "public showcase with 3D interface (React SPA).",
     "showcase_info": "informational product SPA.",
     "perf_label": "Verifiable performance",
-    "perf_desc": "a real client site, built in approximately 16 hours of work. Lighthouse scores between 91 and 100. Git log available on request.",
+    "perf_desc": "a fully functional demo site with integrated CMS, built in approximately 16 hours of work. Lighthouse scores between 91 and 100. Git log available on request.",
     "cta": "If you want to see how I work, enter",
     "cta_link": "Oracode"
   },

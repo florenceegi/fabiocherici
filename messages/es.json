@@ -128,7 +128,7 @@
     "showcase_hub_home": "escaparate publico con interfaz 3D (React SPA).",
     "showcase_info": "SPA informativa de producto.",
     "perf_label": "Rendimiento verificable",
-    "perf_desc": "un sitio de un cliente real, construido en aproximadamente 16 horas de trabajo. Puntuaciones Lighthouse entre 91 y 100. Git log disponible bajo solicitud.",
+    "perf_desc": "un sitio demostrativo cien por cien funcional, con CMS integrado, construido en aproximadamente 16 horas de trabajo. Puntuaciones Lighthouse entre 91 y 100. Git log disponible bajo solicitud.",
     "cta": "Si quieres ver como trabajo, entra en",
     "cta_link": "Oracode"
   },
