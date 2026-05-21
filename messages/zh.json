@@ -93,7 +93,7 @@
     "desc_ai-nous": "我对一种在人类心智与人工智能之间架起桥梁的字母表的研究。",
     "desc_egi": "九个平台，一个有机体。FlorenceEGI 是未来的数字基础设施。",
     "desc_epp": "认证、衡量并使每项专业能力可验证的协议。",
-    "seo_who": "Fabio Cherici 是一位来自佛罗伦萨的创业者和软件工程师。作为 FlorenceEGI S.R.L. 的创始人，他创建了 Oracode——一套用于治理 AI 代理编写生产代码的软件生态系统的形式化范式。自 1995 年起他一直在构建软件——最初通过 Magicsoft（为中小企业定制管理系统），如今运营着一个由九个互联平台组成的生产级生态系统。",
+    "seo_who": "Fabio Cherici 是一位来自意大利佛罗伦萨的企业家和自学开发者。他没有学术学位——从1995年起，他从代码开始构建一切。作为 FlorenceEGI S.R.L. 的创始人，他创建了 Oracode，一个用于管理软件生态系统的正式范式，其中 AI 代理编写生产代码。最初是 Magicsoft（面向中小企业的商业软件），如今是一个由九个互联平台组成的生产级生态系统，超过 410,000 行代码由一个人借助受其自有范式管控的 AI 编写。",
     "seo_what": "本站通过六个板块展示 Fabio Cherici 的工作：创作（自 1995 年以来的作品集与职业历程）、Oracode（包含六大支柱、P0 规则和审计系统的软件范式）、作家（以 Padmin D. Curtis 为主角的科幻传奇）、AI-Nous（一种正在形成的语言，服务于人类智识与人工智能之间的协作）、EGI（Florence EGI，拥有九个生产级器官的软件生态系统）、EPP（专业能力认证协议）。",
     "seo_ecosystem": "Florence EGI 是一个软件生态系统，由以下部分组成：EGI（基于 Algorand 区块链的创作者平台）、EGI-HUB（配置中枢）、NATAN_LOC（面向公共行政的 AI 助手）、EGI-Credential（认证能力钱包）、La Bottega（艺术家工具）、Sigillo（文件区块链认证）、EGI-INFO（公共信息页）、CREATOR-STAGING（创作者网站配置器）、EGI-STAT（生产力仪表盘）。超过 41 万行代码，14 个代码仓库，均以 Oracode 范式构建。",
     "seo_nav_label": "站点地图",
