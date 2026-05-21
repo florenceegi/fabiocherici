@@ -105,7 +105,8 @@
     "seo_section_epp": "EPP — Programa de Excelencia Profesional Permanente. Certificacion, medicion y verificacion de competencias.",
     "seo_section_numeri": "Los numeros — Datos verificables: mas de 410.000 lineas de codigo, 14 repositorios, 5 productos en produccion, 4.500 horas de desarrollo, todo construido por una persona con AI gobernada por Oracode.",
     "seo_section_ecosistema": "Ecosistema — Mapa completo de los organos de FlorenceEGI con roles, URL y estado de produccion.",
-    "seo_section_contatti": "Contacto — Formulario de contacto para colaboraciones, informaciones y propuestas."
+    "seo_section_contatti": "Contacto — Formulario de contacto para colaboraciones, informaciones y propuestas.",
+    "seo_proof": "Cada afirmacion de este sitio esta respaldada por datos reales. La pagina Los numeros contiene las pruebas: 410.000 lineas de codigo en 14 repositorios, 5 productos en produccion, 4.500 horas de desarrollo documentadas, desglose del codigo por organo con lineas de codigo y cantidad de archivos, todo construido por una sola persona con IA gobernada por el paradigma Oracode. Los datos se extraen directamente de los repositorios Git y se mantienen actualizados."
   },
   "under_construction": {
     "subtitle": "En construccion",

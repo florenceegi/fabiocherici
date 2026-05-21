@@ -50,6 +50,7 @@ export default async function HomePage({
         <p>{t('seo_who')}</p>
         <p>{t('seo_what')}</p>
         <p>{t('seo_ecosystem')}</p>
+        <p><strong><Link href={`/${locale}/i-numeri`}>{t('seo_proof')}</Link></strong></p>
         <nav>
           <ul>
             <li><Link href={`/${locale}/creazioni`}>{t('seo_section_creazioni')}</Link></li>
