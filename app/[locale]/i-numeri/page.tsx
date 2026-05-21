@@ -24,9 +24,12 @@ const STAT_IDS = ['loc', 'exnovo', 'scope', 'hours', 'governance'] as const;
 
 const PRODUCT_IDS = ['idealoro', 'bizcard', 'creator', 'sigillo', 'credential'] as const;
 
-const PRODUCT_LINKS: Partial<Record<typeof PRODUCT_IDS[number], string>> = {
-  idealoro: 'https://github.com/florenceegi/IDEALORO-PREVIEW',
-  creator: 'https://github.com/florenceegi/creator-staging',
+const PRODUCT_META: Record<typeof PRODUCT_IDS[number], { site?: string; repo?: string }> = {
+  idealoro: { site: 'https://preview.florenceegi.com', repo: 'https://github.com/florenceegi/IDEALORO-PREVIEW' },
+  bizcard: { site: 'https://egi-credential.florenceegi.com' },
+  creator: { site: 'https://creator-staging.florenceegi.com', repo: 'https://github.com/florenceegi/creator-staging' },
+  sigillo: { site: 'https://egi-sigillo.florenceegi.com' },
+  credential: { site: 'https://egi-credential.florenceegi.com' },
 };
 
 const ORGAN_IDS = [
@@ -34,6 +37,18 @@ const ORGAN_IDS = [
   'bottega', 'sigillo', 'stat', 'creator', 'gialloro',
   'gialloro_cms', 'fabio', 'yuri',
 ] as const;
+
+const ORGAN_META: Partial<Record<typeof ORGAN_IDS[number], { site?: string; repo?: string }>> = {
+  egi: { site: 'https://art.florenceegi.com' },
+  natan: { site: 'https://natan-loc.florenceegi.com' },
+  hub: { site: 'https://hub.florenceegi.com' },
+  info: { site: 'https://info.florenceegi.com', repo: 'https://github.com/florenceegi/EGI-INFO' },
+  home: { site: 'https://florenceegi.com', repo: 'https://github.com/florenceegi/EGI-HUB-HOME-REACT' },
+  credential: { site: 'https://egi-credential.florenceegi.com' },
+  sigillo: { site: 'https://egi-sigillo.florenceegi.com' },
+  creator: { site: 'https://creator-staging.florenceegi.com', repo: 'https://github.com/florenceegi/creator-staging' },
+  gialloro: { site: 'https://preview.florenceegi.com', repo: 'https://github.com/florenceegi/IDEALORO-PREVIEW' },
+};
 
 export default async function NumeriPage({
   params,
@@ -105,16 +120,26 @@ export default async function NumeriPage({
           </p>
           <div className="space-y-8">
             {PRODUCT_IDS.map((id) => {
-              const link = PRODUCT_LINKS[id];
+              const meta = PRODUCT_META[id];
               return (
                 <div key={id} className="reveal ora-card">
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
                     <h3 className="text-xl font-[family-name:var(--font-display)] text-[var(--accent)]">
                       {t(`prod_${id}_name`)}
                     </h3>
-                    {link && (
+                    {meta.site && (
                       <a
-                        href={link}
+                        href={meta.site}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-mono text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                      >
+                        {meta.site.replace('https://', '')} ↗
+                      </a>
+                    )}
+                    {meta.repo && (
+                      <a
+                        href={meta.repo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-mono text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
@@ -193,26 +218,29 @@ export default async function NumeriPage({
               </thead>
               <tbody>
                 {ORGAN_IDS.map((id) => {
-                  const isPublic = ['info', 'home', 'creator', 'gialloro'].includes(id);
-                  const publicLinks: Record<string, string> = {
-                    info: 'https://github.com/florenceegi/EGI-INFO',
-                    home: 'https://github.com/florenceegi/EGI-HUB-HOME-REACT',
-                    creator: 'https://github.com/florenceegi/creator-staging',
-                    gialloro: 'https://github.com/florenceegi/IDEALORO-PREVIEW',
-                  };
+                  const meta = ORGAN_META[id];
                   return (
                     <tr key={id} className="border-b border-[var(--border)]/50">
                       <td className="py-2.5 pr-4 text-[var(--text-primary)]">
                         {t(`organ_${id}_name`)}
-                        {isPublic && (
+                        {meta?.site && (
                           <a
-                            href={publicLinks[id]}
+                            href={meta.site}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="ml-2 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
-                            aria-label={`GitHub: ${t(`organ_${id}_name`)}`}
                           >
-                            ↗
+                            {meta.site.replace('https://', '')} ↗
+                          </a>
+                        )}
+                        {meta?.repo && (
+                          <a
+                            href={meta.repo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-2 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                          >
+                            GitHub ↗
                           </a>
                         )}
                       </td>
