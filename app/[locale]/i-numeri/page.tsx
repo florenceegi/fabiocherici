@@ -115,8 +115,11 @@ export default async function NumeriPage({
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
             {t('products_title')}
           </h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-16">
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
             {t('products_intro')}
+          </p>
+          <p className="reveal text-sm text-[var(--text-muted)] leading-relaxed mb-16 italic">
+            {t('products_note')}
           </p>
           <div className="space-y-8">
             {PRODUCT_IDS.map((id) => {
@@ -198,8 +201,11 @@ export default async function NumeriPage({
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
             {t('codebase_title')}
           </h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
             {t('codebase_intro')}
+          </p>
+          <p className="reveal text-sm text-[var(--text-muted)] leading-relaxed mb-12 italic">
+            {t('codebase_note')}
           </p>
           <div className="reveal overflow-x-auto">
             <table className="w-full text-sm">

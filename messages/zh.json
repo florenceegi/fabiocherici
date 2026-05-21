@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47天",
     "label_hours": "工时",
-    "label_loc": "LOC",
+    "label_loc": "LOC总计",
     "label_commits": "提交",
     "label_calendar": "日历天数",
     "codebase_title": "按器官划分的代码库",
@@ -448,6 +448,8 @@
     "closing_title": "方法论与可用性",
     "closing_p1": "所有工时均以可验证的 commit 会话计量。代码行数以 <b>cloc</b> 在干净代码库上统计，不含 vendor、node_modules、构建产物。导入的既有代码（4 个仓库共 114.945 行）已从全新编写的计数中扣除。",
     "closing_p2": "公开仓库可直接查阅。私有仓库的完整审计（含 CSV 会话记录和 git log）可按需提供。",
-    "closing_source": "Fonte: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)"
+    "closing_source": "Fonte: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)",
+    "products_note": "此处显示的代码行数为总计（代码+数据+配置），包含产品的所有组件，即使分布在多个代码仓库中。下方表格仅统计每个仓库的可执行代码（A类）。",
+    "codebase_note": "此表仅统计可执行代码（A类）：逻辑、模板、样式、脚本。不包括JSON、Markdown或配置文件。上一节中的某些产品跨越多个仓库并包含数据文件，因此数字会有差异。"
   }
 }

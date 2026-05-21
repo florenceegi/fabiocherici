@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47 days",
     "label_hours": "Hours",
-    "label_loc": "LOC",
+    "label_loc": "Total LOC",
     "label_commits": "Commits",
     "label_calendar": "Calendar",
     "codebase_title": "Codebase by organ",
@@ -448,6 +448,8 @@
     "closing_title": "Methodology and availability",
     "closing_p1": "All hours are measured from verifiable commit sessions. Lines are counted with <b>cloc</b> on clean codebases, excluding vendor, node_modules, build artifacts. Pre-existing imported code (114,945 lines in 4 repos) is separated from the from-scratch count.",
     "closing_p2": "Public repositories are directly inspectable. For private repositories, complete audits with session CSVs and git logs are available on request.",
-    "closing_source": "Source: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)"
+    "closing_source": "Source: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)",
+    "products_note": "LOC shown here are totals (code + data + configuration) and include all product components, even when spread across multiple repositories. The table below counts only executable code (Category A) per single repository.",
+    "codebase_note": "This table counts only executable code (Category A): logic, templates, styling, scripts. Does not include JSON, Markdown or configuration. Some products in the previous section span multiple repositories and include data, which is why the numbers differ."
   }
 }

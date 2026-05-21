@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47 dias",
     "label_hours": "Horas",
-    "label_loc": "LOC",
+    "label_loc": "LOC totales",
     "label_commits": "Commit",
     "label_calendar": "Calendario",
     "codebase_title": "Codebase por organo",
@@ -448,6 +448,8 @@
     "closing_title": "Metodologia y disponibilidad",
     "closing_p1": "Todas las horas se miden a partir de sesiones de commit verificables. Las lineas se cuentan con <b>cloc</b> sobre codebases limpias, excluidos vendor, node_modules, build artifact. El codigo preexistente importado (114.945 lineas en 4 repositorios) esta desglosado del conteo ex novo.",
     "closing_p2": "Los repositorios publicos son inspeccionables directamente. Para los repositorios privados, auditorias completas con CSV de sesiones y git log estan disponibles bajo solicitud.",
-    "closing_source": "Fuente: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)"
+    "closing_source": "Fuente: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)",
+    "products_note": "Las LOC indicadas son totales (codigo + datos + configuracion) e incluyen todos los componentes del producto, incluso cuando estan distribuidos en varios repositorios. La tabla siguiente cuenta solo codigo ejecutable (Categoria A) por repositorio.",
+    "codebase_note": "Esta tabla cuenta solo codigo ejecutable (Categoria A): logica, plantillas, estilos, scripts. No incluye JSON, Markdown ni configuracion. Algunos productos de la seccion anterior abarcan varios repositorios e incluyen datos, por eso los numeros difieren."
   }
 }

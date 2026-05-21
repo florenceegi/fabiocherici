@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47 Tage",
     "label_hours": "Stunden",
-    "label_loc": "LOC",
+    "label_loc": "LOC gesamt",
     "label_commits": "Commits",
     "label_calendar": "Kalender",
     "codebase_title": "Codebase nach Organ",
@@ -448,6 +448,8 @@
     "closing_title": "Methodik und Verfuegbarkeit",
     "closing_p1": "Alle Stunden werden anhand verifizierbarer Commit-Sitzungen gemessen. Die Zeilen werden mit <b>cloc</b> auf sauberen Codebases gezaehlt, ohne vendor, node_modules, Build-Artefakte. Vorbestehender importierter Code (114.945 Zeilen in 4 Repos) ist von der Neuzaehlung ausgenommen.",
     "closing_p2": "Oeffentliche Repositories sind direkt einsehbar. Fuer private Repositories sind vollstaendige Audits mit Sitzungs-CSV und Git-Logs auf Anfrage verfuegbar.",
-    "closing_source": "Quelle: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)"
+    "closing_source": "Quelle: PLATFORM_NUMBERS.md v2.2.0 (2026-05-18)",
+    "products_note": "Die hier angegebenen LOC sind Gesamtwerte (Code + Daten + Konfiguration) und umfassen alle Produktkomponenten, auch wenn sie auf mehrere Repositories verteilt sind. Die Tabelle unten zaehlt nur ausfuehrbaren Code (Kategorie A) pro Repository.",
+    "codebase_note": "Diese Tabelle zaehlt nur ausfuehrbaren Code (Kategorie A): Logik, Templates, Styling, Skripte. JSON, Markdown und Konfiguration sind nicht enthalten. Einige Produkte im vorherigen Abschnitt bestehen aus mehreren Repositories und enthalten auch Daten, daher unterscheiden sich die Zahlen."
   }
 }
