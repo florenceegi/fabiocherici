@@ -55,6 +55,8 @@ export default async function CreazioniPage({
     i: (chunks: ReactNode) => <em className="italic text-[var(--text-secondary)]">{chunks}</em>,
     oralink: (chunks: ReactNode) => <Link href={`/${locale}/oracode`} className={linkClass}>{chunks}</Link>,
     egilink: (chunks: ReactNode) => <a href="https://florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
+    sitelink: (chunks: ReactNode) => <a href="https://preview.florenceegi.com/" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
+    repolink: (chunks: ReactNode) => <a href="https://github.com/florenceegi/IDEALORO-PREVIEW" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
   };
 
   return (
@@ -169,7 +171,7 @@ export default async function CreazioniPage({
               {t('perf_label')}
             </h4>
             <p className="text-base text-[var(--text-secondary)] leading-relaxed">
-              {t('perf_desc')}
+              {t.rich('perf_desc', rich)}
             </p>
           </div>
         </div>

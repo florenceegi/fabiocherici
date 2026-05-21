@@ -128,7 +128,7 @@
     "showcase_hub_home": "带 3D 界面的公共展示窗口（React SPA）。",
     "showcase_info": "产品信息 SPA。",
     "perf_label": "可验证的性能",
-    "perf_desc": "一个百分之百功能完整的演示网站，集成 CMS，约 16 小时工作量完成。Lighthouse 得分在 91 到 100 之间。Git log 可应要求提供。",
+    "perf_desc": "<sitelink>一个百分之百功能完整的演示网站</sitelink>，集成 CMS，约 16 小时工作量完成。Lighthouse 得分在 91 到 100 之间。<repolink>源代码和 git log</repolink> 公开。",
     "cta": "如果你想看我如何工作，请进入",
     "cta_link": "Oracode"
   },

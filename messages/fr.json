@@ -128,7 +128,7 @@
     "showcase_hub_home": "vitrine publique avec interface 3D (React SPA).",
     "showcase_info": "SPA informative de produit.",
     "perf_label": "Performance verifiable",
-    "perf_desc": "un site de demonstration entierement fonctionnel, avec CMS integre, construit en environ 16 heures de travail. Scores Lighthouse entre 91 et 100. Git log disponible sur demande.",
+    "perf_desc": "<sitelink>Un site de demonstration</sitelink> entierement fonctionnel, avec CMS integre, construit en environ 16 heures de travail. Scores Lighthouse entre 91 et 100. <repolink>Code source et git log</repolink> publics.",
     "cta": "Si tu veux voir comment je travaille, entre dans",
     "cta_link": "Oracode"
   },
