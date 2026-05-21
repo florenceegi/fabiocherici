@@ -13,6 +13,17 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://fabiocherici.com/it/creazioni</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/creazioni"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/creazioni"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://fabiocherici.com/it/oracode</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/oracode"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/oracode"/>
@@ -24,15 +35,59 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fabiocherici.com/it/prove</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/prove"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/prove"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/prove"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/prove"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/prove"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/prove"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/prove"/>
+    <loc>https://fabiocherici.com/it/scrittore</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/scrittore"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/scrittore"/>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fabiocherici.com/it/ai-nous</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/ai-nous"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/ai-nous"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fabiocherici.com/it/egi</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/egi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/egi"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/egi"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/egi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/egi"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/egi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/egi"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fabiocherici.com/it/epp</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/epp"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/epp"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/epp"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/epp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/epp"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/epp"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/epp"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fabiocherici.com/it/i-numeri</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/i-numeri"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/i-numeri"/>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fabiocherici.com/it/ecosistema</loc>
