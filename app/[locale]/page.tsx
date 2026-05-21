@@ -45,6 +45,26 @@ export default async function HomePage({
         <HeroScene />
       </div>
 
+      <div className="sr-only" role="region" aria-label={t('seo_nav_label')}>
+        <h2>{t('seo_nav_label')}</h2>
+        <p>{t('seo_who')}</p>
+        <p>{t('seo_what')}</p>
+        <p>{t('seo_ecosystem')}</p>
+        <nav>
+          <ul>
+            <li><Link href={`/${locale}/creazioni`}>{t('seo_section_creazioni')}</Link></li>
+            <li><Link href={`/${locale}/oracode`}>{t('seo_section_oracode')}</Link></li>
+            <li><Link href={`/${locale}/scrittore`}>{t('seo_section_scrittore')}</Link></li>
+            <li><Link href={`/${locale}/ai-nous`}>{t('seo_section_ainous')}</Link></li>
+            <li><Link href={`/${locale}/egi`}>{t('seo_section_egi')}</Link></li>
+            <li><Link href={`/${locale}/epp`}>{t('seo_section_epp')}</Link></li>
+            <li><Link href={`/${locale}/i-numeri`}>{t('seo_section_numeri')}</Link></li>
+            <li><Link href={`/${locale}/ecosistema`}>{t('seo_section_ecosistema')}</Link></li>
+            <li><Link href={`/${locale}/contatti`}>{t('seo_section_contatti')}</Link></li>
+          </ul>
+        </nav>
+      </div>
+
       <section
         className="relative z-10 flex min-h-[100dvh] flex-col items-center justify-center px-6"
         aria-labelledby="home-heading"

@@ -92,7 +92,20 @@
     "desc_scrittore": "A science fiction saga where technology becomes narrative and narrative becomes code.",
     "desc_ai-nous": "My study of an alphabet that bridges the human mind and artificial intelligence.",
     "desc_egi": "Nine platforms, one organism. FlorenceEGI is the digital infrastructure of the future.",
-    "desc_epp": "The protocol that certifies, measures and makes every professional skill verifiable."
+    "desc_epp": "The protocol that certifies, measures and makes every professional skill verifiable.",
+    "seo_who": "Fabio Cherici is an entrepreneur and software engineer from Florence. Founder of FlorenceEGI S.R.L., he created Oracode, a formal paradigm for governing software ecosystems in which AI agents write production code. He has been building software since 1995 — first with Magicsoft (management systems for SMEs), today with an ecosystem of nine interconnected platforms in production.",
+    "seo_what": "This site presents the work of Fabio Cherici through six sections: Creations (portfolio and professional history since 1995), Oracode (the software paradigm with six pillars, P0 rules and an audit system), Writer (the science fiction saga with Padmin D. Curtis as the main character), AI-Nous (a language in formation for the work between the human intellect and artificial intelligence), EGI (Florence EGI, the software ecosystem with nine organs in production), EPP (the protocol for professional competence certification).",
+    "seo_ecosystem": "Florence EGI is a software ecosystem composed of: EGI (creator platform on the Algorand blockchain), EGI-HUB (configuration brain), NATAN_LOC (AI assistant for public administrations), EGI-Credential (certified competence wallet), La Bottega (tools for artists), Sigillo (blockchain file certification), EGI-INFO (public informational page), CREATOR-STAGING (creator site configurator), EGI-STAT (productivity dashboard). Over 410,000 lines of code, 14 repositories, built with the Oracode paradigm.",
+    "seo_nav_label": "Site map",
+    "seo_section_creazioni": "Creations — Portfolio and professional history: Magicsoft (1995-2003), crossing (2003-2021), FlorenceEGI (2021-present). Five products in production.",
+    "seo_section_oracode": "Oracode — Formal paradigm for AI-governed software. Six pillars, blocking P0 rules, audit system, automatic safety rails. Verifiable data on the Numbers page.",
+    "seo_section_scrittore": "Writer — Science fiction saga in which Padmin D. Curtis is the main character and the AI CTO of real development.",
+    "seo_section_ainous": "AI-Nous — A language in formation, optimised for the work between the human intellect and artificial intelligence. Glossary, conversation fragments, poem Ti di no bi uda.",
+    "seo_section_egi": "EGI — Florence EGI S.R.L., software ecosystem with nine interconnected platforms. Algorand blockchain, certification, creator economy.",
+    "seo_section_epp": "EPP — Permanent Professional Excellence Programme. Certification, measurement and verification of competences.",
+    "seo_section_numeri": "The numbers — Verifiable data: over 410,000 lines of code, 14 repositories, 5 products in production, 4,500 hours of development, all built by one person with AI governed by Oracode.",
+    "seo_section_ecosistema": "Ecosystem — Complete map of FlorenceEGI organs with roles, URLs and production status.",
+    "seo_section_contatti": "Contact — Contact form for collaborations, enquiries and proposals."
   },
   "under_construction": {
     "subtitle": "Under construction",
