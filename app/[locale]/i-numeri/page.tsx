@@ -26,7 +26,7 @@ const PRODUCT_IDS = ['idealoro', 'bizcard', 'creator', 'sigillo', 'credential'] 
 
 const PRODUCT_META: Record<typeof PRODUCT_IDS[number], { site?: string; repo?: string }> = {
   idealoro: { site: 'https://preview.florenceegi.com', repo: 'https://github.com/florenceegi/IDEALORO-PREVIEW' },
-  bizcard: { site: 'https://egi-credential.florenceegi.com' },
+  bizcard: { site: 'https://egi-credential.florenceegi.com/business-card' },
   creator: { site: 'https://creator-staging.florenceegi.com', repo: 'https://github.com/florenceegi/creator-staging' },
   sigillo: { site: 'https://egi-sigillo.florenceegi.com' },
   credential: { site: 'https://egi-credential.florenceegi.com' },
