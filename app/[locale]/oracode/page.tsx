@@ -46,7 +46,7 @@ export default async function OracodePage({
     ),
     verify: (chunks: ReactNode) => (
       <a
-        href={`/${locale}/prove`}
+        href={`/${locale}/i-numeri`}
         className="ora-verify"
         aria-label={t('what_verify_aria')}
       >

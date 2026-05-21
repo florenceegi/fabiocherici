@@ -33,8 +33,8 @@ export function Footer({ locale }: { locale: string }) {
             <Link href="/oracode" className="hover:text-[var(--accent)] transition-colors">
               Oracode
             </Link>
-            <Link href="/prove" className="hover:text-[var(--accent)] transition-colors">
-              {t('prove')}
+            <Link href="/i-numeri" className="hover:text-[var(--accent)] transition-colors">
+              {t('numeri')}
             </Link>
             <Link href="/ecosistema" className="hover:text-[var(--accent)] transition-colors">
               {t('ecosistema')}
