@@ -565,6 +565,56 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Oracode page — verify spy, inline code, cards, rails
+   ═══════════════════════════════════════════════════════════ */
+
+.ora-verify {
+  font-size: 80%;
+  font-style: italic;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-muted);
+  text-underline-offset: 3px;
+  margin-left: 0.5em;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.ora-verify:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.ora-code {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+.ora-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.ora-rail-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--accent-muted);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+/* ═══════════════════════════════════════════════════════════
    Reduced motion — show everything immediately
    ═══════════════════════════════════════════════════════════ */
 
