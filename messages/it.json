@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47 giorni",
     "label_hours": "Ore",
-    "label_loc": "LOC totali",
+    "label_loc": "Righe totali",
     "label_commits": "Commit",
     "label_calendar": "Calendario",
     "codebase_title": "Codebase per organo",

@@ -392,7 +392,7 @@
     "prod_credential_commits": "203",
     "prod_credential_calendar": "47天",
     "label_hours": "工时",
-    "label_loc": "LOC总计",
+    "label_loc": "总行数",
     "label_commits": "提交",
     "label_calendar": "日历天数",
     "codebase_title": "按器官划分的代码库",
