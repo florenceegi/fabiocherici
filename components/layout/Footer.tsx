@@ -145,7 +145,7 @@ export function Footer({ locale }: { locale: string }) {
                 className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent-muted)] transition-colors"
               >
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
-                SSL A+
+                SSL A+<span className="sr-only">, {t('opens_new_tab')}</span>
               </a>
               <a
                 href="https://securityheaders.com/?q=https%3A%2F%2Ffabiocherici.com&followRedirects=on"
@@ -154,7 +154,7 @@ export function Footer({ locale }: { locale: string }) {
                 className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent-muted)] transition-colors"
               >
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
-                Security A+
+                Security A+<span className="sr-only">, {t('opens_new_tab')}</span>
               </a>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)]">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />

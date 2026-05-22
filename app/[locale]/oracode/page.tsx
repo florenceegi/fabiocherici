@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('oracode_title'),
     description: t('oracode_description'),
     alternates: buildAlternates(locale, '/oracode'),
-    openGraph: { title: t('oracode_title'), description: t('oracode_description'), type: 'website', locale },
+    openGraph: { title: t('oracode_title'), description: t('oracode_description'), type: 'website', locale, images: [buildOgImage(locale, 'oracode')] },
+    twitter: { card: 'summary_large_image', title: t('oracode_title'), description: t('oracode_description') },
   };
 }
 

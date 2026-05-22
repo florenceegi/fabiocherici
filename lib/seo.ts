@@ -10,6 +10,15 @@ import { locales } from '@/lib/i18n/config';
 
 const BASE_URL = 'https://fabiocherici.com';
 
+export function buildOgImage(locale: string, page: string) {
+  return {
+    url: `${BASE_URL}/og/${locale}/${page}.png`,
+    width: 1200,
+    height: 630,
+    type: 'image/png' as const,
+  };
+}
+
 export function buildAlternates(locale: string, path: string = '') {
   const canonical = `${BASE_URL}/${locale}${path}`;
   const languages: Record<string, string> = {};

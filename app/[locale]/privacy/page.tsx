@@ -8,7 +8,7 @@
 
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { buildAlternates, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('privacy_title'),
     description: t('privacy_description'),
     alternates: buildAlternates(locale, '/privacy'),
-    openGraph: { title: t('privacy_title'), description: t('privacy_description'), type: 'website', locale },
+    openGraph: { title: t('privacy_title'), description: t('privacy_description'), type: 'website', locale, images: [buildOgImage(locale, 'privacy')] },
+    twitter: { card: 'summary_large_image', title: t('privacy_title'), description: t('privacy_description') },
     robots: { index: false, follow: true },
   };
 }

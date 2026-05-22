@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildOgImage } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('egi_title'),
     description: t('egi_description'),
     alternates: buildAlternates(locale, '/egi'),
-    openGraph: { title: t('egi_title'), description: t('egi_description'), type: 'website', locale },
-    twitter: { card: 'summary', title: t('egi_title'), description: t('egi_description') },
+    openGraph: { title: t('egi_title'), description: t('egi_description'), type: 'website', locale, images: [buildOgImage(locale, 'egi')] },
+    twitter: { card: 'summary_large_image', title: t('egi_title'), description: t('egi_description') },
   };
 }
 
@@ -63,7 +63,7 @@ export default async function EgiPage({
       <Link href={`/${locale}/epp`} className={linkClass}>{chunks}</Link>
     ),
     platformlink: (chunks: ReactNode) => (
-      <a href="https://art.florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>
+      <a href="https://art.florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}<span className="sr-only">, opens in new tab</span></a>
     ),
     contactlink: (chunks: ReactNode) => (
       <Link href={`/${locale}/contatti`} className={linkClass}>{chunks}</Link>
@@ -243,7 +243,7 @@ export default async function EgiPage({
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3 rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-colors font-medium"
             >
-              {t('cta_platform')}
+              {t('cta_platform')}<span className="sr-only">, opens in new tab</span>
             </a>
             <Link
               href={`/${locale}/contatti`}
@@ -257,3 +257,4 @@ export default async function EgiPage({
     </div>
   );
 }
+// test

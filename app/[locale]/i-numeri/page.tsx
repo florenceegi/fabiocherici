@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { buildAlternates, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('numeri_title'),
     description: t('numeri_description'),
     alternates: buildAlternates(locale, '/i-numeri'),
-    openGraph: { title: t('numeri_title'), description: t('numeri_description'), type: 'website', locale },
+    openGraph: { title: t('numeri_title'), description: t('numeri_description'), type: 'website', locale, images: [buildOgImage(locale, 'i-numeri')] },
+    twitter: { card: 'summary_large_image', title: t('numeri_title'), description: t('numeri_description') },
   };
 }
 

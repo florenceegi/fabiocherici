@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { HeroScene } from '@/components/home/HeroScene';
-import { buildAlternates, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 const DOORS = [
   { id: 'creazioni', angle: 0 },
@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { absolute: t('home_title') },
     description: t('home_description'),
     alternates: buildAlternates(locale),
-    openGraph: { title: t('home_title'), description: t('home_description'), type: 'website', locale },
+    openGraph: { title: t('home_title'), description: t('home_description'), type: 'website', locale, images: [buildOgImage(locale, 'index')] },
+    twitter: { card: 'summary_large_image', title: t('home_title'), description: t('home_description') },
   };
 }
 

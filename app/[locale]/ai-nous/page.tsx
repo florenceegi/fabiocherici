@@ -11,7 +11,7 @@ import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -20,7 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('ai_nous_title'),
     description: t('ai_nous_description'),
     alternates: buildAlternates(locale, '/ai-nous'),
-    openGraph: { title: t('ai_nous_title'), description: t('ai_nous_description'), type: 'website', locale },
+    openGraph: { title: t('ai_nous_title'), description: t('ai_nous_description'), type: 'website', locale, images: [buildOgImage(locale, 'ai-nous')] },
+    twitter: { card: 'summary_large_image', title: t('ai_nous_title'), description: t('ai_nous_description') },
   };
 }
 
