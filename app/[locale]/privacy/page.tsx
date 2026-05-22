@@ -15,7 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: t('privacy_title'),
+    description: t('privacy_title'),
     alternates: buildAlternates(locale, '/privacy'),
+    openGraph: { title: t('privacy_title'), description: t('privacy_title'), type: 'website', locale },
     robots: { index: false, follow: true },
   };
 }
