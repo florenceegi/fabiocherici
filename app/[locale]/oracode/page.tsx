@@ -1,9 +1,9 @@
 /**
  * @package fabiocherici.com — Oracode Page
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 3.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-21
- * @purpose Oracode paradigm page — 7 sections, CEO-approved content, verify spy, pillar/rule cards.
+ * @version 4.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-05-22
+ * @purpose Oracode paradigm page — 8 sections (OS3+OS4+OSZ), CEO-approved content, verify spy, pillar/rule cards.
  */
 
 import type { Metadata } from 'next';
@@ -26,6 +26,8 @@ const PILLAR_IDS = ['1', '2', '3', '4', '5', '6'] as const;
 const RULE_IDS = ['zero', 'anti', 'error', 'i18n', 'flow', 'doc'] as const;
 
 const RAIL_IDS = ['block', 'ask', 'warn'] as const;
+
+const EPISTEMIC_IDS = ['compat', 'integrity', 'sources', 'trace'] as const;
 
 export default async function OracodePage({
   params,
@@ -226,13 +228,57 @@ export default async function OracodePage({
         </div>
       </section>
 
-      {/* ── 7. Frutto naturale ── */}
+      {/* ── 7. L'altra metà — la disciplina umana (OS4) ── */}
       <section className="py-24 bg-[var(--bg)]">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-12">
+            {t('human_title')}
+          </h2>
+          <div className="space-y-6">
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('human_p1')}
+            </p>
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('human_p2')}
+            </p>
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t.rich('human_p3', rich)}
+            </p>
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('human_p4')}
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 mt-10 mb-10">
+            {EPISTEMIC_IDS.map((id) => (
+              <div key={id} className="reveal ora-card">
+                <h3 className="text-base font-medium text-[var(--text-primary)] mb-1">
+                  {t(`human_${id}_name`)}
+                </h3>
+                <p className="text-sm italic text-[var(--accent)]">
+                  {t(`human_${id}_desc`)}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed italic">
+            {t('human_closing')}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 8. Frutto naturale ── */}
+      <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-12">
             {t('fruit_title')}
           </h2>
           <div className="space-y-6">
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t.rich('fruit_osz_p1', rich)}
+            </p>
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('fruit_osz_p2')}
+            </p>
             {(['fruit_p1', 'fruit_p2', 'fruit_p3', 'fruit_p4', 'fruit_p5'] as const).map((key) => (
               <p key={key} className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
                 {t.rich(key, rich)}
