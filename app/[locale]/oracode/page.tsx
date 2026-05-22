@@ -25,7 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const PILLAR_IDS = ['1', '2', '3', '4', '5', '6'] as const;
 
-const RULE_IDS = ['zero', 'anti', 'error', 'i18n', 'flow', 'doc'] as const;
+const RULE_IDS = [
+  'zero', 'atomic', 'limits', 'anti', 'error', 'service',
+  'constants', 'flow', 'i18n', 'interfaces', 'doc', 'infra', 'catalog',
+] as const;
 
 const RAIL_IDS = ['block', 'ask', 'warn'] as const;
 
