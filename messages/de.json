@@ -374,7 +374,11 @@
     "error": "Fehler beim Senden. Bitte erneut versuchen.",
     "consent_label": "Ich habe die Datenschutzerklarung gelesen und stimme der Verarbeitung meiner Daten zur Beantwortung meiner Anfrage zu.",
     "consent_link": "Datenschutzerklarung",
-    "error_consent": "Die Zustimmung ist erforderlich, um fortzufahren."
+    "error_consent": "Die Zustimmung ist erforderlich, um fortzufahren.",
+    "form_disclaimer": "Dieses Formular sendet eine E-Mail an Fabio Cherici. Keine Daten werden auf Servern gespeichert.",
+    "send_another": "Weitere Nachricht senden",
+    "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "sending": "Wird gesendet..."
   },
   "not_found": {
     "title": "404",
@@ -592,15 +596,15 @@
     "title": "Datenschutzerklärung",
     "last_updated": "Letzte Aktualisierung: 22. Mai 2026",
     "controller_title": "Verantwortlicher",
-    "controller_body": "Fabio Cherici, mit Sitz in Florenz, Italien. E-Mail: fabiocherici@gmail.com. Diese Website fabiocherici.com ist eine persönliche Website und erhebt keine Daten auf eigenen Servern.",
+    "controller_body": "Fabio Cherici, mit Sitz in Florenz, Italien. E-Mail: fabio@florenceegi.com. Diese Website fabiocherici.com ist eine persönliche Seite und erhebt keine Daten auf eigenen Servern.",
     "data_collected_title": "Erhobene Daten",
-    "data_collected_body": "Diese Website erhebt, überträgt oder speichert keine personenbezogenen Daten auf einem Server. Das Kontaktformular verwendet einen mailto:-Link, der den E-Mail-Client des Nutzers öffnet — die eingegebenen Daten (Name, E-Mail, Nachricht) werden nie an einen Webserver gesendet, sondern nur an den eigenen E-Mail-Client des Nutzers, der eigenständig entscheidet, ob die E-Mail versendet wird.",
+    "data_collected_body": "Diese Seite erhebt und speichert keine personenbezogenen Daten. Das Kontaktformular sendet die eingegebenen Daten (Name, E-Mail, Nachricht) direkt als E-Mail an den Inhaber über einen E-Mail-Zustelldienst (AWS SES). Keine Daten werden in Datenbanken oder auf Webservern gespeichert.",
     "purpose_title": "Zweck der Verarbeitung",
     "purpose_body": "Da keine Daten auf Servern erhoben werden, findet keine automatisierte Verarbeitung statt. Die einzige Verarbeitung erfolgt, wenn der Nutzer freiwillig eine E-Mail über seinen eigenen E-Mail-Client versendet. In diesem Fall beschränkt sich die Verarbeitung auf die direkte E-Mail-Korrespondenz zwischen dem Nutzer und dem Verantwortlichen.",
     "legal_basis_title": "Rechtsgrundlage",
-    "legal_basis_body": "Einwilligung der betroffenen Person (Art. 6 Abs. 1 lit. a DSGVO) — ausdrücklich erteilt durch die freiwillige Handlung des Versendens der E-Mail über den eigenen E-Mail-Client.",
+    "legal_basis_body": "Einwilligung der betroffenen Person (Art. 6(1)(a) DSGVO) — erteilt durch ausdrückliche Zustimmung im Kontaktformular vor dem Absenden.",
     "storage_title": "Datenspeicherung",
-    "storage_body": "Die Website speichert keine personenbezogenen Daten. Etwaige über das Kontaktformular eingegangene E-Mails werden im E-Mail-Postfach des Verantwortlichen (Gmail) gemäß den Aufbewahrungsrichtlinien von Google gespeichert. Zusätzliche Kopien oder Archivierungen werden nicht vorgenommen.",
+    "storage_body": "Die Seite speichert keine personenbezogenen Daten auf Servern. Über das Kontaktformular empfangene E-Mails werden im E-Mail-Postfach des Inhabers gemäß den Aufbewahrungsrichtlinien des E-Mail-Anbieters aufbewahrt. Es werden keine zusätzlichen Kopien oder Archive erstellt.",
     "local_storage_title": "Im Browser gespeicherte Daten",
     "local_storage_body": "Die Website verwendet den localStorage des Browsers, um Nutzerpräferenzen zu speichern: visuelles Theme, Barrierefreiheitseinstellungen, 3D-Szene und Animationsstil. Diese Daten sind ausschließlich funktional, werden niemals an externe Server übertragen und können jederzeit über die Browsereinstellungen gelöscht werden. Es werden keinerlei Cookies verwendet.",
     "third_party_title": "Dienste Dritter",
@@ -608,6 +612,6 @@
     "rights_title": "Rechte der betroffenen Person",
     "rights_body": "Gemäß den Artikeln 15-22 der DSGVO hat die betroffene Person das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Da die Website keine Daten erhebt, gelten diese Rechte ausschließlich für etwaige freiwillig vom Nutzer versendete E-Mails.",
     "contact_title": "Kontakt",
-    "contact_body": "Für datenschutzbezogene Anfragen: fabiocherici@gmail.com."
+    "contact_body": "Für datenschutzbezogene Anfragen: fabio@florenceegi.com."
   }
 }

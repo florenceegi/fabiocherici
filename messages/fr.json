@@ -374,7 +374,11 @@
     "error": "Erreur lors de l'envoi. Veuillez reessayer.",
     "consent_label": "J'ai lu la politique de confidentialite et je consens au traitement de mes donnees pour repondre a ma demande.",
     "consent_link": "politique de confidentialite",
-    "error_consent": "Le consentement est obligatoire pour continuer."
+    "error_consent": "Le consentement est obligatoire pour continuer.",
+    "form_disclaimer": "Ce formulaire envoie un email à Fabio Cherici. Aucune donnée n'est sauvegardée sur un serveur.",
+    "send_another": "Envoyer un autre message",
+    "error_email": "Veuillez entrer une adresse email valide.",
+    "sending": "Envoi en cours..."
   },
   "not_found": {
     "title": "404",
@@ -592,15 +596,15 @@
     "title": "Politique de Confidentialité",
     "last_updated": "Dernière mise à jour : 22 mai 2026",
     "controller_title": "Responsable du traitement",
-    "controller_body": "Fabio Cherici, basé à Florence, Italie. Email : fabiocherici@gmail.com. Le présent site web fabiocherici.com est un site personnel et ne collecte aucune donnée sur ses propres serveurs.",
+    "controller_body": "Fabio Cherici, basé à Florence, Italie. Email : fabio@florenceegi.com. Ce site web fabiocherici.com est un site personnel et ne collecte pas de données sur ses propres serveurs.",
     "data_collected_title": "Données collectées",
-    "data_collected_body": "Ce site ne collecte, ne transmet et ne stocke aucune donnée personnelle sur un quelconque serveur. Le formulaire de contact utilise un lien mailto: qui ouvre le client de messagerie de l'utilisateur — les données saisies (nom, email, message) ne sont jamais envoyées à un serveur web, mais uniquement au client de messagerie de l'utilisateur, qui décide de manière autonome d'envoyer ou non l'email.",
+    "data_collected_body": "Ce site ne collecte ni ne stocke de données personnelles. Le formulaire de contact envoie les données saisies (nom, email, message) directement par email au responsable via un service de livraison d'emails (AWS SES). Aucune donnée n'est sauvegardée dans une base de données ou un serveur web.",
     "purpose_title": "Finalité du traitement",
     "purpose_body": "En l'absence de collecte de données sur des serveurs, il n'existe aucun traitement automatisé. Le seul traitement intervient si l'utilisateur décide volontairement d'envoyer un email via son propre client de messagerie. Dans ce cas, le traitement se limite à la correspondance directe par email entre l'utilisateur et le responsable.",
     "legal_basis_title": "Base juridique",
-    "legal_basis_body": "Consentement de la personne concernée (Art. 6(1)(a) RGPD) — exprimé par l'action volontaire d'envoyer l'email depuis son propre client de messagerie.",
+    "legal_basis_body": "Consentement de la personne concernée (Art. 6(1)(a) RGPD) — exprimé par un consentement explicite dans le formulaire de contact avant l'envoi.",
     "storage_title": "Conservation des données",
-    "storage_body": "Le site ne conserve aucune donnée personnelle. Les éventuels emails reçus via le formulaire de contact sont conservés dans la boîte de réception du responsable (Gmail) conformément aux politiques de conservation de Google. Aucune copie ou archivage supplémentaire n'est effectué.",
+    "storage_body": "Le site ne conserve pas de données personnelles sur des serveurs. Les emails reçus via le formulaire de contact sont conservés dans la boîte mail du responsable selon les politiques de conservation du fournisseur email. Aucune copie ou archive supplémentaire n'est effectuée.",
     "local_storage_title": "Données stockées dans le navigateur",
     "local_storage_body": "Le site utilise le localStorage du navigateur pour enregistrer les préférences de l'utilisateur : thème visuel, paramètres d'accessibilité, scène 3D et style d'animation. Ces données sont exclusivement fonctionnelles, ne sont jamais transmises à des serveurs externes et peuvent être supprimées à tout moment depuis les paramètres du navigateur. Aucun cookie n'est utilisé.",
     "third_party_title": "Services tiers",
@@ -608,6 +612,6 @@
     "rights_title": "Droits de la personne concernée",
     "rights_body": "Conformément aux articles 15-22 du RGPD, la personne concernée dispose d'un droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité des données et d'opposition. Le site ne collectant aucune donnée, ces droits s'appliquent exclusivement aux emails envoyés volontairement par l'utilisateur.",
     "contact_title": "Contact",
-    "contact_body": "Pour toute demande relative à la confidentialité : fabiocherici@gmail.com."
+    "contact_body": "Pour toute demande relative à la vie privée : fabio@florenceegi.com."
   }
 }

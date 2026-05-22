@@ -374,7 +374,11 @@
     "error": "Errore nell'invio. Riprova.",
     "consent_label": "Ho letto l'informativa sulla privacy e acconsento al trattamento dei miei dati per rispondere alla mia richiesta.",
     "consent_link": "informativa sulla privacy",
-    "error_consent": "Il consenso è obbligatorio per procedere."
+    "error_consent": "Il consenso è obbligatorio per procedere.",
+    "form_disclaimer": "Questo modulo invia un'email a Fabio Cherici. Nessun dato viene salvato su server.",
+    "send_another": "Invia un altro messaggio",
+    "error_email": "Inserisci un indirizzo email valido.",
+    "sending": "Invio in corso..."
   },
   "not_found": {
     "title": "404",
@@ -592,15 +596,15 @@
     "title": "Informativa sulla Privacy",
     "last_updated": "Ultimo aggiornamento: 22 maggio 2026",
     "controller_title": "Titolare del trattamento",
-    "controller_body": "Fabio Cherici, con sede in Firenze, Italia. Email: fabiocherici@gmail.com. Il presente sito web fabiocherici.com è un sito personale e non raccoglie dati su server propri.",
+    "controller_body": "Fabio Cherici, con sede in Firenze, Italia. Email: fabio@florenceegi.com. Il presente sito web fabiocherici.com è un sito personale e non raccoglie dati su server propri.",
     "data_collected_title": "Dati raccolti",
-    "data_collected_body": "Questo sito non raccoglie, trasmette o archivia dati personali su alcun server. Il modulo di contatto utilizza un link mailto: che apre il client email dell'utente — i dati inseriti (nome, email, messaggio) non vengono mai inviati a un server web, ma solo al client email dell'utente stesso, che decide autonomamente se inviare l'email.",
+    "data_collected_body": "Questo sito non raccoglie né archivia dati personali. Il modulo di contatto invia i dati inseriti (nome, email, messaggio) direttamente come email al titolare tramite un servizio di recapito email (AWS SES). Nessun dato viene salvato su database o server web.",
     "purpose_title": "Finalità del trattamento",
     "purpose_body": "Non essendoci raccolta di dati su server, non esiste un trattamento automatizzato. L'unico trattamento avviene se l'utente decide volontariamente di inviare un'email tramite il proprio client di posta. In quel caso, il trattamento è limitato alla corrispondenza email diretta tra l'utente e il titolare.",
     "legal_basis_title": "Base giuridica",
-    "legal_basis_body": "Consenso dell'interessato (Art. 6(1)(a) GDPR) — espresso attraverso l'azione volontaria di inviare l'email dal proprio client di posta.",
+    "legal_basis_body": "Consenso dell'interessato (Art. 6(1)(a) GDPR) — espresso attraverso il consenso esplicito nel modulo di contatto prima dell'invio.",
     "storage_title": "Conservazione dei dati",
-    "storage_body": "Il sito non conserva dati personali. Le eventuali email ricevute tramite il modulo di contatto sono conservate nella casella email del titolare (Gmail) secondo le politiche di conservazione di Google. Non vengono effettuate copie o archiviazioni aggiuntive.",
+    "storage_body": "Il sito non conserva dati personali su server. Le email ricevute tramite il modulo di contatto sono conservate nella casella email del titolare secondo le politiche di conservazione del provider email. Non vengono effettuate copie o archiviazioni aggiuntive.",
     "local_storage_title": "Dati memorizzati nel browser",
     "local_storage_body": "Il sito utilizza il localStorage del browser per salvare le preferenze dell'utente: tema visivo, impostazioni di accessibilità, scena 3D e stile di animazione. Questi dati sono esclusivamente funzionali, non vengono mai trasmessi a server esterni, e possono essere cancellati in qualsiasi momento dalle impostazioni del browser. Non vengono utilizzati cookie di alcun tipo.",
     "third_party_title": "Servizi di terze parti",
@@ -608,6 +612,6 @@
     "rights_title": "Diritti dell'interessato",
     "rights_body": "Ai sensi degli articoli 15-22 del GDPR, l'interessato ha diritto di accesso, rettifica, cancellazione, limitazione del trattamento, portabilità dei dati e opposizione. Poiché il sito non raccoglie dati, questi diritti si applicano esclusivamente alle eventuali email inviate volontariamente dall'utente.",
     "contact_title": "Contatti",
-    "contact_body": "Per qualsiasi richiesta relativa alla privacy: fabiocherici@gmail.com."
+    "contact_body": "Per qualsiasi richiesta relativa alla privacy: fabio@florenceegi.com."
   }
 }

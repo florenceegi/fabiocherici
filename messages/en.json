@@ -374,7 +374,11 @@
     "error": "Error sending. Please try again.",
     "consent_label": "I have read the privacy policy and I consent to the processing of my data to respond to my request.",
     "consent_link": "privacy policy",
-    "error_consent": "Consent is required to proceed."
+    "error_consent": "Consent is required to proceed.",
+    "form_disclaimer": "This form sends an email to Fabio Cherici. No data is saved on any server.",
+    "send_another": "Send another message",
+    "error_email": "Please enter a valid email address.",
+    "sending": "Sending..."
   },
   "not_found": {
     "title": "404",
@@ -592,15 +596,15 @@
     "title": "Privacy Policy",
     "last_updated": "Last updated: May 22, 2026",
     "controller_title": "Data Controller",
-    "controller_body": "Fabio Cherici, based in Florence, Italy. Email: fabiocherici@gmail.com. This website fabiocherici.com is a personal site and does not collect data on its own servers.",
+    "controller_body": "Fabio Cherici, based in Florence, Italy. Email: fabio@florenceegi.com. This website fabiocherici.com is a personal site and does not collect data on its own servers.",
     "data_collected_title": "Data Collected",
-    "data_collected_body": "This site does not collect, transmit, or store personal data on any server. The contact form uses a mailto: link that opens the user's email client — the data entered (name, email, message) is never sent to a web server, but only to the user's own email client, who independently decides whether to send the email.",
+    "data_collected_body": "This site does not collect or store personal data. The contact form sends the entered data (name, email, message) directly as an email to the owner via an email delivery service (AWS SES). No data is saved to any database or web server.",
     "purpose_title": "Purpose of Processing",
     "purpose_body": "Since no data is collected on servers, there is no automated processing. The only processing occurs if the user voluntarily decides to send an email through their own email client. In that case, processing is limited to direct email correspondence between the user and the controller.",
     "legal_basis_title": "Legal Basis",
-    "legal_basis_body": "Consent of the data subject (Art. 6(1)(a) GDPR) — expressed through the voluntary action of sending the email from their own email client.",
+    "legal_basis_body": "Consent of the data subject (Art. 6(1)(a) GDPR) — expressed through explicit consent in the contact form before submission.",
     "storage_title": "Data Retention",
-    "storage_body": "The site does not store personal data. Any emails received through the contact form are stored in the controller's email inbox (Gmail) according to Google's retention policies. No additional copies or archiving is performed.",
+    "storage_body": "The site does not store personal data on servers. Emails received via the contact form are stored in the owner's email inbox according to the email provider's retention policies. No additional copies or archives are made.",
     "local_storage_title": "Data Stored in the Browser",
     "local_storage_body": "The site uses the browser's localStorage to save user preferences: visual theme, accessibility settings, 3D scene, and animation style. This data is exclusively functional, is never transmitted to external servers, and can be deleted at any time from the browser settings. No cookies of any kind are used.",
     "third_party_title": "Third-Party Services",
@@ -608,6 +612,6 @@
     "rights_title": "Data Subject Rights",
     "rights_body": "Under Articles 15-22 of the GDPR, the data subject has the right of access, rectification, erasure, restriction of processing, data portability, and objection. Since the site does not collect data, these rights apply exclusively to any emails voluntarily sent by the user.",
     "contact_title": "Contact",
-    "contact_body": "For any privacy-related inquiries: fabiocherici@gmail.com."
+    "contact_body": "For any privacy-related requests: fabio@florenceegi.com."
   }
 }
