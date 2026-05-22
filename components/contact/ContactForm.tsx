@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 
-const CONTACT_ENDPOINT = 'https://fabiocherici-contact.lambda-url.eu-north-1.on.aws/';
+const CONTACT_ENDPOINT = 'https://art.florenceegi.com/api/public/contact-fabio';
 
 interface FormData {
   name: string;
