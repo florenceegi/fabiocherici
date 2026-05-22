@@ -36,6 +36,26 @@ export default async function EgiPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('egi');
+  const meta = await getTranslations({ locale, namespace: 'meta' });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: meta('egi_title'),
+    description: meta('egi_description'),
+    url: `https://fabiocherici.com/${locale}/egi`,
+    inLanguage: locale,
+    isPartOf: { '@type': 'WebSite', url: 'https://fabiocherici.com' },
+    about: {
+      '@type': 'Organization',
+      name: 'FlorenceEGI S.R.L.',
+      url: 'https://florenceegi.com',
+      founder: { '@type': 'Person', name: 'Fabio Cherici', url: 'https://fabiocherici.com' },
+      foundingDate: '2024',
+      knowsAbout: ['Blockchain', 'Digital Art Certification', 'Market Maker', 'Environmental Impact'],
+      sameAs: ['https://art.florenceegi.com', 'https://github.com/florenceegi'],
+    },
+  };
 
   const rich = {
     b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
@@ -52,6 +72,10 @@ export default async function EgiPage({
 
   return (
     <div className="pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── 1. Apertura (hero) ── */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">
