@@ -9,11 +9,17 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-  return { title: t('scrittore_title') };
+  return {
+    title: t('scrittore_title'),
+    description: t('scrittore_description'),
+    alternates: buildAlternates(locale, '/scrittore'),
+    openGraph: { title: t('scrittore_title'), description: t('scrittore_description'), type: 'website', locale },
+  };
 }
 
 export default async function ScrittorePage({ params }: { params: Promise<{ locale: string }> }) {

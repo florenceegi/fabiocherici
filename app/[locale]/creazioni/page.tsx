@@ -10,13 +10,16 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: t('creazioni_title'),
-    openGraph: { title: t('creazioni_title'), type: 'website', locale },
+    description: t('creazioni_description'),
+    alternates: buildAlternates(locale, '/creazioni'),
+    openGraph: { title: t('creazioni_title'), description: t('creazioni_description'), type: 'website', locale },
   };
 }
 

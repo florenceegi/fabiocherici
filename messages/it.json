@@ -347,7 +347,10 @@
     "mail_subject": "Contatto da",
     "error_required": "Campo obbligatorio.",
     "success": "Messaggio inviato.",
-    "error": "Errore nell'invio. Riprova."
+    "error": "Errore nell'invio. Riprova.",
+    "consent_label": "Ho letto l'informativa sulla privacy e acconsento al trattamento dei miei dati per rispondere alla mia richiesta.",
+    "consent_link": "informativa sulla privacy",
+    "error_consent": "Il consenso e obbligatorio per procedere."
   },
   "not_found": {
     "title": "404",
@@ -368,7 +371,16 @@
     "epp_title": "EPP",
     "numeri_title": "I Numeri — Dati Verificabili",
     "numeri_description": "Numeri reali dell'ecosistema FlorenceEGI costruito sotto Oracode. Repository pubblici, audit disponibili su richiesta.",
-    "ai_nous_description": "Ai-nous: un linguaggio in formazione, ottimizzato per il lavoro tra intelletto umano e intelligenza artificiale."
+    "ai_nous_description": "Ai-nous: un linguaggio in formazione, ottimizzato per il lavoro tra intelletto umano e intelligenza artificiale.",
+    "privacy_title": "Privacy Policy",
+    "contatti_description": "Contatta Fabio Cherici per collaborazioni, informazioni su FlorenceEGI e Oracode, o proposte professionali.",
+    "creazioni_description": "Portfolio e storia professionale di Fabio Cherici: Magicsoft (1995), FlorenceEGI, cinque prodotti in produzione.",
+    "ecosistema_description": "Mappa completa degli organi FlorenceEGI: nove piattaforme interconnesse, ruoli e stato di produzione.",
+    "egi_description": "Florence EGI S.R.L. — ecosistema software con blockchain Algorand, certificazione, creator economy. Nove piattaforme in produzione.",
+    "epp_description": "Programma di Eccellenza Professionale Permanente — certificazione, misurazione e verifica delle competenze su blockchain.",
+    "prove_description": "Dati verificabili: oltre 826.000 righe di codice, 14 repository, 5 prodotti in produzione, costruiti da una persona con AI Oracode.",
+    "scrittore_description": "Fabio Cherici scrittore — la saga Aura Spei, fantascienza dove Padmin D. Curtis e personaggio e CTO AI dello sviluppo reale.",
+    "oracode_description": "Oracode — il paradigma che guida la disciplina AI e la disciplina umana dentro FlorenceEGI. OSZ, OS3, OS4: tre livelli, un sistema vivente."
   },
   "numeri": {
     "title": "I numeri",
@@ -550,5 +562,27 @@
     "closing_sig": "Fabio Cherici — Firenze, maggio 2026",
     "closing_version": "Ai-nous v0.1",
     "frag_3_fabio": ""
+  },
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "last_updated": "Ultimo aggiornamento: 22 maggio 2026",
+    "controller_title": "Titolare del trattamento",
+    "controller_body": "Fabio Cherici, con sede in Firenze, Italia. Email: fabiocherici@gmail.com. Il presente sito web fabiocherici.com è un sito personale e non raccoglie dati su server propri.",
+    "data_collected_title": "Dati raccolti",
+    "data_collected_body": "Questo sito non raccoglie, trasmette o archivia dati personali su alcun server. Il modulo di contatto utilizza un link mailto: che apre il client email dell'utente — i dati inseriti (nome, email, messaggio) non vengono mai inviati a un server web, ma solo al client email dell'utente stesso, che decide autonomamente se inviare l'email.",
+    "purpose_title": "Finalità del trattamento",
+    "purpose_body": "Non essendoci raccolta di dati su server, non esiste un trattamento automatizzato. L'unico trattamento avviene se l'utente decide volontariamente di inviare un'email tramite il proprio client di posta. In quel caso, il trattamento è limitato alla corrispondenza email diretta tra l'utente e il titolare.",
+    "legal_basis_title": "Base giuridica",
+    "legal_basis_body": "Consenso dell'interessato (Art. 6(1)(a) GDPR) — espresso attraverso l'azione volontaria di inviare l'email dal proprio client di posta.",
+    "storage_title": "Conservazione dei dati",
+    "storage_body": "Il sito non conserva dati personali. Le eventuali email ricevute tramite il modulo di contatto sono conservate nella casella email del titolare (Gmail) secondo le politiche di conservazione di Google. Non vengono effettuate copie o archiviazioni aggiuntive.",
+    "local_storage_title": "Dati memorizzati nel browser",
+    "local_storage_body": "Il sito utilizza il localStorage del browser per salvare le preferenze dell'utente: tema visivo, impostazioni di accessibilità, scena 3D e stile di animazione. Questi dati sono esclusivamente funzionali, non vengono mai trasmessi a server esterni, e possono essere cancellati in qualsiasi momento dalle impostazioni del browser. Non vengono utilizzati cookie di alcun tipo.",
+    "third_party_title": "Servizi di terze parti",
+    "third_party_body": "Il sito non utilizza servizi di analisi (Google Analytics o simili), non include script di tracciamento, non carica risorse da CDN esterni. I font sono ospitati localmente. I link esterni presenti nel footer (GitHub, LinkedIn, Instagram, Facebook, Amazon) conducono a siti di terze parti soggetti alle rispettive informative privacy.",
+    "rights_title": "Diritti dell'interessato",
+    "rights_body": "Ai sensi degli articoli 15-22 del GDPR, l'interessato ha diritto di accesso, rettifica, cancellazione, limitazione del trattamento, portabilità dei dati e opposizione. Poiché il sito non raccoglie dati, questi diritti si applicano esclusivamente alle eventuali email inviate volontariamente dall'utente.",
+    "contact_title": "Contatti",
+    "contact_body": "Per qualsiasi richiesta relativa alla privacy: fabiocherici@gmail.com."
   }
 }

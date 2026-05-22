@@ -9,6 +9,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -16,7 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('numeri_title'),
     description: t('numeri_description'),
-    openGraph: { title: t('numeri_title'), type: 'website', locale },
+    alternates: buildAlternates(locale, '/i-numeri'),
+    openGraph: { title: t('numeri_title'), description: t('numeri_description'), type: 'website', locale },
   };
 }
 
@@ -209,15 +211,16 @@ export default async function NumeriPage({
           </p>
           <div className="reveal overflow-x-auto">
             <table className="w-full text-sm">
+              <caption className="sr-only">{t('codebase_intro')}</caption>
               <thead>
                 <tr className="border-b border-[var(--border)]">
-                  <th className="text-left py-3 pr-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
+                  <th scope="col" className="text-left py-3 pr-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
                     {t('table_organ')}
                   </th>
-                  <th className="text-right py-3 px-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
+                  <th scope="col" className="text-right py-3 px-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
                     {t('table_code')}
                   </th>
-                  <th className="text-right py-3 pl-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
+                  <th scope="col" className="text-right py-3 pl-4 text-[var(--text-muted)] font-mono text-xs uppercase tracking-wider">
                     {t('table_files')}
                   </th>
                 </tr>

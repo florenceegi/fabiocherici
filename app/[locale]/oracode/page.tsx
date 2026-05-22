@@ -10,14 +10,16 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: t('oracode_title'),
-    description: t('home_description'),
-    openGraph: { title: t('oracode_title'), type: 'website', locale },
+    description: t('oracode_description'),
+    alternates: buildAlternates(locale, '/oracode'),
+    openGraph: { title: t('oracode_title'), description: t('oracode_description'), type: 'website', locale },
   };
 }
 

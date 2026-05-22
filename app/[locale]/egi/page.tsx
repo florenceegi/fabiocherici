@@ -9,11 +9,17 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-  return { title: t('egi_title') };
+  return {
+    title: t('egi_title'),
+    description: t('egi_description'),
+    alternates: buildAlternates(locale, '/egi'),
+    openGraph: { title: t('egi_title'), description: t('egi_description'), type: 'website', locale },
+  };
 }
 
 export default async function EgiPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -347,7 +347,10 @@
     "mail_subject": "来自",
     "error_required": "必填字段。",
     "success": "消息已发送。",
-    "error": "发送失败，请重试。"
+    "error": "发送失败，请重试。",
+    "consent_label": "我已阅读隐私政策，并同意处理我的数据以回复我的请求。",
+    "consent_link": "隐私政策",
+    "error_consent": "需要同意才能继续。"
   },
   "not_found": {
     "title": "404",
@@ -368,7 +371,16 @@
     "epp_title": "EPP",
     "numeri_title": "数据 — 可验证的数字",
     "numeri_description": "在 Oracode 下构建的 FlorenceEGI 生态系统真实数据。公开仓库可查阅，私有仓库审计报告可按需提供。",
-    "ai_nous_description": "Ai-nous：一种正在形成的语言，为人类智识与人工智能之间的协作而优化。"
+    "ai_nous_description": "Ai-nous：一种正在形成的语言，为人类智识与人工智能之间的协作而优化。",
+    "privacy_title": "Privacy Policy",
+    "contatti_description": "联系 Fabio Cherici 进行合作、了解 FlorenceEGI 和 Oracode 信息，或提出专业建议。",
+    "creazioni_description": "Fabio Cherici 的作品集和职业历史：Magicsoft（1995），FlorenceEGI，五个生产产品。",
+    "ecosistema_description": "FlorenceEGI 器官完整地图：九个互联平台，角色和生产状态。",
+    "egi_description": "Florence EGI S.R.L. — 基于 Algorand 区块链的软件生态系统，认证，创作者经济。九个生产平台。",
+    "epp_description": "永久职业卓越计划 — 基于区块链的技能认证、测量和验证。",
+    "prove_description": "可验证数据：超过 826,000 行代码，14 个代码库，5 个生产产品，由一个人借助 Oracode AI 构建。",
+    "scrittore_description": "Fabio Cherici 作家 — Aura Spei 传奇，科幻小说中 Padmin D. Curtis 既是角色也是真实的 AI CTO。",
+    "oracode_description": "Oracode——指导 FlorenceEGI 内部 AI 纪律和人类纪律的范式。OSZ、OS3、OS4：三个层级，一个活系统。"
   },
   "numeri": {
     "title": "数据",
@@ -550,5 +562,27 @@
     "opera_title": "一部 Ai-nous 作品",
     "opera_desc": "Ti di no bi uda —— 文本曼陀罗形式的诗篇。标题的序列开启仪式；意大利语的序言确立主体；四个季节印记及其俳句标记循环。",
     "opera_alt": "Ti di no bi uda —— Ai-nous 诗篇，文本曼陀罗，四个季节印记"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "last_updated": "最后更新：2026年5月22日",
+    "controller_title": "数据控制者",
+    "controller_body": "Fabio Cherici，位于意大利佛罗伦萨。邮箱：fabiocherici@gmail.com。本网站 fabiocherici.com 为个人网站，不在自有服务器上收集任何数据。",
+    "data_collected_title": "收集的数据",
+    "data_collected_body": "本网站不在任何服务器上收集、传输或存储个人数据。联系表单使用 mailto: 链接打开用户的邮件客户端——输入的数据（姓名、邮箱、留言）不会发送到任何网络服务器，仅发送至用户自己的邮件客户端，由用户自行决定是否发送邮件。",
+    "purpose_title": "处理目的",
+    "purpose_body": "由于不在服务器上收集数据，因此不存在自动化处理。唯一的处理发生在用户自愿通过邮件客户端发送邮件时。在此情况下，处理仅限于用户与控制者之间的直接邮件通信。",
+    "legal_basis_title": "法律依据",
+    "legal_basis_body": "数据主体的同意（GDPR 第6(1)(a)条）——通过用户自愿从邮件客户端发送邮件的行为表达。",
+    "storage_title": "数据保留",
+    "storage_body": "本网站不保存个人数据。通过联系表单收到的邮件保存在控制者的邮箱（Gmail）中，按照 Google 的保留政策执行。不会进行额外的复制或归档。",
+    "local_storage_title": "浏览器中存储的数据",
+    "local_storage_body": "本网站使用浏览器的 localStorage 保存用户偏好：视觉主题、无障碍设置、3D 场景和动画风格。这些数据纯属功能性数据，不会传输至外部服务器，可随时通过浏览器设置删除。不使用任何类型的 Cookie。",
+    "third_party_title": "第三方服务",
+    "third_party_body": "本网站不使用分析服务（如 Google Analytics），不包含跟踪脚本，不从外部 CDN 加载资源。字体为本地托管。页脚中的外部链接（GitHub、LinkedIn、Instagram、Facebook、Amazon）指向第三方网站，适用各自的隐私政策。",
+    "rights_title": "数据主体权利",
+    "rights_body": "根据 GDPR 第15-22条，数据主体享有访问权、更正权、删除权、限制处理权、数据可携带权和反对权。由于本网站不收集数据，这些权利仅适用于用户自愿发送的邮件。",
+    "contact_title": "联系方式",
+    "contact_body": "如有任何隐私相关问题，请联系：fabiocherici@gmail.com。"
   }
 }

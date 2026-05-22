@@ -21,10 +21,11 @@ export function Footer({ locale }: { locale: string }) {
           <div className="flex items-center gap-3 text-sm text-[var(--text-secondary)]">
             <Image
               src="/sigillo-logo.png"
-              alt="Sigillo"
+              alt=""
               width={28}
               height={28}
               className="opacity-70"
+              aria-hidden="true"
             />
             <span>{t('protected_by_sigillo')}</span>
           </div>
@@ -41,6 +42,9 @@ export function Footer({ locale }: { locale: string }) {
             </Link>
             <Link href="/contatti" className="hover:text-[var(--accent)] transition-colors">
               {t('contact')}
+            </Link>
+            <Link href="/privacy" className="hover:text-[var(--accent)] transition-colors">
+              Privacy
             </Link>
             <span className="text-[var(--border)]" aria-hidden="true">|</span>
             {/* P0-FC-4 exception: proper nouns */}
@@ -131,10 +135,11 @@ export function Footer({ locale }: { locale: string }) {
             <p className="text-xs text-[var(--text-muted)] flex items-center gap-1.5">
               <Image
                 src="/sigillo-logo.png"
-                alt="Sigillo"
+                alt=""
                 width={14}
                 height={14}
                 className="opacity-50"
+                aria-hidden="true"
               />
               {year} Fabio Cherici. {t('rights')}
             </p>

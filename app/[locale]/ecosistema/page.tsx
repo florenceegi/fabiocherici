@@ -8,13 +8,16 @@
 
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: t('ecosistema_title'),
-    openGraph: { title: t('ecosistema_title'), type: 'website', locale },
+    description: t('ecosistema_description'),
+    alternates: buildAlternates(locale, '/ecosistema'),
+    openGraph: { title: t('ecosistema_title'), description: t('ecosistema_description'), type: 'website', locale },
   };
 }
 

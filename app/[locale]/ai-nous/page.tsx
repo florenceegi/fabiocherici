@@ -11,6 +11,7 @@ import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('ai_nous_title'),
     description: t('ai_nous_description'),
-    openGraph: { title: t('ai_nous_title'), type: 'website', locale },
+    alternates: buildAlternates(locale, '/ai-nous'),
+    openGraph: { title: t('ai_nous_title'), description: t('ai_nous_description'), type: 'website', locale },
   };
 }
 

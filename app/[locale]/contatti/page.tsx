@@ -9,13 +9,16 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { buildAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
     title: t('contatti_title'),
-    openGraph: { title: t('contatti_title'), type: 'website', locale },
+    description: t('contatti_description'),
+    alternates: buildAlternates(locale, '/contatti'),
+    openGraph: { title: t('contatti_title'), description: t('contatti_description'), type: 'website', locale },
   };
 }
 
