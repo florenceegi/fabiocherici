@@ -151,7 +151,7 @@ export default async function NumeriPage({
                         rel="noopener noreferrer"
                         className="text-xs font-mono text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
                       >
-                        {meta.site.replace('https://', '')} ↗
+                        {meta.site.replace('https://', '')} ↗<span className="sr-only">, opens in new tab</span>
                       </a>
                     )}
                     {meta.repo && (
@@ -161,7 +161,7 @@ export default async function NumeriPage({
                         rel="noopener noreferrer"
                         className="text-xs font-mono text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
                       >
-                        GitHub ↗
+                        GitHub ↗<span className="sr-only">, opens in new tab</span>
                       </a>
                     )}
                   </div>
@@ -251,7 +251,7 @@ export default async function NumeriPage({
                             rel="noopener noreferrer"
                             className="ml-2 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
                           >
-                            {meta.site.replace('https://', '')} ↗
+                            {meta.site.replace('https://', '')} ↗<span className="sr-only">, opens in new tab</span>
                           </a>
                         )}
                         {meta?.repo && (
@@ -261,7 +261,7 @@ export default async function NumeriPage({
                             rel="noopener noreferrer"
                             className="ml-2 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
                           >
-                            GitHub ↗
+                            GitHub ↗<span className="sr-only">, opens in new tab</span>
                           </a>
                         )}
                       </td>

@@ -43,17 +43,35 @@ export interface PageSchemaOptions {
 export function buildPageSchema(opts: PageSchemaOptions): object[] {
   const url = `${BASE_URL}/${opts.locale}${opts.path}`;
   const schemas: object[] = [];
+  const contentType = opts.type || 'WebPage';
+  const isWebPage = contentType === 'WebPage';
 
-  schemas.push({
-    '@type': opts.type || 'WebPage',
+  const webPage: Record<string, unknown> = {
+    '@type': 'WebPage',
     '@id': url,
     url,
     name: opts.title,
     description: opts.description,
     inLanguage: opts.locale,
     isPartOf: { '@id': `${BASE_URL}/#website` },
-    ...opts.extra,
-  });
+    about: { '@type': 'Thing', name: opts.title },
+  };
+
+  if (isWebPage) {
+    schemas.push({ ...webPage, ...opts.extra });
+  } else {
+    schemas.push(webPage);
+    schemas.push({
+      '@type': contentType,
+      '@id': `${url}#content`,
+      url,
+      name: opts.title,
+      description: opts.description,
+      inLanguage: opts.locale,
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      ...opts.extra,
+    });
+  }
 
   if (opts.breadcrumbItems && opts.breadcrumbItems.length > 0) {
     schemas.push({

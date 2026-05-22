@@ -58,9 +58,9 @@ export default async function CreazioniPage({
     b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
     i: (chunks: ReactNode) => <em className="italic text-[var(--text-secondary)]">{chunks}</em>,
     oralink: (chunks: ReactNode) => <Link href={`/${locale}/oracode`} className={linkClass}>{chunks}</Link>,
-    egilink: (chunks: ReactNode) => <a href="https://florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
-    sitelink: (chunks: ReactNode) => <a href="https://preview.florenceegi.com/" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
-    repolink: (chunks: ReactNode) => <a href="https://github.com/florenceegi/IDEALORO-PREVIEW" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
+    egilink: (chunks: ReactNode) => <a href="https://florenceegi.com" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}<span className="sr-only">, opens in new tab</span></a>,
+    sitelink: (chunks: ReactNode) => <a href="https://preview.florenceegi.com/" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}<span className="sr-only">, opens in new tab</span></a>,
+    repolink: (chunks: ReactNode) => <a href="https://github.com/florenceegi/IDEALORO-PREVIEW" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}<span className="sr-only">, opens in new tab</span></a>,
   };
   const tm = await getTranslations({ locale, namespace: 'meta' });
   const pageSchema = buildPageSchema({
@@ -133,7 +133,7 @@ export default async function CreazioniPage({
                     <li key={key} className="reveal flex gap-3 text-base text-[var(--text-secondary)]">
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
                       <span>
-                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}<span className="sr-only">, opens in new tab</span></a>
                         {' — '}{t(`prod_${key}`)}
                       </span>
                     </li>
@@ -151,7 +151,7 @@ export default async function CreazioniPage({
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
                       <span>
                         {url ? (
-                          <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                          <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}<span className="sr-only">, opens in new tab</span></a>
                         ) : (
                           <strong className="text-[var(--text-primary)] font-medium">{name}</strong>
                         )}
@@ -171,7 +171,7 @@ export default async function CreazioniPage({
                     <li key={key} className="reveal flex gap-3 text-base text-[var(--text-secondary)]">
                       <span className="text-[var(--accent)] flex-shrink-0">—</span>
                       <span>
-                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}</a>
+                        <a href={url} target="_blank" rel="noopener noreferrer" className={`font-medium ${linkClass}`}>{name}<span className="sr-only">, opens in new tab</span></a>
                         {' — '}{t(`showcase_${key}`)}
                       </span>
                     </li>
