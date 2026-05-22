@@ -8,7 +8,7 @@
 
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -31,9 +31,20 @@ export default async function EcosistemaPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('ecosistema');
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/ecosistema', title: tm('ecosistema_title'), description: tm('ecosistema_description'),
+    type: 'WebPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('ecosistema_title'), url: `https://fabiocherici.com/${locale}/ecosistema` },
+    ],
+  });
+
 
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">
           <p className="text-sm font-mono uppercase tracking-[0.3em] text-[var(--accent)] mb-4">

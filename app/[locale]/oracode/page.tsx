@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -66,9 +66,22 @@ export default async function OracodePage({
       </Link>
     ),
   };
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/oracode', title: tm('oracode_title'), description: tm('oracode_description'),
+    type: 'Article',
+    datePublished: '2026-05-22',
+    extra: { author: { '@id': 'https://fabiocherici.com/#person' } },
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('oracode_title'), url: `https://fabiocherici.com/${locale}/oracode` },
+    ],
+  });
+
 
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       {/* ── 1. Apertura ── */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">

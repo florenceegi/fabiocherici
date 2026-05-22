@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,9 +26,20 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/epp', title: tm('epp_title'), description: tm('epp_description'),
+    type: 'WebPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('epp_title'), url: `https://fabiocherici.com/${locale}/epp` },
+    ],
+  });
+
 
   return (
     <div className="flex min-h-[80dvh] flex-col items-center justify-center px-6 pt-24 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <p className="text-sm font-mono uppercase tracking-[0.3em] text-[var(--accent)] mb-4">
         {t('under_construction.subtitle')}
       </p>

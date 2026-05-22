@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -65,8 +65,19 @@ export default async function NumeriPage({
     b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
   };
 
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/i-numeri', title: tm('numeri_title'), description: tm('numeri_description'),
+    type: 'WebPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('numeri_title'), url: `https://fabiocherici.com/${locale}/i-numeri` },
+    ],
+  });
+
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       {/* ── Fascia 1 — Apertura ── */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">

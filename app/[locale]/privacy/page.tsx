@@ -8,7 +8,7 @@
 
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -35,9 +35,20 @@ export default async function PrivacyPage({
     'controller', 'data_collected', 'purpose', 'legal_basis',
     'storage', 'local_storage', 'third_party', 'rights', 'contact',
   ] as const;
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/privacy', title: tm('privacy_title'), description: tm('privacy_description'),
+    type: 'WebPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('privacy_title'), url: `https://fabiocherici.com/${locale}/privacy` },
+    ],
+  });
+
 
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">
           <h1 className="reveal font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light tracking-tight text-[var(--text-primary)] mb-4">

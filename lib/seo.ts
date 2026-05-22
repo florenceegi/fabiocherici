@@ -19,3 +19,44 @@ export function buildAlternates(locale: string, path: string = '') {
   languages['x-default'] = `${BASE_URL}/it${path}`;
   return { canonical, languages };
 }
+
+export interface PageSchemaOptions {
+  locale: string;
+  path: string;
+  title: string;
+  description: string;
+  type?: string;
+  datePublished?: string;
+  breadcrumbItems?: { name: string; url: string }[];
+  extra?: Record<string, unknown>;
+}
+
+export function buildPageSchema(opts: PageSchemaOptions): object[] {
+  const url = `${BASE_URL}/${opts.locale}${opts.path}`;
+  const schemas: object[] = [];
+
+  schemas.push({
+    '@type': opts.type || 'WebPage',
+    '@id': url,
+    url,
+    name: opts.title,
+    description: opts.description,
+    inLanguage: opts.locale,
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    ...opts.extra,
+  });
+
+  if (opts.breadcrumbItems && opts.breadcrumbItems.length > 0) {
+    schemas.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: opts.breadcrumbItems.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    });
+  }
+
+  return schemas;
+}

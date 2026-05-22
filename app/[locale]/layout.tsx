@@ -7,7 +7,7 @@
  */
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { locales } from '@/lib/i18n/config';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
@@ -28,6 +28,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: 'meta' });
 
   return (
     <html lang={locale} suppressHydrationWarning className={fontVariables}>
@@ -40,13 +41,15 @@ export default async function LocaleLayout({
               '@graph': [
                 {
                   '@type': 'WebSite',
+                  '@id': 'https://fabiocherici.com/#website',
                   name: 'Fabio Cherici — Oracode',
                   url: 'https://fabiocherici.com',
-                  description: 'Personal site of Fabio Cherici — entrepreneur, self-taught developer, creator of Oracode and FlorenceEGI.',
+                  description: t('home_description'),
                   inLanguage: ['it', 'en', 'de', 'es', 'fr', 'pt', 'zh'],
                 },
                 {
                   '@type': 'Person',
+                  '@id': 'https://fabiocherici.com/#person',
                   name: 'Fabio Cherici',
                   url: 'https://fabiocherici.com',
                   jobTitle: 'CEO & Founder',

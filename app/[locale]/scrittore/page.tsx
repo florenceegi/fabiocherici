@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,9 +26,22 @@ export default async function ScrittorePage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/scrittore', title: tm('scrittore_title'), description: tm('scrittore_description'),
+    type: 'Article',
+    datePublished: '2026-05-18',
+    extra: { author: { '@id': 'https://fabiocherici.com/#person' } },
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('scrittore_title'), url: `https://fabiocherici.com/${locale}/scrittore` },
+    ],
+  });
+
 
   return (
     <div className="flex min-h-[80dvh] flex-col items-center justify-center px-6 pt-24 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <p className="text-sm font-mono uppercase tracking-[0.3em] text-[var(--accent)] mb-4">
         {t('under_construction.subtitle')}
       </p>

@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { HeroScene } from '@/components/home/HeroScene';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 const DOORS = [
   { id: 'creazioni', angle: 0 },
@@ -40,9 +40,16 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('home');
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+
+  const pageSchema = buildPageSchema({
+    locale, path: '', title: tm('home_title'), description: tm('home_description'),
+    breadcrumbItems: [{ name: tm('home_title'), url: `https://fabiocherici.com/${locale}` }],
+  });
 
   return (
     <div className="home-circle">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <div className="scene-backdrop absolute inset-0 z-0">
         <HeroScene />
       </div>

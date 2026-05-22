@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -30,9 +30,20 @@ export default async function ContattiPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('contatti');
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/contatti', title: tm('contatti_title'), description: tm('contatti_description'),
+    type: 'ContactPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('contatti_title'), url: `https://fabiocherici.com/${locale}/contatti` },
+    ],
+  });
+
 
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-xl px-6">
           <p className="text-sm font-mono uppercase tracking-[0.3em] text-[var(--accent)] mb-4">

@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildPageSchema } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -61,9 +61,20 @@ export default async function CreazioniPage({
     sitelink: (chunks: ReactNode) => <a href="https://preview.florenceegi.com/" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
     repolink: (chunks: ReactNode) => <a href="https://github.com/florenceegi/IDEALORO-PREVIEW" target="_blank" rel="noopener noreferrer" className={linkClass}>{chunks}</a>,
   };
+  const tm = await getTranslations({ locale, namespace: 'meta' });
+  const pageSchema = buildPageSchema({
+    locale, path: '/creazioni', title: tm('creazioni_title'), description: tm('creazioni_description'),
+    type: 'CollectionPage',
+    breadcrumbItems: [
+      { name: tm('home_title'), url: `https://fabiocherici.com/${locale}` },
+      { name: tm('creazioni_title'), url: `https://fabiocherici.com/${locale}/creazioni` },
+    ],
+  });
+
 
   return (
     <div className="pt-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-3xl px-6">
           <h1 className="reveal font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[var(--text-primary)] mb-6">
