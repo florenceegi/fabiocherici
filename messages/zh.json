@@ -384,7 +384,8 @@
     "epp_description": "永久职业卓越计划 — 基于区块链的技能认证、测量和验证。",
     "prove_description": "可验证数据：超过 826,000 行代码，14 个代码库，5 个生产产品，由一个人借助 Oracode AI 构建。",
     "scrittore_description": "Fabio Cherici 作家 — Aura Spei 传奇，科幻小说中 Padmin D. Curtis 既是角色也是真实的 AI CTO。",
-    "oracode_description": "Oracode——指导 FlorenceEGI 内部 AI 纪律和人类纪律的范式。OSZ、OS3、OS4：三个层级，一个活系统。"
+    "oracode_description": "Oracode——指导 FlorenceEGI 内部 AI 纪律和人类纪律的范式。OSZ、OS3、OS4：三个层级，一个活系统。",
+    "privacy_description": "fabiocherici.com 隐私政策。服务器不收集数据，无 cookie，无追踪。"
   },
   "numeri": {
     "title": "数据",
