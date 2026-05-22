@@ -33,7 +33,11 @@
     "protected_by_sigillo": "Sito protetto da Sigillo",
     "nav_label": "Link footer",
     "opens_new_tab": "si apre in una nuova scheda",
-    "numeri": "I numeri"
+    "numeri": "I numeri",
+    "quality_label": "Qualità verificata",
+    "quality_aria": "Badge di qualità del sito",
+    "zero_tracking": "Zero tracking",
+    "verified": "Verificato"
   },
   "preferences": {
     "title": "Come vuoi vedere questo sito?",

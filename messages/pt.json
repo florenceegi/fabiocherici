@@ -33,7 +33,11 @@
     "protected_by_sigillo": "Site protegido por Sigillo",
     "nav_label": "Links do rodape",
     "opens_new_tab": "abre num novo separador",
-    "numeri": "Números"
+    "numeri": "Números",
+    "quality_label": "Qualidade verificada",
+    "quality_aria": "Selos de qualidade do site",
+    "zero_tracking": "Sem rastreamento",
+    "verified": "Verificado"
   },
   "preferences": {
     "title": "Como queres ver este site?",

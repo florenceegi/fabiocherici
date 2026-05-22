@@ -33,7 +33,11 @@
     "protected_by_sigillo": "Seite geschuetzt durch Sigillo",
     "nav_label": "Footer-Links",
     "opens_new_tab": "oeffnet in neuem Tab",
-    "numeri": "Zahlen"
+    "numeri": "Zahlen",
+    "quality_label": "Verifizierte Qualität",
+    "quality_aria": "Website-Qualitätssiegel",
+    "zero_tracking": "Kein Tracking",
+    "verified": "Verifiziert"
   },
   "preferences": {
     "title": "Wie moechtest du diese Seite sehen?",

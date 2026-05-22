@@ -33,7 +33,11 @@
     "protected_by_sigillo": "本站受 Sigillo 保护",
     "nav_label": "页脚链接",
     "opens_new_tab": "在新标签页中打开",
-    "numeri": "数据"
+    "numeri": "数据",
+    "quality_label": "已验证质量",
+    "quality_aria": "网站质量徽章",
+    "zero_tracking": "零追踪",
+    "verified": "已验证"
   },
   "preferences": {
     "title": "你希望如何浏览本站？",

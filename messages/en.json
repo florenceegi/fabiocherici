@@ -33,7 +33,11 @@
     "protected_by_sigillo": "Site protected by Sigillo",
     "nav_label": "Footer links",
     "opens_new_tab": "opens in a new tab",
-    "numeri": "Numbers"
+    "numeri": "Numbers",
+    "quality_label": "Verified quality",
+    "quality_aria": "Site quality badges",
+    "zero_tracking": "Zero tracking",
+    "verified": "Verified"
   },
   "preferences": {
     "title": "How do you want to see this site?",

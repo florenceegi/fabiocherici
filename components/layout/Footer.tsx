@@ -128,6 +128,44 @@ export function Footer({ locale }: { locale: string }) {
             </a>
           </nav>
 
+          <div className="flex flex-col items-center gap-4" role="region" aria-label={t('quality_aria')}>
+            <p className="text-[10px] font-mono uppercase tracking-widest text-[var(--text-muted)]">
+              {t('quality_label')}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <a
+                href="https://www.ssllabs.com/ssltest/analyze.html?d=fabiocherici.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent-muted)] transition-colors"
+              >
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                SSL A+
+              </a>
+              <a
+                href="https://securityheaders.com/?q=https%3A%2F%2Ffabiocherici.com&followRedirects=on"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent-muted)] transition-colors"
+              >
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                Security A+
+              </a>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)]">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                WCAG AA
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)]">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                GDPR
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1 text-[11px] font-mono text-[var(--text-muted)]">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                {t('zero_tracking')}
+              </span>
+            </div>
+          </div>
+
           <div className="flex flex-col items-center gap-2">
             <p className="text-xs text-[var(--text-muted)] font-mono">
               {t('built_with')}
