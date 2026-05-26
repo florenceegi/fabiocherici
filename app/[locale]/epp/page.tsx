@@ -122,30 +122,6 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               height={700}
               className="w-full h-auto"
             />
-            <span className="absolute top-[34%] left-[2%] sm:left-[4%] text-xs sm:text-sm font-mono text-[var(--text-muted)]">
-              {t('flow_buyer')}
-            </span>
-            <span className="absolute top-[34%] left-[28%] sm:left-[30%] text-xs sm:text-sm font-mono text-[var(--text-primary)] max-w-[20%] text-center leading-tight">
-              {t('flow_psp')}
-            </span>
-            <span className="absolute top-[8%] right-[1%] sm:right-[2%] text-xs sm:text-sm font-mono text-[var(--text-muted)]">
-              {t('flow_creator')}
-            </span>
-            <span className="absolute top-[28%] right-[1%] sm:right-[2%] text-xs sm:text-sm font-mono font-bold text-[var(--accent)]">
-              {t('flow_epp')}
-            </span>
-            <span className="absolute top-[48%] right-[1%] sm:right-[2%] text-xs sm:text-sm font-mono text-[var(--text-muted)]">
-              {t('flow_platform')}
-            </span>
-            <span className="absolute top-[66%] right-[1%] sm:right-[2%] text-xs sm:text-sm font-mono text-[var(--text-muted)]">
-              {t('flow_frangette')}
-            </span>
-            <span className="absolute bottom-[22%] left-[50%] -translate-x-1/2 text-xs sm:text-sm text-[var(--text-primary)] font-medium text-center whitespace-nowrap">
-              {t('flow_claim')}
-            </span>
-            <span className="absolute bottom-[6%] left-[50%] -translate-x-1/2 text-[10px] sm:text-xs text-[var(--text-muted)] text-center line-through decoration-[#8B4A4A]">
-              {t('flow_traditional')}
-            </span>
           </div>
         </div>
       </section>
@@ -167,21 +143,6 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               height={800}
               className="w-full h-auto"
             />
-            <span className="absolute top-[28%] left-[12%] sm:left-[14%] text-center w-[20%]">
-              <span className="block text-sm sm:text-base font-semibold text-[var(--text-primary)]">{t('not_nft_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] mt-1 leading-snug">{t('not_nft_desc')}</span>
-            </span>
-            <span className="absolute top-[28%] left-[40%] text-center w-[20%]">
-              <span className="block text-sm sm:text-base font-semibold text-[var(--text-primary)]">{t('not_carbon_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] mt-1 leading-snug">{t('not_carbon_desc')}</span>
-            </span>
-            <span className="absolute top-[28%] right-[8%] sm:right-[10%] text-center w-[20%]">
-              <span className="block text-sm sm:text-base font-semibold text-[var(--text-primary)]">{t('not_sponsor_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] mt-1 leading-snug">{t('not_sponsor_desc')}</span>
-            </span>
-            <span className="absolute bottom-[10%] left-[25%] right-[6%] text-xs sm:text-sm text-[var(--text-primary)] font-medium leading-snug">
-              {t('not_yes_label')}
-            </span>
           </div>
         </div>
       </section>
@@ -203,21 +164,6 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               height={1100}
               className="w-full h-auto"
             />
-            <span className="absolute top-[17%] left-[22%] right-[8%] sm:right-[10%]">
-              <span className="block text-base sm:text-lg font-bold text-[#1C1C1C]">{t('guarantee_statutory_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[#1C1C1C]/70 leading-snug mt-1">{t('guarantee_statutory_desc')}</span>
-            </span>
-            <span className="absolute top-[46%] left-[16%] right-[8%] sm:right-[10%]">
-              <span className="block text-base sm:text-lg font-bold text-[var(--text-primary)]">{t('guarantee_corporate_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] leading-snug mt-1">{t('guarantee_corporate_desc')}</span>
-            </span>
-            <span className="absolute top-[72%] left-[16%] right-[4%] sm:right-[6%]">
-              <span className="block text-base sm:text-lg font-bold text-[var(--text-primary)]">{t('guarantee_code_label')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] leading-snug mt-1">{t('guarantee_code_desc')}</span>
-            </span>
-            <span className="absolute top-[50%] left-[0%] -translate-y-1/2 -rotate-90 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] whitespace-nowrap origin-center">
-              {t('guarantee_line_label')}
-            </span>
           </div>
         </div>
       </section>
@@ -236,27 +182,6 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               height={1100}
               className="w-full h-auto"
             />
-            <span className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-2xl sm:text-3xl font-bold text-[var(--accent)]">
-              {t('cycle_center')}
-            </span>
-            <span className="absolute top-[5%] left-[50%] -translate-x-1/2 text-[10px] sm:text-xs font-mono text-[var(--text-primary)] text-center whitespace-nowrap">
-              {t('cycle_1')}
-            </span>
-            <span className="absolute top-[22%] right-[8%] sm:right-[10%] text-[10px] sm:text-xs font-mono text-[var(--text-primary)] text-right max-w-[25%] leading-snug">
-              {t('cycle_2')}
-            </span>
-            <span className="absolute top-[52%] right-[8%] sm:right-[10%] text-[10px] sm:text-xs font-mono font-bold text-[#1C1C1C] text-right max-w-[25%] leading-snug">
-              {t('cycle_3')}
-            </span>
-            <span className="absolute bottom-[8%] left-[50%] -translate-x-1/2 text-[10px] sm:text-xs font-mono text-[var(--text-primary)] text-center max-w-[30%] leading-snug">
-              {t('cycle_4')}
-            </span>
-            <span className="absolute top-[52%] left-[8%] sm:left-[10%] text-[10px] sm:text-xs font-mono text-[var(--text-primary)] max-w-[25%] leading-snug">
-              {t('cycle_5')}
-            </span>
-            <span className="absolute top-[22%] left-[8%] sm:left-[10%] text-[10px] sm:text-xs font-mono text-[var(--text-primary)] max-w-[25%] leading-snug">
-              {t('cycle_6')}
-            </span>
           </div>
           <p className="reveal mt-8 text-center text-base sm:text-lg text-[var(--text-secondary)] italic">
             {t('cycle_caption')}
@@ -281,32 +206,6 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               height={900}
               className="w-full h-auto"
             />
-            <span className="absolute top-[10%] left-[8%]">
-              <span className="block text-lg sm:text-2xl font-bold text-[var(--accent)]">{t('dashboard_org')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] mt-0.5">{t('dashboard_org_sub')}</span>
-            </span>
-            <span className="absolute top-[32%] left-[8%] max-w-[45%]">
-              <span className="block text-[10px] sm:text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] mb-2">{t('dashboard_project_label')}</span>
-              <span className="block text-sm sm:text-base font-semibold text-[var(--text-primary)]">{t('dashboard_project_name')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)] mt-1">{t('dashboard_objective')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)]">{t('dashboard_timeline')}</span>
-            </span>
-            <span className="absolute top-[48%] right-[12%] text-right">
-              <span className="block text-lg sm:text-2xl font-bold text-[var(--accent)]">{t('dashboard_amount')}</span>
-              <span className="block text-[10px] sm:text-xs text-[var(--text-muted)]">{t('dashboard_amount_label')}</span>
-            </span>
-            <span className="absolute top-[64%] left-[8%] right-[8%] flex text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">
-              <span className="w-1/3">{t('dashboard_col_date')}</span>
-              <span className="w-1/3">{t('dashboard_col_tx')}</span>
-              <span className="w-1/3 text-right">{t('dashboard_col_amount')}</span>
-            </span>
-            {(['dashboard_row1', 'dashboard_row2', 'dashboard_row3'] as const).map((key, i) => (
-              <span key={key} className="absolute left-[8%] right-[8%] flex text-[9px] sm:text-[11px] text-[var(--text-secondary)]" style={{ top: `${70 + i * 8}%` }}>
-                <span className="w-1/3">{t(`${key}.0`)}</span>
-                <span className="w-1/3">{t(`${key}.1`)}</span>
-                <span className="w-1/3 text-right">{t(`${key}.2`)}</span>
-              </span>
-            ))}
           </div>
           <p className="reveal mt-8 text-center">
             <a
