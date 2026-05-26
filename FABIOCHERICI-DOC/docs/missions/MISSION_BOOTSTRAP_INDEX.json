@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "description": "Bootstrap mirato — quali moduli caricare per tipo_missione + organi_coinvolti",
+    "version": "1.0.0",
+    "created": "2026-05-26",
+    "updated": "2026-05-26",
+    "author": "Claude (Oracode) for Fabio Cherici",
+    "purpose": "MISSION_PROTOCOL.md v2.0.0 §4.3 — SSOT per bootstrap calibrato per tipo mission",
+    "instance": "FABIOCHERICI-DOC",
+    "update_policy": "Solo via approvazione esplicita CEO. Proposte emergono da retrospective FASE 6 in BOOTSTRAP_DRIFT_LOG.md"
+  },
+  "always_loaded": [
+    "/home/fabio/fabiocherici.com/CLAUDE.md",
+    "/home/fabio/fabiocherici.com/CLAUDE_ORACODE_CORE.md",
+    "CLAUDE.md"
+  ],
+  "by_mission_type": {
+    "bootstrap": [
+      "docs/lso/SSOT_REGISTRY.json"
+    ],
+    "feature": [],
+    "fix": [],
+    "refactor": [],
+    "doc-sync": [
+      "docs/lso/SSOT_REGISTRY.json"
+    ],
+    "guard": [],
+    "infrastructure": [],
+    "migration": [],
+    "compliance": [],
+    "epic": [],
+    "oracode-audit": []
+  },
+  "by_organ": {
+    "fabiocherici.com": [
+      "/home/fabio/fabiocherici.com/CLAUDE.md"
+    ]
+  }
+}

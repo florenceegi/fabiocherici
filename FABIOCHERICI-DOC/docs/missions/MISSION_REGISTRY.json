@@ -15,6 +15,10 @@
     {
       "id": "M-001",
       "title": "Bootstrap SSOT Registry — Registrazione SSOT esistenti",
+      "tipo_missione": "bootstrap",
+      "organi_coinvolti": [
+        "fabiocherici.com"
+      ],
       "priority": "P1",
       "status": "closed",
       "date_open": "2026-05-26",
@@ -35,7 +39,41 @@
         "fonts",
         "seo",
         "i18n-messages"
-      ]
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 799,
+        "lines_deleted": 10,
+        "lines_net": 789,
+        "lines_touched": 809,
+        "files_touched": 11,
+        "weighted_commits": 3.2,
+        "cognitive_load": 2.71,
+        "productivity_index": 36.78,
+        "tags_breakdown": {
+          "ARCH": 2
+        },
+        "commit_hashes": [
+          "cfb088541e3b3525708f34a89917fdbe1ba808bd",
+          "fa4a76f5822a0cddea36a466b4eb1e83c77c6106"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-26",
+            "commits": 2,
+            "lines_added": 799,
+            "lines_deleted": 10,
+            "files_touched": 11,
+            "tags": {
+              "ARCH": 2
+            }
+          }
+        ],
+        "calculated_at": "2026-05-26"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-05-26T14:26:34Z"
     }
   ]
 }

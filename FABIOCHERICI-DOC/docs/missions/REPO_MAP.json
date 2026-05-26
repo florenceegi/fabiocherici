@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "description": "Repo map per enrich_registry.py — FABIOCHERICI-DOC istanza fabiocherici.com",
+    "version": "1.0.0",
+    "created": "2026-05-26",
+    "purpose": "Mappa organo_key → (local_dir, github_repo) per attribution grep-by-mission-ID"
+  },
+  "fabiocherici.com": {
+    "local_dir": "/home/fabio/fabiocherici.com",
+    "github_repo": "florenceegi/fabiocherici"
+  }
+}
