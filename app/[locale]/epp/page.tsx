@@ -89,32 +89,13 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </h2>
           <div className="reveal relative mx-auto max-w-2xl">
             <Image
-              src="/images/epp/epp-split.png"
+              src={`/images/epp/${locale}/01.png`}
               alt={t('split_alt')}
               width={1200}
               height={800}
               className="w-full h-auto"
               priority
             />
-            <span className="absolute top-[42%] left-[50%] -translate-x-1/2 -translate-y-1/2 text-sm sm:text-base font-mono text-[var(--text-muted)] text-center leading-tight">
-              {t('split_caption')}
-            </span>
-            <span className="absolute top-[18%] right-[8%] text-right">
-              <span className="block text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">{t('split_creator_pct')}</span>
-              <span className="block text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--text-muted)]">{t('split_creator')}</span>
-            </span>
-            <span className="absolute top-[45%] left-[4%] sm:left-[6%]">
-              <span className="block text-2xl sm:text-3xl font-bold text-[var(--accent)]">{t('split_epp_pct')}</span>
-              <span className="block text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--accent)]">{t('split_epp')}</span>
-            </span>
-            <span className="absolute top-[2%] right-[38%]">
-              <span className="block text-lg sm:text-xl font-bold text-[var(--text-muted)]">{t('split_platform_pct')}</span>
-              <span className="block text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">{t('split_platform')}</span>
-            </span>
-            <span className="absolute top-[2%] right-[18%]">
-              <span className="block text-sm font-bold text-[var(--text-muted)]">{t('split_frangette_pct')}</span>
-              <span className="block text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">{t('split_frangette')}</span>
-            </span>
           </div>
         </div>
       </section>
@@ -135,7 +116,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </div>
           <div className="reveal relative mx-auto max-w-3xl">
             <Image
-              src="/images/epp/epp-flow.png"
+              src={`/images/epp/${locale}/02.png`}
               alt={t('flow_alt')}
               width={1400}
               height={700}
@@ -180,7 +161,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </p>
           <div className="reveal relative mx-auto max-w-3xl">
             <Image
-              src="/images/epp/epp-comparison.png"
+              src={`/images/epp/${locale}/04.png`}
               alt={t('not_alt')}
               width={1200}
               height={800}
@@ -216,7 +197,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </p>
           <div className="reveal relative mx-auto max-w-sm sm:max-w-md">
             <Image
-              src="/images/epp/epp-guarantee.png"
+              src={`/images/epp/${locale}/03.png`}
               alt={t('guarantee_alt')}
               width={900}
               height={1100}
@@ -249,7 +230,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </h2>
           <div className="reveal relative mx-auto max-w-lg sm:max-w-xl">
             <Image
-              src="/images/epp/epp-cycle.png"
+              src={`/images/epp/${locale}/05.png`}
               alt={t('cycle_alt')}
               width={1100}
               height={1100}
@@ -294,7 +275,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
           </p>
           <div className="reveal relative mx-auto max-w-3xl">
             <Image
-              src="/images/epp/epp-dashboard.png"
+              src={`/images/epp/${locale}/06.png`}
               alt={t('dashboard_alt')}
               width={1200}
               height={900}
