@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "description": "Mission Registry — tracking delle mission del progetto fabiocherici.com",
+    "version": "1.0.0",
+    "created": "2026-05-26",
+    "updated": "2026-05-26",
+    "author": "Claude (Oracode) for Fabio Cherici",
+    "purpose": "Registro SSOT delle mission. Ogni modifica strutturale passa da qui.",
+    "project": "fabiocherici.com",
+    "level": 3,
+    "organ_type": "LSO mono-organo"
+  },
+  "counter": 1,
+  "missions": [
+    {
+      "id": "M-001",
+      "title": "Bootstrap SSOT Registry — Registrazione SSOT esistenti",
+      "priority": "P1",
+      "status": "suspended",
+      "date_open": "2026-05-26",
+      "date_close": null,
+      "suspended_at": "2026-05-26",
+      "suspend_reason": "Blocked by ORACODE-DOC M-ORACODE-001 — Audit Oracode v2 chiusura accoppiamenti FlorenceEGI per vincolo spin-off",
+      "file": "docs/missions/M-001_SSOT_BOOTSTRAP.md",
+      "ssot_added": [
+        "animation-presets",
+        "scene3d-ids",
+        "i18n-config",
+        "design-tokens",
+        "fonts",
+        "seo",
+        "i18n-messages"
+      ]
+    }
+  ]
+}

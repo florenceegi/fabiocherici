@@ -1,0 +1,150 @@
+{
+  "_meta": {
+    "description": "SSOT Registry — mapping documenti SSOT e file codebase per fabiocherici.com",
+    "version": "1.0.0",
+    "created": "2026-05-26",
+    "updated": "2026-05-26",
+    "author": "Claude (Oracode) for Fabio Cherici",
+    "purpose": "Layer 0 MIELINA: ogni entry mappa un documento SSOT ai file sorgente che descrive.",
+    "project": "fabiocherici.com",
+    "level": 3,
+    "organ_type": "LSO mono-organo"
+  },
+  "check_frequencies": {
+    "on_commit": "Dopo ogni commit che tocca file watchati (Layer 1 — Riflesso)",
+    "daily": "Verifica quotidiana via cron (Layer 3 — Autonomo)",
+    "on_demand": "Solo su richiesta esplicita"
+  },
+  "documents": [
+    {
+      "ssot_id": "animation-presets",
+      "path": "FABIOCHERICI-DOC/docs/ssot/animation-presets.md",
+      "title": "Animation Presets — 6 preset GSAP",
+      "organ": "fabiocherici.com",
+      "doc_type": "config-ssot",
+      "priority": "high",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "lib/animation.ts",
+          "lib/animation-context.tsx",
+          "components/ui/ScrollReveal.tsx"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "scene3d-ids",
+      "path": "FABIOCHERICI-DOC/docs/ssot/scene3d-ids.md",
+      "title": "3D Scene IDs — 9 scene Three.js",
+      "organ": "fabiocherici.com",
+      "doc_type": "config-ssot",
+      "priority": "medium",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "lib/scene3d.ts",
+          "lib/scene-context.tsx",
+          "components/three/Scene3DSwitch.tsx",
+          "components/three/scenes/*.tsx"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "i18n-config",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-config.md",
+      "title": "i18n Config — 7 lingue + locale metadata",
+      "organ": "fabiocherici.com",
+      "doc_type": "config-ssot",
+      "priority": "critical",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "lib/i18n/config.ts",
+          "lib/i18n/routing.ts",
+          "lib/i18n/request.ts"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "design-tokens",
+      "path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "title": "Design Tokens — Palette grafite+bronzo + temi",
+      "organ": "fabiocherici.com",
+      "doc_type": "design-ssot",
+      "priority": "high",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "app/globals.css",
+          "lib/theme-context.tsx"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "fonts",
+      "path": "FABIOCHERICI-DOC/docs/ssot/fonts.md",
+      "title": "Fonts — Display + Body config centralizzato",
+      "organ": "fabiocherici.com",
+      "doc_type": "config-ssot",
+      "priority": "medium",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "lib/fonts.ts",
+          "app/layout.tsx",
+          "app/[locale]/layout.tsx"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "title": "SEO — Canonical URL + hreflang alternates",
+      "organ": "fabiocherici.com",
+      "doc_type": "config-ssot",
+      "priority": "high",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "lib/seo.ts",
+          "app/[locale]/**/page.tsx",
+          "app/[locale]/layout.tsx"
+        ]
+      },
+      "registered_by": "M-001"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "title": "i18n Messages — Stringhe localizzate 7 lingue",
+      "organ": "fabiocherici.com",
+      "doc_type": "content-ssot",
+      "priority": "critical",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": ["fabiocherici.com"],
+        "paths": [
+          "messages/it.json",
+          "messages/en.json",
+          "messages/de.json",
+          "messages/es.json",
+          "messages/fr.json",
+          "messages/pt.json",
+          "messages/zh.json"
+        ]
+      },
+      "registered_by": "M-001"
+    }
+  ]
+}
