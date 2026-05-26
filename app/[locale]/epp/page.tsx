@@ -107,11 +107,11 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
               <span className="block text-2xl sm:text-3xl font-bold text-[var(--accent)]">{t('split_epp_pct')}</span>
               <span className="block text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--accent)]">{t('split_epp')}</span>
             </span>
-            <span className="absolute top-[8%] right-[32%]">
+            <span className="absolute top-[2%] right-[38%]">
               <span className="block text-lg sm:text-xl font-bold text-[var(--text-muted)]">{t('split_platform_pct')}</span>
               <span className="block text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">{t('split_platform')}</span>
             </span>
-            <span className="absolute top-[14%] right-[24%]">
+            <span className="absolute top-[2%] right-[18%]">
               <span className="block text-sm font-bold text-[var(--text-muted)]">{t('split_frangette_pct')}</span>
               <span className="block text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">{t('split_frangette')}</span>
             </span>
