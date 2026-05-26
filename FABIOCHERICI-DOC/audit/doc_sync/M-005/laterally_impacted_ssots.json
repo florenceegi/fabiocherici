@@ -1,0 +1,7 @@
+{
+  "mission_id": "M-005",
+  "computed_at": "2026-05-26T00:00:00Z",
+  "rag_mode": "skipped_no_schema",
+  "reason": "LSO mono-organo fabiocherici.com — no RAG_SCHEMA configured in instance",
+  "impacted": []
+}

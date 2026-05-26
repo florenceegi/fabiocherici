@@ -1,3 +1,6 @@
 {"timestamp":"2026-05-26T13:57:14Z","event":"mission_resumed","mission_id":"M-001","prev_status":"suspended","unblocked_by":"ORACODE-DOC M-ORACODE-001 closed"}
 {"timestamp":"2026-05-26T14:18:00Z","event":"mission_closed","mission_id":"M-001","tipo_missione":"bootstrap","outcome":"success","commits":["cfb0885","fa4a76f"],"ssots_verified":7,"note":"FASE 6 inizialmente incompleta (MOA-5). Retrofit eseguito 14:26Z."}
 {"timestamp":"2026-05-26T14:26:34Z","event":"retrofit_phase_6","mission_id":"M-001","steps_added":["6c_stats","6e_retrospective"],"trigger":"CEO_finding_MOA-5","drift_severity":"minor","loaded_unused_count":1}
+{"timestamp":"2026-05-26T15:00:00Z","event":"mission_opened","mission_id":"M-005","tipo_missione":"fix","trigger_matrix":2,"found_by":"CEO screenshot donut chart label overlap"}
+{"timestamp":"2026-05-26T19:00:00Z","event":"mission_closed","mission_id":"M-005","outcome":"success","commit":"1f53de8","files_modified":2,"note":"State machine completa (executing→auditing→closed) via bin/mission v0.2. FASE 6 retrofit eseguito post-closure (stats+retrospective via Oracode tooling generico D5/D7)."}
+{"timestamp":"2026-05-26T19:14:36Z","event":"retrofit_phase_6","mission_id":"M-005","steps_added":["6c_stats","6e_retrospective"],"trigger":"protocol_compliance","drift_severity":"none","loaded_unused_count":0}

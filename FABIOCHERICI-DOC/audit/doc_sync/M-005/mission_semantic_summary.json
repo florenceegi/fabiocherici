@@ -1,0 +1,56 @@
+{
+  "mission_id": "M-005",
+  "commit": "1f53de86934e73ab0ad92e2b2b247c4e51f2c8dc",
+  "analyzed_at": "2026-05-26T00:00:00Z",
+  "scope": "CSS layout fix — donut chart label repositioning",
+  "files_analyzed": [
+    {
+      "path": "app/[locale]/epp/page.tsx",
+      "change_type": "modified",
+      "lines_added": 2,
+      "lines_removed": 2,
+      "semantic_changes": {
+        "new_functions": [],
+        "removed_functions": [],
+        "modified_behaviors": [],
+        "css_only_changes": [
+          {
+            "element": "span.absolute (PIATTAFORMA label)",
+            "old_classes": "top-[8%] right-[32%]",
+            "new_classes": "top-[2%] right-[38%]",
+            "purpose": "non-overlap with FRANGETTE label"
+          },
+          {
+            "element": "span.absolute (FRANGETTE label)",
+            "old_classes": "top-[14%] right-[24%]",
+            "new_classes": "top-[2%] right-[18%]",
+            "purpose": "horizontal stack with PIATTAFORMA, gap 20% right"
+          }
+        ],
+        "metadata_changes": [],
+        "i18n_changes": [],
+        "narrative_changes": []
+      }
+    },
+    {
+      "path": "tests/m-005/test_split_chart_svg_inline.sh",
+      "change_type": "created",
+      "lines_added": 18,
+      "lines_removed": 0,
+      "semantic_changes": {
+        "purpose": "M-005 red shell-based test: verifica assenza coord vecchie nel file epp/page.tsx"
+      }
+    }
+  ],
+  "semantic_classification": "css_layout_only",
+  "impacts": {
+    "seo_metadata": false,
+    "canonical_urls": false,
+    "hreflang_alternates": false,
+    "i18n_strings": false,
+    "design_tokens": false,
+    "animations": false,
+    "scene3d": false,
+    "fonts": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "mission_id": "M-005",
+  "computed_at": "2026-05-26T00:00:00Z",
+  "method": "deterministic_glob_match",
+  "files_scanned": [
+    "app/[locale]/epp/page.tsx",
+    "tests/m-005/test_split_chart_svg_inline.sh"
+  ],
+  "impacted": [
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "matched_file": "app/[locale]/epp/page.tsx",
+      "matched_pattern": "app/[locale]/**/page.tsx",
+      "impact_type": "pattern_match"
+    }
+  ],
+  "not_impacted": [
+    "animation-presets",
+    "scene3d-ids",
+    "i18n-config",
+    "design-tokens",
+    "fonts",
+    "i18n-messages"
+  ],
+  "uncovered_files": [
+    {
+      "path": "tests/m-005/test_split_chart_svg_inline.sh",
+      "reason": "no SSOT watches tests/** in registry",
+      "severity": "informational"
+    }
+  ]
+}

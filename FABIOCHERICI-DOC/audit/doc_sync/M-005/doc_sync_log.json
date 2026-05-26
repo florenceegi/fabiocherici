@@ -1,0 +1,48 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "mission_id": "M-005",
+  "instance_root": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC",
+  "commit": "1f53de86934e73ab0ad92e2b2b247c4e51f2c8dc",
+  "timestamp_start": "2026-05-26T00:00:00Z",
+  "timestamp_end": "2026-05-26T00:00:05Z",
+  "duration_seconds": 5,
+  "ssots_impacted_direct": 1,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 0,
+  "ssots_modified_substitutive": 0,
+  "ssots_no_change": 1,
+  "rag_chunks_reindexed": 0,
+  "rag_mode": "skipped_no_schema",
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": [
+    "step_1_semantic_analysis",
+    "step_2_direct_impact",
+    "step_3_lateral_discovery_skipped_no_schema",
+    "step_4_discrimination_and_actions",
+    "step_5_rag_reindex_skipped_no_schema",
+    "step_5b_registry_metadata_update",
+    "step_6_audit_trail"
+  ],
+  "ssot_details": [
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "justification": "Diff puramente CSS layout (Tailwind top/right percentuali su 2 span decorativi del donut chart). Nessun impatto su canonical, hreflang, metadata, generateMetadata o locales descritte dallo SSOT."
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [
+    {
+      "path": "tests/m-005/test_split_chart_svg_inline.sh",
+      "reason": "no SSOT watches tests/** in registry",
+      "severity": "informational"
+    }
+  ],
+  "audit_path": "audit/doc_sync/M-005/"
+}

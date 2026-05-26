@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-005",
+  "rag_mode": "skipped_no_schema",
+  "reason": "Instance fabiocherici.com (LSO mono-organo) has no RAG_SCHEMA configured. Step 3 (lateral discovery) and Step 5 (re-indexing) skipped per spec v2.2.0.",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "files_to_reindex": [],
+  "sanity_checks": []
+}

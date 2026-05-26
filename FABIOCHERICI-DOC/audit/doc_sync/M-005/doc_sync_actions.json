@@ -1,0 +1,27 @@
+{
+  "mission_id": "M-005",
+  "version": "2.2.0",
+  "timestamp": "2026-05-26T00:00:00Z",
+  "actions": [
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "ssot_content_hash": "27bd88c90b5cbc33a60ecf62b16354239776beea56ab2d1fe47ea85d5dfd1445",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "Il diff M-005 modifica esclusivamente classi Tailwind di posizionamento assoluto (top-[X%] right-[Y%]) su due <span> decorativi del donut chart EPP. Lo SSOT seo.md descrive: canonical URL builder (lib/seo.ts), hreflang alternates per 7 locali, metadata config base. NESSUNA di queste aree e impattata: nessuna modifica a metadata export, a generateMetadata, a canonical URLs, ad alternates hreflang, alle locales. Il cambio e puramente visivo (CSS layout label non-overlapping) e non altera il contratto SEO del file. Discriminazione: testo SSOT semanticamente immutato rispetto al codice corrente.",
+      "resolution_method": "automatic_no_change",
+      "timestamp": "2026-05-26T00:00:00Z"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "additive": 0,
+    "substitutive": 0,
+    "no_change": 1,
+    "flagged_for_rewrite": 0,
+    "failed": 0
+  }
+}

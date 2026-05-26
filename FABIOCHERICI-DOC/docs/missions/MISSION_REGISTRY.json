@@ -10,8 +10,58 @@
     "level": 3,
     "organ_type": "LSO mono-organo"
   },
-  "counter": 1,
+  "counter": 2,
   "missions": [
+    {
+      "id": "M-005",
+      "title": "Fix EPP split chart — label PIATTAFORMA + FRANGETTE non-overlapping",
+      "tipo_missione": "fix",
+      "organi_coinvolti": [
+        "fabiocherici.com"
+      ],
+      "priority": "P2",
+      "trigger_matrix": 2,
+      "status": "closed",
+      "date_open": "2026-05-26",
+      "date_close": "2026-05-26",
+      "file": "docs/missions/M-005_FIX_SPLIT_CHART_LABEL.md",
+      "found_by": "CEO screenshot 2026-05-26",
+      "test_file": "tests/m-005/test_split_chart_svg_inline.sh",
+      "commit_hash": "1f53de8",
+      "stats": {
+        "total_commits": 1,
+        "lines_added": 20,
+        "lines_deleted": 2,
+        "lines_net": 18,
+        "lines_touched": 22,
+        "files_touched": 2,
+        "weighted_commits": 1.5,
+        "cognitive_load": 1.82,
+        "productivity_index": 11.99,
+        "tags_breakdown": {
+          "FIX": 1
+        },
+        "commit_hashes": [
+          "1f53de86934e73ab0ad92e2b2b247c4e51f2c8dc"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-26",
+            "commits": 1,
+            "lines_added": 20,
+            "lines_deleted": 2,
+            "files_touched": 2,
+            "tags": {
+              "FIX": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-05-26"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-05-26T19:14:36Z"
+    },
     {
       "id": "M-001",
       "title": "Bootstrap SSOT Registry — Registrazione SSOT esistenti",
@@ -41,19 +91,21 @@
         "i18n-messages"
       ],
       "stats": {
-        "total_commits": 2,
+        "total_commits": 4,
         "lines_added": 799,
         "lines_deleted": 10,
         "lines_net": 789,
         "lines_touched": 809,
         "files_touched": 11,
-        "weighted_commits": 3.2,
-        "cognitive_load": 2.71,
-        "productivity_index": 36.78,
+        "weighted_commits": 6.4,
+        "cognitive_load": 2.8,
+        "productivity_index": 45.96,
         "tags_breakdown": {
-          "ARCH": 2
+          "ARCH": 4
         },
         "commit_hashes": [
+          "2612862d670c0f9595f61be1fcdde673cfadf9c4",
+          "8ffbaa74f078df810ef4142f81531b26fe0db2a6",
           "cfb088541e3b3525708f34a89917fdbe1ba808bd",
           "fa4a76f5822a0cddea36a466b4eb1e83c77c6106"
         ],
@@ -61,12 +113,12 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-05-26",
-            "commits": 2,
+            "commits": 4,
             "lines_added": 799,
             "lines_deleted": 10,
             "files_touched": 11,
             "tags": {
-              "ARCH": 2
+              "ARCH": 4
             }
           }
         ],
