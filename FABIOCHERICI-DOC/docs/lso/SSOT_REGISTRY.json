@@ -25,14 +25,21 @@
       "priority": "high",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "lib/animation.ts",
           "lib/animation-context.tsx",
           "components/ui/ScrollReveal.tsx"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "scene3d-ids",
@@ -43,7 +50,9 @@
       "priority": "medium",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "lib/scene3d.ts",
           "lib/scene-context.tsx",
@@ -51,7 +60,12 @@
           "components/three/scenes/*.tsx"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "i18n-config",
@@ -62,14 +76,21 @@
       "priority": "critical",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "lib/i18n/config.ts",
           "lib/i18n/routing.ts",
           "lib/i18n/request.ts"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "design-tokens",
@@ -80,13 +101,20 @@
       "priority": "high",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "app/globals.css",
           "lib/theme-context.tsx"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "fonts",
@@ -97,14 +125,21 @@
       "priority": "medium",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "lib/fonts.ts",
           "app/layout.tsx",
           "app/[locale]/layout.tsx"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "seo",
@@ -115,14 +150,21 @@
       "priority": "high",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "lib/seo.ts",
           "app/[locale]/**/page.tsx",
           "app/[locale]/layout.tsx"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     },
     {
       "ssot_id": "i18n-messages",
@@ -133,7 +175,9 @@
       "priority": "critical",
       "check_frequency": "on_commit",
       "watches": {
-        "repos": ["fabiocherici.com"],
+        "repos": [
+          "fabiocherici.com"
+        ],
         "paths": [
           "messages/it.json",
           "messages/en.json",
@@ -144,7 +188,12 @@
           "messages/zh.json"
         ]
       },
-      "registered_by": "M-001"
+      "registered_by": "M-001",
+      "last_verified": "2026-05-26",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-001",
+      "last_drift_score": 0,
+      "verification_mode": "registry_only"
     }
   ]
 }

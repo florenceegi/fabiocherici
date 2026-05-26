@@ -1,0 +1,29 @@
+{
+  "mission_id": "M-001",
+  "mission_type": "bootstrap",
+  "commit_sha": "cfb088541e3b3525708f34a89917fdbe1ba808bd",
+  "analysis_timestamp": "2026-05-26T13:57:14Z",
+  "summary": "Bootstrap LSO mono-organo per fabiocherici.com. Installazione paradigma Oracode (CLAUDE_ORACODE_CORE.md root) + scaffold FABIOCHERICI-DOC come istanza nested. Identificati e documentati 7 SSOT esistenti nel codice. Creazione SSOT_REGISTRY.json + 7 SSOT stub doc + MISSION_REGISTRY + mission doc M-001.",
+  "intent": "Stabilire Layer 0 MIELINA: mapping tra documenti SSOT e file sorgente. Nessuna modifica alla codebase produttiva — solo creazione di artefatti documentali e di registry.",
+  "scope": "documentation_only",
+  "new_functions": [],
+  "removed_functions": [],
+  "modified_behaviors": [],
+  "new_narrative_content": [
+    {"type": "paradigm_boot", "path": "CLAUDE_ORACODE_CORE.md", "description": "Documento root di boot paradigma Oracode (368 righe). Definisce regole, hook, standard validi per istanza fabiocherici.com."},
+    {"type": "ssot_registry", "path": "FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json", "description": "Registry SSOT con 7 entries: animation-presets, scene3d-ids, i18n-config, design-tokens, fonts, seo, i18n-messages."},
+    {"type": "mission_registry", "path": "FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json", "description": "Mission registry istanza con M-001 registrata (stato suspended)."},
+    {"type": "mission_doc", "path": "FABIOCHERICI-DOC/docs/missions/M-001_SSOT_BOOTSTRAP.md", "description": "Documento mission M-001 con scope, motivazione sospensione, dipendenza da M-ORACODE-001."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/animation-presets.md", "description": "Stub SSOT che descrive i 6 preset GSAP definiti in lib/animation.ts."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/scene3d-ids.md", "description": "Stub SSOT che descrive i 9 ID scene 3D definiti in lib/scene3d.ts."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/i18n-config.md", "description": "Stub SSOT che descrive config i18n con 7 lingue (lib/i18n/config.ts)."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md", "description": "Stub SSOT che descrive palette grafite+bronzo + tema (app/globals.css + lib/theme-context.tsx)."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/fonts.md", "description": "Stub SSOT che descrive config font display+body (lib/fonts.ts)."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/seo.md", "description": "Stub SSOT che descrive helper SEO canonical+hreflang (lib/seo.ts)."},
+    {"type": "ssot_stub", "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md", "description": "Stub SSOT che descrive struttura messaggi localizzati per 7 lingue (messages/*.json)."}
+  ],
+  "modified_narrative_content": [],
+  "key_concepts": ["Oracode LSO mono-organo", "SSOT Layer 0 MIELINA", "Bootstrap registry", "Pattern istanza nested", "Animation presets GSAP", "Scene3D Three.js", "i18n next-intl 7 lingue", "Design tokens Tailwind", "Fonts display+body", "SEO canonical hreflang", "Messages localization"],
+  "rag_concepts_extractable": false,
+  "rag_skip_reason": "no_schema_configured"
+}

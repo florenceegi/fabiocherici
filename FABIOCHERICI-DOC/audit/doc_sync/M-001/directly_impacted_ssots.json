@@ -1,0 +1,18 @@
+{
+  "mission_id": "M-001",
+  "step": "step_2_direct_impact",
+  "timestamp": "2026-05-26T13:57:14Z",
+  "impact_method": "registry_path_match",
+  "rationale": "Mission bootstrap: i 7 file creati in docs/ssot/*.md sono LE entries del registry stesso (matchano `path` di ogni document). Nessun source file della codebase è stato modificato in M-001 — i 7 stub SSOT sono i SSOT registrati ex-novo.",
+  "directly_impacted": [
+    {"ssot_id": "animation-presets", "path": "FABIOCHERICI-DOC/docs/ssot/animation-presets.md", "impact_type": "ssot_created", "registry_index": 0, "watched_files_modified": []},
+    {"ssot_id": "scene3d-ids", "path": "FABIOCHERICI-DOC/docs/ssot/scene3d-ids.md", "impact_type": "ssot_created", "registry_index": 1, "watched_files_modified": []},
+    {"ssot_id": "i18n-config", "path": "FABIOCHERICI-DOC/docs/ssot/i18n-config.md", "impact_type": "ssot_created", "registry_index": 2, "watched_files_modified": []},
+    {"ssot_id": "design-tokens", "path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md", "impact_type": "ssot_created", "registry_index": 3, "watched_files_modified": []},
+    {"ssot_id": "fonts", "path": "FABIOCHERICI-DOC/docs/ssot/fonts.md", "impact_type": "ssot_created", "registry_index": 4, "watched_files_modified": []},
+    {"ssot_id": "seo", "path": "FABIOCHERICI-DOC/docs/ssot/seo.md", "impact_type": "ssot_created", "registry_index": 5, "watched_files_modified": []},
+    {"ssot_id": "i18n-messages", "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md", "impact_type": "ssot_created", "registry_index": 6, "watched_files_modified": []}
+  ],
+  "uncovered_new_files": [],
+  "count": 7
+}

@@ -1,0 +1,102 @@
+{
+  "mission_id": "M-001",
+  "step": "step_4_actions",
+  "timestamp": "2026-05-26T13:57:14Z",
+  "rag_mode": "skipped_no_schema",
+  "actions": [
+    {
+      "ssot_id": "animation-presets",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/animation-presets.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "17446fd5c5fc1742314d69acb3a360bd09943688fe5bb5dce9ea4a6a8574f09b",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "scene3d-ids",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/scene3d-ids.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "bd1d1720625c07b787e7fbea832f88aa5d28f0a4dd907da58d8bb93b30236a8c",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "i18n-config",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-config.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "5b65f91a4a0e8ea16ad6d88454ada8ac1923336e19294c659602010561eee73d",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "design-tokens",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "5bab9269e0019d7f54c8feefc15527fe31ea97f0aeccff17c9cf7bf02c4065e2",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "fonts",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/fonts.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "d6c59718739382431221bd519bd4de9dbad3b2d0ab180e100e8b707e2ceaee96",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "27bd88c90b5cbc33a60ecf62b16354239776beea56ab2d1fe47ea85d5dfd1445",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash": "79d0a1bb0df8338725ba167788900181439dba67e764cd1a6cbdd8a4e3eeec8a",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "SSOT creato ex-novo dalla mission M-001 (commit cfb0885). Contenuto stub già scritto e committato. Nessuna patch da applicare — additive completato all'atto di creazione.",
+      "resolution_method": "ssot_created_in_mission",
+      "timestamp": "2026-05-26T13:57:14Z"
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "additive": 7,
+    "substitutive": 0,
+    "no_change": 0,
+    "applied": 7,
+    "failed": 0,
+    "awaiting_approval": 0,
+    "flagged_for_rewrite": 0
+  }
+}
