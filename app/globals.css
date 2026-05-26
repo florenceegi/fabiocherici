@@ -284,6 +284,7 @@ body {
 .home-circle {
   --circle-size: min(85vw, 640px);
   --circle-r: calc(var(--circle-size) * 0.425);
+  overflow-x: clip;
 }
 
 .circle-stage {
