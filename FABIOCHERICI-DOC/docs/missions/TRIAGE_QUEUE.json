@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "description": "Triage Queue — mission proposte per FABIOCHERICI-DOC, in attesa apertura formale",
+    "version": "1.0.0",
+    "created": "2026-05-26",
+    "updated": "2026-05-26",
+    "author": "Claude (Oracode) for Fabio Cherici",
+    "purpose": "Backlog mission emergenti da chiusura M-001. CEO triage e approvazione."
+  },
+  "queue": [
+    {
+      "proposed_id": "M-FABIOCHERICI-002",
+      "title": "RAG backend per stack static export Next.js",
+      "tipo_missione": "infrastructure",
+      "organi_coinvolti": ["fabiocherici.com"],
+      "priority": "P2",
+      "rationale": "M-001 ha registrato 7 SSOT ma il sistema RAG resta offline (modalità LSO ridotto §2.6). Per attivare Step 3 + Step 5 di doc-sync-v2 serve runtime RAG. Opzioni stack: Lambda + DynamoDB con vector / Cloudflare Workers + Vectorize / Vercel Edge Functions + DB esterno / Postgres+pgvector self-hosted. Decisione CEO + costi.",
+      "blocked_by": ["M-ORACODE-002 (pattern AI Helping conversazionale)"],
+      "proposed_at": "2026-05-26",
+      "proposed_by": "M-001 mission report"
+    }
+  ]
+}
