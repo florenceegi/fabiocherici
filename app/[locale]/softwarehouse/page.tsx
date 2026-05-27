@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 import ComparisonTable from '@/components/infographics/ComparisonTable';
+import EvidenceBox from '@/components/infographics/EvidenceBox';
 import FormulaBlock from '@/components/infographics/FormulaBlock';
 import IconGrid from '@/components/infographics/IconGrid';
 import FlowDiagram from '@/components/infographics/FlowDiagram';
@@ -216,20 +217,120 @@ export default async function SoftwarehousePage({
         </div>
       </section>
 
-      {/* ── 2. Pain — ComparisonTable ── */}
+      {/* ── 2. Pain — Data + Evidence + ComparisonTable ── */}
       <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
             {t('pain_label')}
           </h2>
+
           <div className="space-y-6 mb-12">
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] italic leading-relaxed">
               {t('pain_p1')}
             </p>
             <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('pain_p2')}
+              {t('pain_data_intro')}
             </p>
+            <ul className="reveal space-y-3 list-none">
+              {([
+                { key: 'teamsystem', url: 'https://it.trustpilot.com/review/teamsystem.com' },
+                { key: 'dylog', url: 'https://it.trustpilot.com/review/dylog.it' },
+                { key: 'sistemi', url: 'https://it.trustpilot.com/review/www.sistemi.com' },
+                { key: 'fattureincloud', url: 'https://it.trustpilot.com/review/fattureincloud.it' },
+              ] as const).map((c) => (
+                <li
+                  key={c.key}
+                  className="flex gap-3 text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed"
+                >
+                  <span aria-hidden="true" className="text-[var(--accent)] shrink-0">—</span>
+                  <span>
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4"
+                    >
+                      {t(`pain_data_${c.key}_label`)}
+                      <span className="sr-only">, opens in new tab</span>
+                    </a>
+                    {' — '}
+                    {t(`pain_data_${c.key}_summary`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <div className="my-12">
+            <EvidenceBox
+              ariaLabel={t('evidence_label')}
+              label={t('evidence_label')}
+              title={t('evidence_title')}
+              reviews={[
+                {
+                  stars: 1,
+                  date: t('evidence_q1_date'),
+                  author: t('evidence_q1_author'),
+                  company: t('evidence_q1_company'),
+                  quote: t('evidence_q1_quote'),
+                  sourceUrl: 'https://it.trustpilot.com/review/teamsystem.com',
+                  languageCaption: t('evidence_caption_in_italian'),
+                  reply: {
+                    label: t('evidence_reply_label_teamsystem'),
+                    text: t('evidence_q1_reply'),
+                    date: t('evidence_q1_reply_date'),
+                  },
+                },
+                {
+                  stars: 1,
+                  date: t('evidence_q2_date'),
+                  author: t('evidence_q2_author'),
+                  company: t('evidence_q2_company'),
+                  quote: t('evidence_q2_quote'),
+                  sourceUrl: 'https://it.trustpilot.com/review/teamsystem.com',
+                  languageCaption: t('evidence_caption_in_italian'),
+                  reply: {
+                    label: t('evidence_reply_label_teamsystem'),
+                    text: t('evidence_q2_reply'),
+                    date: t('evidence_q2_reply_date'),
+                  },
+                },
+                {
+                  stars: 1,
+                  date: t('evidence_q3_date'),
+                  author: t('evidence_q3_author'),
+                  company: t('evidence_q3_company'),
+                  quote: t('evidence_q3_quote'),
+                  sourceUrl: 'https://it.trustpilot.com/review/dylog.it',
+                  languageCaption: t('evidence_caption_in_italian'),
+                  noReplyNote: t('evidence_no_reply_dylog'),
+                },
+                {
+                  stars: 1,
+                  date: t('evidence_q4_date'),
+                  author: t('evidence_q4_author'),
+                  company: t('evidence_q4_company'),
+                  quote: t('evidence_q4_quote'),
+                  sourceUrl: 'https://it.trustpilot.com/review/dylog.it',
+                  languageCaption: t('evidence_caption_in_italian'),
+                  noReplyNote: t('evidence_no_reply_dylog'),
+                },
+              ]}
+              ctaIntro={t('evidence_cta_intro')}
+              ctaTotal={t('evidence_cta_total')}
+              ctaLinks={[
+                { label: t('pain_data_teamsystem_label'), url: 'https://it.trustpilot.com/review/teamsystem.com' },
+                { label: t('pain_data_dylog_label'), url: 'https://it.trustpilot.com/review/dylog.it' },
+                { label: t('pain_data_sistemi_label'), url: 'https://it.trustpilot.com/review/www.sistemi.com' },
+                { label: t('pain_data_fattureincloud_label'), url: 'https://it.trustpilot.com/review/fattureincloud.it' },
+              ]}
+            />
+          </div>
+
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
+            {t('pain_p2')}
+          </p>
+
           <ComparisonTable
             ariaLabel={t('pain_label')}
             headPromise={t('pain_table_head_promise')}
