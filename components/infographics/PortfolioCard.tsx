@@ -13,7 +13,7 @@ export interface PortfolioCardProps {
   /** Nome progetto (es. "EGI / ArtFlorenceEGI") */
   name: string;
   /** Descrizione 1 riga concreta */
-  description: string;
+  description: ReactNode;
   /** LOC formattato (es. "503.909 LOC") */
   loc?: string;
   /** Ore audit (es. "16h") */

@@ -10,6 +10,7 @@
  */
 
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -111,6 +112,20 @@ export default async function SoftwarehousePage({
   const t = await getTranslations('softwarehouse');
   const tm = await getTranslations({ locale, namespace: 'meta' });
 
+  const rich = {
+    b: (chunks: ReactNode) => (
+      <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>
+    ),
+    oralink: (chunks: ReactNode) => (
+      <Link
+        href={`/${locale}/oracode`}
+        className="text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-2 transition-colors"
+      >
+        {chunks}
+      </Link>
+    ),
+  };
+
   const pageSchema = buildPageSchema({
     locale,
     path: '/softwarehouse',
@@ -151,15 +166,18 @@ export default async function SoftwarehousePage({
 
   const formulaTerms = [
     { label: t('how_formula_term_1'), emphasis: 'primary' as const },
-    { label: t('how_formula_term_2'), emphasis: 'accent' as const },
+    { label: t('how_formula_term_2'), emphasis: 'accent' as const, href: `/${locale}/oracode` },
     { label: t('how_formula_term_3'), emphasis: 'accent' as const },
   ];
 
-  const iconGridItems = [1, 2, 3, 4, 5, 6, 7].map((n, i) => ({
-    icon: RECEIVE_ICONS[i],
-    title: t(`receive_lever_${n}_title`),
-    description: t(`receive_lever_${n}_desc`),
-  }));
+  const iconGridItems = [1, 2, 3, 4, 5, 6, 7].map((n, i) => {
+    const key = `receive_lever_${n}_desc` as const;
+    return {
+      icon: RECEIVE_ICONS[i],
+      title: t(`receive_lever_${n}_title`),
+      description: n === 5 ? t.rich(key, rich) : t(key),
+    };
+  });
 
   const pricingTiers = [1, 2, 3, 4, 5].map((n) => ({
     name: t(`pricing_tier_${n}_name`),
@@ -365,13 +383,9 @@ export default async function SoftwarehousePage({
               <p
                 key={n}
                 className="reveal text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: t(`how_term_${n}_explanation`).replace(
-                    /\*\*(.+?)\*\*/g,
-                    '<strong class="text-[var(--text-primary)] font-semibold">$1</strong>',
-                  ),
-                }}
-              />
+              >
+                {t.rich(`how_term_${n}_explanation`, rich)}
+              </p>
             ))}
           </div>
         </div>
@@ -456,15 +470,18 @@ export default async function SoftwarehousePage({
               },
               {
                 label: t('portfolio_group_infra'),
-                children: PORTFOLIO_INFRA.map((p) => (
-                  <PortfolioCard
-                    key={p.key}
-                    name={t(`portfolio_${p.key}_name`)}
-                    description={t(`portfolio_${p.key}_desc`)}
-                    loc={'loc' in p ? p.loc : undefined}
-                    liveUrl={'live' in p ? p.live : undefined}
-                  />
-                )),
+                children: PORTFOLIO_INFRA.map((p) => {
+                  const descKey = `portfolio_${p.key}_desc` as const;
+                  return (
+                    <PortfolioCard
+                      key={p.key}
+                      name={t(`portfolio_${p.key}_name`)}
+                      description={p.key === 'infra_6' ? t.rich(descKey, rich) : t(descKey)}
+                      loc={'loc' in p ? p.loc : undefined}
+                      liveUrl={'live' in p ? p.live : undefined}
+                    />
+                  );
+                }),
               },
               {
                 label: t('portfolio_group_sites'),

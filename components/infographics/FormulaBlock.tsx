@@ -12,6 +12,8 @@ import type { ReactNode } from 'react';
 export type FormulaTerm = {
   label: string;
   emphasis?: 'accent' | 'primary' | 'muted';
+  /** Optional href: if set, the term renders as a link */
+  href?: string;
 };
 
 export interface FormulaBlockProps {
@@ -53,26 +55,35 @@ export default function FormulaBlock({
         aria-label={ariaLabel || terms.map((t) => t.label).join(' ')}
         className="flex flex-col items-center justify-center gap-2 py-8 text-center font-[family-name:var(--font-display)] sm:flex-row sm:flex-wrap sm:gap-4"
       >
-        {terms.map((term, i) => (
-          <span key={`t-${i}`} className="contents">
-            <span
-              className={
-                'text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight ' +
-                emphasisClass(term.emphasis)
-              }
-            >
-              {term.label}
+        {terms.map((term, i) => {
+          const labelClass =
+            'text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight ' +
+            emphasisClass(term.emphasis);
+          return (
+            <span key={`t-${i}`} className="contents">
+              {term.href ? (
+                <a
+                  href={term.href}
+                  className={
+                    labelClass + ' underline underline-offset-8 decoration-2 hover:opacity-80 transition-opacity'
+                  }
+                >
+                  {term.label}
+                </a>
+              ) : (
+                <span className={labelClass}>{term.label}</span>
+              )}
+              {i < operators.length && (
+                <span
+                  aria-hidden="true"
+                  className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--text-muted)]"
+                >
+                  {operators[i]}
+                </span>
+              )}
             </span>
-            {i < operators.length && (
-              <span
-                aria-hidden="true"
-                className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--text-muted)]"
-              >
-                {operators[i]}
-              </span>
-            )}
-          </span>
-        ))}
+          );
+        })}
       </div>
       {details && <div className="mt-8 space-y-4">{details}</div>}
     </div>

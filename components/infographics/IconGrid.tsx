@@ -12,7 +12,7 @@ import type { ReactNode } from 'react';
 export type IconGridItem = {
   icon: ReactNode;
   title: string;
-  description: string;
+  description: ReactNode;
 };
 
 export interface IconGridProps {
