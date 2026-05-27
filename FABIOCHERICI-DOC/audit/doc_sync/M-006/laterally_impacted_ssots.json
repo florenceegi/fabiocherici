@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "computed_at": "2026-05-27T00:00:00Z",
+  "rag_mode": "skipped_no_schema",
+  "reason": "FABIOCHERICI-DOC instance has no RAG schema configured — lateral discovery via vector search disabled per Step 3 spec (best-effort, non-blocking)",
+  "lateral_impacted": []
+}

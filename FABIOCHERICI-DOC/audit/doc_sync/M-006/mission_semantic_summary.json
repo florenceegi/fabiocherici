@@ -1,0 +1,47 @@
+{
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "analyzed_at": "2026-05-27T00:00:00Z",
+  "commits_in_scope": [
+    "1a07e56 [FEAT] M-006 — EPP immagini localizzate 7 lingue (42 PNG)",
+    "3730acb [FIX] EPP — rimossi overlay HTML span sezioni 3-7 (testo dentro immagine)",
+    "84c02e9 [CLEANUP] M-006 follow-up — rimossi 6 PNG legacy globali sostituiti da set localizzato"
+  ],
+  "files_modified": {
+    "modified": ["app/[locale]/epp/page.tsx"],
+    "created": [
+      "public/images/epp/{it,en,de,es,fr,pt,zh}/0[1-6].png (42 files)",
+      "public/images/epp/{it,en,de,es,fr,pt,zh}/.gitkeep (7 files)",
+      "tests/m-006/test_localized_images.sh"
+    ],
+    "deleted": [
+      "public/images/epp/epp-split.png",
+      "public/images/epp/epp-flow.png",
+      "public/images/epp/epp-comparison.png",
+      "public/images/epp/epp-guarantee.png",
+      "public/images/epp/epp-cycle.png",
+      "public/images/epp/epp-dashboard.png"
+    ]
+  },
+  "semantic_changes": {
+    "new_functions_classes": [],
+    "removed_functions": [],
+    "behavior_changes": [
+      {
+        "file": "app/[locale]/epp/page.tsx",
+        "change": "Image src interpolation: /images/epp/${locale}/0N.png (was /images/epp/epp-NAME.png)",
+        "impact": "asset path localization per locale",
+        "ssot_impact": "none"
+      },
+      {
+        "file": "app/[locale]/epp/page.tsx",
+        "change": "Removed 29 HTML overlay spans (sections 3-7)",
+        "impact": "text content baked into localized PNG, no DOM overlay",
+        "ssot_impact": "none"
+      }
+    ],
+    "narrative_content_changes": [],
+    "test_additions": ["tests/m-006/test_localized_images.sh"]
+  },
+  "summary": "M-006 sostituisce 6 PNG globali con 42 PNG localizzati (7 lingue x 6 sezioni) sulla pagina /epp. page.tsx interpola dinamicamente il locale nel src; gli overlay HTML span sono rimossi (testo ora dentro l'immagine). Zero impatto su metadati SEO, canonical, hreflang, Schema.org, i18n keys, design tokens, animazioni, scene 3D, fonts."
+}

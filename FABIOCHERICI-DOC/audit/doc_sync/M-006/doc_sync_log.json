@@ -1,0 +1,41 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "timestamp_start": "2026-05-27T00:00:00Z",
+  "timestamp_end": "2026-05-27T00:00:05Z",
+  "duration_seconds": 5,
+  "ssots_impacted_direct": 1,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 0,
+  "ssots_modified_substitutive": 0,
+  "ssots_no_change": 1,
+  "rag_mode": "skipped_no_schema",
+  "rag_chunks_reindexed": 0,
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": [
+    "step_1_semantic_analysis",
+    "step_2_direct_impact",
+    "step_3_lateral_discovery_skipped",
+    "step_4_discrimination",
+    "step_5_rag_reindex_skipped",
+    "step_5b_registry_metadata_update",
+    "step_6_audit_trail"
+  ],
+  "ssot_details": [
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "justification": "M-006 cambia solo asset path img + rimuove overlay DOM. Nessun impatto canonical/hreflang/metadata/Schema.org descritti in seo SSOT."
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [],
+  "audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-006/"
+}

@@ -4,3 +4,7 @@
 {"timestamp":"2026-05-26T15:00:00Z","event":"mission_opened","mission_id":"M-005","tipo_missione":"fix","trigger_matrix":2,"found_by":"CEO screenshot donut chart label overlap"}
 {"timestamp":"2026-05-26T19:00:00Z","event":"mission_closed","mission_id":"M-005","outcome":"success","commit":"1f53de8","files_modified":2,"note":"State machine completa (executing→auditing→closed) via bin/mission v0.2. FASE 6 retrofit eseguito post-closure (stats+retrospective via Oracode tooling generico D5/D7)."}
 {"timestamp":"2026-05-26T19:14:36Z","event":"retrofit_phase_6","mission_id":"M-005","steps_added":["6c_stats","6e_retrospective"],"trigger":"protocol_compliance","drift_severity":"none","loaded_unused_count":0}
+{"timestamp":"2026-05-26T20:24:00Z","event":"mission_opened","mission_id":"M-006","tipo_missione":"feature","trigger_matrix":2,"found_by":"CEO request immagini localizzate"}
+{"timestamp":"2026-05-27T10:14:00Z","event":"mission_closed","mission_id":"M-006","outcome":"success","commits":["1a07e56","3730acb","84c02e9"],"audit_findings":"YELLOW→GREEN dopo cleanup 6 PNG legacy","note":"FASE 6 retrofit eseguito + registry sync retroattivo MOA-5"}
+{"timestamp":"2026-05-26T20:40:00Z","event":"mission_opened","mission_id":"M-007","tipo_missione":"fix","trigger_matrix":2,"found_by":"CEO mobile screenshot gear fuori viewport"}
+{"timestamp":"2026-05-27T10:24:00Z","event":"mission_closed","mission_id":"M-007","outcome":"success","commit":"fa186c1","audit_findings":"GREEN","note":"FASE 6 retrofit + registry sync retroattivo MOA-5"}

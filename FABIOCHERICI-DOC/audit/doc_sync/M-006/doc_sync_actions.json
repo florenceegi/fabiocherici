@@ -1,0 +1,27 @@
+{
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "generated_at": "2026-05-27T00:00:00Z",
+  "actions": [
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "ssot_content_hash_sha256": "27bd88c90b5cbc33a60ecf62b16354239776beea56ab2d1fe47ea85d5dfd1445",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "M-006 cambia solo asset path (interpolazione locale nel src img) e rimuove overlay HTML span. Il SSOT seo.md descrive canonical URL + hreflang alternates + metadata strategy: nessuno di questi aspetti e toccato. Image src e overlay DOM sono dettagli di presentazione locale-aware, non SEO struttura. Discriminazione: stessa entita (page.tsx /epp) gia descritta dal pattern watch generico app/[locale]/**/page.tsx, significato SEO invariato -> NO_CHANGE.",
+      "timestamp": "2026-05-27T00:00:00Z",
+      "resolution_method": "automatic_no_change"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "applied": 0,
+    "no_change": 1,
+    "failed": 0,
+    "awaiting_approval": 0,
+    "flagged_for_rewrite": 0
+  }
+}

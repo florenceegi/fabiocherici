@@ -1,0 +1,7 @@
+{
+  "mission_id": "M-007",
+  "timestamp": "2026-05-27T10:18:39Z",
+  "rag_available": false,
+  "skip_reason": "FABIOCHERICI-DOC LSO mono-organo: no RAG vettoriale configurato per questa istanza. Step 3 (lateral discovery) skipped per policy istanza.",
+  "impacted": []
+}

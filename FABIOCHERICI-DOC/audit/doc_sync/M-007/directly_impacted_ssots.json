@@ -1,0 +1,25 @@
+{
+  "mission_id": "M-007",
+  "timestamp": "2026-05-27T10:18:39Z",
+  "files_scanned": [
+    "app/globals.css",
+    "tests/m-007/test_home_overflow_clip.sh"
+  ],
+  "impacted": [
+    {
+      "ssot_id": "design-tokens",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "match_type": "direct_watcher",
+      "matched_path": "app/globals.css",
+      "registry_index": 3
+    }
+  ],
+  "not_impacted_rationale": {
+    "animation-presets": "No file in lib/animation.ts, lib/animation-context.tsx, components/ui/ScrollReveal.tsx modified",
+    "scene3d-ids": "No file in lib/scene3d.ts, lib/scene-context.tsx, components/three/** modified",
+    "i18n-config": "No file in lib/i18n/** modified",
+    "fonts": "No file in lib/fonts.ts, app/layout.tsx, app/[locale]/layout.tsx modified",
+    "seo": "No file in lib/seo.ts, app/[locale]/**/page.tsx, app/[locale]/layout.tsx modified",
+    "i18n-messages": "No file in messages/*.json modified"
+  }
+}

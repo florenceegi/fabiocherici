@@ -1,0 +1,18 @@
+{
+  "mission_id": "M-007",
+  "timestamp": "2026-05-27T10:18:39Z",
+  "actions": [
+    {
+      "ssot_id": "design-tokens",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "ssot_content_hash": "5bab9269e0019d7f54c8feefc15527fe31ea97f0aeccff17c9cf7bf02c4065e2",
+      "diff_path": null,
+      "proposed_patch": null,
+      "justification": "M-007 aggiunge `overflow-x: clip` a `.home-circle` per fix overflow viewport mobile. La modifica e' di layout/containment, non tocca: (a) palette grafite+bronzo, (b) tema dark/light/ambient, (c) slot ambient 0-6, (d) tokens --bg/--text/--accent/--border/--surface-glass, (e) color-scheme. Il SSOT design-tokens descrive esclusivamente questi 5 ambiti (vedi sezione 'Cosa descrive' del SSOT). La rule `.home-circle` non e' un design token ma una regola di layout di pagina. SSOT semanticamente non impattato.",
+      "timestamp": "2026-05-27T10:18:39Z",
+      "resolution_method": "automatic_no_change"
+    }
+  ]
+}

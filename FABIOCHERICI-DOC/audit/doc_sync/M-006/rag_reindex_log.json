@@ -1,0 +1,10 @@
+{
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "rag_mode": "skipped_no_schema",
+  "reason": "No RAG schema configured for FABIOCHERICI-DOC instance. No SSOT had status=applied (only no_change). Re-indexing not required.",
+  "ssots_reindexed": [],
+  "chunks_reindexed": 0,
+  "sanity_check_passed": null,
+  "duration_seconds": 0
+}

@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-007",
+  "timestamp": "2026-05-27T10:18:39Z",
+  "executed": false,
+  "skip_reason": "Nessun SSOT con status `applied` (1 SSOT impattato -> `no_change`). Inoltre FABIOCHERICI-DOC non ha RAG vettoriale configurato.",
+  "ssots_reindexed": [],
+  "chunks_total": 0
+}

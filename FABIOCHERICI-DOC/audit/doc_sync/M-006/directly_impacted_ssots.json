@@ -1,0 +1,26 @@
+{
+  "mission_id": "M-006",
+  "instance": "FABIOCHERICI-DOC",
+  "computed_at": "2026-05-27T00:00:00Z",
+  "method": "deterministic_glob_match",
+  "registry_path": "FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json",
+  "registry_documents_scanned": 7,
+  "impacted": [
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "matched_pattern": "app/[locale]/**/page.tsx",
+      "matched_file": "app/[locale]/epp/page.tsx",
+      "impact_type": "pattern_match",
+      "registry_index": 5
+    }
+  ],
+  "not_impacted": [
+    "animation-presets (paths: lib/animation*, components/ui/ScrollReveal.tsx — none touched)",
+    "scene3d-ids (paths: lib/scene3d*, components/three/** — none touched)",
+    "i18n-config (paths: lib/i18n/* — none touched)",
+    "design-tokens (paths: app/globals.css, lib/theme-context.tsx — none touched in M-006 scope)",
+    "fonts (paths: lib/fonts.ts, app/layout.tsx — none touched)",
+    "i18n-messages (paths: messages/*.json — none touched in M-006 scope)"
+  ]
+}

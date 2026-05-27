@@ -10,8 +10,128 @@
     "level": 3,
     "organ_type": "LSO mono-organo"
   },
-  "counter": 2,
+  "counter": 7,
   "missions": [
+    {
+      "id": "M-007",
+      "title": "Fix home mobile — gear button fuori viewport (overflow-x .home-circle)",
+      "tipo_missione": "fix",
+      "organi_coinvolti": [
+        "fabiocherici.com"
+      ],
+      "priority": "P2",
+      "trigger_matrix": 2,
+      "status": "closed",
+      "date_open": "2026-05-26",
+      "date_close": "2026-05-27",
+      "found_by": "CEO mobile screenshot",
+      "test_file": "tests/m-007/test_home_overflow_clip.sh",
+      "commit_hash": "fa186c1",
+      "doc_sync_executed": true,
+      "doc_sync_outcome": "success",
+      "doc_sync_audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-007/",
+      "audit_findings": "GREEN",
+      "note_sync": "Registry sync retroattivo (debito MOA-5)",
+      "stats": {
+        "total_commits": 1,
+        "lines_added": 14,
+        "lines_deleted": 0,
+        "lines_net": 14,
+        "lines_touched": 14,
+        "files_touched": 2,
+        "weighted_commits": 1.5,
+        "cognitive_load": 1.75,
+        "productivity_index": 12.18,
+        "tags_breakdown": {
+          "FIX": 1
+        },
+        "commit_hashes": [
+          "fa186c1a42e2cac80ae3d7a5e87f8cbdab3bd02f"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-26",
+            "commits": 1,
+            "lines_added": 14,
+            "lines_deleted": 0,
+            "files_touched": 2,
+            "tags": {
+              "FIX": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-05-27"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-05-27T10:25:10Z"
+    },
+    {
+      "id": "M-006",
+      "title": "EPP page — immagini localizzate per lingua (6×7=42 PNG)",
+      "tipo_missione": "feature",
+      "organi_coinvolti": [
+        "fabiocherici.com"
+      ],
+      "priority": "P2",
+      "trigger_matrix": 2,
+      "status": "closed",
+      "date_open": "2026-05-26",
+      "date_close": "2026-05-27",
+      "found_by": "CEO request — 42 immagini localizzate (no overlay HTML)",
+      "test_file": "tests/m-006/test_localized_images.sh",
+      "doc_sync_executed": true,
+      "doc_sync_outcome": "success",
+      "doc_sync_audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-006/",
+      "audit_findings": "YELLOW→GREEN dopo cleanup 6 PNG legacy orfani",
+      "note_sync": "Registry sync retroattivo (debito MOA-5)",
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 34,
+        "lines_deleted": 25,
+        "lines_net": 9,
+        "lines_touched": 59,
+        "files_touched": 2,
+        "weighted_commits": 1.5,
+        "cognitive_load": 2.05,
+        "productivity_index": 7.76,
+        "tags_breakdown": {
+          "FEAT": 1,
+          "CLEANUP": 1
+        },
+        "commit_hashes": [
+          "1a07e5613c3d44d57064ddd576e9469833cc803b",
+          "84c02e97f5fbe6616c7d8b7293cdcb6e7d88cf13"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-26",
+            "commits": 1,
+            "lines_added": 34,
+            "lines_deleted": 25,
+            "files_touched": 2,
+            "tags": {
+              "FEAT": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-27",
+            "commits": 1,
+            "lines_added": 0,
+            "lines_deleted": 0,
+            "files_touched": 0,
+            "tags": {
+              "CLEANUP": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-05-27"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-05-27T10:16:40Z"
+    },
     {
       "id": "M-005",
       "title": "Fix EPP split chart — label PIATTAFORMA + FRANGETTE non-overlapping",
@@ -29,35 +149,41 @@
       "test_file": "tests/m-005/test_split_chart_svg_inline.sh",
       "commit_hash": "1f53de8",
       "stats": {
-        "total_commits": 1,
-        "lines_added": 20,
-        "lines_deleted": 2,
-        "lines_net": 18,
-        "lines_touched": 22,
-        "files_touched": 2,
-        "weighted_commits": 1.5,
-        "cognitive_load": 1.82,
-        "productivity_index": 11.99,
+        "total_commits": 3,
+        "lines_added": 177,
+        "lines_deleted": 27,
+        "lines_net": 150,
+        "lines_touched": 204,
+        "files_touched": 5,
+        "weighted_commits": 4.1,
+        "cognitive_load": 2.42,
+        "productivity_index": 30.12,
         "tags_breakdown": {
+          "FEAT": 1,
+          "ARCH": 1,
           "FIX": 1
         },
         "commit_hashes": [
+          "036101963eff2b5982973c37bbd2ba867f31816d",
+          "1a07e5613c3d44d57064ddd576e9469833cc803b",
           "1f53de86934e73ab0ad92e2b2b247c4e51f2c8dc"
         ],
         "by_repo_day": [
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-05-26",
-            "commits": 1,
-            "lines_added": 20,
-            "lines_deleted": 2,
-            "files_touched": 2,
+            "commits": 3,
+            "lines_added": 177,
+            "lines_deleted": 27,
+            "files_touched": 5,
             "tags": {
+              "FEAT": 1,
+              "ARCH": 1,
               "FIX": 1
             }
           }
         ],
-        "calculated_at": "2026-05-26"
+        "calculated_at": "2026-05-27"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-26T19:14:36Z"
@@ -122,7 +248,7 @@
             }
           }
         ],
-        "calculated_at": "2026-05-26"
+        "calculated_at": "2026-05-27"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-26T14:26:34Z"

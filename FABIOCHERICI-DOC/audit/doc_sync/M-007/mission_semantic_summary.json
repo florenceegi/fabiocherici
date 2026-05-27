@@ -1,0 +1,39 @@
+{
+  "mission_id": "M-007",
+  "commit": "fa186c1a42e2cac80ae3d7a5e87f8cbdab3bd02f",
+  "timestamp": "2026-05-27T10:18:39Z",
+  "scope": "layout_fix_mobile",
+  "files": [
+    {
+      "path": "app/globals.css",
+      "change_type": "modified",
+      "lines_added": 1,
+      "lines_removed": 0,
+      "semantic_change": "Added single CSS property overflow-x: clip to existing .home-circle rule block. No palette, theme, ambient slot, design token, or color-scheme modifications."
+    },
+    {
+      "path": "tests/m-007/test_home_overflow_clip.sh",
+      "change_type": "created",
+      "semantic_change": "Shell test verifying presence of overflow-x: clip|hidden directive within .home-circle block."
+    }
+  ],
+  "new_functions": [],
+  "removed_functions": [],
+  "behavior_changes": [
+    {
+      "scope": "css_layout",
+      "selector": ".home-circle",
+      "property": "overflow-x",
+      "value": "clip",
+      "rationale": "Prevent .circle-orbit translateY children from expanding document width beyond viewport on mobile (375-414px), which caused fixed-position gear button to render off-screen on home page only.",
+      "side_effects": "Limited to .home-circle (home page); no impact on sub-pages or theme tokens."
+    }
+  ],
+  "narrative_content_changes": [],
+  "key_concepts": [
+    "mobile_viewport_overflow",
+    "circle_orbit_layout",
+    "home_page_layout",
+    "fixed_header_alignment"
+  ]
+}
