@@ -13,7 +13,7 @@ import { HeroScene } from '@/components/home/HeroScene';
 import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 const DOORS = [
-  { id: 'creazioni', angle: 0 },
+  { id: 'softwarehouse', angle: 0 },
   { id: 'oracode', angle: 60 },
   { id: 'scrittore', angle: 120 },
   { id: 'ai-nous', angle: 180 },
@@ -64,7 +64,7 @@ export default async function HomePage({
         <p>{t('seo_experience')}</p>
         <nav>
           <ul>
-            <li><Link href={`/${locale}/creazioni`}>{t('seo_section_creazioni')}</Link></li>
+            <li><Link href={`/${locale}/softwarehouse`}>{t('seo_section_softwarehouse')}</Link></li>
             <li><Link href={`/${locale}/oracode`}>{t('seo_section_oracode')}</Link></li>
             <li><Link href={`/${locale}/scrittore`}>{t('seo_section_scrittore')}</Link></li>
             <li><Link href={`/${locale}/ai-nous`}>{t('seo_section_ainous')}</Link></li>
