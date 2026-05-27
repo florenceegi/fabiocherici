@@ -309,7 +309,7 @@ export default async function SoftwarehousePage({
           </div>
           <figure className="reveal">
             <Image
-              src="/img/softwarehouse/natan-chat-example.webp"
+              src="/img/softwarehouse/chat_ai.png"
               alt={t('diff_screenshot_alt')}
               width={1200}
               height={800}
