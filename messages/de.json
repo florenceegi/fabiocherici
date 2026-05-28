@@ -1053,6 +1053,51 @@
         "not_title": "Was Florence EGI NICHT tut",
         "not_p1": "Florence EGI agiert niemals als Steuerschuldner. Es stellt keine steuerliche Dokumentation anstelle der empfangenden EPP-Einrichtung aus, die für die Ausstellung der gegebenenfalls angeforderten Quittungen verantwortlich bleibt. Die steuerliche Compliance bleibt immer bei der kaufenden Organisation und der empfangenden EPP-Einrichtung.",
         "not_p2": "Für komplexe Fälle (große Beträge, multinationale Gruppen, Spenden, die spezifische CSR-Vorschriften oder nichtfinanzielle Berichterstattung aktivieren), den eigenen Steuerberater und das interne Compliance-Büro konsultieren."
+      },
+      "fiscalita_epp": {
+        "section_badge": "STEUERWESEN — EPP-SEITE",
+        "section_title": "Bist du ein EPP, das Spenden empfängt?",
+        "section_subtitle": "Compliance, Automatisierung, Verantwortung",
+        "section_intro": "Die EPPs — Environmental Protection Projects — ob kleine gemeinnützige Realitäten oder große Unternehmen und strukturierte Einrichtungen, erhalten die Gelder direkt von den FlorenceEGI-Nutzern über dedizierte Wallets, die mit den Sammlungen verbunden sind. Die Plattform bietet fortschrittliche Werkzeuge für Reporting, Automatisierung und Dokumentationsunterstützung, verwaltet oder hält jedoch nicht die für die EPPs bestimmten Gelder. Die steuerliche und administrative Verantwortung verbleibt bei der empfangenden Einrichtung, gemäß ihrer Rechtsnatur.",
+        "section_outro": "FlorenceEGI agiert niemals als Steuerschuldner und ist nicht Partei der für die EPPs bestimmten finanziellen Flüsse. Jedes EPP verwaltet seine eigene Compliance: wir bieten nur Werkzeuge, Nachverfolgbarkeit und Transparenz. Alle Leitlinien werden öffentlich gemacht in ToS, Partner-Onboarding und technischer Dokumentation.",
+        "noprofit": {
+          "badge": "STEUERWESEN",
+          "title": "Kleine gemeinnützige Einrichtung (ETS / ONLUS)",
+          "subtitle": "Im RUNTS oder im früheren ONLUS-Verzeichnis eingetragen, verwaltet Spenden als Akte der Freigebigkeit gemäß dem Codice del Terzo Settore (D.Lgs. 117/2017).",
+          "disclaimer": "Dieser Abschnitt bezieht sich auf das italienische Steuerrecht.",
+          "how_title": "Wie es mit FlorenceEGI funktioniert",
+          "how_items": [
+            "Die Spenden kommen direkt auf dein Konto/Wallet an, ohne Vermittlung.",
+            "Die Spendenquittungen werden nur auf Anfrage des Spenders ausgestellt (italienische Regelung, nicht unsere Wahl).",
+            "Empfohlener Modus: kumulative jährliche oder monatliche Quittung für jeden Spender, auch im Fall von tausenden Mikro-Spenden.",
+            "Keine elektronische Rechnung: die Spenden sind Akte der Freigebigkeit, keine Gegenleistungen.",
+            "Die Plattform generiert automatisch die vorausgefüllten Quittungen, digital archiviert, vom Spender aus seinem Dashboard herunterladbar.",
+            "Alle Quittungen werden für eventuelle steuerliche Prüfungen nachverfolgt (vollständiger Audit Trail)."
+          ],
+          "example_title": "Reales Beispiel",
+          "example_body": "Die Associazione Frangette, die FlorenceEGI unterstützt, operiert so: sie erhält Spenden direkt auf ihrem eigenen Konto, stellt auf Anfrage kumulative Quittungen über das FlorenceEGI-Automatiksystem aus, alle gemäß der ETS-Regelung nachverfolgt.",
+          "sources_title": "Regulatorische Quellen",
+          "sources_body": "D.Lgs. 117/2017 (Codice del Terzo Settore), Rundschreiben der Agenzia delle Entrate zu ETS/ONLUS, RUNTS-Verordnung."
+        },
+        "azienda": {
+          "badge": "STEUERWESEN",
+          "title": "Große Einrichtung, Unternehmen, strukturierte Gruppe",
+          "subtitle": "Organisierte Realität mit eigener Rechtspersönlichkeit (SpA, Srl, Stiftung, NGO, multi-utility, corporate), die über interne Buchhaltungs- und Verwaltungsstrukturen verfügt.",
+          "disclaimer": "Dieser Abschnitt bezieht sich auf das italienische Steuerrecht.",
+          "how_title": "Wie es mit FlorenceEGI funktioniert",
+          "how_items": [
+            "Die Gelder werden direkt auf eine IBAN überwiesen, die auf die Einrichtung lautet, oder auf ein validiertes Unternehmens-Wallet.",
+            "Die Erstellung von Quittungen, Spendenattesten, Gutschriften erfolgt über dein Verwaltungsbüro, gemäß deinen internen Policies und den anwendbaren Rechnungslegungsgrundsätzen (OIC, IAS/IFRS).",
+            "FlorenceEGI bietet API, herunterladbare Berichte, exportierbare Audit Trails, um die Daten direkt in deine CRM-, ERP-Systeme oder deine Verwaltungsflüsse zu integrieren.",
+            "Vollständige Nachverfolgbarkeit des Flusses in der Plattform, Interoperabilität mit deinen Systemen, Reduzierung der manuellen Lasten."
+          ],
+          "principle_title": "Das Prinzip",
+          "principle_body": "Die Plattform garantiert nur die Nachverfolgbarkeit in der Plattform und den Datenexport. Sie ersetzt nicht deine internen Compliance-Verfahren. Du bleibst immer verantwortlich für die korrekte steuerliche und administrative Verwaltung der erhaltenen Gelder, gemäß deiner Rechtsnatur und deinem Buchhaltungsregime.",
+          "example_title": "Typisches Beispiel",
+          "example_body": "Ein Unternehmen erhält 100.000€ für ein Projekt → lädt den Transaktionsbericht herunter → integriert die Daten mit dem eigenen Buchhaltungs-/Steuersystem → produziert intern die geforderten Dokumente gemäß den eigenen Policies.",
+          "sources_title": "Regulatorische Quellen",
+          "sources_body": "Italienisches Zivilgesetzbuch, nationale und internationale Rechnungslegungsgrundsätze (OIC, IAS/IFRS), D.Lgs. 231/2007 (Geldwäschebekämpfung), Art. 83 D.Lgs. 117/2017."
+        }
       }
     }
   }

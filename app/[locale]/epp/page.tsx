@@ -14,7 +14,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { buildAlternates, buildOgImage, buildPageSchema, buildFaqSchema, buildItemListSchema } from '@/lib/seo';
 import { EppAccordion } from '@/components/ui/EppAccordion';
-import { Heart, Waves, Trees, Bee, FileText, Building2 } from '@/components/ui/EppIcons';
+import { Heart, Waves, Trees, Bee, FileText, Building2, Sprout, Briefcase } from '@/components/ui/EppIcons';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -414,7 +414,69 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 14. CTA ── */}
+      {/* ── 14. Fiscalità lato EPP — 2 widget (no-profit + grande ente) ── */}
+      <section className="py-24 bg-[var(--bg-elevated)]">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className="reveal text-sm font-mono uppercase tracking-widest text-[var(--accent)] mb-4">
+            {tw('fiscalita_epp.section_badge')}
+          </p>
+          <h2 className="reveal font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light text-[var(--text-primary)] mb-3">
+            {tw('fiscalita_epp.section_title')}
+          </h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] italic mb-8">
+            {tw('fiscalita_epp.section_subtitle')}
+          </p>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
+            {tw('fiscalita_epp.section_intro')}
+          </p>
+          <div className="space-y-4">
+            <EppAccordion
+              id="widget-epp-noprofit"
+              badge={tw('fiscalita_epp.noprofit.badge')}
+              title={tw('fiscalita_epp.noprofit.title')}
+              subtitle={tw('fiscalita_epp.noprofit.subtitle')}
+              icon={<Sprout />}
+            >
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.noprofit.how_title')}</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                {(tw.raw('fiscalita_epp.noprofit.how_items') as string[]).map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.noprofit.example_title')}</h4>
+              <p>{tw('fiscalita_epp.noprofit.example_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.noprofit.sources_title')}</h4>
+              <p className="text-sm">{tw('fiscalita_epp.noprofit.sources_body')}</p>
+            </EppAccordion>
+
+            <EppAccordion
+              id="widget-epp-azienda"
+              badge={tw('fiscalita_epp.azienda.badge')}
+              title={tw('fiscalita_epp.azienda.title')}
+              subtitle={tw('fiscalita_epp.azienda.subtitle')}
+              icon={<Briefcase />}
+            >
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.azienda.how_title')}</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                {(tw.raw('fiscalita_epp.azienda.how_items') as string[]).map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.azienda.principle_title')}</h4>
+              <p>{tw('fiscalita_epp.azienda.principle_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.azienda.example_title')}</h4>
+              <p>{tw('fiscalita_epp.azienda.example_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_epp.azienda.sources_title')}</h4>
+              <p className="text-sm">{tw('fiscalita_epp.azienda.sources_body')}</p>
+            </EppAccordion>
+          </div>
+          <p className="reveal mt-12 text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed italic">
+            {tw('fiscalita_epp.section_outro')}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 15. CTA ── */}
       <section className="py-20 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-12">

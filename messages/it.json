@@ -1065,6 +1065,49 @@
         "not_title": "Cosa Florence EGI NON fa",
         "not_p1": "Florence EGI non agisce mai come sostituto d'imposta. Non rilascia documentazione fiscale al posto dell'ente EPP destinatario, che resta responsabile dell'emissione delle eventuali ricevute richieste. La compliance fiscale resta sempre in capo all'organizzazione acquirente e all'ente EPP ricevente.",
         "not_p2": "Per casi complessi (grandi importi, gruppi multinazionali, donazioni che attivano specifiche normative di CSR o reporting non-finanziario), consultare il proprio fiscalista e l'ufficio compliance interno."
+      },
+      "fiscalita_epp": {
+        "section_badge": "FISCALITÀ — LATO EPP",
+        "section_title": "Sei un EPP che riceve donazioni?",
+        "section_subtitle": "Compliance, automazione, responsabilità",
+        "section_intro": "Gli EPP — Environmental Protection Project — che siano piccole realtà no profit o grandi aziende e enti strutturati, ricevono direttamente i fondi dagli utenti FlorenceEGI attraverso wallet dedicati collegati alle collezioni. La piattaforma offre strumenti avanzati di reportistica, automazione e supporto documentale, ma non gestisce né trattiene i fondi destinati agli EPP. La responsabilità fiscale e amministrativa resta in capo all'ente ricevente, secondo la sua natura giuridica.",
+        "section_outro": "FlorenceEGI non agisce mai da sostituto d'imposta e non è parte nei flussi finanziari destinati agli EPP. Ogni EPP gestisce la propria compliance: noi offriamo solo strumenti, tracciabilità e trasparenza. Tutte le linee guida sono rese pubbliche in ToS, onboarding partner e documentazione tecnica.",
+        "noprofit": {
+          "badge": "FISCALITÀ",
+          "title": "Piccolo ente no profit (ETS / ONLUS)",
+          "subtitle": "Iscritto al RUNTS o ex-elenco ONLUS, gestisce donazioni come atti di liberalità secondo il Codice del Terzo Settore (D.Lgs. 117/2017).",
+          "how_title": "Come funziona con FlorenceEGI",
+          "how_items": [
+            "Le donazioni arrivano direttamente sul tuo conto/wallet, senza intermediazione.",
+            "Le ricevute di donazione sono emesse solo su richiesta del donatore (è normativa italiana, non scelta nostra).",
+            "Modalità raccomandata: ricevuta cumulativa annuale o mensile per ogni donatore, anche in caso di migliaia di micro-donazioni.",
+            "Nessuna fattura elettronica: le donazioni sono atti di liberalità, non corrispettivi.",
+            "La piattaforma genera automaticamente le ricevute precompilate, archiviate digitalmente, scaricabili dal donatore dalla sua dashboard.",
+            "Tutte le ricevute sono tracciate per eventuali verifiche fiscali (audit trail completo)."
+          ],
+          "example_title": "Esempio reale",
+          "example_body": "L'Associazione Frangette, che sostiene FlorenceEGI, opera così: riceve donazioni direttamente sul proprio conto, su richiesta emette ricevute cumulative tramite sistema automatico FlorenceEGI, tutte tracciate secondo normativa ETS.",
+          "sources_title": "Fonti normative",
+          "sources_body": "D.Lgs. 117/2017 (Codice del Terzo Settore), Circolari Agenzia delle Entrate su ETS/ONLUS, Regolamento RUNTS."
+        },
+        "azienda": {
+          "badge": "FISCALITÀ",
+          "title": "Grande ente, azienda, gruppo strutturato",
+          "subtitle": "Realtà organizzata con personalità giuridica propria (SpA, Srl, fondazione, ONG, multi-utility, corporate) che dispone di strutture contabili e amministrative interne.",
+          "how_title": "Come funziona con FlorenceEGI",
+          "how_items": [
+            "I fondi vengono trasferiti direttamente su un IBAN intestato all'ente o su un wallet aziendale validato.",
+            "La produzione di ricevute, attestati di donazione, note di accredito avviene tramite il tuo ufficio amministrativo, secondo le tue policy interne e i principi contabili applicabili (OIC, IAS/IFRS).",
+            "FlorenceEGI offre API, report scaricabili, audit trail esportabili per integrare i dati direttamente nei tuoi sistemi CRM, ERP, o nei tuoi flussi amministrativi.",
+            "Tracciabilità completa del flusso in piattaforma, interoperabilità con i tuoi sistemi, riduzione dei carichi manuali."
+          ],
+          "principle_title": "Il principio",
+          "principle_body": "La piattaforma garantisce solo la tracciabilità in piattaforma e l'export dei dati. Non sostituisce le tue procedure di compliance interna. Tu resti sempre responsabile della corretta gestione fiscale e amministrativa dei fondi ricevuti, secondo la tua natura giuridica e il tuo regime contabile.",
+          "example_title": "Esempio tipico",
+          "example_body": "Un'azienda riceve 100.000€ per un progetto → scarica il report delle transazioni → integra i dati con il proprio sistema contabile/fiscale → produce internamente i documenti richiesti secondo le proprie policy.",
+          "sources_title": "Fonti normative",
+          "sources_body": "Codice Civile, Principi contabili nazionali e internazionali (OIC, IAS/IFRS), D.Lgs. 231/2007 (antiriciclaggio), art. 83 D.Lgs. 117/2017."
+        }
       }
     }
   }

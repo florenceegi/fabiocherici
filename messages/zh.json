@@ -1053,6 +1053,51 @@
         "not_title": "Florence EGI 不做什么",
         "not_p1": "Florence EGI 从不作为税务代扣方行事。它不代替接收捐赠的 EPP 实体出具税务文档，该实体仍负责出具任何被请求的收据。税务合规始终由购买机构和接收的 EPP 实体负责。",
         "not_p2": "对于复杂情况（金额较大、跨国集团、激活特定的 CSR 法规或非财务报告的捐赠），请咨询你自己的税务顾问和内部合规办公室。"
+      },
+      "fiscalita_epp": {
+        "section_badge": "税务 — EPP 方",
+        "section_title": "你是接收捐赠的 EPP 吗？",
+        "section_subtitle": "合规、自动化、责任",
+        "section_intro": "EPP——Environmental Protection Projects——无论是小型非营利组织还是大型公司和有组织的实体，都通过与合集相关联的专用 wallet 直接从 FlorenceEGI 用户处接收资金。平台提供先进的报告、自动化和文档支持工具，但不管理或保留为 EPP 提供的资金。税务和行政责任仍由接收实体根据其法律性质承担。",
+        "section_outro": "FlorenceEGI 从不作为税务代扣方行事，也不是为 EPP 提供的资金流动的一方。每个 EPP 管理自己的合规：我们只提供工具、可追溯性和透明度。所有指南都在 ToS、合作伙伴入驻和技术文档中公开。",
+        "noprofit": {
+          "badge": "税务",
+          "title": "小型非营利实体（ETS / ONLUS）",
+          "subtitle": "在 RUNTS 或前 ONLUS 名册中注册，根据 Codice del Terzo Settore（D.Lgs. 117/2017）将捐赠作为自由行为管理。",
+          "disclaimer": "本节内容适用于意大利税法。",
+          "how_title": "如何与 FlorenceEGI 协同工作",
+          "how_items": [
+            "捐赠直接到达你的账户/wallet，无中介。",
+            "捐赠收据仅根据捐赠者的请求出具（是意大利的规定，非我们的选择）。",
+            "推荐方式：对每位捐赠者出具年度或月度的累计收据，即使有数千笔微捐赠。",
+            "无电子发票：捐赠是自由行为，不是对价。",
+            "平台自动生成预填收据，数字化归档，捐赠者可从其 dashboard 下载。",
+            "所有收据均被追踪以备税务审查（完整审计跟踪）。"
+          ],
+          "example_title": "真实示例",
+          "example_body": "支持 FlorenceEGI 的 Associazione Frangette 这样运作：直接在自己的账户上接收捐赠，应请求通过 FlorenceEGI 自动系统出具累计收据，全部按 ETS 规定追踪。",
+          "sources_title": "法规来源",
+          "sources_body": "D.Lgs. 117/2017（Codice del Terzo Settore）、Agenzia delle Entrate 关于 ETS/ONLUS 的通函、RUNTS 规则。"
+        },
+        "azienda": {
+          "badge": "税务",
+          "title": "大型实体、企业、有组织集团",
+          "subtitle": "具有自身法律人格的有组织实体（SpA、Srl、基金会、NGO、multi-utility、corporate），拥有内部会计和行政架构。",
+          "disclaimer": "本节内容适用于意大利税法。",
+          "how_title": "如何与 FlorenceEGI 协同工作",
+          "how_items": [
+            "资金直接转入以该实体名义的 IBAN 或经验证的企业 wallet。",
+            "收据、捐赠证明、贷方票据的制作通过你的行政办公室进行，依据你的内部 policy 和适用的会计准则（OIC、IAS/IFRS）。",
+            "FlorenceEGI 提供 API、可下载的报告、可导出的审计跟踪，以便将数据直接集成到你的 CRM、ERP 系统或行政流程中。",
+            "平台中流程的完整可追溯性，与你的系统的互操作性，手工负担的减少。"
+          ],
+          "principle_title": "原则",
+          "principle_body": "平台仅保证平台内的可追溯性和数据导出。它不替代你的内部合规程序。你始终对所收资金的正确税务和行政管理负责，按照你的法律性质和会计制度。",
+          "example_title": "典型示例",
+          "example_body": "一家公司为某个项目收到 100.000€ → 下载交易报告 → 将数据与自己的会计/税务系统集成 → 按自己的 policy 内部生成所需的文档。",
+          "sources_title": "法规来源",
+          "sources_body": "意大利民法典、国家和国际会计准则（OIC、IAS/IFRS）、D.Lgs. 231/2007（反洗钱）、art. 83 D.Lgs. 117/2017。"
+        }
       }
     }
   }

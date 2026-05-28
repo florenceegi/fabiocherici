@@ -1,0 +1,62 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "mission_id": "M-011",
+  "instance_root": "/home/fabio/fabiocherici.com",
+  "timestamp_start": "2026-05-28T00:00:00Z",
+  "timestamp_end": "2026-05-28T00:00:05Z",
+  "duration_seconds": 5,
+  "ssots_impacted_direct": 2,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 2,
+  "ssots_modified_substitutive": 0,
+  "ssots_no_change": 0,
+  "rag_chunks_reindexed": null,
+  "rag_mode": "skipped_no_schema",
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": [
+    "step_1_semantic_analysis",
+    "step_2_direct_ssots",
+    "step_3_lateral_discovery_skipped",
+    "step_4_apply_additive",
+    "step_5_rag_skipped",
+    "step_5b_registry_metadata_update",
+    "step_6_audit_trail"
+  ],
+  "ssot_details": [
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/diffs/i18n-messages.md.diff"
+    },
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/diffs/seo.md.diff"
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [],
+  "uncovered_modified_files": [
+    {
+      "path": "components/ui/EppIcons.tsx",
+      "note": "Gia uncovered da M-009. Estensione 1.0.0 -> 1.1.0 additiva (+Sprout +Briefcase). Triage informativo."
+    }
+  ],
+  "cross_project_changes": [
+    {
+      "path": "/home/fabio/os3-matrix/bin/web_quality_gate.py",
+      "cross_project": true,
+      "scope": "whitelist DE I-2 estesa (Steuersystem*, manuell*, aktuell*, individuell*, kontinuierlich*)",
+      "managed_by": "os3-matrix repo (separato)"
+    }
+  ],
+  "audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/"
+}

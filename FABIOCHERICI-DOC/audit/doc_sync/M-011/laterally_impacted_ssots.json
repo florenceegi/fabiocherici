@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-011",
+  "doc_sync_version": "2.2.0",
+  "computed_at": "2026-05-28T00:00:00Z",
+  "rag_mode": "skipped_no_schema",
+  "lateral_ssots": [],
+  "note": "Step 3 skip: nessun RAG_SCHEMA configurato in CLAUDE.md istanza ne in ORACODE_RAG_SCHEMA env. Modalita LSO ridotto (registry+audit, no discovery vettoriale)."
+}

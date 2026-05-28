@@ -1,0 +1,33 @@
+{
+  "mission_id": "M-011",
+  "doc_sync_version": "2.2.0",
+  "computed_at": "2026-05-28T00:00:00Z",
+  "actions": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "83f2a8ac141527add2a042d8e2e1821d9da7ee335d4ed12278a899f2df54b67f",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/diffs/i18n-messages.md.diff",
+      "justification": "Nuovo sub-namespace `epp.widgets.fiscalita_epp` introdotto in 7 lingue. Cercata sezione esistente che descrivesse questa entita: NON TROVATA. Aggiunta cronologia esplicita sub-namespace `epp.widgets` (M-009 + M-011), aggiornata enumerazione namespace top-level con riferimento M-011, aggiunte 2 nuove CICATRICI (1 positiva su naming convention applicata al primo colpo + 1 procedurale su come estendere `epp.widgets.*`). Bump last_verified_mission M-010 -> M-011.",
+      "resolution_method": "auto_applied_additive",
+      "timestamp": "2026-05-28T00:00:00Z"
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "64df44e27f4a212184b81d2ac1a17e0c9ca9b5909b032bce70cf55561714f491",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/diffs/seo.md.diff",
+      "justification": "Pagina `app/[locale]/epp/page.tsx` (consumer SEO) estesa con sezione 14 (2 widget EPP-side). Cercata descrizione esistente del consumer: trovata riga M-009 — estesa con nota M-011 (additivo, non sostitutivo: M-009 resta valido + chiarimento che M-011 non aggiunge FaqSchema/ItemListSchema). Aggiunta nuova CICATRICE M-011 (regola design: NON forzare FaqSchema su contenuto narrativo non-Q&A). Bump last_verified_mission M-010 -> M-011.",
+      "resolution_method": "auto_applied_additive",
+      "timestamp": "2026-05-28T00:00:00Z"
+    }
+  ],
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "rejections": 0,
+  "rewrite_flagged": []
+}

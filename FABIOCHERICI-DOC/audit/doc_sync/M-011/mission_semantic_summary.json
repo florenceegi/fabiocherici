@@ -1,0 +1,100 @@
+{
+  "mission_id": "M-011",
+  "doc_sync_version": "2.2.0",
+  "analyzed_at": "2026-05-28T00:00:00Z",
+  "trigger_matrix": 2,
+  "trigger_matrix_reason": "comportamentale additivo: nuova sezione UI con 2 widget EPP-side fiscalita su pagina /epp, + 2 nuove icone SVG, + nuovo sub-namespace i18n in 7 lingue. Cross-project minor su os3-matrix (whitelist DE, gestito separatamente).",
+  "parent_mission": "M-009",
+  "semantic_classification": "additive_only",
+  "new_functions_or_components": [
+    {
+      "type": "react_component_export",
+      "name": "Sprout",
+      "file": "components/ui/EppIcons.tsx",
+      "purpose": "Inline SVG icon (lucide.dev MIT) per widget noprofit ETS/ONLUS"
+    },
+    {
+      "type": "react_component_export",
+      "name": "Briefcase",
+      "file": "components/ui/EppIcons.tsx",
+      "purpose": "Inline SVG icon (lucide.dev MIT) per widget grande ente/azienda"
+    },
+    {
+      "type": "ui_section",
+      "name": "Section 14 — Fiscalita lato EPP",
+      "file": "app/[locale]/epp/page.tsx",
+      "purpose": "Nuova sezione UI con 2 EppAccordion widget (noprofit + azienda) tra ex-sezione 13 e CTA (ora 15)"
+    }
+  ],
+  "removed_functions": [],
+  "modified_behaviors": [
+    {
+      "type": "section_renumbering",
+      "file": "app/[locale]/epp/page.tsx",
+      "change": "Sezione CTA da ex-14 a 15 (commento aggiornato). Nessun cambio funzionale/output utente — solo numerazione interna nel commento JSX."
+    },
+    {
+      "type": "metadata_version_bump",
+      "file": "components/ui/EppIcons.tsx",
+      "change": "@version 1.0.0 -> 1.1.0, @mission M-009 -> M-009, M-011 (additivo, no breaking)"
+    }
+  ],
+  "new_content_blocks": [
+    {
+      "type": "i18n_subnamespace",
+      "namespace": "epp.widgets.fiscalita_epp",
+      "files": ["messages/it.json", "messages/en.json", "messages/de.json", "messages/es.json", "messages/fr.json", "messages/pt.json", "messages/zh.json"],
+      "keys_per_locale": [
+        "section_badge",
+        "section_title",
+        "section_subtitle",
+        "section_intro",
+        "section_outro",
+        "noprofit.badge",
+        "noprofit.title",
+        "noprofit.subtitle",
+        "noprofit.how_title",
+        "noprofit.how_items",
+        "noprofit.example_title",
+        "noprofit.example_body",
+        "noprofit.sources_title",
+        "noprofit.sources_body",
+        "azienda.badge",
+        "azienda.title",
+        "azienda.subtitle",
+        "azienda.how_title",
+        "azienda.how_items",
+        "azienda.principle_title",
+        "azienda.principle_body",
+        "azienda.example_title",
+        "azienda.example_body",
+        "azienda.sources_title",
+        "azienda.sources_body"
+      ],
+      "structural_parity": "verified_7_languages_identical_tree",
+      "naming_convention_applied": "_text/_body/_title/_items (P0 CICATRICE M-010 — no `_value` ne digrammi linguistici sensibili)"
+    }
+  ],
+  "modified_narrative_content": [],
+  "file_changes": [
+    {"path": "components/ui/EppIcons.tsx", "type": "modified", "lines_added": 22, "lines_deleted": 2},
+    {"path": "app/[locale]/epp/page.tsx", "type": "modified", "lines_added": 64, "lines_deleted": 2},
+    {"path": "messages/it.json", "type": "modified", "lines_added": 43, "lines_deleted": 0},
+    {"path": "messages/en.json", "type": "modified", "lines_added": 45, "lines_deleted": 0},
+    {"path": "messages/de.json", "type": "modified", "lines_added": 45, "lines_deleted": 0},
+    {"path": "messages/es.json", "type": "modified", "lines_added": 45, "lines_deleted": 0},
+    {"path": "messages/fr.json", "type": "modified", "lines_added": 45, "lines_deleted": 0},
+    {"path": "messages/pt.json", "type": "modified", "lines_added": 45, "lines_deleted": 0},
+    {"path": "messages/zh.json", "type": "modified", "lines_added": 45, "lines_deleted": 0}
+  ],
+  "cross_project_changes": [
+    {
+      "path": "/home/fabio/os3-matrix/bin/web_quality_gate.py",
+      "type": "modified",
+      "scope": "whitelist DE I-2 estesa: Steuersystem*, manuell*, aktuell*, individuell*, kontinuierlich*",
+      "cross_project": true,
+      "note": "Gestito separatamente in repo os3-matrix. NON tracciato dal registry locale fabiocherici.com."
+    }
+  ],
+  "semantic_impact": "Solo additivo. Nessuna funzione rimossa, nessuna API modificata, nessuna semantica esistente cambiata. Estensione coerente del namespace `epp.widgets.*` introdotto in M-009. Pattern riusato: EppAccordion + icone lucide.dev MIT + sub-namespace gerarchico atomico in 7 lingue."
+}

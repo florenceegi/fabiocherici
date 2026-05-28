@@ -1053,6 +1053,51 @@
         "not_title": "Qué Florence EGI NO hace",
         "not_p1": "Florence EGI no actúa nunca como sustituto de impuesto. No emite documentación fiscal en lugar de la entidad EPP destinataria, que queda responsable de la emisión de los eventuales recibos solicitados. El compliance fiscal queda siempre en cabeza de la organización compradora y de la entidad EPP receptora.",
         "not_p2": "Para casos complejos (grandes importes, grupos multinacionales, donaciones que activan normativas específicas de CSR o reporting no-financiero), consultar al propio fiscalista y a la oficina compliance interna."
+      },
+      "fiscalita_epp": {
+        "section_badge": "FISCALIDAD — LADO EPP",
+        "section_title": "¿Eres un EPP que recibe donaciones?",
+        "section_subtitle": "Compliance, automatización, responsabilidad",
+        "section_intro": "Los EPP — Environmental Protection Projects — sean pequeñas realidades sin ánimo de lucro o grandes empresas y entidades estructuradas, reciben directamente los fondos de los usuarios FlorenceEGI a través de wallets dedicados conectados a las colecciones. La plataforma ofrece herramientas avanzadas de reporting, automatización y soporte documental, pero no gestiona ni retiene los fondos destinados a los EPP. La responsabilidad fiscal y administrativa queda en cabeza de la entidad receptora, según su naturaleza jurídica.",
+        "section_outro": "FlorenceEGI no actúa nunca como sustituto de impuesto y no es parte en los flujos financieros destinados a los EPP. Cada EPP gestiona su propio compliance: nosotros ofrecemos solo herramientas, trazabilidad y transparencia. Todas las directrices se hacen públicas en ToS, onboarding partner y documentación técnica.",
+        "noprofit": {
+          "badge": "FISCALIDAD",
+          "title": "Pequeña entidad sin ánimo de lucro (ETS / ONLUS)",
+          "subtitle": "Inscrita al RUNTS o al ex-listado ONLUS, gestiona donaciones como actos de liberalidad según el Codice del Terzo Settore (D.Lgs. 117/2017).",
+          "disclaimer": "Esta sección se refiere a la legislación fiscal italiana.",
+          "how_title": "Cómo funciona con FlorenceEGI",
+          "how_items": [
+            "Las donaciones llegan directamente a tu cuenta/wallet, sin intermediación.",
+            "Los recibos de donación se emiten solo bajo solicitud del donante (es normativa italiana, no elección nuestra).",
+            "Modalidad recomendada: recibo acumulativo anual o mensual para cada donante, incluso en caso de miles de micro-donaciones.",
+            "Ninguna factura electrónica: las donaciones son actos de liberalidad, no contraprestaciones.",
+            "La plataforma genera automáticamente los recibos precompilados, archivados digitalmente, descargables por el donante desde su dashboard.",
+            "Todos los recibos son trazados para eventuales verificaciones fiscales (audit trail completo)."
+          ],
+          "example_title": "Ejemplo real",
+          "example_body": "La Associazione Frangette, que sostiene FlorenceEGI, opera así: recibe donaciones directamente en su propia cuenta, bajo solicitud emite recibos acumulativos a través del sistema automático FlorenceEGI, todos trazados según normativa ETS.",
+          "sources_title": "Fuentes normativas",
+          "sources_body": "D.Lgs. 117/2017 (Codice del Terzo Settore), Circulares Agenzia delle Entrate sobre ETS/ONLUS, Reglamento RUNTS."
+        },
+        "azienda": {
+          "badge": "FISCALIDAD",
+          "title": "Gran entidad, empresa, grupo estructurado",
+          "subtitle": "Realidad organizada con personalidad jurídica propia (SpA, Srl, fundación, ONG, multi-utility, corporate) que dispone de estructuras contables y administrativas internas.",
+          "disclaimer": "Esta sección se refiere a la legislación fiscal italiana.",
+          "how_title": "Cómo funciona con FlorenceEGI",
+          "how_items": [
+            "Los fondos se transfieren directamente a un IBAN a nombre de la entidad o a un wallet empresarial validado.",
+            "La producción de recibos, atestados de donación, notas de crédito ocurre a través de tu oficina administrativa, según tus policy internas y los principios contables aplicables (OIC, IAS/IFRS).",
+            "FlorenceEGI ofrece API, reportes descargables, audit trail exportables para integrar los datos directamente en tus sistemas CRM, ERP, o tus flujos administrativos.",
+            "Trazabilidad completa del flujo en plataforma, interoperabilidad con tus sistemas, reducción de las cargas manuales."
+          ],
+          "principle_title": "El principio",
+          "principle_body": "La plataforma garantiza solo la trazabilidad en plataforma y el export de los datos. No sustituye tus procedimientos de compliance interna. Tú quedas siempre responsable de la correcta gestión fiscal y administrativa de los fondos recibidos, según tu naturaleza jurídica y tu régimen contable.",
+          "example_title": "Ejemplo típico",
+          "example_body": "Una empresa recibe 100.000€ por un proyecto → descarga el reporte de las transacciones → integra los datos con el propio sistema contable/fiscal → produce internamente los documentos requeridos según las propias policy.",
+          "sources_title": "Fuentes normativas",
+          "sources_body": "Código Civil italiano, principios contables nacionales e internacionales (OIC, IAS/IFRS), D.Lgs. 231/2007 (antiblanqueo), art. 83 D.Lgs. 117/2017."
+        }
       }
     }
   }

@@ -162,7 +162,7 @@
       "registered_by": "M-001",
       "last_verified": "2026-05-28",
       "last_verified_by": "doc_sync_v2",
-      "verified_in_mission": "M-010",
+      "verified_in_mission": "M-011",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
     },
@@ -191,7 +191,7 @@
       "registered_by": "M-001",
       "last_verified": "2026-05-28",
       "last_verified_by": "doc_sync_v2",
-      "verified_in_mission": "M-010",
+      "verified_in_mission": "M-011",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
     }

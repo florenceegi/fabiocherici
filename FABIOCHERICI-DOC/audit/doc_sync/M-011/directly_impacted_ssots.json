@@ -1,0 +1,52 @@
+{
+  "mission_id": "M-011",
+  "doc_sync_version": "2.2.0",
+  "computed_at": "2026-05-28T00:00:00Z",
+  "matching_method": "glob_fnmatch_against_watches.paths",
+  "registry_path": "FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json",
+  "impacted_ssots": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "priority": "critical",
+      "impact_type": "direct_watcher",
+      "matched_files": [
+        "messages/it.json",
+        "messages/en.json",
+        "messages/de.json",
+        "messages/es.json",
+        "messages/fr.json",
+        "messages/pt.json",
+        "messages/zh.json"
+      ],
+      "matched_against": [
+        "messages/it.json",
+        "messages/en.json",
+        "messages/de.json",
+        "messages/es.json",
+        "messages/fr.json",
+        "messages/pt.json",
+        "messages/zh.json"
+      ]
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "priority": "high",
+      "impact_type": "pattern_match",
+      "matched_files": [
+        "app/[locale]/epp/page.tsx"
+      ],
+      "matched_against": [
+        "app/[locale]/**/page.tsx"
+      ]
+    }
+  ],
+  "uncovered_modified_files": [
+    {
+      "path": "components/ui/EppIcons.tsx",
+      "reason": "Non coperto da nessun watch in SSOT_REGISTRY. Estensione 1.1.0 additiva di file gia uncovered da M-009. Informativo (anti-pattern 8 v2.1+ coverage check non-blocking)."
+    }
+  ],
+  "lateral_discovery_skipped": "RAG schema non configurato — modalita LSO ridotto"
+}

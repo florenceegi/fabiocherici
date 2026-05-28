@@ -1,0 +1,10 @@
+{
+  "mission_id": "M-011",
+  "doc_sync_version": "2.2.0",
+  "rag_mode": "skipped_no_schema",
+  "reason": "Nessun RAG_SCHEMA configurato in FABIOCHERICI-DOC/CLAUDE.md ne in env ORACODE_RAG_SCHEMA. Modalita LSO ridotto (registry + audit attivi, RAG vettoriale non attivo per questa istanza).",
+  "ssots_to_reindex": [],
+  "ssots_reindexed": [],
+  "sanity_checks": [],
+  "duration_seconds": 0
+}

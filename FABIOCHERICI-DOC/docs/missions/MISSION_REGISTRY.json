@@ -10,8 +10,36 @@
     "level": 3,
     "organ_type": "LSO mono-organo"
   },
-  "counter": 10,
+  "counter": 11,
   "missions": [
+    {
+      "id": "M-011",
+      "title": "EPP page — Fiscalita lato EPP (2 widget no-profit + grande ente)",
+      "tipo_missione": "feature",
+      "organi_coinvolti": [
+        "fabiocherici.com",
+        "os3-matrix"
+      ],
+      "priority": "P1",
+      "trigger_matrix": 2,
+      "trigger_matrix_reason": "comportamentale additivo (nuova sezione UI + sub-namespace i18n in 7 lingue + 2 icone). Cross-project minor su os3-matrix (whitelist DE quality gate) gestito separatamente.",
+      "parent_mission": "M-009",
+      "status": "closed",
+      "date_open": "2026-05-28",
+      "date_close": "2026-05-28",
+      "found_by": "CEO brief — estensione M-009 lato EPP riceventi (2 widget: noprofit ETS/ONLUS + grande ente/azienda)",
+      "commit_hash": "PENDING_COMMIT",
+      "doc_sync_executed": true,
+      "doc_sync_outcome": "success",
+      "doc_sync_version": "2.2.0",
+      "doc_sync_rag_mode": "skipped_no_schema",
+      "doc_sync_ssots_impacted_direct": 2,
+      "doc_sync_ssots_modified_additive": 2,
+      "doc_sync_ssots_modified_substitutive": 0,
+      "doc_sync_audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-011/",
+      "audit_findings": "GREEN",
+      "note_sync": "Mission M-011 chiusa via DOC-SYNC v2 (modalita LSO ridotto, no RAG). 2 SSOT impattati (i18n-messages + seo), entrambi additive applied senza approval. Estende epp.widgets di M-009 con sub-namespace fiscalita_epp (25 chiavi x 7 lingue). 1 file uncovered (EppIcons.tsx bump 1.0.0->1.1.0 con +Sprout +Briefcase) — gia uncovered da M-009, informativo. Cross-project file /home/fabio/os3-matrix/bin/web_quality_gate.py whitelist DE estesa (Steuersystem*, manuell*, aktuell*, individuell*, kontinuierlich*) segnalato come cross_project:true — NON gestito dal registry locale, commit separato in repo os3-matrix."
+    },
     {
       "id": "M-010",
       "title": "Fix M-009 — quality gate (meta description ≤160 chars + I-2 DE false positives whitelist)",

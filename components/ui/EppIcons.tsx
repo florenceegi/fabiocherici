@@ -1,10 +1,10 @@
 /**
  * @package fabiocherici.com — EPP Icons
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
+ * @version 1.1.0 (FlorenceEGI — fabiocherici.com)
  * @date 2026-05-28
  * @purpose Inline SVG icons for EPP accordion widgets (lucide.dev MIT, zero JS overhead).
- * @mission M-009
+ * @mission M-009, M-011 (Sprout + Briefcase per fiscalita_epp)
  */
 
 import type { SVGProps } from 'react';
@@ -85,6 +85,26 @@ export function Building2(props: IconProps) {
       <path d="M10 10h4" />
       <path d="M10 14h4" />
       <path d="M10 18h4" />
+    </svg>
+  );
+}
+
+export function Sprout(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M7 20h10" />
+      <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+      <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+      <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+    </svg>
+  );
+}
+
+export function Briefcase(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+      <rect width="20" height="14" x="2" y="6" rx="2" />
     </svg>
   );
 }

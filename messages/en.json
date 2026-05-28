@@ -1053,6 +1053,51 @@
         "not_title": "What Florence EGI does NOT do",
         "not_p1": "Florence EGI never acts as a withholding agent. It does not issue tax documentation in place of the recipient EPP entity, which remains responsible for issuing any receipts requested. Tax compliance always remains with the purchasing organisation and the receiving EPP entity.",
         "not_p2": "For complex cases (large amounts, multinational groups, donations that trigger specific CSR regulations or non-financial reporting), consult your tax advisor and internal compliance office."
+      },
+      "fiscalita_epp": {
+        "section_badge": "TAXATION — EPP SIDE",
+        "section_title": "Are you an EPP receiving donations?",
+        "section_subtitle": "Compliance, automation, responsibility",
+        "section_intro": "EPPs — Environmental Protection Projects — whether small non-profits or large companies and structured entities, receive funds directly from FlorenceEGI users through dedicated wallets linked to the collections. The platform offers advanced tools for reporting, automation and documentation support, but does not manage or hold the funds destined for the EPPs. Fiscal and administrative responsibility remains with the receiving entity, according to its legal nature.",
+        "section_outro": "FlorenceEGI never acts as a withholding agent and is not a party to the financial flows destined for the EPPs. Each EPP manages its own compliance: we provide only tools, traceability and transparency. All guidelines are made public in ToS, partner onboarding and technical documentation.",
+        "noprofit": {
+          "badge": "TAXATION",
+          "title": "Small non-profit entity (ETS / ONLUS)",
+          "subtitle": "Registered in the RUNTS or former ONLUS list, manages donations as acts of liberality pursuant to the Third Sector Code (D.Lgs. 117/2017).",
+          "disclaimer": "This section refers to Italian tax law.",
+          "how_title": "How it works with FlorenceEGI",
+          "how_items": [
+            "Donations arrive directly on your account/wallet, without intermediation.",
+            "Donation receipts are issued only upon the donor's request (Italian regulation, not our choice).",
+            "Recommended mode: cumulative annual or monthly receipt for each donor, even in the case of thousands of micro-donations.",
+            "No electronic invoice: donations are acts of liberality, not payments.",
+            "The platform automatically generates pre-compiled receipts, digitally archived, downloadable by the donor from their dashboard.",
+            "All receipts are tracked for any tax audits (complete audit trail)."
+          ],
+          "example_title": "Real example",
+          "example_body": "The Frangette Association, which supports FlorenceEGI, operates this way: it receives donations directly on its own account, upon request issues cumulative receipts through the FlorenceEGI automatic system, all tracked according to ETS regulation.",
+          "sources_title": "Regulatory sources",
+          "sources_body": "D.Lgs. 117/2017 (Third Sector Code), Agenzia delle Entrate Circulars on ETS/ONLUS, RUNTS Regulation."
+        },
+        "azienda": {
+          "badge": "TAXATION",
+          "title": "Large entity, company, structured group",
+          "subtitle": "Organised entity with its own legal personality (SpA, Srl, foundation, NGO, multi-utility, corporate) which has internal accounting and administrative structures.",
+          "disclaimer": "This section refers to Italian tax law.",
+          "how_title": "How it works with FlorenceEGI",
+          "how_items": [
+            "Funds are transferred directly to an IBAN held by the entity or to a validated corporate wallet.",
+            "The production of receipts, donation attestations, credit notes takes place through your administrative office, according to your internal policies and the applicable accounting principles (OIC, IAS/IFRS).",
+            "FlorenceEGI offers API, downloadable reports, exportable audit trails to integrate data directly into your CRM, ERP systems, or your administrative flows.",
+            "Complete traceability of the flow in the platform, interoperability with your systems, reduction of manual workloads."
+          ],
+          "principle_title": "The principle",
+          "principle_body": "The platform guarantees only traceability in the platform and data export. It does not replace your internal compliance procedures. You always remain responsible for the correct fiscal and administrative management of the funds received, according to your legal nature and your accounting regime.",
+          "example_title": "Typical example",
+          "example_body": "A company receives 100,000€ for a project → downloads the transaction report → integrates the data with its own accounting/fiscal system → internally produces the documents required according to its own policies.",
+          "sources_title": "Regulatory sources",
+          "sources_body": "Italian Civil Code, national and international accounting principles (OIC, IAS/IFRS), D.Lgs. 231/2007 (anti-money laundering), art. 83 D.Lgs. 117/2017."
+        }
       }
     }
   }
