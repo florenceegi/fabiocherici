@@ -1,0 +1,9 @@
+{
+  "mission_id": "M-009",
+  "status": "skipped",
+  "rag_mode": "skipped_no_schema",
+  "skip_reason": "no_rag_schema_configured",
+  "detail": "Istanza fabiocherici.com opera in modalita LSO ridotto. CLAUDE.md istanza non dichiara RAG_SCHEMA. Variabile env ORACODE_RAG_SCHEMA non impostata. Step 5 skip per design DOC-SYNC v2 §Tooling RAG generico.",
+  "ssots_processed": [],
+  "rag_chunks_reindexed": null
+}

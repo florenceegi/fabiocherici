@@ -1,0 +1,6 @@
+{
+  "mission_id": "M-010",
+  "rag_mode": "skipped_no_schema",
+  "reason": "Istanza LSO ridotto: nessun RAG_SCHEMA configurato in CLAUDE.md ne in ORACODE_RAG_SCHEMA env var. Step 3 skip.",
+  "lateral_ssots": []
+}

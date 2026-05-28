@@ -1,0 +1,51 @@
+{
+  "mission_id": "M-010",
+  "registry_path": "FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json",
+  "impacted_ssots": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "match_type": "direct_watcher",
+      "matched_files": [
+        "messages/it.json",
+        "messages/en.json",
+        "messages/de.json",
+        "messages/es.json",
+        "messages/fr.json",
+        "messages/pt.json",
+        "messages/zh.json"
+      ],
+      "matched_paths": [
+        "messages/it.json",
+        "messages/en.json",
+        "messages/de.json",
+        "messages/es.json",
+        "messages/fr.json",
+        "messages/pt.json",
+        "messages/zh.json"
+      ]
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "match_type": "pattern_match",
+      "matched_files": [
+        "app/[locale]/epp/page.tsx"
+      ],
+      "matched_patterns": [
+        "app/[locale]/**/page.tsx"
+      ]
+    }
+  ],
+  "cross_project_signals": [
+    {
+      "cross_project": true,
+      "file": "/home/fabio/os3-matrix/bin/web_quality_gate.py",
+      "registry_origin": "os3-matrix (not local)",
+      "doc_sync_handled_here": false,
+      "note": "File esterno al perimetro instance_root fabiocherici.com. Committare e tracciare separatamente in os3-matrix DOC."
+    }
+  ],
+  "uncovered_new_files": [],
+  "outcome": "success"
+}

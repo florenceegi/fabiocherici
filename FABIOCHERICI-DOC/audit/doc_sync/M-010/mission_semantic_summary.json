@@ -1,0 +1,100 @@
+{
+  "mission_id": "M-010",
+  "tipo_missione": "fix",
+  "parent_mission": "M-009",
+  "trigger_matrix": 6,
+  "trigger_matrix_reason": "cross-project: tocca file in /home/fabio/os3-matrix/bin/web_quality_gate.py",
+  "ceo_approval": {
+    "type": "retroactive",
+    "method": "AskUserQuestion",
+    "date": "2026-05-28"
+  },
+  "analysis_timestamp": "2026-05-28T01:55:00Z",
+  "files_analyzed": [
+    "messages/it.json",
+    "messages/en.json",
+    "messages/de.json",
+    "messages/es.json",
+    "messages/fr.json",
+    "messages/pt.json",
+    "messages/zh.json",
+    "app/[locale]/epp/page.tsx",
+    "FABIOCHERICI-DOC/docs/missions/M-010_WEB_QUALITY_GATE_FIX.md"
+  ],
+  "cross_project_files": [
+    {
+      "path": "/home/fabio/os3-matrix/bin/web_quality_gate.py",
+      "type": "modified",
+      "scope": "whitelist DE I-2 estesa (~59 termini lessicalmente legittimi tedeschi)",
+      "doc_sync_handled": false,
+      "note": "Cross-project file, gestito separatamente in repo os3-matrix"
+    }
+  ],
+  "semantic_changes": {
+    "new_functions": [],
+    "removed_functions": [],
+    "renamed_i18n_keys": [
+      {
+        "old_key": "epp.widgets.apr.status_value",
+        "new_key": "epp.widgets.apr.status_text",
+        "reason": "key letterale `status_value` matchava regex DE I-2 `\\b\\w*ue\\w*\\b` su `value` interno nel next-intl payload HTML",
+        "locales_affected": ["it", "en", "de", "es", "fr", "pt", "zh"]
+      },
+      {
+        "old_key": "epp.widgets.arf.status_value",
+        "new_key": "epp.widgets.arf.status_text",
+        "reason": "stessa motivazione apr",
+        "locales_affected": ["it", "en", "de", "es", "fr", "pt", "zh"]
+      },
+      {
+        "old_key": "epp.widgets.bpe.status_value",
+        "new_key": "epp.widgets.bpe.status_text",
+        "reason": "stessa motivazione apr",
+        "locales_affected": ["it", "en", "de", "es", "fr", "pt", "zh"]
+      }
+    ],
+    "shortened_strings": [
+      {
+        "key": "meta.epp_description",
+        "reason": "violazione soglia SEO Google 160 chars",
+        "before_lengths": {
+          "it": 186,
+          "en": 199,
+          "de": 199,
+          "es": 188,
+          "fr": 207,
+          "pt": 186,
+          "zh": 109
+        },
+        "after_lengths": {
+          "it": 157,
+          "en": 158,
+          "de": 142,
+          "es": 152,
+          "fr": 156,
+          "pt": 152,
+          "zh": 109
+        },
+        "concept_preserved": "APR/ARF/BPE + Florence EGI + 20% + strutturale",
+        "locale_unchanged": ["zh"]
+      }
+    ],
+    "code_callsite_updates": [
+      {
+        "file": "app/[locale]/epp/page.tsx",
+        "occurrences": 3,
+        "change": "tw('apr.status_value') → tw('apr.status_text'); idem arf, bpe",
+        "type": "callsite_rename_propagation"
+      }
+    ]
+  },
+  "doc_only_mission": false,
+  "type_of_changes": "behavioral_substitutive",
+  "p0_relevance": [
+    "P0-FC-4 — i18n: rename key richiede parità in tutte 7 lingue (rispettata)",
+    "P0-2 — Translation keys atomiche: confermata convenzione",
+    "P0-9 — i18n completa: rename in tutte 7 lingue + meta accorciata in 6/7",
+    "P0-11 — DOC-SYNC: in esecuzione"
+  ],
+  "analysis_outcome": "success"
+}

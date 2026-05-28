@@ -1,0 +1,54 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "mission_id": "M-009",
+  "instance_root": "/home/fabio/fabiocherici.com",
+  "timestamp_start": "2026-05-27T23:22:23Z",
+  "timestamp_end": "2026-05-27T23:26:32Z",
+  "duration_seconds": 249,
+  "ssots_impacted_direct": 2,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 2,
+  "ssots_modified_substitutive": 0,
+  "ssots_no_change": 0,
+  "rag_chunks_reindexed": null,
+  "rag_mode": "skipped_no_schema",
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": [
+    "step_1_semantic_analysis",
+    "step_2_direct_impact",
+    "step_3_lateral_discovery_skipped",
+    "step_4_discrimination_and_patch",
+    "step_5_rag_reindex_skipped",
+    "step_5b_registry_metadata_update",
+    "step_6_audit_trail"
+  ],
+  "ssot_details": [
+    {
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "ssot_id": "seo",
+      "mode": "additive",
+      "status": "applied",
+      "hash_before": "27bd88c90b5cbc33a60ecf62b16354239776beea56ab2d1fe47ea85d5dfd1445",
+      "hash_after": "2477338e2d4ab5cb491d73ad500cb33cc3525d145f41ed34296593bc63f9063c"
+    },
+    {
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "ssot_id": "i18n-messages",
+      "mode": "additive",
+      "status": "applied",
+      "hash_before": "79d0a1bb0df8338725ba167788900181439dba67e764cd1a6cbdd8a4e3eeec8a",
+      "hash_after": "ed85988dc17642600c126e408e0ba2ffdec2ad829b6af580be72ce21148c69f2"
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [
+    {"file": "components/ui/EppAccordion.tsx", "triage": "decidere se creare SSOT epp-widgets — componente puramente presentazionale"},
+    {"file": "components/ui/EppIcons.tsx", "triage": "uncovered acceptable — icone derived MIT zero behavior"},
+    {"file": "tests/m-009/test_epp_widgets_accordion.sh", "triage": "pattern coerente con altri test mission — no action"}
+  ],
+  "audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-009/"
+}

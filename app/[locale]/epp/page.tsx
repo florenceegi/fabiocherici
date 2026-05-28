@@ -1,10 +1,10 @@
 /**
  * @package fabiocherici.com — EPP Page
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-26
- * @purpose EPP page — Environment Protection Programs, 6 infographic sections with i18n overlay, narrative first-person tone.
- * @mission M-212
+ * @version 3.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-05-28
+ * @purpose EPP page — Environment Protection Programs, 14 sections with 6 inline accordion widgets (Ragion d'essere + APR/ARF/BPE + fiscalita individuali/aziende).
+ * @mission M-009
  */
 
 import type { Metadata } from 'next';
@@ -12,7 +12,9 @@ import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildPageSchema, buildFaqSchema, buildItemListSchema } from '@/lib/seo';
+import { EppAccordion } from '@/components/ui/EppAccordion';
+import { Heart, Waves, Trees, Bee, FileText, Building2 } from '@/components/ui/EppIcons';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -32,8 +34,10 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('epp');
+  const tw = await getTranslations('epp.widgets');
   const tm = await getTranslations({ locale, namespace: 'meta' });
-  const pageSchema = buildPageSchema({
+
+  const pageSchemas = buildPageSchema({
     locale, path: '/epp', title: tm('epp_title'), description: tm('epp_description'),
     type: 'WebPage',
     breadcrumbItems: [
@@ -41,6 +45,21 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
       { name: tm('epp_title'), url: `https://fabiocherici.com/${locale}/epp` },
     ],
   });
+
+  // D6 — FAQPage schema (2 fiscal widgets)
+  const faqSchema = buildFaqSchema([
+    { question: tw('fiscalita_individuale.title'), answer: tw('fiscalita_individuale.you_p1') + ' ' + tw('fiscalita_individuale.you_p2') },
+    { question: tw('fiscalita_aziende.title'),     answer: tw('fiscalita_aziende.intro_body') },
+  ]);
+
+  // D6 — ItemList schema (3 programmi)
+  const programsSchema = buildItemListSchema(tw('programs_section_title'), [
+    { name: `APR — ${tw('apr.subtitle')}`, description: tw('apr.what_body') },
+    { name: `ARF — ${tw('arf.subtitle')}`, description: tw('arf.what_body') },
+    { name: `BPE — ${tw('bpe.subtitle')}`, description: tw('bpe.what_body') },
+  ]);
+
+  const jsonLd = { '@context': 'https://schema.org', '@graph': [...pageSchemas, faqSchema, programsSchema] };
 
   const rich = {
     b: (chunks: ReactNode) => <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>,
@@ -54,9 +73,12 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
     ),
   };
 
+  const disclaimerIndividuale = tw('fiscalita_individuale.disclaimer');
+  const disclaimerAziende     = tw('fiscalita_aziende.disclaimer');
+
   return (
     <div className="pt-24">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': pageSchema }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── 1. Hero ── */}
       <section className="py-24 bg-[var(--bg)]">
@@ -81,7 +103,26 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 2. Split — Donut Chart ── */}
+      {/* ── 2. Widget — Ragion d'essere ── */}
+      <section className="py-16 bg-[var(--bg)]">
+        <div className="mx-auto max-w-4xl px-6">
+          <EppAccordion
+            id="widget-ragione-essere"
+            badge={tw('ragione_essere.badge')}
+            title={tw('ragione_essere.title')}
+            icon={<Heart />}
+          >
+            <p>{tw('ragione_essere.body_p1')}</p>
+            <p>{tw('ragione_essere.body_p2')}</p>
+            <p>{tw('ragione_essere.body_p3')}</p>
+            <p>{tw('ragione_essere.body_p4')}</p>
+            <p>{tw('ragione_essere.body_p5')}</p>
+            <p className="font-medium text-[var(--text-primary)]">{tw('ragione_essere.body_p6')}</p>
+          </EppAccordion>
+        </div>
+      </section>
+
+      {/* ── 3. Split — Donut Chart ── */}
       <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-16">
@@ -100,7 +141,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 3. Flow — Non-Custodial ── */}
+      {/* ── 4. Flow — Non-Custodial ── */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
@@ -126,7 +167,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 4. What EPP is NOT ── */}
+      {/* ── 5. What EPP is NOT ── */}
       <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
@@ -147,7 +188,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 5. Triple Guarantee ── */}
+      {/* ── 6. Triple Guarantee ── */}
       <section className="py-24 bg-[var(--bg)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
@@ -168,7 +209,7 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 6. Virtuous Cycle ── */}
+      {/* ── 7. Virtuous Cycle ── */}
       <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-16">
@@ -189,8 +230,88 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 7. Partner Dashboard ── */}
+      {/* ── 8-10. Wrapper "I tre programmi" — APR + ARF + BPE widget ── */}
       <section className="py-24 bg-[var(--bg)]">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
+            {tw('programs_section_title')}
+          </h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
+            {tw('programs_section_intro')}
+          </p>
+          <div className="space-y-4">
+            <EppAccordion
+              id="widget-apr"
+              badge={tw('apr.badge')}
+              title={tw('apr.title')}
+              subtitle={tw('apr.subtitle')}
+              icon={<Waves />}
+            >
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('apr.what_title')}</h4>
+              <p>{tw('apr.what_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('apr.why_title')}</h4>
+              <p>{tw('apr.why_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('apr.continent_title')}</h4>
+              <p>{tw('apr.continent_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('apr.micro_title')}</h4>
+              <p>{tw('apr.micro_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('apr.impact_title')}</h4>
+              <p>{tw('apr.impact_body')}</p>
+              <p className="pt-2 text-sm border-t border-[var(--border)]">
+                <strong className="text-[var(--text-primary)]">{tw('apr.status_label')}:</strong> {tw('apr.status_text')}
+              </p>
+            </EppAccordion>
+
+            <EppAccordion
+              id="widget-arf"
+              badge={tw('arf.badge')}
+              title={tw('arf.title')}
+              subtitle={tw('arf.subtitle')}
+              icon={<Trees />}
+            >
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('arf.what_title')}</h4>
+              <p>{tw('arf.what_body')}</p>
+              <p>{tw('arf.scope_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('arf.why_title')}</h4>
+              <p>{tw('arf.why_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('arf.where_title')}</h4>
+              <p>{tw('arf.where_p1')}</p>
+              <p>{tw('arf.where_p2')}</p>
+              <p>{tw('arf.where_p3')}</p>
+              <p>{tw('arf.where_p4')}</p>
+              <p className="pt-2 text-sm border-t border-[var(--border)]">
+                <strong className="text-[var(--text-primary)]">{tw('arf.status_label')}:</strong> {tw('arf.status_text')}
+              </p>
+            </EppAccordion>
+
+            <EppAccordion
+              id="widget-bpe"
+              badge={tw('bpe.badge')}
+              title={tw('bpe.title')}
+              subtitle={tw('bpe.subtitle')}
+              icon={<Bee />}
+            >
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('bpe.what_title')}</h4>
+              <p>{tw('bpe.what_body')}</p>
+              <p>{tw('bpe.name_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('bpe.why_title')}</h4>
+              <p>{tw('bpe.why_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('bpe.depend_title')}</h4>
+              <p>{tw('bpe.depend_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('bpe.causes_title')}</h4>
+              <p>{tw('bpe.causes_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('bpe.impact_title')}</h4>
+              <p>{tw('bpe.impact_body')}</p>
+              <p className="pt-2 text-sm border-t border-[var(--border)]">
+                <strong className="text-[var(--text-primary)]">{tw('bpe.status_label')}:</strong> {tw('bpe.status_text')}
+              </p>
+            </EppAccordion>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 11. Partner Dashboard ── */}
+      <section className="py-24 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
             {t('dashboard_title')}
@@ -220,7 +341,80 @@ export default async function EppPage({ params }: { params: Promise<{ locale: st
         </div>
       </section>
 
-      {/* ── 8. CTA ── */}
+      {/* ── 12-13. Wrapper "Fiscalità" — individuale + aziende widget ── */}
+      <section className="py-24 bg-[var(--bg)]">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
+            {tw('fiscal_section_title')}
+          </h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
+            {tw('fiscal_section_intro')}
+          </p>
+          <div className="space-y-4">
+            <EppAccordion
+              id="widget-fiscal-individual"
+              badge={tw('fiscalita_individuale.badge')}
+              title={tw('fiscalita_individuale.title')}
+              subtitle={tw('fiscalita_individuale.subtitle')}
+              icon={<FileText />}
+            >
+              {disclaimerIndividuale && (
+                <p className="italic text-sm text-[var(--text-muted)] border-l-2 border-[var(--accent)] pl-3">
+                  {disclaimerIndividuale}
+                </p>
+              )}
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_individuale.you_title')}</h4>
+              <p>{tw('fiscalita_individuale.you_p1')}</p>
+              <p>{tw('fiscalita_individuale.you_p2')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_individuale.practice_title')}</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{tw('fiscalita_individuale.practice_item1')}</li>
+                <li>{tw('fiscalita_individuale.practice_item2')}</li>
+                <li>{tw('fiscalita_individuale.practice_item3')}</li>
+              </ul>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_individuale.receipt_title')}</h4>
+              <p>{tw('fiscalita_individuale.receipt_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_individuale.not_title')}</h4>
+              <p>{tw('fiscalita_individuale.not_p1')}</p>
+              <p>{tw('fiscalita_individuale.not_p2')}</p>
+            </EppAccordion>
+
+            <EppAccordion
+              id="widget-fiscal-business"
+              badge={tw('fiscalita_aziende.badge')}
+              title={tw('fiscalita_aziende.title')}
+              subtitle={tw('fiscalita_aziende.subtitle')}
+              icon={<Building2 />}
+            >
+              {disclaimerAziende && (
+                <p className="italic text-sm text-[var(--text-muted)] border-l-2 border-[var(--accent)] pl-3">
+                  {disclaimerAziende}
+                </p>
+              )}
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_aziende.intro_title')}</h4>
+              <p>{tw('fiscalita_aziende.intro_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_aziende.vat_title')}</h4>
+              <p>{tw('fiscalita_aziende.vat_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_aziende.books_title')}</h4>
+              <p>{tw('fiscalita_aziende.books_body')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_aziende.docs_title')}</h4>
+              <p>{tw('fiscalita_aziende.docs_intro')}</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{tw('fiscalita_aziende.docs_item1')}</li>
+                <li>{tw('fiscalita_aziende.docs_item2')}</li>
+                <li>{tw('fiscalita_aziende.docs_item3')}</li>
+                <li>{tw('fiscalita_aziende.docs_item4')}</li>
+              </ul>
+              <p>{tw('fiscalita_aziende.docs_outro')}</p>
+              <h4 className="font-medium text-[var(--text-primary)]">{tw('fiscalita_aziende.not_title')}</h4>
+              <p>{tw('fiscalita_aziende.not_p1')}</p>
+              <p>{tw('fiscalita_aziende.not_p2')}</p>
+            </EppAccordion>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 14. CTA ── */}
       <section className="py-20 bg-[var(--bg-elevated)]">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-12">

@@ -1,0 +1,34 @@
+{
+  "mission_id": "M-010",
+  "actions": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_pre": "ed85988dc17642600c126e408e0ba2ffdec2ad829b6af580be72ce21148c69f2",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-010/diffs/i18n-messages.md",
+      "justification": "Aggiunte 2 CICATRICI M-010: (1) convenzione naming chiavi anti-regex DE; (2) protocollo rename i18n atomico 7 file + callsite + test + gate. Aggiornato frontmatter last_verified_mission.",
+      "timestamp": "2026-05-28T01:55:30Z",
+      "resolution_method": "auto_apply",
+      "approval_required": false
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_pre": "2477338e2d4ab5cb491d73ad500cb33cc3525d145f41ed34296593bc63f9063c",
+      "diff_path": "FABIOCHERICI-DOC/audit/doc_sync/M-010/diffs/seo.md",
+      "justification": "Aggiunte 2 CICATRICI M-010: (1) soglia SEO Google meta description ≤160 chars + check S-3 quality gate; (2) workflow gate hook pre-FASE 6. Aggiornato frontmatter last_verified_mission.",
+      "timestamp": "2026-05-28T01:55:45Z",
+      "resolution_method": "auto_apply",
+      "approval_required": false
+    }
+  ],
+  "batch_complete": true,
+  "approvals_required_count": 0,
+  "approvals_received_count": 0,
+  "rejections_count": 0,
+  "outcome": "all_applied"
+}

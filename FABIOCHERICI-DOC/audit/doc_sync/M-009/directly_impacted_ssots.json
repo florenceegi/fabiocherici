@@ -1,0 +1,63 @@
+{
+  "mission_id": "M-009",
+  "computed_at": "2026-05-27T23:22:23Z",
+  "method": "deterministic_glob_pattern_match",
+  "ssot_registry_path": "FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json",
+  "ssot_registry_total": 7,
+  "directly_impacted": [
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "impact_type": "direct_watcher",
+      "matched_files": [
+        {"file": "lib/seo.ts", "watch_pattern": "lib/seo.ts", "match_kind": "exact"},
+        {"file": "app/[locale]/epp/page.tsx", "watch_pattern": "app/[locale]/**/page.tsx", "match_kind": "glob"}
+      ],
+      "priority": "high"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "impact_type": "direct_watcher",
+      "matched_files": [
+        {"file": "messages/it.json", "watch_pattern": "messages/it.json", "match_kind": "exact"},
+        {"file": "messages/en.json", "watch_pattern": "messages/en.json", "match_kind": "exact"},
+        {"file": "messages/fr.json", "watch_pattern": "messages/fr.json", "match_kind": "exact"},
+        {"file": "messages/de.json", "watch_pattern": "messages/de.json", "match_kind": "exact"},
+        {"file": "messages/es.json", "watch_pattern": "messages/es.json", "match_kind": "exact"},
+        {"file": "messages/pt.json", "watch_pattern": "messages/pt.json", "match_kind": "exact"},
+        {"file": "messages/zh.json", "watch_pattern": "messages/zh.json", "match_kind": "exact"}
+      ],
+      "priority": "critical"
+    }
+  ],
+  "not_impacted_ssots": [
+    {"ssot_id": "animation-presets", "reason": "no_match — mission non tocca lib/animation*"},
+    {"ssot_id": "scene3d-ids", "reason": "no_match — mission non tocca scene 3D"},
+    {"ssot_id": "i18n-config", "reason": "no_match — mission non tocca lib/i18n/config|routing|request"},
+    {"ssot_id": "design-tokens", "reason": "no_match — mission non tocca app/globals.css o theme-context"},
+    {"ssot_id": "fonts", "reason": "no_match — mission non tocca lib/fonts.ts o layout"}
+  ],
+  "uncovered_new_files": [
+    {
+      "file": "components/ui/EppAccordion.tsx",
+      "reason": "Nuovo componente UI non coperto da SSOT esistente",
+      "triage_suggestion": "Decidere se creare SSOT 'epp-widgets' o lasciare uncovered (componente puramente presentazionale)"
+    },
+    {
+      "file": "components/ui/EppIcons.tsx",
+      "reason": "Nuovo set icone inline non coperto da SSOT esistente",
+      "triage_suggestion": "Probabile uncovered acceptable — icone derived MIT zero behavior"
+    },
+    {
+      "file": "tests/m-009/test_epp_widgets_accordion.sh",
+      "reason": "Test acceptance per mission specifica, no SSOT richiesto",
+      "triage_suggestion": "Pattern coerente con tests/m-007 e tests/m-006 — no action"
+    }
+  ],
+  "summary": {
+    "ssots_directly_impacted_count": 2,
+    "ssots_not_impacted_count": 5,
+    "new_files_uncovered_count": 3
+  }
+}

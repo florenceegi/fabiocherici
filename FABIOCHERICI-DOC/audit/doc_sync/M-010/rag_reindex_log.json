@@ -1,0 +1,7 @@
+{
+  "mission_id": "M-010",
+  "rag_mode": "skipped_no_schema",
+  "reason": "Istanza LSO ridotto: nessun RAG_SCHEMA configurato. Step 5 skip.",
+  "ssots_to_reindex": [],
+  "outcome": "skipped"
+}

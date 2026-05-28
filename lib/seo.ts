@@ -87,3 +87,39 @@ export function buildPageSchema(opts: PageSchemaOptions): object[] {
 
   return schemas;
 }
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export function buildFaqSchema(items: FaqItem[]): object {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((it) => ({
+      '@type': 'Question',
+      name: it.question,
+      acceptedAnswer: { '@type': 'Answer', text: it.answer },
+    })),
+  };
+}
+
+export interface ItemListEntry {
+  name: string;
+  description: string;
+  url?: string;
+}
+
+export function buildItemListSchema(name: string, entries: ItemListEntry[]): object {
+  return {
+    '@type': 'ItemList',
+    name,
+    itemListElement: entries.map((e, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: e.name,
+      description: e.description,
+      ...(e.url ? { url: e.url } : {}),
+    })),
+  };
+}

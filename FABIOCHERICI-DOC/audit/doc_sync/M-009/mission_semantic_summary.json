@@ -1,0 +1,97 @@
+{
+  "mission_id": "M-009",
+  "trigger_matrix": 2,
+  "mission_nature": "feature_additive",
+  "analyzed_at": "2026-05-27T23:22:23Z",
+  "doc_sync_version": "2.2.0",
+  "summary": "Aggiunti 6 widget accordion HTML5 details/summary alla pagina EPP (Ragion d'essere + APR + ARF + BPE + Fiscalita Individuale + Fiscalita Aziende). Estesa lib/seo.ts con 2 nuovi helper schema (FAQPage + ItemList). Pagina EPP cresce da 8 a 14 sezioni. Nuova namespace i18n epp.widgets.* (10 chiavi top-level x 7 lingue). Correzione 3 chiavi meta presenti ma null (epp_title, epp_description, seo_section_epp).",
+  "new_entities": {
+    "components": [
+      {
+        "path": "components/ui/EppAccordion.tsx",
+        "kind": "react_server_component",
+        "exports": ["EppAccordion", "EppAccordionProps"],
+        "purpose": "Accordion native HTML5 details/summary, zero JS, A11y native, static-export friendly",
+        "deps": ["./EppIcons (ChevronDown)"]
+      },
+      {
+        "path": "components/ui/EppIcons.tsx",
+        "kind": "react_server_component_icons",
+        "exports": ["ChevronDown", "Heart", "Waves", "Trees", "Bee", "Building2", "FileText"],
+        "purpose": "7 SVG inline lucide-derived (MIT), zero JS overhead",
+        "deps": []
+      }
+    ],
+    "tests": [
+      {
+        "path": "tests/m-009/test_epp_widgets_accordion.sh",
+        "kind": "acceptance_bash",
+        "covers": ["D8 acceptance criteria EPP widgets"]
+      }
+    ],
+    "seo_helpers": [
+      {
+        "function": "buildFaqSchema(items: FaqItem[])",
+        "file": "lib/seo.ts",
+        "returns": "schema.org FAQPage object",
+        "additive": true
+      },
+      {
+        "function": "buildItemListSchema(name, entries)",
+        "file": "lib/seo.ts",
+        "returns": "schema.org ItemList object",
+        "additive": true
+      }
+    ],
+    "i18n_keys": {
+      "namespace": "epp.widgets",
+      "top_level_keys": ["ragione_essere", "programs_section_title", "programs_section_intro", "apr", "arf", "bpe", "fiscal_section_title", "fiscal_section_intro", "fiscalita_individuale", "fiscalita_aziende"],
+      "locales_affected": ["it", "en", "fr", "de", "es", "pt", "zh"],
+      "parity_verified": true,
+      "parity_check_result": "10 keys x 7 locales = 70 namespaces validated"
+    },
+    "i18n_meta_fix": {
+      "namespace": "meta",
+      "keys_corrected": ["epp_title", "epp_description", "seo_section_epp"],
+      "nature": "null_to_value_corrective",
+      "additive": true
+    }
+  },
+  "removed_entities": {
+    "functions": [],
+    "components": [],
+    "i18n_keys": []
+  },
+  "behavioral_changes": {
+    "epp_page": {
+      "path": "app/[locale]/epp/page.tsx",
+      "version_bump": "2.0.0 -> 3.0.0",
+      "sections_count": "8 -> 14",
+      "new_features": [
+        "6 inline accordion widgets HTML5 details (zero JS)",
+        "JSON-LD FAQPage schema (2 fiscal Q&A)",
+        "JSON-LD ItemList schema (3 programmi APR/ARF/BPE)",
+        "Wrapper 'I tre programmi' (sezione 8-10)",
+        "Wrapper 'Fiscalita' (sezione 12-13)"
+      ],
+      "no_breaking_changes": true,
+      "ssr_compatible": true,
+      "static_export_compatible": true
+    },
+    "seo_lib": {
+      "path": "lib/seo.ts",
+      "new_exports": ["buildFaqSchema", "buildItemListSchema", "FaqItem (interface)", "ItemListEntry (interface)"],
+      "no_breaking_changes": true,
+      "existing_functions_unchanged": ["buildOgImage", "buildAlternates", "buildPageSchema", "PageSchemaOptions"]
+    }
+  },
+  "narrative_content_changes": {
+    "scope": "Contenuti widget tematici (programs EPP + fiscalita) interamente nuovi",
+    "source_authority": "BRIEF_LSO_EPP_WIDGETS.md v1.1.0 (post-allucinazione corretto)",
+    "source_ssot_tecniche": ["EGI-DOC/04_Gestione_Pagamenti.md", "EGI-DOC/06_Gestione_Fiscale.md"]
+  },
+  "discrimination_logic": {
+    "default_mode": "additive",
+    "rationale": "Mission feature add-only: nuovi componenti, nuove keys i18n, nuove funzioni SEO. Nessuna firma esistente alterata. Fix meta null e' additivo (passa da null a valore semantico). Doc esistenti SSOT i18n-messages e seo non descrivono entita rimosse — solo da estendere."
+  }
+}

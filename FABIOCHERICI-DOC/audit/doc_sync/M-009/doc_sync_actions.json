@@ -1,0 +1,47 @@
+{
+  "mission_id": "M-009",
+  "doc_sync_version": "2.2.0",
+  "computed_at": "2026-05-27T23:22:23Z",
+  "actions": [
+    {
+      "ssot_id": "seo",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "27bd88c90b5cbc33a60ecf62b16354239776beea56ab2d1fe47ea85d5dfd1445",
+      "ssot_content_hash_after": "2477338e2d4ab5cb491d73ad500cb33cc3525d145f41ed34296593bc63f9063c",
+      "diff_path": "audit/doc_sync/M-009/diffs/seo.md",
+      "proposed_patch": "applied_inline",
+      "resolution_method": "direct_apply_additive_no_approval_needed",
+      "justification": "Aggiunti 2 nuovi helper Schema.org (buildFaqSchema, buildItemListSchema) in lib/seo.ts. Estesa pagina EPP che ora consuma entrambi. SSOT esistente non descriveva alcuna delle entita rimosse — solo additive. Nessuna firma o comportamento documentato alterato.",
+      "timestamp": "2026-05-27T23:22:23Z",
+      "approval_required": false
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "79d0a1bb0df8338725ba167788900181439dba67e764cd1a6cbdd8a4e3eeec8a",
+      "ssot_content_hash_after": "ed85988dc17642600c126e408e0ba2ffdec2ad829b6af580be72ce21148c69f2",
+      "diff_path": "audit/doc_sync/M-009/diffs/i18n-messages.md",
+      "proposed_patch": "applied_inline",
+      "resolution_method": "direct_apply_additive_no_approval_needed",
+      "justification": "Aggiunta sezione 'Namespace principali' (catalogo top-level keys) + 2 nuove trappole M-009 (meta null pattern + parita strutturale sub-namespace gerarchici). Lista file/policy/quality-gate invariata. Nessuna semantica esistente alterata.",
+      "timestamp": "2026-05-27T23:22:23Z",
+      "approval_required": false
+    }
+  ],
+  "rejected_actions": [],
+  "no_change_actions": [],
+  "flagged_for_rewrite": [],
+  "summary": {
+    "total_actions": 2,
+    "applied": 2,
+    "no_change": 0,
+    "failed": 0,
+    "awaiting_approval": 0,
+    "approvals_required": 0,
+    "approvals_received": 0
+  }
+}

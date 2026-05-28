@@ -1,0 +1,9 @@
+{
+  "mission_id": "M-009",
+  "computed_at": "2026-05-27T23:22:23Z",
+  "status": "skipped",
+  "skip_reason": "no_rag_schema_configured",
+  "rag_mode": "skipped_no_schema",
+  "detail": "L'istanza fabiocherici.com opera in modalita LSO ridotto (registry+audit, no RAG/Postgres). CLAUDE.md non dichiara RAG_SCHEMA e variabile env ORACODE_RAG_SCHEMA non e' impostata. Discovery laterale skip per design — comportamento documentato in DOC-SYNC v2 §Tooling RAG generico.",
+  "laterally_impacted": []
+}

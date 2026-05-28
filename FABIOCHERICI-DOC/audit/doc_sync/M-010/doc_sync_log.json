@@ -1,0 +1,55 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "instance_root": "/home/fabio/fabiocherici.com",
+  "mission_id": "M-010",
+  "timestamp_start": "2026-05-28T01:54:30Z",
+  "timestamp_end": "2026-05-28T01:56:30Z",
+  "duration_seconds": 120,
+  "ssots_impacted_direct": 2,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 2,
+  "ssots_modified_substitutive": 0,
+  "ssots_no_change": 0,
+  "rag_chunks_reindexed": null,
+  "rag_mode": "skipped_no_schema",
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": [
+    "step_1_semantic_analysis",
+    "step_2_direct_impact",
+    "step_3_lateral_discovery_skipped",
+    "step_4_apply_changes",
+    "step_5_rag_reindex_skipped",
+    "step_5b_registry_metadata_update",
+    "step_6_audit_trail"
+  ],
+  "ssot_details": [
+    {
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "ssot_id": "i18n-messages",
+      "mode": "additive",
+      "status": "applied"
+    },
+    {
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "ssot_id": "seo",
+      "mode": "additive",
+      "status": "applied"
+    }
+  ],
+  "cross_project_signals": [
+    {
+      "cross_project": true,
+      "file": "/home/fabio/os3-matrix/bin/web_quality_gate.py",
+      "doc_sync_handled_here": false,
+      "note": "Da gestire separatamente in repo os3-matrix (out of instance_root fabiocherici.com)"
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [],
+  "audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-010/",
+  "audit_findings": "GREEN"
+}
