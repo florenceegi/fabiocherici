@@ -1,0 +1,28 @@
+{
+  "mission_id": "M-012",
+  "timestamp": "2026-05-29T00:00:00Z",
+  "actions": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "resolution_method": "auto_applied_no_approval_required",
+      "justification": "Rename brand label porta home (door_egi: 'EGI' -> 'Florence EGI') in 7 locale. Substitutive testuale puro su payload i18n, additive narrativo su SSOT (nuova CICATRICE M-012 + bump last_sync/last_verified_mission). Cambio brand visibile (trigger 2) ma non rompe alcuna API/contract — solo etichetta UI. Nessuna chiave aggiunta, rimossa o spostata.",
+      "changes_applied": [
+        "frontmatter: last_sync 2026-05-28 -> 2026-05-29",
+        "frontmatter: last_verified_mission M-011 -> M-012",
+        "trappole_note: aggiunta CICATRICE M-012 (pattern rename brand label)"
+      ],
+      "timestamp": "2026-05-29T00:00:00Z"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "applied": 1,
+    "no_change": 0,
+    "failed": 0,
+    "awaiting_approval": 0,
+    "flagged_for_rewrite": 0
+  }
+}

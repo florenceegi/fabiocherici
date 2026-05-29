@@ -1,0 +1,22 @@
+{
+  "mission_id": "M-012",
+  "analysis_timestamp": "2026-05-29T00:00:00Z",
+  "directly_impacted": [
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "match_type": "direct_watcher",
+      "matched_paths": [
+        "messages/it.json",
+        "messages/en.json",
+        "messages/de.json",
+        "messages/es.json",
+        "messages/fr.json",
+        "messages/pt.json",
+        "messages/zh.json"
+      ],
+      "watcher_registry_index": 6
+    }
+  ],
+  "total_count": 1
+}

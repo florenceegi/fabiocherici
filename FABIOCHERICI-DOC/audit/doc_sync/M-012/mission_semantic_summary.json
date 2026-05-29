@@ -1,0 +1,33 @@
+{
+  "mission_id": "M-012",
+  "type": "doc-only/i18n-substitutive",
+  "trigger_matrix": 2,
+  "trigger_matrix_reason": "comportamentale: cambia label visibile UI nella porta home — output utente modificato (EGI -> Florence EGI)",
+  "analysis_timestamp": "2026-05-29T00:00:00Z",
+  "changes": {
+    "new_functions": [],
+    "removed_functions": [],
+    "modified_behavior": [],
+    "narrative_changes": [
+      {
+        "type": "i18n_label_substitutive",
+        "key": "home.door_egi",
+        "old_value": "EGI",
+        "new_value": "Florence EGI",
+        "locales_touched": ["it", "en", "de", "es", "fr", "pt", "zh"],
+        "files_count": 7,
+        "occurrences_per_file": 1
+      }
+    ]
+  },
+  "files_modified": [
+    {"path": "messages/it.json", "type": "modified"},
+    {"path": "messages/en.json", "type": "modified"},
+    {"path": "messages/de.json", "type": "modified"},
+    {"path": "messages/es.json", "type": "modified"},
+    {"path": "messages/fr.json", "type": "modified"},
+    {"path": "messages/pt.json", "type": "modified"},
+    {"path": "messages/zh.json", "type": "modified"}
+  ],
+  "key_concepts": ["i18n-messages", "home.door_egi", "label_porta_home", "rename_brand"]
+}

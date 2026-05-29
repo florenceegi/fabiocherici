@@ -1,0 +1,31 @@
+{
+  "version": "2.2.0",
+  "doc_sync_version": "2.2.0",
+  "instance_root": "/home/fabio/fabiocherici.com",
+  "mission_id": "M-012",
+  "timestamp_start": "2026-05-29T00:00:00Z",
+  "timestamp_end": "2026-05-29T00:00:30Z",
+  "duration_seconds": 30,
+  "ssots_impacted_direct": 1,
+  "ssots_impacted_lateral": 0,
+  "ssots_modified_additive": 0,
+  "ssots_modified_substitutive": 1,
+  "ssots_no_change": 0,
+  "rag_chunks_reindexed": null,
+  "rag_mode": "skipped_no_schema",
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "outcome": "success",
+  "failure_reason": null,
+  "steps_completed": ["step_1", "step_2", "step_3_skipped", "step_4", "step_5_skipped", "step_5b", "step_6"],
+  "ssot_details": [
+    {
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "substitutive",
+      "status": "applied"
+    }
+  ],
+  "rewrite_flagged": [],
+  "uncovered_new_files": [],
+  "audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-012/"
+}
