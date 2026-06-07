@@ -1,0 +1,14 @@
+{
+  "Name": "drop-csp",
+  "Comment": "CSP per Drop /drop/* — consente API Gateway, S3 (PUT multipart), CDN Uppy",
+  "SecurityHeadersConfig": {
+    "ContentSecurityPolicy": {
+      "Override": true,
+      "ContentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://releases.transloadit.com; style-src 'self' 'unsafe-inline' https://releases.transloadit.com; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://nicq4pm10i.execute-api.eu-north-1.amazonaws.com https://fabiocherici-drop-incoming.s3.eu-north-1.amazonaws.com https://s3.eu-north-1.amazonaws.com; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    },
+    "ContentTypeOptions": { "Override": true },
+    "FrameOptions": { "Override": true, "FrameOption": "DENY" },
+    "ReferrerPolicy": { "Override": true, "ReferrerPolicy": "strict-origin-when-cross-origin" },
+    "StrictTransportSecurity": { "Override": true, "AccessControlMaxAgeSec": 31536000, "IncludeSubdomains": true, "Preload": true }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Logs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:eu-north-1:504606041369:*"
+    },
+    {
+      "Sid": "MultipartConfinedToIncoming",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": "arn:aws:s3:::fabiocherici-drop-incoming/incoming/*"
+    },
+    {
+      "Sid": "ListUploadsOnBucket",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucketMultipartUploads"],
+      "Resource": "arn:aws:s3:::fabiocherici-drop-incoming"
+    },
+    {
+      "Sid": "ReadClientTokens",
+      "Effect": "Allow",
+      "Action": ["dynamodb:GetItem", "dynamodb:Query"],
+      "Resource": [
+        "arn:aws:dynamodb:eu-north-1:504606041369:table/drop-clients",
+        "arn:aws:dynamodb:eu-north-1:504606041369:table/drop-clients/index/slug-index"
+      ]
+    }
+  ]
+}

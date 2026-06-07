@@ -1,0 +1,10 @@
+{
+  "name": "drop-signer",
+  "version": "1.0.0",
+  "description": "Drop — Lambda di firma multipart presigned per ricezione file pesanti clienti",
+  "type": "module",
+  "main": "index.mjs",
+  "private": true,
+  "comment": "Le dipendenze @aws-sdk/* sono PRE-INSTALLATE nel runtime Lambda nodejs20.x — nessun bundle richiesto.",
+  "engines": { "node": ">=20" }
+}

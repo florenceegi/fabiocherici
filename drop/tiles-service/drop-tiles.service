@@ -1,0 +1,24 @@
+[Unit]
+Description=drop-tiles deep-zoom service
+After=network.target
+[Service]
+Environment=DROP_BUCKET=fabiocherici-drop-incoming
+Environment=DROP_PREFIX=incoming
+Environment=DROP_ME_URL=https://nicq4pm10i.execute-api.eu-north-1.amazonaws.com/me
+Environment=DROP_CACHE=/var/lib/drop-tiles/cache
+Environment=DROP_ORIGIN=https://fabiocherici.com
+Environment=PORT=8095
+Environment=AWS_REGION=eu-north-1
+Environment=VIPS_CONCURRENCY=1
+Environment=VIPS_DISC_THRESHOLD=128m
+ExecStart=/usr/bin/python3 /opt/drop-tiles/server.py
+Restart=always
+RestartSec=5
+User=root
+MemoryHigh=1500M
+MemoryMax=1800M
+Nice=15
+CPUWeight=20
+IOSchedulingClass=idle
+[Install]
+WantedBy=multi-user.target

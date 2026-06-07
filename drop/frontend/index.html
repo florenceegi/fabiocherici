@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop — Invia i tuoi file a Fabio Cherici</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link href="https://releases.transloadit.com/uppy/v4.13.3/uppy.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="drop">
+    <header class="drop__head">
+      <h1 class="drop__title">Drop</h1>
+      <p class="drop__sub">Invia i tuoi file — qualunque dimensione. Trascinali qui sotto.</p>
+      <p class="drop__client" id="client" hidden></p>
+    </header>
+
+    <div id="gate" class="drop__gate" hidden>
+      <p><strong>Link non valido o scaduto.</strong></p>
+      <p>Chiedi a Fabio un nuovo link di caricamento.</p>
+    </div>
+
+    <div id="uppy" class="drop__uppy"></div>
+
+    <footer class="drop__foot">
+      <p>Upload diretto e cifrato verso lo storage. I file non transitano da alcun server intermedio.</p>
+    </footer>
+  </main>
+
+  <!-- Uppy UMD bundle (core + dashboard + aws-s3 multipart) -->
+  <script src="https://releases.transloadit.com/uppy/v4.13.3/uppy.min.js"></script>
+  <!-- config.js è GENERATO da infra/setup.sh con l'endpoint reale dell'API Gateway -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

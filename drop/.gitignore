@@ -1,0 +1,7 @@
+# config.js è generato dal setup con l'endpoint reale — non versionarlo
+frontend/config.js
+
+# artefatti
+*.zip
+node_modules/
+.DS_Store

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlorenceEGI — TIFF Master Viewer + Drop</title>
+  <link href="https://releases.transloadit.com/uppy/v4.13.3/uppy.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__brand">
+      <h1 class="header__title">TIFF Master Viewer</h1>
+      <p class="header__sub">FlorenceEGI — R&amp;D Deep Zoom &middot; Drop ricezione file</p>
+    </div>
+    <div class="header__stats" id="stats"></div>
+  </header>
+
+  <!-- Tab nav: una sola app, due sezioni -->
+  <nav class="tabs">
+    <button class="tab tab--active" data-tab="gallery">Galleria</button>
+    <button class="tab" data-tab="upload">Ricevi file</button>
+  </nav>
+
+  <!-- VIEW: Galleria (deep-zoom) -->
+  <section class="view" id="view-gallery">
+    <main class="gallery" id="gallery">
+      <div class="gallery__loading" id="loading">
+        <div class="spinner"></div>
+        <p>Caricamento manifest...</p>
+      </div>
+    </main>
+  </section>
+
+  <!-- VIEW: Ricevi file (Uppy → S3) -->
+  <section class="view" id="view-upload" hidden>
+    <div class="upload">
+      <div class="upload__head">
+        <h2 class="upload__title">Ricevi file dal cliente</h2>
+        <p class="upload__sub">Qualunque dimensione. Upload diretto e cifrato verso lo storage — i file non transitano da alcun server.</p>
+        <p class="upload__client" id="uploadClient" hidden></p>
+      </div>
+      <div class="upload__gate" id="uploadGate" hidden>
+        <p><strong>Link non valido o scaduto.</strong></p>
+        <p>Apri questa sezione con un link di caricamento valido (<code>?k=…</code>) o chiedine uno a Fabio.</p>
+      </div>
+      <div id="uppy" class="upload__uppy"></div>
+    </div>
+  </section>
+
+  <!-- Viewer overlay (Galleria) -->
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer__toolbar">
+      <div class="viewer__info">
+        <h2 class="viewer__title" id="viewerTitle"></h2>
+        <span class="viewer__meta" id="viewerMeta"></span>
+      </div>
+      <div class="viewer__actions">
+        <span class="viewer__zoom-badge" id="zoomBadge">1.0x</span>
+        <button class="btn btn--icon" id="btnZoomIn" title="Zoom in">+</button>
+        <button class="btn btn--icon" id="btnZoomOut" title="Zoom out">&minus;</button>
+        <button class="btn btn--icon" id="btnHome" title="Reset view">&#8962;</button>
+        <button class="btn btn--icon" id="btnFullscreen" title="Fullscreen">&#9974;</button>
+        <button class="btn btn--close" id="btnClose" title="Chiudi">&times;</button>
+      </div>
+    </div>
+    <div id="osd" class="viewer__canvas"></div>
+    <div class="viewer__detail" id="viewerDetail"></div>
+  </div>
+
+  <!-- Dipendenze -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
+  <script src="https://releases.transloadit.com/uppy/v4.13.3/uppy.min.js"></script>
+  <script src="config.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/upload.js"></script>
+  <script src="src/tabs.js"></script>
+</body>
+</html>
