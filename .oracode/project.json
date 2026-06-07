@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "description": "Descrittore progetto Oracode — letto da bin/mission e dalle statistiche EGI-STAT. Registra fabiocherici nell'asse ORE/righe e collassa gli alias storici su canonical 'fabiocherici'.",
+    "version": "1.1.0",
+    "created": "2026-06-07",
+    "note": "2026-06-07: registry reale = FABIOCHERICI-DOC/ (interno al repo). Clone canonico = /home/fabio/fabiocherici.com. FABIO-CHERICI-SITE ritirato."
+  },
+  "project": "fabiocherici",
+  "canonical_name": "fabiocherici",
+  "aliases": [
+    "florenceegi/fabiocherici",
+    "fabiocherici.com",
+    "FABIOCHERICI-DOC",
+    "FABIO-CHERICI-SITE",
+    "FABIO-CHERICI"
+  ],
+  "id_prefix": "M-FABIOCHERICI",
+  "level": 2,
+  "instance_root": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC",
+  "registry_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json",
+  "repo_map_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/docs/missions/REPO_MAP.json",
+  "read_log_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/audit/MISSION_READ_LOG.jsonl",
+  "bootstrap_index_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/docs/missions/MISSION_BOOTSTRAP_INDEX.json"
+}
