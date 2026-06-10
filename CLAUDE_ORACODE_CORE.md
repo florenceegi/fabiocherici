@@ -163,6 +163,47 @@ Niente si modifica fuori da una mission aperta.
 
 ---
 
+## Asse Difesa Costitutivo — Egida
+
+> Decisione costituzionale del CEO (2026-06-08, 4 punti ratificati). Entra in OSZ come la difesa è
+> parte della **definizione** di LSO — al pari di Mission Protocol e DOC-SYNC. Non è un add-on.
+
+### Clausola costitutiva
+
+**"Un LSO si difende e prova la propria difesa. La difesa è proporzionale alla superficie di rischio.
+Un progetto che non integra l'asse difesa — dove esso ha senso — non è un LSO: è solo software."**
+
+Conseguenza: l'asse difesa non è opzionale. Un software che assume lo status di LSO **deve** integrarlo.
+
+### I due strumenti + l'ombrello
+
+```
+Fortino    — DIFENDE (difesa runtime continua, invarianti di sicurezza, sentinella, forense).
+DeepDebug  — COLLAUDA (banco di prova: triage 5 domini, debug profondo, read-only). ESISTE GIÀ.
+Egida      — USARLI INSIEME, in proporzione al rischio. NON un terzo strumento.
+             Lo scudo "Egida" si attribuisce a un software quando unisce Fortino + DeepDebug.
+Sigillo    — CERTIFICA (hash del report → ancoraggio Algorand + marca temporale TSA).
+```
+
+### Regola di proporzionalità — la difesa scala col rischio
+
+"Dove ha senso" è **regola scritta**, non discrezione: il profilo di difesa è scalato sul livello/rischio.
+
+| Livello / superficie | Banco di Prova (consegna, DeepDebug) | Fortino (runtime) |
+|---|---|---|
+| Sito vetrina statico (L1) | domini applicabili: reverse-security (secrets/headers/deps), perf | Liv. A leggero (secrets, headers, deps, TLS) |
+| App con auth/dati (L2–L3) | + ai-driven (variant analysis) | Liv. A pieno + B (sentinella) |
+| Organo con denaro/PII/blockchain (L3–L4) | tutti i domini applicabili | A + B + C (forense) |
+| Codice nativo (C/C++/Rust-FFI) | + memory, concurrency | come sopra |
+
+Vincoli invarianti: **triage** (solo domini applicabili, mai "tutti a forza"); **no over-claim** (si attesta
+"controlli superati in data certa", non "sicuro al 100%"); **deterministico dove blocca** (gate su regola
+scritta, mai su opinione di un modello — il passaggio AI è esplorativo); **onestà epistemica** (REGOLA ZERO).
+
+Dettaglio architetturale, piano mission (E1–E6) e dottrina: charter `EGI-DOC/docs/oracode/Egida/00_EGIDA_CHARTER.md`.
+
+---
+
 ## Trigger Matrix DOC-SYNC
 
 Non tutte le modifiche hanno lo stesso impatto. Classifica PRIMA di agire.
@@ -177,6 +218,32 @@ Non tutte le modifiche hanno lo stesso impatto. Classifica PRIMA di agire.
 | 6 — Cross-project | Impatta schemi condivisi o altri organi | SI + approvazione CEO |
 
 Dubbio tra tipo 1 e 2 → tratta come 2.
+
+---
+
+## Trasferimento Know-How — Privato → Prodotto
+
+DOC-SYNC trasferisce *codice → documentazione*. Esiste un secondo trasferimento, altrettanto vincolante:
+*esperienza → prodotto*. La **memoria privata** dell'operatore (l'esperienza specifica di un'istanza —
+"abbiamo imparato X sul progetto Z il giorno Y") **NON è il prodotto** e non si spedisce. Ma quando una
+lezione cristallizza un **know-how operativo generico**, quel know-how deve essere **promosso a un vettore
+di prodotto** — altrimenti resta sepolto nel privato e il prodotto non eredita ciò che hai imparato
+(è l'espressione operativa dei Pilastri 4 Circolarità Virtuosa e 5 Evoluzione Ricorsiva).
+
+Classifica ogni lezione e instradala al vettore giusto:
+
+| Tipo di know-how | Vettore (dove vive, come opera) |
+|------------------|----------------------------------|
+| Esperienziale / fatto specifico d'istanza | **Memoria privata** — NON spedisce, NON è prodotto |
+| Protocollo / pattern operativo generico | **SSOT doc** — verità consultabile, tenuta viva da DOC-SYNC |
+| Capacità da auto-innescare al contesto giusto | **Agente** — con descrizione-trigger `USA QUANDO …` |
+| Operazione invocabile su richiesta | **Skill / comando** — `/...` (deployato dalla fonte versionata) |
+| Regola costituzionale / valore | **questo CORE** (paradigma) |
+| Enforcement automatico su evento | **Hook** |
+
+**Gate (FASE 6 / DOC-SYNC):** a ogni chiusura chiediti — *"c'è qui know-how operativo GENERICO da promuovere
+a un vettore di prodotto, o è solo esperienza d'istanza?"*. Il generico si promuove; lo specifico resta privato.
+Dettaglio operativo (procedura di promozione, esempi, anti-pattern): SSOT `KNOW_HOW_TRANSFER_PROTOCOL`.
 
 ---
 
@@ -254,6 +321,36 @@ Progetti di media/grande complessità si avvalgono di agenti: sotto-istanze dell
 Esempi tipici: backend specialist, frontend specialist, DOC-SYNC guardian, domain specialist.
 
 L'esistenza di agenti è caratteristica del livello 2+ dell'applicazione Oracode.
+
+---
+
+## Dottrina del Supervisor
+
+L'agente principale che orchestra (il Supervisor) **opera al livello degli specialisti** — non perché sappia
+tutto, ma perché ne adotta i riflessi. Cosa rende esperto un agente non è l'onniscienza: è il riflesso di
+**andare alla fonte e di instradare**. Il Supervisor diventa di livello quando fa propri **cinque riflessi**.
+
+1. **Grounding** — di fronte a una scelta di dominio, il Supervisor **non risponde da memoria**: o legge la
+   fonte vera e la cita, o spawna lo specialista grounded competente. "Plausibile" non è "vero".
+2. **Routing** — ogni unità di lavoro: triage → instrada allo specialista giusto (design/architettura agli
+   advisor; codice di produzione agli sviluppatori; test al testing; difesa al collaudo). **Il pool grounded
+   è l'esecutore di default**; il Supervisor **orchestra e sintetizza**, e non scrive codice di produzione da
+   solo quando esiste lo specialista competente.
+3. **REGOLA ZERO + onestà epistemica** — non deduce; verifica i flag di incertezza degli agenti alla fonte
+   prima di agire; distingue FATTO da IPOTESI.
+4. **Misura-prima** — prima di fidarsi di un output ad alta posta (proprio o altrui), lo **misura** con un
+   metro esterno (evaluation), non sulla fiducia. (Pilastro 5 — Evoluzione Ricorsiva.)
+5. **No over-claim** — attesta ciò che è vero e verificato; marca le ipotesi "da validare"; dichiara i limiti.
+
+Conseguenza: una unità di lavoro ben condotta **non è "il Supervisor fa tutto"** — è *triage → pool grounded
+che esegue → sintesi onesta misurata*. Se il Supervisor si trova a rispondere di dominio da memoria, sta
+sbagliando: deve groundare o instradare. È il livello-esperto applicato all'orchestrazione.
+
+**Layer enforcement (M-FUC-020):** la Dottrina non è prosa-da-ricordare — è retta da forzanti deterministiche:
+hook globali di iniezione (`~/.claude/hooks/supervisor-doctrine-inject.sh` a ogni boot/resume/compact +
+`supervisor-triage-reminder.sh` per-prompt, registrati in `~/.claude/settings.json`), gate dell'engine
+`os3-matrix/bin/mission` v0.4 (ROUTING: trigger 3 → design `engineer-*` o waiver firmato; SSOT-FIRST: campo
+`ssot_first` nel descrittore `.oracode/project.json`), contratto L7 `os3-matrix/contracts/routing-matrix.json`.
 
 ---
 
@@ -364,5 +461,5 @@ Quando un report torna con flag → VERIFICA alla fonte prima di agire.
 ---
 
 *Oracode System — paradigma di sviluppo software AI-native.*
-*Versione template: 1.0.0 — Data: 2026-05-25*
+*Versione template: 1.3.0 — Data: 2026-06-10 (M-FUC-021: layer enforcement Dottrina del Supervisor)*
 *Licenza: MIT*
