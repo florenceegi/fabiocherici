@@ -24,10 +24,10 @@
   "ssot_first": {
     "enabled": true,
     "ssot_globs": [
-      "docs/ssot/",
-      "docs/lso/",
-      "docs/missions/MISSION_REGISTRY.json"
+      "FABIOCHERICI-DOC/docs/ssot/",
+      "FABIOCHERICI-DOC/docs/lso/",
+      "FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json"
     ],
-    "_meta": "M-FUC-021 (pattern M-FUC-020 Fucina) gate SSOT-first: mission trigger 3 richiede lettura SSOT prima di executing (kill-switch: enabled=false). Globs verificati con ls sull'organo."
+    "_meta": "M-FUC-021 (fix audit): glob corretti su FABIOCHERICI-DOC/ e verificati con ls (kill-switch: enabled=false)"
   }
 }
