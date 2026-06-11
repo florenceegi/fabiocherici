@@ -16,6 +16,7 @@
   ],
   "id_prefix": "M-FABIOCHERICI",
   "level": 2,
+  "web_root": ".",
   "instance_root": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC",
   "registry_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json",
   "repo_map_path": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC/docs/missions/REPO_MAP.json",

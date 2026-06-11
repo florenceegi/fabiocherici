@@ -486,7 +486,7 @@ body {
 }
 
 /* Show matching description */
-.circle-stage:has([data-door="creazioni"] .circle-label:hover) .circle-desc[data-desc="creazioni"],
+.circle-stage:has([data-door="softwarehouse"] .circle-label:hover) .circle-desc[data-desc="softwarehouse"],
 .circle-stage:has([data-door="oracode"] .circle-label:hover) .circle-desc[data-desc="oracode"],
 .circle-stage:has([data-door="scrittore"] .circle-label:hover) .circle-desc[data-desc="scrittore"],
 .circle-stage:has([data-door="ai-nous"] .circle-label:hover) .circle-desc[data-desc="ai-nous"],

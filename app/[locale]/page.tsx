@@ -1,9 +1,9 @@
 /**
  * @package fabiocherici.com — Homepage
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-18
- * @purpose Homepage — single screen, circle of 6 doors, TU at center, quote below. CSS-only entrance animation, 3D scene as ambient backdrop.
+ * @version 3.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-06-11
+ * @purpose Homepage provvisoria (M-013) — circle of 3 doors (softwarehouse, egi, epp), TU at center, quote below. SEO sr-only block keeps ALL 9 site sections for crawlers. Oracode door returns post-rework (Oracode Nexus).
  */
 
 import type { Metadata } from 'next';
@@ -14,11 +14,8 @@ import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
 
 const DOORS = [
   { id: 'softwarehouse', angle: 0 },
-  { id: 'oracode', angle: 60 },
-  { id: 'scrittore', angle: 120 },
-  { id: 'ai-nous', angle: 180 },
-  { id: 'egi', angle: 240 },
-  { id: 'epp', angle: 300 },
+  { id: 'egi', angle: 120 },
+  { id: 'epp', angle: 240 },
 ] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
