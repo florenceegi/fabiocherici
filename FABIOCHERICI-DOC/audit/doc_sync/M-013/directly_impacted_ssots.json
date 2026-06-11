@@ -1,0 +1,28 @@
+{
+  "mission_id": "M-013",
+  "matched_at": "2026-06-11T10:19:26Z",
+  "method": "deterministic watch-path/pattern scan su SSOT_REGISTRY.json v1.0.0 (7 documenti)",
+  "impacted": [
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["messages/it.json", "messages/en.json", "messages/de.json", "messages/es.json", "messages/fr.json", "messages/pt.json", "messages/zh.json"]
+    },
+    {
+      "ssot_id": "design-tokens",
+      "path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["app/globals.css"]
+    },
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "impact_type": "pattern_match",
+      "matched_files": ["app/[locale]/page.tsx"],
+      "note": "Pattern watch 'app/[locale]/**/page.tsx' — match per intento (tutte le pagine locale, home inclusa). Nota tecnica: fnmatch letterale tratterebbe [locale] come character-class e '**/' richiederebbe un livello dir; il match e' risolto sull'intento dichiarato del watch (consumer pages di lib/seo.ts, home inclusa — vedi sezione Consumer di seo.md)."
+    }
+  ],
+  "not_impacted": ["animation-presets", "scene3d-ids", "i18n-config", "fonts"],
+  "unmatched_files": [".oracode/project.json", "tests/m-013/test_home_3_doors.sh", "FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json"]
+}

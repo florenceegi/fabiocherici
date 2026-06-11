@@ -1,0 +1,10 @@
+{
+  "mission_id": "M-013",
+  "rag_mode": "skipped_no_schema",
+  "note": "Nessun RAG_SCHEMA configurato nel CLAUDE.md istanza ne' ORACODE_RAG_SCHEMA in env — modalita' LSO ridotto (come M-012). Discovery laterale RAG saltata.",
+  "fallback_check": {
+    "method": "grep manuale su FABIOCHERICI-DOC/ (md+json) per residui 'sei porte|six doors|6 porte|6 doors|circle of 6'",
+    "result": "Nessun documento stale trovato. Uniche occorrenze: i report M-013 stessi (descrivono legittimamente la transizione 6->3). REPO_MAP.json: nessun riferimento a porte/home doors."
+  },
+  "impacted": []
+}

@@ -1,0 +1,7 @@
+{
+  "mission_id": "M-013",
+  "rag_mode": "skipped_no_schema",
+  "note": "Nessun RAG_SCHEMA in CLAUDE.md istanza ne' ORACODE_RAG_SCHEMA in env. Modalita' LSO ridotto: re-indexing saltato, metadati registry aggiornati con verification_mode=registry_only (coerente con M-012).",
+  "chunks_reindexed": null,
+  "sanity_check": "n/a"
+}

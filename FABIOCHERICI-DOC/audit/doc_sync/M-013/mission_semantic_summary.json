@@ -1,0 +1,46 @@
+{
+  "mission_id": "M-013",
+  "commit": "0c0c3ccef3edc9a3bf68a2d876b79cd4c3e522ab",
+  "title": "Home provvisoria 3 porte: Softwarehouse + Florence EGI + EPP",
+  "analyzed_at": "2026-06-11T10:19:26Z",
+  "semantic_changes": [
+    {
+      "file": "app/[locale]/page.tsx",
+      "type": "modified",
+      "kind": "behavior_changed",
+      "summary": "DOORS array ridotto da 6 a 3 porte visibili: softwarehouse (0deg), egi (120deg), epp (240deg). Rimosse dal visibile: oracode, scrittore, ai-nous (torneranno post-rework Oracode Nexus). Header @version 2.0.0 -> 3.0.0. Il blocco SEO sr-only resta INTATTO con tutti i 9 link sezione per i crawler; metadata/hreflang/ld+json invariati."
+    },
+    {
+      "file": "app/globals.css",
+      "type": "modified",
+      "kind": "bug_fix",
+      "summary": "Fix selettore hover descrizione porta: [data-door=\"creazioni\"]/[data-desc=\"creazioni\"] -> softwarehouse. Residuo della rinomina creazioni->softwarehouse di M-008 mai propagato ai selettori :has() di globals.css."
+    },
+    {
+      "file": "messages/{it,en,de,es,fr,pt,zh}.json",
+      "type": "modified",
+      "kind": "content_changed",
+      "summary": "home.nav_label da label count-specifica ('Sei porte'/'Six doors'/...) a label neutra ('Le porte del sito'/'Site doors'/...) su tutti i 7 locale. Motivazione: finding gate a11y — aria-label 'Sei porte' con 3 porte visibili = incoerenza."
+    },
+    {
+      "file": ".oracode/project.json",
+      "type": "modified",
+      "kind": "config_changed",
+      "summary": "Aggiunto web_root: \".\" — abilita auto-attivazione Web Quality Gate sul progetto."
+    },
+    {
+      "file": "tests/m-013/test_home_3_doors.sh",
+      "type": "created",
+      "kind": "test_added",
+      "summary": "Test acceptance M-013: home a 3 porte, blocco sr-only integro, nav_label neutra."
+    },
+    {
+      "file": "FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json",
+      "type": "modified",
+      "kind": "mission_machinery",
+      "summary": "Entry M-013 + report pair linkata. Non rilevante per discovery SSOT (machinery mission, esclusa)."
+    }
+  ],
+  "key_concepts": ["home 3 porte", "porte del sito", "nav_label neutra", "sr-only SEO block 9 sezioni", "rinomina creazioni->softwarehouse", "selettori data-door globals.css", "web_root quality gate"],
+  "notes": "Diff piccolo, nessun chunking necessario. Nessuna funzione creata/rimossa: cambi di dato (DOORS const), selettore CSS, payload i18n, config descrittore."
+}

@@ -16,17 +16,77 @@
       "id": "M-013",
       "title": "Home page provvisoria 3 porte: Softwarehouse + Florence EGI + EPP (SEO sr-only intatto)",
       "trigger_matrix": 1,
-      "status": "executing",
+      "status": "closed",
       "date_open": "2026-06-11",
-      "date_close": null,
+      "date_close": "2026-06-11",
       "scope_hash": "9b4ed3e5512963f09bdf1472cf3deb2609c907e03e6135bd572da1ca733e4385",
       "synced_by_engine": true,
-      "last_engine_sync": "2026-06-11T09:55:33.226Z",
+      "last_engine_sync": "2026-06-11T10:17:08.443Z",
       "ssot_waiver": {
         "reason": "Home provvisoria: riduzione porte visibili 6→3, nessun contenuto nuovo — testi esistenti già da SSOT (M-008/M-012), blocco SEO invariato",
         "at": "2026-06-11T09:55:33.223Z",
         "by": "supervisor"
-      }
+      },
+      "report_technical": "docs/missions/M-013_HOME_3_PORTE_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-013_HOME_3_PORTE_REPORT_EXTENDED.md",
+      "commit_hash": "0c0c3cc",
+      "organs": [
+        "EGI-DOC",
+        "EGI-HUB",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 469,
+        "lines_deleted": 10,
+        "lines_net": 459,
+        "lines_touched": 479,
+        "files_touched": 9,
+        "weighted_commits": 2.0,
+        "cognitive_load": 2.6,
+        "productivity_index": 25.39,
+        "tags_breakdown": {
+          "FEAT": 2
+        },
+        "commit_hashes": [
+          "0c0c3ccef3edc9a3bf68a2d876b79cd4c3e522ab",
+          "6614acdb23023363dacb976daa34deda7ee3d8e1"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "AutobookNft/EGI-HUB",
+            "date": "2026-04-05",
+            "commits": 1,
+            "lines_added": 419,
+            "lines_deleted": 1,
+            "files_touched": 6,
+            "tags": {
+              "FEAT": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-11",
+            "commits": 1,
+            "lines_added": 50,
+            "lines_deleted": 9,
+            "files_touched": 3,
+            "tags": {
+              "FEAT": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-11"
+      },
+      "doc_sync_executed": true,
+      "doc_sync_outcome": "success",
+      "doc_sync_version": "2.2.0",
+      "doc_sync_rag_mode": "skipped_no_schema",
+      "doc_sync_ssots_impacted_direct": 3,
+      "doc_sync_ssots_impacted_lateral": 0,
+      "doc_sync_ssots_modified_additive": 3,
+      "doc_sync_ssots_modified_substitutive": 0,
+      "doc_sync_audit_path": "FABIOCHERICI-DOC/audit/doc_sync/M-013/"
     },
     {
       "id": "M-012",
@@ -55,35 +115,19 @@
       "audit_findings": "GREEN",
       "note_sync": "Mission M-012 chiusa via DOC-SYNC v2 minimale (modalita LSO ridotto, no RAG). 1 SSOT impattato (i18n-messages) — substitutive applied: bump frontmatter (last_sync 2026-05-29, last_verified_mission M-012) + nuova CICATRICE M-012 (pattern rename brand label, brand non tradotto in 7 lingue). 7 file locale modificati con 1 sostituzione cadauno (home.door_egi: EGI -> Florence EGI).",
       "stats": {
-        "total_commits": 1,
-        "lines_added": 97,
-        "lines_deleted": 2,
-        "lines_net": 95,
-        "lines_touched": 99,
-        "files_touched": 3,
-        "weighted_commits": 0.5,
-        "cognitive_load": 2.11,
-        "productivity_index": 6.86,
-        "tags_breakdown": {
-          "UNTAGGED": 1
-        },
-        "commit_hashes": [
-          "31a1c1fff3179c9ce63559dbbffc2e6e1261b8d8"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-29",
-            "commits": 1,
-            "lines_added": 97,
-            "lines_deleted": 2,
-            "files_touched": 3,
-            "tags": {
-              "UNTAGGED": 1
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "total_commits": 0,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       }
     },
     {
@@ -115,34 +159,34 @@
       "note_sync": "Mission M-011 chiusa via DOC-SYNC v2 (modalita LSO ridotto, no RAG). 2 SSOT impattati (i18n-messages + seo), entrambi additive applied senza approval. Estende epp.widgets di M-009 con sub-namespace fiscalita_epp (25 chiavi x 7 lingue). 1 file uncovered (EppIcons.tsx bump 1.0.0->1.1.0 con +Sprout +Briefcase) — gia uncovered da M-009, informativo. Cross-project file /home/fabio/os3-matrix/bin/web_quality_gate.py whitelist DE estesa (Steuersystem*, manuell*, aktuell*, individuell*, kontinuierlich*) segnalato come cross_project:true — NON gestito dal registry locale, commit separato in repo os3-matrix.",
       "stats": {
         "total_commits": 1,
-        "lines_added": 201,
-        "lines_deleted": 8,
-        "lines_net": 193,
-        "lines_touched": 209,
-        "files_touched": 5,
-        "weighted_commits": 1,
-        "cognitive_load": 2.31,
-        "productivity_index": 12.71,
+        "lines_added": 6,
+        "lines_deleted": 1,
+        "lines_net": 5,
+        "lines_touched": 7,
+        "files_touched": 1,
+        "weighted_commits": 1.5,
+        "cognitive_load": 1.58,
+        "productivity_index": 9.82,
         "tags_breakdown": {
-          "FEAT": 1
+          "FIX": 1
         },
         "commit_hashes": [
-          "9d7f7be02dc6c9cf86347effc5993188a2bc84c3"
+          "a3cc7aaf2e64ee2bbbdb271a8b38d3e9ef4dbf74"
         ],
         "by_repo_day": [
           {
-            "repo": "florenceegi/fabiocherici",
+            "repo": "florenceegi/os3-matrix",
             "date": "2026-05-28",
             "commits": 1,
-            "lines_added": 201,
-            "lines_deleted": 8,
-            "files_touched": 5,
+            "lines_added": 6,
+            "lines_deleted": 1,
+            "files_touched": 1,
             "tags": {
-              "FEAT": 1
+              "FIX": 1
             }
           }
         ],
-        "calculated_at": "2026-06-08"
+        "calculated_at": "2026-06-11"
       }
     },
     {
@@ -182,34 +226,34 @@
       "note_sync": "Mission M-010 fix retroattivo M-009. Trigger 6 cross-project (os3-matrix/bin/web_quality_gate.py whitelist DE I-2 estesa ~59 termini). 2 SSOT impattati additive (i18n-messages + seo) — aggiunte 4 CICATRICI M-010 totali. Cross-project file segnalato come cross_project:true, NON gestito dal registry locale fabiocherici.com — commit separato in repo os3-matrix.",
       "stats": {
         "total_commits": 1,
-        "lines_added": 1897,
-        "lines_deleted": 20,
-        "lines_net": 1877,
-        "lines_touched": 1917,
-        "files_touched": 16,
-        "weighted_commits": 1,
-        "cognitive_load": 2.85,
-        "productivity_index": 90.26,
+        "lines_added": 25,
+        "lines_deleted": 1,
+        "lines_net": 24,
+        "lines_touched": 26,
+        "files_touched": 1,
+        "weighted_commits": 1.5,
+        "cognitive_load": 1.78,
+        "productivity_index": 12.71,
         "tags_breakdown": {
-          "FEAT": 1
+          "FIX": 1
         },
         "commit_hashes": [
-          "09f5a055679adae408ce513e1e771c72424044af"
+          "ca686b077f2d29c5ed796197c025aa6d15e3e022"
         ],
         "by_repo_day": [
           {
-            "repo": "florenceegi/fabiocherici",
+            "repo": "florenceegi/os3-matrix",
             "date": "2026-05-28",
             "commits": 1,
-            "lines_added": 1897,
-            "lines_deleted": 20,
-            "files_touched": 16,
+            "lines_added": 25,
+            "lines_deleted": 1,
+            "files_touched": 1,
             "tags": {
-              "FEAT": 1
+              "FIX": 1
             }
           }
         ],
-        "calculated_at": "2026-06-08"
+        "calculated_at": "2026-06-11"
       }
     },
     {
@@ -247,35 +291,19 @@
       "audit_findings": "GREEN",
       "note_sync": "Mission M-009 chiusa via DOC-SYNC v2 (modalita LSO ridotto, no RAG). 2 SSOT impattati (seo + i18n-messages), entrambi additive applied senza approval. 3 nuovi file uncovered (EppAccordion.tsx, EppIcons.tsx, test) — triage informativo.",
       "stats": {
-        "total_commits": 1,
-        "lines_added": 1897,
-        "lines_deleted": 20,
-        "lines_net": 1877,
-        "lines_touched": 1917,
-        "files_touched": 16,
-        "weighted_commits": 1,
-        "cognitive_load": 2.85,
-        "productivity_index": 69.43,
-        "tags_breakdown": {
-          "FEAT": 1
-        },
-        "commit_hashes": [
-          "09f5a055679adae408ce513e1e771c72424044af"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-28",
-            "commits": 1,
-            "lines_added": 1897,
-            "lines_deleted": 20,
-            "files_touched": 16,
-            "tags": {
-              "FEAT": 1
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "total_commits": 0,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       }
     },
     {
@@ -317,48 +345,19 @@
       "audit_findings": "GREEN",
       "note_sync": "Registry sync retroattivo (debito MOA-5)",
       "stats": {
-        "total_commits": 2,
-        "lines_added": 100,
+        "total_commits": 0,
+        "lines_added": 0,
         "lines_deleted": 0,
-        "lines_net": 100,
-        "lines_touched": 100,
-        "files_touched": 4,
-        "weighted_commits": 3.1,
-        "cognitive_load": 2.22,
-        "productivity_index": 24,
-        "tags_breakdown": {
-          "FIX": 1,
-          "ARCH": 1
-        },
-        "commit_hashes": [
-          "3111bba5044f37828a8aad0cc838333ca9a69c4f",
-          "fa186c1a42e2cac80ae3d7a5e87f8cbdab3bd02f"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-26",
-            "commits": 1,
-            "lines_added": 14,
-            "lines_deleted": 0,
-            "files_touched": 2,
-            "tags": {
-              "FIX": 1
-            }
-          },
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-27",
-            "commits": 1,
-            "lines_added": 86,
-            "lines_deleted": 0,
-            "files_touched": 2,
-            "tags": {
-              "ARCH": 1
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-27T10:25:10Z"
@@ -383,53 +382,19 @@
       "audit_findings": "YELLOW→GREEN dopo cleanup 6 PNG legacy orfani",
       "note_sync": "Registry sync retroattivo (debito MOA-5)",
       "stats": {
-        "total_commits": 4,
-        "lines_added": 757,
-        "lines_deleted": 25,
-        "lines_net": 732,
-        "lines_touched": 782,
-        "files_touched": 13,
-        "weighted_commits": 4.1,
-        "cognitive_load": 2.82,
-        "productivity_index": 40.52,
-        "tags_breakdown": {
-          "FEAT": 2,
-          "ARCH": 1,
-          "CLEANUP": 1
-        },
-        "commit_hashes": [
-          "1a07e5613c3d44d57064ddd576e9469833cc803b",
-          "3111bba5044f37828a8aad0cc838333ca9a69c4f",
-          "84c02e97f5fbe6616c7d8b7293cdcb6e7d88cf13",
-          "ee32c6a67461611a54ce24dbcf14aaf0214eefe2"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-26",
-            "commits": 1,
-            "lines_added": 34,
-            "lines_deleted": 25,
-            "files_touched": 2,
-            "tags": {
-              "FEAT": 1
-            }
-          },
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-27",
-            "commits": 3,
-            "lines_added": 723,
-            "lines_deleted": 0,
-            "files_touched": 11,
-            "tags": {
-              "FEAT": 1,
-              "ARCH": 1,
-              "CLEANUP": 1
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "total_commits": 0,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-27T10:16:40Z"
@@ -451,53 +416,19 @@
       "test_file": "tests/m-005/test_split_chart_svg_inline.sh",
       "commit_hash": "1f53de8",
       "stats": {
-        "total_commits": 4,
-        "lines_added": 814,
-        "lines_deleted": 27,
-        "lines_net": 787,
-        "lines_touched": 841,
-        "files_touched": 14,
-        "weighted_commits": 5.1,
-        "cognitive_load": 2.84,
-        "productivity_index": 59.32,
-        "tags_breakdown": {
-          "FEAT": 2,
-          "ARCH": 1,
-          "FIX": 1
-        },
-        "commit_hashes": [
-          "036101963eff2b5982973c37bbd2ba867f31816d",
-          "1a07e5613c3d44d57064ddd576e9469833cc803b",
-          "1f53de86934e73ab0ad92e2b2b247c4e51f2c8dc",
-          "ee32c6a67461611a54ce24dbcf14aaf0214eefe2"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-26",
-            "commits": 3,
-            "lines_added": 177,
-            "lines_deleted": 27,
-            "files_touched": 5,
-            "tags": {
-              "FEAT": 1,
-              "ARCH": 1,
-              "FIX": 1
-            }
-          },
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-27",
-            "commits": 1,
-            "lines_added": 637,
-            "lines_deleted": 0,
-            "files_touched": 9,
-            "tags": {
-              "FEAT": 1
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "total_commits": 0,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-26T19:14:36Z"
@@ -531,36 +462,19 @@
         "i18n-messages"
       ],
       "stats": {
-        "total_commits": 2,
-        "lines_added": 799,
-        "lines_deleted": 10,
-        "lines_net": 789,
-        "lines_touched": 809,
-        "files_touched": 11,
-        "weighted_commits": 3.2,
-        "cognitive_load": 2.71,
-        "productivity_index": 36.78,
-        "tags_breakdown": {
-          "ARCH": 2
-        },
-        "commit_hashes": [
-          "cfb088541e3b3525708f34a89917fdbe1ba808bd",
-          "fa4a76f5822a0cddea36a466b4eb1e83c77c6106"
-        ],
-        "by_repo_day": [
-          {
-            "repo": "florenceegi/fabiocherici",
-            "date": "2026-05-26",
-            "commits": 2,
-            "lines_added": 799,
-            "lines_deleted": 10,
-            "files_touched": 11,
-            "tags": {
-              "ARCH": 2
-            }
-          }
-        ],
-        "calculated_at": "2026-06-08"
+        "total_commits": 0,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "lines_net": 0,
+        "lines_touched": 0,
+        "files_touched": 0,
+        "weighted_commits": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0,
+        "tags_breakdown": {},
+        "by_repo_day": [],
+        "commit_hashes": [],
+        "calculated_at": "2026-06-11"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-05-26T14:26:34Z"

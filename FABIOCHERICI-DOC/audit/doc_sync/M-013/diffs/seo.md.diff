@@ -1,0 +1,20 @@
+diff --git a/FABIOCHERICI-DOC/docs/ssot/seo.md b/FABIOCHERICI-DOC/docs/ssot/seo.md
+index 00a0257..f78dd60 100644
+--- a/FABIOCHERICI-DOC/docs/ssot/seo.md
++++ b/FABIOCHERICI-DOC/docs/ssot/seo.md
+@@ -3,8 +3,8 @@ ssot_id: seo
+ title: SEO — Canonical URL + hreflang alternates + Schema.org helpers
+ organ: fabiocherici.com
+ source: lib/seo.ts
+-last_sync: 2026-05-28
+-last_verified_mission: M-011
++last_sync: 2026-06-11
++last_verified_mission: M-013
+ ---
+ 
+ # SEO SSOT
+@@ -59,3 +59,4 @@ Helper SEO per fabiocherici.com:
+ - [CICATRICE M-010] Meta description: rispettare soglia SEO Google **≤160 chars** per ogni locale. Il quality gate `web_quality_gate.py` (criterio S-3) blocca commit con meta description >160 chars. Quando il brief contiene testo destinato sia a sezione interna sia a meta tag, **distinguere le due versioni** (interno full vs meta ≤160 chars) — non riusare letteralmente. Verifica in fase di scrittura `meta.{page}_description` per tutti i 7 locale prima di chiudere mission che attiva pagina nuova.
+ - [CICATRICE M-010] Quality gate hook `web-quality-gate-guard.sh` va **rigenerato e verificato PRIMA** di FASE 6 advance → auditing/closed, non dopo. Aggiungere passaggio esplicito al protocollo mission per fabiocherici.com.
+ - [CICATRICE M-011] Quando si aggiunge contenuto narrativo a una pagina gia attiva (es. nuova sezione widget) e il contenuto NON e FAQ-shape (Q&A esplicita): NON forzare `buildFaqSchema` — il payload semantico HTML del nextintl render e sufficiente per i crawler. `FaqSchema` va riservato a domanda/risposta strutturate (vedi widget fiscalita_individuali/aziende M-009). Estensione narrativa lato EPP (M-011: noprofit + azienda) ha intentionally skipped FaqSchema/ItemListSchema — registrazione esplicita per evitare drift futuri.
++- [DECISIONE M-013] Home provvisoria a 3 porte visibili (softwarehouse, egi, epp — `DOORS` in `app/[locale]/page.tsx` @version 3.0.0): il blocco SEO `sr-only` resta INTATTO con tutti i 9 link sezione (`seo_section_*`: softwarehouse, oracode, scrittore, ainous, egi, epp, numeri, ecosistema, contatti) per i crawler. Metadata, hreflang e JSON-LD invariati. NON rimuovere i link sr-only delle porte non visibili (oracode/scrittore/ai-nous) pensando che siano dead code: sono deliberati — preservano l'indicizzazione delle sezioni durante la home provvisoria; le porte torneranno visibili post-rework Oracode Nexus. Test di guardia: `tests/m-013/test_home_3_doors.sh`.

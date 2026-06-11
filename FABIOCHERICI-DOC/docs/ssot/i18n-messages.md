@@ -3,8 +3,8 @@ ssot_id: i18n-messages
 title: i18n Messages — Stringhe localizzate 7 lingue
 organ: fabiocherici.com
 source: messages/*.json
-last_sync: 2026-05-29
-last_verified_mission: M-012
+last_sync: 2026-06-11
+last_verified_mission: M-013
 ---
 
 # i18n Messages SSOT
@@ -62,3 +62,4 @@ Top-level keys per pagina/area (ordine alfabetico):
 - [CICATRICE POSITIVA M-011] Convenzione naming applicata correttamente al primo colpo nel nuovo sub-namespace `epp.widgets.fiscalita_epp`: suffissi neutri `_title`, `_body`, `_items`, `_text` — nessun digramma linguistico sensibile (no `_value`/`_werk`/ecc.). Pattern riusato da M-009 + lezione M-010 internalizzata. Zero retry quality gate richiesti su nomi chiave.
 - [CICATRICE M-011] Quando si aggiunge un nuovo widget al sub-namespace `epp.widgets.*`: (1) definire schema chiavi PRIMA della scrittura it.json (sezione + widget), (2) replicare struttura identica nelle altre 6 lingue (parita strutturale obbligatoria — vedi CICATRICE M-009), (3) usare array per liste enumerate (`how_items: [...]`) consumate via `tw.raw(...)` lato React, (4) aggiungere icone necessarie a `components/ui/EppIcons.tsx` mantenendo @version semver + lista @mission aggiornata.
 - [CICATRICE M-012] Rename label porta home: `home.door_egi` da `"EGI"` → `"Florence EGI"` su tutti i 7 locale (1 sostituzione x file, trigger 2 substitutive). Valore IDENTICO in tutte le 7 lingue (brand non tradotto). Pattern per rename brand label: (1) grep esaustivo della key per identificare tutte le occorrenze (deve essere 1 sola per file: la definizione), (2) sed/Edit atomico su tutti i 7 file con stesso valore, (3) verifica callsite di `door_egi` in componenti Home (non richiede modifica codice — solo payload i18n cambia). Brand names non traducibili: stesso valore in tutte le lingue, evitare localizzazione "creativa".
+- [CICATRICE M-013] Label count-specifiche nelle stringhe UI: `home.nav_label` era `"Sei porte"` (e equivalenti nei 7 locale) — quando M-013 ha ridotto le porte visibili da 6 a 3 (home provvisoria: softwarehouse, egi, epp), l'aria-label è diventata incoerente con la UI (finding del gate a11y). Fix: label neutra `"Le porte del sito"` / `"Site doors"` su tutti i 7 locale. Lezione: nelle stringhe i18n evitare di codificare il NUMERO di elementi renderizzati da un array dati (`DOORS` in `app/[locale]/page.tsx`) — se il dato cambia, la stringa mente. Preferire label che descrivono il ruolo, non il conteggio. Le porte oracode/scrittore/ai-nous restano nei messages (chiavi `door_*` e `seo_section_*` intatte): sono ancora consumate dal blocco SEO sr-only e torneranno visibili post-rework Oracode Nexus — NON rimuovere le chiavi.

@@ -1,0 +1,50 @@
+{
+  "mission_id": "M-013",
+  "actions": [
+    {
+      "ssot_path": "docs/ssot/i18n-messages.md",
+      "ssot_id": "i18n-messages",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_pre": "78cd81c4a81efde8533297e8a7855f1dde1513f723039f4e88c5902059df8562",
+      "ssot_content_hash_post": "fa068a636e0dc8e3b4c68e1b611052aa1844bb7b92bcef2db8b60ed6162719de",
+      "diff_path": "audit/doc_sync/M-013/diffs/i18n-messages.md.diff",
+      "justification": "Il doc non descriveva il valore di home.nav_label ne' la home a 6 porte: nessun testo contraddetto -> ADDITIVE. Aggiunta CICATRICE M-013 (label count-specifiche nelle stringhe i18n + chiavi door_*/seo_section_* da NON rimuovere) + front-matter last_sync/last_verified_mission.",
+      "timestamp": "2026-06-11T10:19:26Z",
+      "resolution_method": "auto_additive"
+    },
+    {
+      "ssot_path": "docs/ssot/design-tokens.md",
+      "ssot_id": "design-tokens",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_pre": "5bab9269e0019d7f54c8feefc15527fe31ea97f0aeccff17c9cf7bf02c4065e2",
+      "ssot_content_hash_post": "6d127817965dab45a61d2b7ddab1cce1572b3d9942b082386da59c93799f0ce9",
+      "diff_path": "audit/doc_sync/M-013/diffs/design-tokens.md.diff",
+      "justification": "Il fix M-013 in globals.css (selettore hover creazioni->softwarehouse) non tocca i token descritti dal doc: nessun testo contraddetto -> ADDITIVE. Aggiunta CICATRICE M-013 sui selettori :has([data-door=...]) da aggiornare in blocco a ogni rename di porta (residuo M-008 scoperto in M-013) + front-matter.",
+      "timestamp": "2026-06-11T10:19:26Z",
+      "resolution_method": "auto_additive"
+    },
+    {
+      "ssot_path": "docs/ssot/seo.md",
+      "ssot_id": "seo",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_pre": "a9fae2b3d870b6e6f8bdc96c1a3519c062226fc05811a75b45e5ba31f889ab4b",
+      "ssot_content_hash_post": "cddad53846a66dfdd3887130de907e77dddc611d95ca140150c5e99b4e0055e3",
+      "diff_path": "audit/doc_sync/M-013/diffs/seo.md.diff",
+      "justification": "lib/seo.ts e metadata/hreflang/ld+json invariati: nessun testo contraddetto -> ADDITIVE. Aggiunta DECISIONE M-013: blocco sr-only con 9 link sezione INTATTO e deliberato durante la home provvisoria a 3 porte — anti-drift contro rimozione futura come presunto dead code. Grounding verificato in app/[locale]/page.tsx righe 55-72.",
+      "timestamp": "2026-06-11T10:19:26Z",
+      "resolution_method": "auto_additive"
+    }
+  ],
+  "exhaustiveness_check": {
+    "rule": "M-OS3-027",
+    "greps": ["sei porte|six doors|2026-05-29|2026-05-26|2026-05-28 sui 3 doc patchati"],
+    "residues": [
+      {"file": "docs/ssot/i18n-messages.md", "line": 65, "text": "\"Sei porte\"", "verdict": "legittimo — citazione storica del valore PRE-fix dentro la cicatrice M-013 stessa"}
+    ]
+  },
+  "approvals_required": 0,
+  "approvals_received": 0
+}
