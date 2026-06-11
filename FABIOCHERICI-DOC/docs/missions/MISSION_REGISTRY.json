@@ -53,22 +53,23 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 4,
-        "lines_added": 550,
-        "lines_deleted": 212,
-        "lines_net": 338,
-        "lines_touched": 762,
-        "files_touched": 19,
-        "weighted_commits": 3.6,
-        "cognitive_load": 2.87,
-        "productivity_index": 24.29,
+        "total_commits": 5,
+        "lines_added": 2508,
+        "lines_deleted": 616,
+        "lines_net": 1892,
+        "lines_touched": 3124,
+        "files_touched": 39,
+        "weighted_commits": 4.6,
+        "cognitive_load": 3.25,
+        "productivity_index": 72.27,
         "tags_breakdown": {
-          "FEAT": 2,
+          "FEAT": 3,
           "DOC": 2
         },
         "commit_hashes": [
           "3832d27c44b1051c8a14376180e0f06fd4aee5ed",
           "42094df08c2897d5d4992250b4acd5cf5ce2237f",
+          "5c621216e0536910ce9da9f7f9e5103ba4e1ebf0",
           "b6a57e5064fd68d2313a6f93ea4653f5d9bf1bf6",
           "bcdbc88e377ffdd9f50251f1a2e95dd84bf4abb4"
         ],
@@ -105,10 +106,23 @@
             "tags": {
               "DOC": 1
             }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-12",
+            "commits": 1,
+            "lines_added": 1958,
+            "lines_deleted": 404,
+            "files_touched": 20,
+            "tags": {
+              "FEAT": 1
+            }
           }
         ],
         "calculated_at": "2026-06-12"
-      }
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-11T22:32:18Z"
     },
     {
       "id": "M-267",

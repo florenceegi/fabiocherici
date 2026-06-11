@@ -1,11 +1,11 @@
 {
   "_meta": {
     "description": "Triage Queue — mission proposte per FABIOCHERICI-DOC, in attesa apertura formale",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "created": "2026-05-26",
-    "updated": "2026-05-26",
+    "updated": "2026-06-12",
     "author": "Claude (Oracode) for Fabio Cherici",
-    "purpose": "Backlog mission emergenti da chiusura M-001. CEO triage e approvazione."
+    "purpose": "Backlog mission emergenti. CEO triage e approvazione."
   },
   "queue": [
     {
@@ -18,6 +18,83 @@
       "blocked_by": ["M-ORACODE-002 (pattern AI Helping conversazionale)"],
       "proposed_at": "2026-05-26",
       "proposed_by": "M-001 mission report"
+    },
+    {
+      "proposed_id": "M-EGI-ADVISOR-FABIOCHERICI",
+      "title": "Chat advisor endpoint su EGI per fabiocherici.com (route fabiocherici/advisor/chat + CORS + proiezione PUBBLICA SSOT commerciale nel RAG)",
+      "tipo_missione": "feature",
+      "organi_coinvolti": ["EGI", "fabiocherici.com"],
+      "priority": "P1",
+      "rationale": "HANDOFF M-015 §5: pattern SigilloAdvisorController/Service pronto in EGI. Vincolo audit M-014: nel RAG entra SOLO proiezione pubblica (claim §3 + frame + linguaggio §5), MAI §2/§4/§6. Frontend: slot AdvisorSlot già predisposto — innesto = NEXT_PUBLIC_ADVISOR_CHAT_ENDPOINT + componente AdvisorChat (specifica nel design doc M-015 §D). Aprire nel repo EGI (prefisso M-EGI-xxx).",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "M-015 chiusura (HANDOFF §8)"
+    },
+    {
+      "proposed_id": "M-FABIOCHERICI-COPY-HOME-STALE",
+      "title": "Home: desc_softwarehouse + seo_section_softwarehouse stale pre-M-015 (frame non conforme commercial-claims)",
+      "tipo_missione": "fix",
+      "organi_coinvolti": ["fabiocherici.com"],
+      "priority": "P1",
+      "rationale": "Web-quality-gate M-015 WARN-2: la home descrive la softwarehouse con 'qualità enterprise a costo accessibile' e 'portfolio di 20 progetti misurati' — narrativa pre-M-015, incoerente col posizionamento SSOT commercial-claims v1.1.0 (frame LOC vietato §4.1). Micro-fix: 2 chiavi ×7 lingue.",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "web-quality-gate M-015 (WARN-2)"
+    },
+    {
+      "proposed_id": "M-FABIOCHERICI-A11Y-I18N-SWEEP",
+      "title": "Bonifica sitewide: sr-only 'opens in new tab' hardcoded EN + fallback PortfolioCard + serializzatore JSON-LD con escape <",
+      "tipo_missione": "fix",
+      "organi_coinvolti": ["fabiocherici.com"],
+      "priority": "P2",
+      "rationale": "Residui dopo fix M-015 in /softwarehouse: creazioni/page.tsx (6), i-numeri/page.tsx (3), EvidenceBox.tsx, fallback EN in PortfolioCard.tsx:82 (dead-path). + Audit OS3 INFO-3: JSON-LD dangerouslySetInnerHTML senza escape '<' in 13 pagine → serializzatore centralizzato in lib/seo.ts. Chiave footer.opens_new_tab già esiste ×7.",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "web-quality-gate M-015 (WARN-3) + audit OS3 (INFO-3)"
+    },
+    {
+      "proposed_id": "M-FABIOCHERICI-FOOTER-BADGES",
+      "title": "Footer: badge 'WCAG AA' / 'GDPR' / 'Zero tracking' senza link a prova",
+      "tipo_missione": "fix",
+      "organi_coinvolti": ["fabiocherici.com"],
+      "priority": "P3",
+      "rationale": "Web-quality-gate M-015 WARN-1 (pre-M-015, commit 895959c): span statici, mentre SSL A+ e Security A+ linkano la prova. Coerenza 'te lo dimostro, non te lo prometto'.",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "web-quality-gate M-015 (WARN-1)"
+    },
+    {
+      "proposed_id": "M-FABIOCHERICI-EPP-OG-LOCALE",
+      "title": "Localizzazione meta.epp_title (OG epp.png identica ×7 — spiegata, non bug)",
+      "tipo_missione": "content",
+      "organi_coinvolti": ["fabiocherici.com"],
+      "priority": "P3",
+      "rationale": "Anomalia OG epp ×7 SPIEGATA in M-015: meta.epp_title identico in 7 lingue ('EPP — Environment Protection Programs') → PNG identici. Decisione copy CEO: localizzare il titolo (almeno zh) o confermare nome-programma invariante.",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "M-015 verifica pre-deploy"
+    },
+    {
+      "proposed_id": "M-FABIOCHERICI-CRON-PUSH-STATS",
+      "title": "Cron locale push-stats.sh (refresh automatico cantiere live)",
+      "tipo_missione": "infrastructure",
+      "organi_coinvolti": ["EGI-STAT", "fabiocherici.com"],
+      "priority": "P2",
+      "rationale": "HANDOFF M-015 §8: il widget cantiere su /softwarehouse mostra dati live da stat.florenceegi.com — senza cron il dato invecchia tra una sessione e l'altra. Script pronto: /home/fabio/EGI-STAT/deploy/push-stats.sh (rigenera stats.db + S3 + SSM pull EC2).",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "M-015 chiusura (HANDOFF §8)"
+    },
+    {
+      "proposed_id": "M-IDEALORO-DEMO-BADGE",
+      "title": "Badge 'sito dimostrativo — disponibile per la tua attività' + noindex + form lead su IDEALORO-PREVIEW",
+      "tipo_missione": "feature",
+      "organi_coinvolti": ["IDEALORO-PREVIEW"],
+      "priority": "P2",
+      "rationale": "SSOT commercial-claims §6.4 [da implementare]: demo a brand fittizio linkata LIVE da /softwarehouse (M-015 S6) — serve badge demo + noindex + form → lead B2B.",
+      "blocked_by": [],
+      "proposed_at": "2026-06-12",
+      "proposed_by": "M-015 chiusura (HANDOFF §8 + SSOT §6.4)"
     }
   ]
 }
