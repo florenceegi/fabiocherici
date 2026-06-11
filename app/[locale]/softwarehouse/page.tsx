@@ -260,7 +260,6 @@ export default async function SoftwarehousePage({
             {t('lso_closing')}
           </p>
           <AdvisorSlot
-            demoAlt={t('lso_demo_alt')}
             demoCaption={t('lso_demo_caption')}
             ctaLabel={t('lso_chat_cta')}
           />

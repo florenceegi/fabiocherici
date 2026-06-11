@@ -1,50 +1,37 @@
 /**
  * @package fabiocherici.com — AdvisorSlot
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-06-11
- * @purpose Slot progressivo per la chat advisor (design M-015 §D). v1: demo
- *          statica (screenshot reale chat_ai.png + caption SSOT §3 r9 + CTA
- *          "la provi in chiamata"). Predisposizione innesto: con static export
- *          la env NEXT_PUBLIC_ADVISOR_CHAT_ENDPOINT è valutata a BUILD time —
- *          quando AdvisorChat esisterà (mission M-EGI), questo slot renderà
+ * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-06-12
+ * @purpose Slot della chat advisor (design M-015 §D). M-016: rimosso lo
+ *          screenshot statico (vincolo CEO). Finché la chat reale non è
+ *          innestata (route EGI fabiocherici/advisor/chat — mission M-EGI),
+ *          lo slot rende SOLO copy onesto + CTA "la provi in chiamata".
+ *          Innesto v2: con static export la env NEXT_PUBLIC_ADVISOR_CHAT_ENDPOINT
+ *          è valutata a BUILD time — quando AdvisorChat esisterà renderà
  *          <AdvisorChat endpoint={endpoint} locale={locale} /> se la env è
- *          definita. In v1 il componente NON esiste (design §D: niente
- *          componenti vuoti) e lo slot rende SOLO la demo statica.
- * @mission M-015
+ *          definita; zero refactor della pagina.
+ * @mission M-016
  */
 
-import Image from 'next/image';
-
 export interface AdvisorSlotProps {
-  /** Alt screenshot demo (i18n: lso_demo_alt) */
-  demoAlt: string;
-  /** Caption demo (i18n: lso_demo_caption) */
+  /** Copy onesto sullo stato della chat (i18n: lso_demo_caption) */
   demoCaption: string;
   /** Testo CTA "provala in chiamata" (i18n: lso_chat_cta) */
   ctaLabel: string;
 }
 
-export default function AdvisorSlot({ demoAlt, demoCaption, ctaLabel }: AdvisorSlotProps) {
-  // Innesto v2 (M-EGI): sostituire il blocco statico con
+export default function AdvisorSlot({ demoCaption, ctaLabel }: AdvisorSlotProps) {
+  // Innesto v2 (mission M-EGI): sostituire il blocco con
   //   const endpoint = process.env.NEXT_PUBLIC_ADVISOR_CHAT_ENDPOINT;
-  //   return endpoint ? <AdvisorChat endpoint={endpoint} locale={locale} /> : <demo statica>;
+  //   return endpoint ? <AdvisorChat endpoint={endpoint} locale={locale} /> : <fallback>;
   // "Setti la env e rebuildi": zero refactor della pagina (design M-015 §D).
   return (
     <div className="space-y-8">
-      <figure className="reveal">
-        <Image
-          src="/img/softwarehouse/chat_ai.png"
-          alt={demoAlt}
-          width={1200}
-          height={800}
-          className="w-full h-auto rounded-lg border border-[var(--border)]"
-        />
-        <figcaption className="mt-4 text-sm text-[var(--text-muted)] italic leading-relaxed">
-          {demoCaption}
-        </figcaption>
-      </figure>
-      <div className="reveal text-center">
+      <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed max-w-3xl">
+        {demoCaption}
+      </p>
+      <div className="reveal">
         <a
           href="#contatto"
           className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] px-8 py-3 text-base font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--bg)]"
