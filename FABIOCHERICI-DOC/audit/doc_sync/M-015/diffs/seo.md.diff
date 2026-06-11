@@ -1,0 +1,29 @@
+diff --git a/FABIOCHERICI-DOC/docs/ssot/seo.md b/FABIOCHERICI-DOC/docs/ssot/seo.md
+index f78dd60..fffbd85 100644
+--- a/FABIOCHERICI-DOC/docs/ssot/seo.md
++++ b/FABIOCHERICI-DOC/docs/ssot/seo.md
+@@ -3,8 +3,8 @@ ssot_id: seo
+ title: SEO — Canonical URL + hreflang alternates + Schema.org helpers
+ organ: fabiocherici.com
+ source: lib/seo.ts
+-last_sync: 2026-06-11
+-last_verified_mission: M-013
++last_sync: 2026-06-12
++last_verified_mission: M-015
+ ---
+ 
+ # SEO SSOT
+@@ -53,10 +53,12 @@ Helper SEO per fabiocherici.com:
+ 
+ - Cambiare locales → rigenera hreflang in TUTTE le pagine
+ - Canonical deve essere absolute URL `https://fabiocherici.com/{locale}/...`
+-- OG images: 84 immagini (12 pagine × 7 locali) in `public/og/` (vedi commit 95edd2e)
++- OG images: 91 immagini (13 pagine × 7 locali) in `public/og/` — M-015 ha aggiunto `softwarehouse` a `scripts/generate-og-images.mjs` (prima: 84 = 12×7, commit 95edd2e). Aggiungere pagina con metadata → aggiungere entry in `PAGES` dello script e rigenerare
+ - `buildFaqSchema`: il testo answer deve essere plain text (Schema.org Answer.text), niente HTML
+ - `buildItemListSchema`: position parte da 1, name+description sempre obbligatori, url opzionale
+ - [CICATRICE M-010] Meta description: rispettare soglia SEO Google **≤160 chars** per ogni locale. Il quality gate `web_quality_gate.py` (criterio S-3) blocca commit con meta description >160 chars. Quando il brief contiene testo destinato sia a sezione interna sia a meta tag, **distinguere le due versioni** (interno full vs meta ≤160 chars) — non riusare letteralmente. Verifica in fase di scrittura `meta.{page}_description` per tutti i 7 locale prima di chiudere mission che attiva pagina nuova.
+ - [CICATRICE M-010] Quality gate hook `web-quality-gate-guard.sh` va **rigenerato e verificato PRIMA** di FASE 6 advance → auditing/closed, non dopo. Aggiungere passaggio esplicito al protocollo mission per fabiocherici.com.
+ - [CICATRICE M-011] Quando si aggiunge contenuto narrativo a una pagina gia attiva (es. nuova sezione widget) e il contenuto NON e FAQ-shape (Q&A esplicita): NON forzare `buildFaqSchema` — il payload semantico HTML del nextintl render e sufficiente per i crawler. `FaqSchema` va riservato a domanda/risposta strutturate (vedi widget fiscalita_individuali/aziende M-009). Estensione narrativa lato EPP (M-011: noprofit + azienda) ha intentionally skipped FaqSchema/ItemListSchema — registrazione esplicita per evitare drift futuri.
++- [SPIEGATO M-015] PNG OG identici tra i 7 locali per la stessa pagina NON sono un bug: accade quando `meta.{page}_title` ha lo stesso valore in tutte le 7 lingue (caso `epp.png` ×7 — titolo identico nei 7 locali → lo script rasterizza lo stesso testo). Anomalia osservata in M-015 alla rigenerazione OG e spiegata: nessuna azione richiesta. Diventa un bug SOLO se i titoli nei locale differiscono e i PNG restano identici.
++- [M-015] Rewrite `/softwarehouse`: `meta.softwarehouse_title` → "Softwarehouse — Vedi prima, decidi dopo" e `meta.softwarehouse_description` aggiornati nei 7 locali (≤160 chars, cicatrice M-010 rispettata); OG `softwarehouse.png` generata per i 7 locali.
+ - [DECISIONE M-013] Home provvisoria a 3 porte visibili (softwarehouse, egi, epp — `DOORS` in `app/[locale]/page.tsx` @version 3.0.0): il blocco SEO `sr-only` resta INTATTO con tutti i 9 link sezione (`seo_section_*`: softwarehouse, oracode, scrittore, ainous, egi, epp, numeri, ecosistema, contatti) per i crawler. Metadata, hreflang e JSON-LD invariati. NON rimuovere i link sr-only delle porte non visibili (oracode/scrittore/ai-nous) pensando che siano dead code: sono deliberati — preservano l'indicizzazione delle sezioni durante la home provvisoria; le porte torneranno visibili post-rework Oracode Nexus. Test di guardia: `tests/m-013/test_home_3_doors.sh`.

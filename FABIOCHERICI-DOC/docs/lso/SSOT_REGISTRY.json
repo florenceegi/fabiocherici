@@ -3,7 +3,7 @@
     "description": "SSOT Registry — mapping documenti SSOT e file codebase per fabiocherici.com",
     "version": "1.0.0",
     "created": "2026-05-26",
-    "updated": "2026-06-11",
+    "updated": "2026-06-12",
     "author": "Claude (Oracode) for Fabio Cherici",
     "purpose": "Layer 0 MIELINA: ogni entry mappa un documento SSOT ai file sorgente che descrive.",
     "project": "fabiocherici.com",
@@ -110,9 +110,9 @@
         ]
       },
       "registered_by": "M-001",
-      "last_verified": "2026-06-11",
+      "last_verified": "2026-06-12",
       "last_verified_by": "doc_sync_v2",
-      "verified_in_mission": "M-013",
+      "verified_in_mission": "M-015",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
     },
@@ -160,9 +160,9 @@
         ]
       },
       "registered_by": "M-001",
-      "last_verified": "2026-06-11",
+      "last_verified": "2026-06-12",
       "last_verified_by": "doc_sync_v2",
-      "verified_in_mission": "M-013",
+      "verified_in_mission": "M-015",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
     },
@@ -189,9 +189,9 @@
         ]
       },
       "registered_by": "M-001",
-      "last_verified": "2026-06-11",
+      "last_verified": "2026-06-12",
       "last_verified_by": "doc_sync_v2",
-      "verified_in_mission": "M-013",
+      "verified_in_mission": "M-015",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
     },
@@ -209,12 +209,16 @@
         ],
         "paths": [
           "app/[locale]/softwarehouse/page.tsx",
+          "components/softwarehouse/*.tsx",
           "messages/it.json"
         ]
       },
       "registered_by": "M-014",
-      "last_verified": "2026-06-11",
-      "verification_mode": "registry_only"
+      "last_verified": "2026-06-12",
+      "verification_mode": "registry_only",
+      "last_verified_by": "doc_sync_v2",
+      "verified_in_mission": "M-015",
+      "last_drift_score": 0
     }
   ]
 }

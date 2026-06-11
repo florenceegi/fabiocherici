@@ -25,10 +25,10 @@
   "ssot_first": {
     "enabled": true,
     "ssot_globs": [
-      "FABIOCHERICI-DOC/docs/ssot/",
-      "FABIOCHERICI-DOC/docs/lso/",
-      "FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json"
+      "docs/ssot/",
+      "docs/lso/",
+      "docs/missions/MISSION_REGISTRY.json"
     ],
-    "_meta": "M-FUC-021 (fix audit): glob corretti su FABIOCHERICI-DOC/ e verificati con ls (kill-switch: enabled=false)"
+    "_meta": "M-015 (fix regressione M-FUC-021): i glob sono relativi a instance_root (bin/mission r693-699 compone <instance_root rel HOME>/<glob>); il prefisso FABIOCHERICI-DOC/ li doppiava → gate sempre RED. Verificato contro path reali del read-log."
   }
 }

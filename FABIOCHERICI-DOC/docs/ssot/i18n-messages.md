@@ -3,8 +3,8 @@ ssot_id: i18n-messages
 title: i18n Messages — Stringhe localizzate 7 lingue
 organ: fabiocherici.com
 source: messages/*.json
-last_sync: 2026-06-11
-last_verified_mission: M-013
+last_sync: 2026-06-12
+last_verified_mission: M-015
 ---
 
 # i18n Messages SSOT
@@ -32,6 +32,18 @@ Top-level keys per pagina/area (ordine alfabetico):
 `ainous`, `contatti`, `creazioni`, `ecosistema`, `egi`, `epp` (incluso sub-namespace `epp.widgets` — M-009, esteso con `epp.widgets.fiscalita_epp` in M-011),
 `footer`, `home`, `meta`, `nav`, `navbar_quotes`, `not_found`, `numeri`, `oracode`,
 `preferences`, `privacy`, `prove`, `softwarehouse`, `under_construction`.
+
+### Namespace `softwarehouse` (cronologia)
+
+- **M-008**: namespace originario (pagina softwarehouse v1).
+- **M-015**: rewrite completo della pagina → namespace ristrutturato: 202→112
+  chiavi flat (it.json: 56 nuove — gruppi `live_*` widget cantiere live,
+  `lso_*` sezione Oracode Nexus→LSO, `demos_*`, `cta_*` — e 146 eliminate
+  con le sezioni rimosse). Le chiavi `pricing_*` e `process_*` (SSOT
+  commerciale, M-008) restano la fonte vincolante per prezzi/processo.
+  Aggiornate anche `meta.softwarehouse_title` ("Softwarehouse — Vedi prima,
+  decidi dopo") e `meta.softwarehouse_description` nei 7 locali (≤160 chars
+  verificato: max 145, DE). Parità strutturale 7 lingue mantenuta.
 
 ### Sub-namespace `epp.widgets` (cronologia)
 

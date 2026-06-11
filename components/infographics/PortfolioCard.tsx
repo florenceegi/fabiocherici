@@ -24,6 +24,8 @@ export interface PortfolioCardProps {
   liveUrl?: string;
   /** Label link live ("vedi live") */
   liveLabel?: string;
+  /** Indicatore sr-only localizzato per target=_blank (es. footer.opens_new_tab) */
+  opensNewTabLabel?: string;
 }
 
 export default function PortfolioCard({
@@ -34,6 +36,7 @@ export default function PortfolioCard({
   auditBadge,
   liveUrl,
   liveLabel,
+  opensNewTabLabel,
 }: PortfolioCardProps) {
   return (
     <article
@@ -76,7 +79,7 @@ export default function PortfolioCard({
             className="text-xs text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-2"
           >
             {liveLabel || 'live →'}
-            <span className="sr-only">, opens in new tab</span>
+            <span className="sr-only">{opensNewTabLabel ? ` (${opensNewTabLabel})` : ', opens in new tab'}</span>
           </a>
         )}
       </div>

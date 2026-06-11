@@ -1,0 +1,29 @@
+{
+  "mission_id": "M-015",
+  "generated_by": "doc_sync_v2",
+  "version": "2.2.0",
+  "timestamp": "2026-06-11T22:10:00Z",
+  "mission_title": "Rewrite pagina /softwarehouse (risk-reversal + Oracode Nexus->LSO, 3 card offerta, widget cantiere live, chat advisor slot, 7 lingue)",
+  "new_components": [
+    {"path": "components/softwarehouse/SoftwarehouseHero.tsx", "purpose": "Hero risk-reversal 'Vedi prima, decidi dopo'"},
+    {"path": "components/softwarehouse/LiveSiteStats.tsx", "purpose": "Widget cantiere aperto: fetch client-side da https://stat.florenceegi.com/api/public/site-stats (endpoint EGI-STAT ora COSTRUITO e consumato live); degrado senza JS conforme P0-FC-2"},
+    {"path": "components/softwarehouse/LsoTraits.tsx", "purpose": "3 card tratti LSO (si documenta da solo / puoi parlargli / sente quando qualcosa non torna)"},
+    {"path": "components/softwarehouse/AdvisorSlot.tsx", "purpose": "Slot progressive per chat AI advisor — v1 SENZA chat funzionante (dipendenza endpoint EGI non pronta); lo slot si attiva senza rework pagina"},
+    {"path": "components/softwarehouse/SectionCta.tsx", "purpose": "CTA di sezione riusabile"}
+  ],
+  "modified_behaviors": [
+    {"path": "app/[locale]/softwarehouse/page.tsx", "change": "Rewrite completo 585->349 righe, 8 sezioni; narrativa risk-reversal atto1 + Oracode Nexus->LSO atto2; 3 card offerta; metadata via meta.softwarehouse_title/description aggiornati ('Softwarehouse — Vedi prima, decidi dopo')"},
+    {"path": "app/globals.css", "change": "+@keyframes lso-breathe e classi .lso-trait — animazione respiro CSS-only su box-shadow/opacity (usa --accent-glow), gated dietro prefers-reduced-motion: no-preference, zero layout shift"},
+    {"path": "messages/{it,en,de,es,fr,pt,zh}.json", "change": "Namespace softwarehouse ristrutturato: 202->112 chiavi flat (it.json: 56 nuove tra cui live_*, lso_*, demos_*, cta_*; 146 eliminate) + 2 chiavi meta.softwarehouse_title/description aggiornate; parita strutturale 7 lingue"},
+    {"path": "scripts/generate-og-images.mjs", "change": "+entry {slug: softwarehouse, metaKey: softwarehouse_title} in PAGES -> ora 13 pagine x 7 locali = 91 OG images (era 12x7=84)"},
+    {"path": ".oracode/project.json", "change": "Fix regressione M-FUC-021: ssot_globs ora relativi a instance_root (docs/ssot/, docs/lso/, docs/missions/MISSION_REGISTRY.json) — il prefisso FABIOCHERICI-DOC/ li doppiava, gate sempre RED"}
+  ],
+  "new_tests": ["tests/m-015/test_softwarehouse_rewrite.sh"],
+  "removed_functions": [],
+  "notable_facts": [
+    "FATTO 1 (commercial-claims par.3): endpoint EGI-STAT 'da costruire' -> COSTRUITO e consumato live in pagina (https://stat.florenceegi.com/api/public/site-stats, verificato live). Aggiornamento di stato, decisione invariata.",
+    "FATTO 2 (commercial-claims par.7): chat advisor 'embeddata in v1' -> v1 online SENZA chat funzionante; slot progressive AdvisorSlot.tsx predisposto, dipendenza M-EGI non pronta. Stato reale da riflettere senza riscrivere la decisione.",
+    "FATTO 3 (anomalia OG epp.png x7): meta.epp_title identico nei 7 locali -> PNG OG identici tra lingue. NON e un bug (lo script rasterizza il titolo). Nessun SSOT la traccia come anomalia aperta -> registrazione come trappola nota in seo.md (additive).",
+    "FATTO 4 (registry): i doc mission M-015_* NON vanno registrati in SSOT_REGISTRY — sono record storici di mission, non SSOT watchati; nessun precedente doc mission e registrato (coerenza istanza)."
+  ]
+}

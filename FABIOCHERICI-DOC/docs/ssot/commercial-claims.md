@@ -4,10 +4,10 @@ ssot_id: commercial-claims
 slug: commercial-claims
 organ: fabiocherici.com
 doc_type: content-ssot
-version: 1.0.0
+version: 1.1.0
 status: current
 date: '2026-06-11'
-last_sync: '2026-06-11'
+last_sync: '2026-06-12'
 author: Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
 scope:
 - fabiocherici.com
@@ -58,7 +58,7 @@ parole del cliente. Mai LSO/Oracode Nexus/SSOT/RAG come apertura.
 |---|---|---|
 | ~2,2M righe nette / ~2.233 ore tracciate / ~24 progetti | EGI-STAT (tracker interno) | SOLO dentro "cantiere aperto"; ore/attività protagoniste, righe SECONDARIE; mai LOC-first |
 | Verificabile su GitHub (repo pubblici) | github.com (org) | "Non credermi: guarda i commit" |
-| Cantiere aperto con dati LIVE | endpoint EGI-STAT (da costruire — vincolo CEO: live dal giorno 1, NESSUN placeholder) | demo del deliverable: "quando lavori con me ricevi questa trasparenza" |
+| Cantiere aperto con dati LIVE | endpoint EGI-STAT `https://stat.florenceegi.com/api/public/site-stats` — COSTRUITO e consumato in pagina (M-015, `components/softwarehouse/LiveSiteStats.tsx`, verificato live; vincolo CEO rispettato: live dal giorno 1, NESSUN placeholder) | demo del deliverable: "quando lavori con me ricevi questa trasparenza" |
 | Processo 5 fasi: MVP prima della firma, caparra-custodia, fino a 3 MVP | SSOT esistente: messages/it.json `process_*` (M-008) — sancito, non si rinegozia | promosso a protagonista atto 1 |
 | Rebrand sito verticale in <48h (fatto: GialloOro→IdealOro <2h) | repo IDEALORO-PREVIEW | come capacità, MAI ore accanto a prezzi |
 | Sito completo ~12,5h (Le Vespe v1) | EGI-STAT | SOLO uso interno/cantiere; MAI accanto a prezzi |
@@ -112,6 +112,9 @@ Chiusura approvata: "Risultato: non dipendi da nessuno. Nemmeno da me."
 - **Stats cantiere LIVE dal giorno 1** — endpoint da EGI-STAT, fetch
   client-side; P0-FC-2: la pagina resta sensata senza JS (la sezione degrada,
   non sparisce). NESSUN placeholder statico.
+  - [STATO M-015] **Realizzato.** `components/softwarehouse/LiveSiteStats.tsx`
+    consuma `https://stat.florenceegi.com/api/public/site-stats` (verificato
+    live); degrado senza JS conforme P0-FC-2.
 - **Chat AI advisor embeddata in v1** — pattern SigilloAdvisorService su EGI:
   endpoint guest throttle 20/min + CORS fabiocherici.com; frontend pattern
   free-ai-chat.js (vanilla, SSE) con estetica ai-sidebar adattata
@@ -119,6 +122,12 @@ Chiusura approvata: "Risultato: non dipendi da nessuno. Nemmeno da me."
   entra SOLO una **proiezione pubblica** di questo SSOT (claim citabili §3 +
   frame + linguaggio §5) — MAI il documento integrale: §2 (pricing interno),
   §4 (razionali), §6 (protocollo) restano internal.
+  - [STATO M-015] **Non realizzato in v1.** La v1 è andata online SENZA chat
+    funzionante: la dipendenza lato EGI (endpoint guest) non era pronta. In
+    pagina è predisposto uno slot progressive
+    (`components/softwarehouse/AdvisorSlot.tsx`): la chat si attiverà nello
+    slot senza rework di pagina quando l'endpoint EGI sarà disponibile. La
+    decisione di questo punto resta valida e NON è rinegoziata.
 - Demo toccabili: IdealOro live; Capasso al deploy su pinocapasso.com.
 
 ## 8. Registro decisioni CEO (2026-06-11)
@@ -134,3 +143,22 @@ Chiusura approvata: "Risultato: non dipendi da nessuno. Nemmeno da me."
 | Siti seri | terza card in pagina softwarehouse |
 | Capasso | in portfolio al deploy pinocapasso.com |
 | Testimonianze dolore | ELIMINATE |
+
+## 9. Stato di attuazione in pagina (M-015 — 2026-06-12)
+
+Rewrite `/softwarehouse` (M-015): 8 sezioni, narrativa §1 attuata (atto 1
+risk-reversal, atto 2 Oracode Nexus → LSO), 3 card offerta da §2, claim solo
+da §3 con frame, linguaggio LSO da §5, 7 lingue.
+
+| Dipendenza §7 | Stato v1 |
+|---|---|
+| Stats cantiere LIVE | ATTIVO — `LiveSiteStats.tsx` su endpoint EGI-STAT live |
+| Chat AI advisor | SLOT predisposto (`AdvisorSlot.tsx`), chat NON attiva — dipendenza EGI non pronta |
+| Demo toccabili | IdealOro live; Capasso resta gated al deploy pinocapasso.com |
+
+## Changelog
+
+| Versione | Data | Mission | Cambiamento |
+|---|---|---|---|
+| 1.0.0 | 2026-06-11 | M-014 | Creazione SSOT commerciale |
+| 1.1.0 | 2026-06-12 | M-015 (DOC-SYNC) | Stato endpoint EGI-STAT §3 (costruito), note di stato §7 (stats attive, chat slot-only), sezione 9 stato attuazione |

@@ -1,28 +1,30 @@
 /**
  * @package fabiocherici.com — Softwarehouse Page
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 1.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-05-27
- * @purpose Softwarehouse page — 9 sezioni con 7 componenti infografici riusabili.
- *          Sostituisce /creazioni come pagina commerciale dedicata PMI italiane.
- *          Postura TU al centro, tono asciutto-fattuale, no vendita.
- * @mission M-008
+ * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
+ * @date 2026-06-11
+ * @purpose Softwarehouse page — rewrite M-015: 8 sezioni risk-reversal +
+ *          Oracode Nexus→LSO (SSOT commercial-claims v1.0.0, P0-FC-6).
+ *          Hero "Vedi il tuo software funzionare. Poi decidi." + cantiere
+ *          aperto LIVE + 3 card offerta + processo 5 fasi (riuso M-008) +
+ *          specie nuova LSO + demo toccabili + prezzi invariati + CTA calda.
+ *          Server component: tutto il testo nell'HTML statico (P0-FC-2).
+ * @mission M-015
  */
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
-import ComparisonTable from '@/components/infographics/ComparisonTable';
-import EvidenceBox from '@/components/infographics/EvidenceBox';
-import FormulaBlock from '@/components/infographics/FormulaBlock';
 import IconGrid from '@/components/infographics/IconGrid';
 import FlowDiagram from '@/components/infographics/FlowDiagram';
 import PricingTiers from '@/components/infographics/PricingTiers';
 import PortfolioCard from '@/components/infographics/PortfolioCard';
-import PortfolioGrid from '@/components/infographics/PortfolioGrid';
+import SoftwarehouseHero from '@/components/softwarehouse/SoftwarehouseHero';
+import LiveSiteStats from '@/components/softwarehouse/LiveSiteStats';
+import LsoTraits from '@/components/softwarehouse/LsoTraits';
+import AdvisorSlot from '@/components/softwarehouse/AdvisorSlot';
+import SectionCta from '@/components/softwarehouse/SectionCta';
 
 export async function generateMetadata({
   params,
@@ -53,52 +55,24 @@ export async function generateMetadata({
 const linkClass =
   'text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4 transition-colors';
 
-const PORTFOLIO_MARKET = [
-  { key: 'market_1', loc: '504.304 LOC', live: 'https://art.florenceegi.com' },
-  { key: 'market_2', loc: '110.479 LOC', live: 'https://natan-loc.florenceegi.com' },
-  { key: 'market_3', loc: '36.537 LOC', live: 'https://egi-credential.florenceegi.com', hours: '~78h' },
-  { key: 'market_4', loc: '10.013 LOC', live: 'https://egi-sigillo.florenceegi.com', hours: '38-44h' },
-  { key: 'market_5', loc: '16.285 LOC', live: 'https://creator-staging.florenceegi.com', hours: '~30h' },
-  { key: 'market_6', loc: '13.111 LOC' },
-  { key: 'market_7', loc: '1.426 LOC', live: 'https://preview.florenceegi.com', hours: '16h' },
-] as const;
+const labelClass =
+  'reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4';
 
-const PORTFOLIO_INFRA = [
-  { key: 'infra_1', loc: '57.365 LOC', live: 'https://hub.florenceegi.com' },
-  { key: 'infra_2', loc: '21.939 LOC', live: 'https://florenceegi.com' },
-  { key: 'infra_3', loc: '35.869 LOC', live: 'https://info.florenceegi.com' },
-  { key: 'infra_4', loc: '3.860 LOC' },
-  { key: 'infra_5' },
-  { key: 'infra_6' },
-  { key: 'infra_7', loc: '3.408 LOC' },
-  { key: 'infra_8', loc: '2.009 LOC' },
-  { key: 'infra_9', loc: '1.995 LOC' },
-  { key: 'infra_10', loc: '1.181 LOC' },
-] as const;
+const titleClass =
+  'reveal font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light tracking-tight text-[var(--text-primary)] mb-6';
 
-const PORTFOLIO_SITES = [
-  { key: 'site_1', loc: '3.489 LOC', live: 'https://fabiocherici.com' },
-  { key: 'site_2', loc: '4.505 LOC', hours: '16h' },
-  { key: 'site_3' },
-] as const;
-
-const RECEIVE_ICONS = [
-  // 1. Assistenza diretta — chat bubble
-  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>,
-  // 2. Codice / lock-in — code brackets
-  <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
-  // 3. Documentazione viva — book
-  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>,
-  // 4. Infrastruttura — server
-  <svg key="4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect x="2" y="2" width="20" height="8" rx="2" /><rect x="2" y="14" width="20" height="8" rx="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>,
-  // 5. Velocità — zap
-  <svg key="5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>,
-  // 6. Prezzo — euro
-  <svg key="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M14 21V3" /><path d="M18 8H8c-3.3 0-6 2.7-6 6s2.7 6 6 6h10" /><path d="M2 14h10" /></svg>,
-  // 7. Numeri — check
-  <svg key="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
+/* Icone card offerta — stesso stile stroke 1.5 del pattern M-008 */
+const OFFER_ICONS = [
+  // 1. Software su misura — layers
+  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>,
+  // 2. Esemplare unico (Sigillo) — award/seal
+  <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="8" r="6" /><path d="M15.5 13 17 22l-5-3-5 3 1.5-9" /></svg>,
+  // 3. Già rifatto — refresh
+  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" /></svg>,
 ];
 
+const GITHUB_URL = 'https://github.com/florenceegi';
+const IDEALORO_LIVE_URL = 'https://preview.florenceegi.com';
 const WHATSAPP_URL = 'https://wa.me/393388350412';
 const EMAIL_HREF = 'mailto:fabio@florenceegi.com?subject=Softwarehouse';
 
@@ -111,20 +85,7 @@ export default async function SoftwarehousePage({
   setRequestLocale(locale);
   const t = await getTranslations('softwarehouse');
   const tm = await getTranslations({ locale, namespace: 'meta' });
-
-  const rich = {
-    b: (chunks: ReactNode) => (
-      <strong className="font-semibold text-[var(--text-primary)]">{chunks}</strong>
-    ),
-    oralink: (chunks: ReactNode) => (
-      <Link
-        href={`/${locale}/oracode`}
-        className="text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-2 transition-colors"
-      >
-        {chunks}
-      </Link>
-    ),
-  };
+  const tf = await getTranslations('footer');
 
   const pageSchema = buildPageSchema({
     locale,
@@ -159,34 +120,38 @@ export default async function SoftwarehousePage({
     ],
   };
 
-  const comparisonRows = [1, 2, 3, 4, 5, 6].map((n) => ({
-    promise: t(`pain_row_${n}_promise`),
-    reality: t(`pain_row_${n}_reality`),
-  }));
-
-  const formulaTerms = [
-    { label: t('how_formula_term_1'), emphasis: 'primary' as const },
-    { label: t('how_formula_term_2'), emphasis: 'accent' as const, href: `/${locale}/oracode` },
-    { label: t('how_formula_term_3'), emphasis: 'accent' as const },
+  /* 3 card offerta — SSOT §2, beneficio PRIMA del nome proprietario (regola jargon §1) */
+  const offerItems = [
+    {
+      icon: OFFER_ICONS[0],
+      title: t('offer_1_title'),
+      description: t.rich('offer_1_desc', {
+        pricinglink: (chunks: ReactNode) => (
+          <a href="#prezzi" className={linkClass}>{chunks}</a>
+        ),
+      }),
+    },
+    {
+      icon: OFFER_ICONS[1],
+      title: t('offer_2_title'),
+      description: t.rich('offer_2_desc', {
+        demolink: (chunks: ReactNode) => (
+          <a href="#demo" className={linkClass}>{chunks}</a>
+        ),
+      }),
+    },
+    {
+      icon: OFFER_ICONS[2],
+      title: t('offer_3_title'),
+      description: t.rich('offer_3_desc', {
+        contactlink: (chunks: ReactNode) => (
+          <a href="#contatto" className={linkClass}>{chunks}</a>
+        ),
+      }),
+    },
   ];
 
-  const iconGridItems = [1, 2, 3, 4, 5, 6, 7].map((n, i) => {
-    const key = `receive_lever_${n}_desc` as const;
-    return {
-      icon: RECEIVE_ICONS[i],
-      title: t(`receive_lever_${n}_title`),
-      description: n === 5 ? t.rich(key, rich) : t(key),
-    };
-  });
-
-  const pricingTiers = [1, 2, 3, 4, 5].map((n) => ({
-    name: t(`pricing_tier_${n}_name`),
-    priceRange: t(`pricing_tier_${n}_price`),
-    timeline: t(`pricing_tier_${n}_timeline`),
-    maintenance: t(`pricing_tier_${n}_maintenance`),
-    depositMvp: t(`pricing_tier_${n}_deposit`),
-  }));
-
+  /* Processo 5 fasi — RIUSO INVARIATO M-008 (SSOT §3 r4: sancito, non si rinegozia) */
   const flowPhases = [
     { label: t('process_phase_1_label'), steps: [1, 2, 3] },
     { label: t('process_phase_2_label'), steps: [4, 5] },
@@ -198,8 +163,22 @@ export default async function SoftwarehousePage({
     steps: phase.steps.map((n) => ({ number: n, text: t(`process_step_${n}`) })),
   }));
 
+  /* Fasce INVARIATE (SSOT §8) */
+  const pricingTiers = [1, 2, 3, 4, 5].map((n) => ({
+    name: t(`pricing_tier_${n}_name`),
+    priceRange: t(`pricing_tier_${n}_price`),
+    timeline: t(`pricing_tier_${n}_timeline`),
+    maintenance: t(`pricing_tier_${n}_maintenance`),
+    depositMvp: t(`pricing_tier_${n}_deposit`),
+  }));
+
+  const lsoTraits = [1, 2, 3].map((n) => ({
+    title: t(`lso_trait_${n}_title`),
+    description: t(`lso_trait_${n}_desc`),
+  }));
+
   return (
-    <div className="pt-24">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -207,315 +186,45 @@ export default async function SoftwarehousePage({
         }}
       />
 
-      {/* ── 1. Hero ── */}
-      <section className="py-24 bg-[var(--bg)]" aria-labelledby="softwarehouse-heading">
-        <div className="mx-auto max-w-3xl px-6">
-          <p className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
-            {t('hero_label')}
-          </p>
-          <h1
-            id="softwarehouse-heading"
-            className="reveal font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl font-light tracking-tight text-[var(--text-primary)] mb-6"
-          >
-            {t('hero_title')}
-          </h1>
-          <p className="reveal text-xl sm:text-2xl text-[var(--accent)] leading-relaxed font-medium mb-2">
-            {t('hero_subtitle_1')}
-          </p>
-          <p className="reveal text-xl sm:text-2xl text-[var(--accent)] leading-relaxed font-medium mb-12">
-            {t('hero_subtitle_2')}
-          </p>
-          <div className="space-y-6">
-            {(['hero_p1', 'hero_p2', 'hero_p3'] as const).map((key) => (
-              <p key={key} className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-                {t(key)}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── 1. Hero — claim risk-reversal + 3D ambient (unico Canvas) ── */}
+      <SoftwarehouseHero />
 
-      {/* ── 2. Pain — Data + Evidence + ComparisonTable ── */}
-      <section className="py-24 bg-[var(--bg-elevated)]">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('pain_label')}
-          </h2>
-
-          <div className="space-y-6 mb-12">
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] italic leading-relaxed">
-              {t('pain_p1')}
-            </p>
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('pain_data_intro')}
-            </p>
-            <ul className="reveal space-y-3 list-none">
-              {([
-                { key: 'teamsystem', url: 'https://it.trustpilot.com/review/teamsystem.com' },
-                { key: 'dylog', url: 'https://it.trustpilot.com/review/dylog.it' },
-                { key: 'sistemi', url: 'https://it.trustpilot.com/review/www.sistemi.com' },
-                { key: 'fattureincloud', url: 'https://it.trustpilot.com/review/fattureincloud.it' },
-              ] as const).map((c) => (
-                <li
-                  key={c.key}
-                  className="flex gap-3 text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed"
-                >
-                  <span aria-hidden="true" className="text-[var(--accent)] shrink-0">—</span>
-                  <span>
-                    <a
-                      href={c.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4"
-                    >
-                      {t(`pain_data_${c.key}_label`)}
-                      <span className="sr-only">, opens in new tab</span>
-                    </a>
-                    {' — '}
-                    {t(`pain_data_${c.key}_summary`)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="my-12">
-            <EvidenceBox
-              ariaLabel={t('evidence_label')}
-              label={t('evidence_label')}
-              title={t('evidence_title')}
-              reviews={[
-                {
-                  stars: 1,
-                  date: t('evidence_q1_date'),
-                  author: t('evidence_q1_author'),
-                  company: t('evidence_q1_company'),
-                  quote: t('evidence_q1_quote'),
-                  sourceUrl: 'https://it.trustpilot.com/review/teamsystem.com',
-                  languageCaption: t('evidence_caption_in_italian'),
-                  reply: {
-                    label: t('evidence_reply_label_teamsystem'),
-                    text: t('evidence_q1_reply'),
-                    date: t('evidence_q1_reply_date'),
-                  },
-                },
-                {
-                  stars: 1,
-                  date: t('evidence_q2_date'),
-                  author: t('evidence_q2_author'),
-                  company: t('evidence_q2_company'),
-                  quote: t('evidence_q2_quote'),
-                  sourceUrl: 'https://it.trustpilot.com/review/teamsystem.com',
-                  languageCaption: t('evidence_caption_in_italian'),
-                  reply: {
-                    label: t('evidence_reply_label_teamsystem'),
-                    text: t('evidence_q2_reply'),
-                    date: t('evidence_q2_reply_date'),
-                  },
-                },
-                {
-                  stars: 1,
-                  date: t('evidence_q3_date'),
-                  author: t('evidence_q3_author'),
-                  company: t('evidence_q3_company'),
-                  quote: t('evidence_q3_quote'),
-                  sourceUrl: 'https://it.trustpilot.com/review/dylog.it',
-                  languageCaption: t('evidence_caption_in_italian'),
-                  noReplyNote: t('evidence_no_reply_dylog'),
-                },
-                {
-                  stars: 1,
-                  date: t('evidence_q4_date'),
-                  author: t('evidence_q4_author'),
-                  company: t('evidence_q4_company'),
-                  quote: t('evidence_q4_quote'),
-                  sourceUrl: 'https://it.trustpilot.com/review/dylog.it',
-                  languageCaption: t('evidence_caption_in_italian'),
-                  noReplyNote: t('evidence_no_reply_dylog'),
-                },
-              ]}
-              ctaIntro={t('evidence_cta_intro')}
-              ctaTotal={t('evidence_cta_total')}
-              ctaLinks={[
-                { label: t('pain_data_teamsystem_label'), url: 'https://it.trustpilot.com/review/teamsystem.com' },
-                { label: t('pain_data_dylog_label'), url: 'https://it.trustpilot.com/review/dylog.it' },
-                { label: t('pain_data_sistemi_label'), url: 'https://it.trustpilot.com/review/www.sistemi.com' },
-                { label: t('pain_data_fattureincloud_label'), url: 'https://it.trustpilot.com/review/fattureincloud.it' },
-              ]}
-            />
-          </div>
-
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
-            {t('pain_p2')}
-          </p>
-
-          <ComparisonTable
-            ariaLabel={t('pain_label')}
-            headPromise={t('pain_table_head_promise')}
-            headReality={t('pain_table_head_reality')}
-            rows={comparisonRows}
-            caption={t('pain_closing')}
-          />
-        </div>
-      </section>
-
-      {/* ── 3. How — FormulaBlock ── */}
-      <section className="py-24 bg-[var(--bg)]">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('how_label')}
-          </h2>
-          <div className="space-y-6 mb-12">
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('how_p1')}
-            </p>
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('how_p2')}
-            </p>
-          </div>
-          <FormulaBlock
-            ariaLabel={`${t('how_formula_term_1')} ${t('how_op_1')} ${t('how_formula_term_2')} ${t('how_op_2')} ${t('how_formula_term_3')}`}
-            terms={formulaTerms}
-            operators={[t('how_op_1'), t('how_op_2')]}
-          />
-          <div className="mt-12 space-y-4">
-            {([1, 2, 3] as const).map((n) => (
-              <p
-                key={n}
-                className="reveal text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed"
-              >
-                {t.rich(`how_term_${n}_explanation`, rich)}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. Receive — IconGrid ── */}
-      <section className="py-24 bg-[var(--bg-elevated)]">
+      {/* ── 2. Cantiere aperto LIVE ── */}
+      <section id="cantiere" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="cantiere-heading">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
-            {t('receive_label')}
-          </h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12">
-            {t('receive_intro')}
+          <p className={labelClass}>{t('live_label')}</p>
+          <h2 id="cantiere-heading" className={titleClass}>{t('live_title')}</h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10 max-w-3xl">
+            {t('live_intro')}
           </p>
-          <IconGrid ariaLabel={t('receive_label')} items={iconGridItems} columns={4} />
-          <p className="reveal mt-10 text-sm sm:text-base">
-            <Link href={`/${locale}/i-numeri`} className={linkClass}>
-              {t('receive_link_numbers')}
-            </Link>
+          <LiveSiteStats />
+          <p className="reveal mt-8 text-sm sm:text-base">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              {t('live_github_link')}
+              <span className="sr-only"> ({tf('opens_new_tab')})</span>
+            </a>
           </p>
         </div>
       </section>
 
-      {/* ── 5. Differenziatore ── */}
-      <section className="py-24 bg-[var(--bg)]">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('diff_label')}
-          </h2>
-          <div className="space-y-6 mb-12">
-            {(['diff_p1', 'diff_p2', 'diff_p3'] as const).map((key) => (
-              <p key={key} className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-                {t(key)}
-              </p>
-            ))}
-          </div>
-          <figure className="reveal">
-            <Image
-              src="/img/softwarehouse/chat_ai.png"
-              alt={t('diff_screenshot_alt')}
-              width={1200}
-              height={800}
-              className="w-full h-auto rounded-lg border border-[var(--border)]"
-            />
-            <figcaption className="mt-4 text-sm text-[var(--text-muted)] italic leading-relaxed">
-              {t('diff_screenshot_caption')}
-            </figcaption>
-          </figure>
+      {/* ── 3. Le 3 linee d'offerta ── */}
+      <section id="offerta" className="py-24 bg-[var(--bg)]" aria-labelledby="offerta-heading">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={labelClass}>{t('offer_label')}</p>
+          <h2 id="offerta-heading" className={`${titleClass} mb-12`}>{t('offer_title')}</h2>
+          <IconGrid ariaLabel={t('offer_label')} items={offerItems} columns={3} />
+          <SectionCta text={t('cta_mid_offer')} href="#contatto" />
         </div>
       </section>
 
-      {/* ── 6. Portfolio ── */}
-      <section className="py-24 bg-[var(--bg-elevated)]">
+      {/* ── 4. Processo 5 fasi — riuso M-008 ── */}
+      <section id="processo" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="processo-heading">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('portfolio_label')}
-          </h2>
-          <div className="space-y-6 mb-12 max-w-3xl">
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('portfolio_p1')}
-            </p>
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('portfolio_p2')}
-            </p>
-          </div>
-          <PortfolioGrid
-            ariaLabel={t('portfolio_label')}
-            groups={[
-              {
-                label: t('portfolio_group_market'),
-                children: PORTFOLIO_MARKET.map((p) => (
-                  <PortfolioCard
-                    key={p.key}
-                    name={t(`portfolio_${p.key}_name`)}
-                    description={t(`portfolio_${p.key}_desc`)}
-                    loc={p.loc}
-                    hours={'hours' in p ? p.hours : undefined}
-                    auditBadge={'hours' in p ? t('portfolio_audit_badge') : undefined}
-                    liveUrl={'live' in p ? p.live : undefined}
-                  />
-                )),
-              },
-              {
-                label: t('portfolio_group_infra'),
-                children: PORTFOLIO_INFRA.map((p) => {
-                  const descKey = `portfolio_${p.key}_desc` as const;
-                  return (
-                    <PortfolioCard
-                      key={p.key}
-                      name={t(`portfolio_${p.key}_name`)}
-                      description={p.key === 'infra_6' ? t.rich(descKey, rich) : t(descKey)}
-                      loc={'loc' in p ? p.loc : undefined}
-                      liveUrl={'live' in p ? p.live : undefined}
-                    />
-                  );
-                }),
-              },
-              {
-                label: t('portfolio_group_sites'),
-                children: PORTFOLIO_SITES.map((p) => (
-                  <PortfolioCard
-                    key={p.key}
-                    name={t(`portfolio_${p.key}_name`)}
-                    description={t(`portfolio_${p.key}_desc`)}
-                    loc={'loc' in p ? p.loc : undefined}
-                    hours={'hours' in p ? p.hours : undefined}
-                    auditBadge={'hours' in p ? t('portfolio_audit_badge') : undefined}
-                    liveUrl={'live' in p ? p.live : undefined}
-                  />
-                )),
-              },
-            ]}
-          />
-          <p className="reveal mt-10 text-sm text-[var(--text-muted)] leading-relaxed max-w-3xl">
-            {t('portfolio_audit_note')}{' '}
-            <Link href={`/${locale}/i-numeri`} className={linkClass}>
-              {t('portfolio_audit_link')}
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ── 7. Process — FlowDiagram ── */}
-      <section className="py-24 bg-[var(--bg)]">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
+          <h2 id="processo-heading" className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
             {t('process_label')}
           </h2>
           <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
-            {t('process_intro')}
+            {t('process_intro_v2')}
           </p>
           <FlowDiagram ariaLabel={t('process_label')} phases={flowPhases} />
           <p className="reveal mt-12 text-base sm:text-lg text-[var(--accent)] italic leading-relaxed max-w-3xl">
@@ -524,10 +233,67 @@ export default async function SoftwarehousePage({
         </div>
       </section>
 
-      {/* ── 8. Investimento — PricingTiers ── */}
-      <section className="py-24 bg-[var(--bg-elevated)]">
+      {/* ── 5. La specie nuova — Oracode Nexus → LSO ── */}
+      <section id="lso" className="py-32 bg-[var(--bg)]" aria-labelledby="lso-heading">
+        <div className="mx-auto max-w-3xl px-6">
+          <p className={labelClass}>{t('lso_label')}</p>
+          <h2 id="lso-heading" className={titleClass}>{t('lso_title')}</h2>
+          <div className="space-y-6 mb-10">
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('lso_p1')}
+            </p>
+            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              {t('lso_p2')}
+            </p>
+          </div>
+          <div className="reveal my-10 text-center">
+            <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light text-[var(--accent)]">
+              {t('lso_name')}
+            </p>
+            <p className="mt-2 text-sm text-[var(--text-muted)]">{t('lso_name_translation')}</p>
+          </div>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10">
+            {t('lso_proof')}
+          </p>
+          <LsoTraits ariaLabel={t('lso_label')} traits={lsoTraits} />
+          <p className="reveal mt-10 mb-12 text-lg sm:text-xl text-[var(--accent)] italic leading-relaxed">
+            {t('lso_closing')}
+          </p>
+          <AdvisorSlot
+            demoAlt={t('lso_demo_alt')}
+            demoCaption={t('lso_demo_caption')}
+            ctaLabel={t('lso_chat_cta')}
+          />
+          <SectionCta text={t('cta_mid_lso')} href="#demo" />
+        </div>
+      </section>
+
+      {/* ── 6. Demo toccabili ── */}
+      <section id="demo" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="demo-heading">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={labelClass}>{t('demos_label')}</p>
+          <h2 id="demo-heading" className={titleClass}>{t('demos_title')}</h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
+            {t('demos_intro')}
+          </p>
+          {/* Lista demo: aggiungere Capasso = aggiungere una card (SOLO al deploy
+              su pinocapasso.com — SSOT §3 r10), zero refactor. */}
+          <div className="reveal max-w-md">
+            <PortfolioCard
+              name={t('demos_idealoro_name')}
+              description={t('demos_idealoro_desc')}
+              liveUrl={IDEALORO_LIVE_URL}
+              liveLabel={t('demos_live_label')}
+              opensNewTabLabel={tf('opens_new_tab')}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. Prezzi — fasce INVARIATE ── */}
+      <section id="prezzi" className="py-24 bg-[var(--bg)]" aria-labelledby="prezzi-heading">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
+          <h2 id="prezzi-heading" className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
             {t('pricing_label')}
           </h2>
           <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
@@ -547,17 +313,17 @@ export default async function SoftwarehousePage({
               {t('pricing_uncertain_link')}
             </a>
           </p>
+          <SectionCta text={t('cta_mid_pricing')} href="#contatto" />
         </div>
       </section>
 
-      {/* ── 9. CTA ── */}
-      <section className="py-24 bg-[var(--bg)]">
+      {/* ── 8. CTA calda ── */}
+      <section id="contatto" className="py-32 bg-[var(--bg-elevated)]" aria-labelledby="contatto-heading">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('cta_label')}
-          </p>
+          <p className={labelClass}>{t('cta_final_label')}</p>
+          <h2 id="contatto-heading" className={titleClass}>{t('cta_final_title')}</h2>
           <p className="reveal text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-12">
-            {t('cta_paragraph')}
+            {t('cta_final_paragraph')}
           </p>
           <div className="reveal flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
@@ -575,7 +341,7 @@ export default async function SoftwarehousePage({
               className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] px-8 py-3 text-base font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--bg)]"
             >
               {t('cta_whatsapp')}
-              <span className="sr-only">, opens in new tab</span>
+              <span className="sr-only"> ({tf('opens_new_tab')})</span>
             </a>
           </div>
         </div>

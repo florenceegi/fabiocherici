@@ -1,0 +1,34 @@
+diff --git a/FABIOCHERICI-DOC/docs/ssot/i18n-messages.md b/FABIOCHERICI-DOC/docs/ssot/i18n-messages.md
+index 1efcf5e..4e81ff4 100644
+--- a/FABIOCHERICI-DOC/docs/ssot/i18n-messages.md
++++ b/FABIOCHERICI-DOC/docs/ssot/i18n-messages.md
+@@ -3,8 +3,8 @@ ssot_id: i18n-messages
+ title: i18n Messages — Stringhe localizzate 7 lingue
+ organ: fabiocherici.com
+ source: messages/*.json
+-last_sync: 2026-06-11
+-last_verified_mission: M-013
++last_sync: 2026-06-12
++last_verified_mission: M-015
+ ---
+ 
+ # i18n Messages SSOT
+@@ -33,6 +33,18 @@ Top-level keys per pagina/area (ordine alfabetico):
+ `footer`, `home`, `meta`, `nav`, `navbar_quotes`, `not_found`, `numeri`, `oracode`,
+ `preferences`, `privacy`, `prove`, `softwarehouse`, `under_construction`.
+ 
++### Namespace `softwarehouse` (cronologia)
++
++- **M-008**: namespace originario (pagina softwarehouse v1).
++- **M-015**: rewrite completo della pagina → namespace ristrutturato: 202→112
++  chiavi flat (it.json: 56 nuove — gruppi `live_*` widget cantiere live,
++  `lso_*` sezione Oracode Nexus→LSO, `demos_*`, `cta_*` — e 146 eliminate
++  con le sezioni rimosse). Le chiavi `pricing_*` e `process_*` (SSOT
++  commerciale, M-008) restano la fonte vincolante per prezzi/processo.
++  Aggiornate anche `meta.softwarehouse_title` ("Softwarehouse — Vedi prima,
++  decidi dopo") e `meta.softwarehouse_description` nei 7 locali (≤160 chars
++  verificato: max 145, DE). Parità strutturale 7 lingue mantenuta.
++
+ ### Sub-namespace `epp.widgets` (cronologia)
+ 
+ - **M-009**: introdotto `epp.widgets` con 6 sezioni accordion: `ragion_essere`, `apr`, `arf`, `bpe`, `fiscalita_individuali`, `fiscalita_aziende`.

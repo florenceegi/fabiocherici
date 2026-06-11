@@ -1,0 +1,10 @@
+{
+  "mission_id": "M-015",
+  "generated_by": "doc_sync_v2",
+  "version": "2.2.0",
+  "status": "skipped_no_schema",
+  "reason": "RAG_SCHEMA non configurato per l'istanza FABIOCHERICI-DOC (assente in CLAUDE.md root+istanza, env ORACODE_RAG_SCHEMA vuota). Modalita LSO ridotto: registry+audit attivi, re-indexing non applicabile. RAG non presente.",
+  "reindexed_files": [],
+  "chunks_reindexed": null,
+  "sanity_check": "not_applicable"
+}

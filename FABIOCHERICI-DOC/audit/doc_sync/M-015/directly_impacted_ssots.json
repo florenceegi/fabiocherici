@@ -1,0 +1,47 @@
+{
+  "mission_id": "M-015",
+  "generated_by": "doc_sync_v2",
+  "version": "2.2.0",
+  "method": "deterministic glob match (fnmatch) file_modified vs watches.paths",
+  "impacted": [
+    {
+      "ssot_id": "commercial-claims",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["app/[locale]/softwarehouse/page.tsx", "messages/it.json"]
+    },
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "impact_type": "pattern_match",
+      "matched_files": ["app/[locale]/softwarehouse/page.tsx (pattern app/[locale]/**/page.tsx)"]
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["messages/it.json", "messages/en.json", "messages/de.json", "messages/es.json", "messages/fr.json", "messages/pt.json", "messages/zh.json"]
+    },
+    {
+      "ssot_id": "design-tokens",
+      "path": "FABIOCHERICI-DOC/docs/ssot/design-tokens.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["app/globals.css"]
+    }
+  ],
+  "not_impacted_with_reason": [
+    {"ssot_id": "animation-presets", "reason": "nessun file watchato toccato (lib/animation*, ScrollReveal invariati)"},
+    {"ssot_id": "scene3d-ids", "reason": "nessun file watchato toccato"},
+    {"ssot_id": "i18n-config", "reason": "lib/i18n/* invariati"},
+    {"ssot_id": "fonts", "reason": "lib/fonts.ts, app/layout.tsx, app/[locale]/layout.tsx invariati"}
+  ],
+  "uncovered_new_files": [
+    {"path": "components/softwarehouse/SoftwarehouseHero.tsx", "triage": "coverage fix proposto: aggiunto watch components/softwarehouse/*.tsx a commercial-claims (i componenti incarnano claim par.3/par.7)"},
+    {"path": "components/softwarehouse/LiveSiteStats.tsx", "triage": "idem"},
+    {"path": "components/softwarehouse/LsoTraits.tsx", "triage": "idem"},
+    {"path": "components/softwarehouse/AdvisorSlot.tsx", "triage": "idem"},
+    {"path": "components/softwarehouse/SectionCta.tsx", "triage": "idem"},
+    {"path": "tests/m-015/test_softwarehouse_rewrite.sh", "triage": "test di mission — non richiede watch SSOT (convenzione istanza: tests/m-* non watchati)"},
+    {"path": "scripts/generate-og-images.mjs", "triage": "modificato (non nuovo), non watchato da alcun SSOT ma descritto in seo.md trappole — coperto narrativamente"}
+  ]
+}

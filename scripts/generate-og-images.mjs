@@ -22,6 +22,7 @@ const LOCALES = ['it', 'en', 'de', 'es', 'fr', 'pt', 'zh'];
 
 const PAGES = [
   { slug: 'index', metaKey: 'home_title' },
+  { slug: 'softwarehouse', metaKey: 'softwarehouse_title' },
   { slug: 'egi', metaKey: 'egi_title' },
   { slug: 'epp', metaKey: 'epp_title' },
   { slug: 'oracode', metaKey: 'oracode_title' },

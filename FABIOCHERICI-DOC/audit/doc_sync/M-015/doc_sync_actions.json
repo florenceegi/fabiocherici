@@ -1,0 +1,72 @@
+{
+  "mission_id": "M-015",
+  "generated_by": "doc_sync_v2",
+  "version": "2.2.0",
+  "actions": [
+    {
+      "ssot_id": "commercial-claims",
+      "ssot_path": "docs/ssot/commercial-claims.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "resolution_method": "pre_approved_by_caller",
+      "ssot_content_hash_pre": "7cad697a8510f747157120bc6a9e82dceef1a6bb8fecc00bda63af14e2a9e5a7",
+      "ssot_content_hash_post": "b4103811a0e18149e6f946196552f06b6ded274cf01ed64a81633e88d2645e37",
+      "diff_path": "audit/doc_sync/M-015/diffs/commercial-claims.md.diff",
+      "justification": "Patch mista: (a) par.3 cella fonte claim 'Cantiere aperto LIVE': stato 'da costruire' -> 'COSTRUITO e consumato' (sostituzione di stato fattuale, decisione invariata — esplicitamente pre-approvata dal chiamante mission come 'aggiornamento additivo dello stato'); (b) par.7 due note [STATO M-015] additive sotto i bullet stats/chat — la decisione 'chat embeddata in v1' NON e riscritta, la nota registra che v1 e online con slot progressive senza chat (dipendenza EGI non pronta); (c) nuova sezione 9 'Stato di attuazione in pagina' + changelog; (d) bump 1.0.0 -> 1.1.0, last_sync 2026-06-12. Verifica esaustivita M-OS3-027: grep residui '1.0.0|da costruire|embeddata in v1' -> 2 residui legittimi (riga changelog storica 1.0.0; bullet decisione par.7 conservato intenzionalmente con nota di stato sotto).",
+      "timestamp": "2026-06-11T22:20:00Z"
+    },
+    {
+      "ssot_id": "seo",
+      "ssot_path": "docs/ssot/seo.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "resolution_method": "fact_refresh_verified",
+      "ssot_content_hash_pre": "cddad53846a66dfdd3887130de907e77dddc611d95ca140150c5e99b4e0055e3",
+      "ssot_content_hash_post": "9200587622d6285d469771538d5bd038469ff3d3f9053ad446fa2903acbd2637",
+      "diff_path": "audit/doc_sync/M-015/diffs/seo.md.diff",
+      "justification": "Sostitutivo SOLO sul conteggio OG (84/12 -> 91/13): fatto numerico derivato, verificato con ls public/og/it/ (13 file x 7 dir locale); il dato storico (84, commit 95edd2e) e conservato nella stessa riga. Additive: (a) trappola [SPIEGATO M-015] anomalia epp.png x7 identici (meta.epp_title identico nei 7 locali, non-bug — nessun SSOT la tracciava come anomalia aperta); (b) nota M-015 metadata softwarehouse aggiornati (titolo 'Vedi prima, decidi dopo', description <=160 verificata: max 145 DE). Front-matter: last_sync 2026-06-12, last_verified_mission M-015.",
+      "timestamp": "2026-06-11T22:22:00Z"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "auto_additive",
+      "ssot_content_hash_pre": "fa068a636e0dc8e3b4c68e1b611052aa1844bb7b92bcef2db8b60ed6162719de",
+      "ssot_content_hash_post": "70aa80c3f36d15b09cbcdefbc033e73977f9e28c5451bf54abf2f13abc993bae",
+      "diff_path": "audit/doc_sync/M-015/diffs/i18n-messages.md.diff",
+      "justification": "Nuova sottosezione 'Namespace softwarehouse (cronologia)' con la ristrutturazione M-015: 202->112 chiavi flat it.json, 56 nuove / 146 eliminate (conteggio VERIFICATO via diff strutturale git show HEAD:messages/it.json vs working tree — il brief del chiamante citava 58/148, riconciliato: includeva le 2 chiavi meta.* aggiornate, che non sono nuove ma modificate). Nessun testo esistente alterato. Front-matter: last_sync 2026-06-12, last_verified_mission M-015.",
+      "timestamp": "2026-06-11T22:24:00Z"
+    },
+    {
+      "ssot_id": "design-tokens",
+      "ssot_path": "docs/ssot/design-tokens.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "auto_additive",
+      "ssot_content_hash_pre": "6d127817965dab45a61d2b7ddab1cce1572b3d9942b082386da59c93799f0ce9",
+      "ssot_content_hash_post": "a57a6630514099eda1bab5793998ae1ca009ea222cef250a6e769f33eca94a08",
+      "diff_path": "audit/doc_sync/M-015/diffs/design-tokens.md.diff",
+      "justification": "Nuova trappola nota [M-015]: @keyframes lso-breathe + .lso-trait in globals.css, consumo token --accent-glow (verificato definito in tutti i temi: 5 occorrenze grep), gating prefers-reduced-motion, vincolo di coerenza su rename del token. Nessun testo esistente alterato. Front-matter aggiornato.",
+      "timestamp": "2026-06-11T22:25:00Z"
+    },
+    {
+      "ssot_id": "animation-presets|scene3d-ids|i18n-config|fonts",
+      "ssot_path": "docs/ssot/{animation-presets,scene3d-ids,i18n-config,fonts}.md",
+      "mode": "no_change",
+      "status": "no_change",
+      "justification": "Nessun file watchato toccato da M-015 (lib/animation*, lib/scene3d*, lib/i18n/*, lib/fonts.ts, layout invariati). La pagina softwarehouse usa ScrollReveal e i token font ma senza modificarli.",
+      "timestamp": "2026-06-11T22:25:00Z"
+    },
+    {
+      "ssot_id": "_mission_docs_registration_check",
+      "ssot_path": "docs/lso/SSOT_REGISTRY.json",
+      "mode": "no_change",
+      "status": "no_change",
+      "justification": "FATTO 4 del brief: i doc mission M-015_* (design doc, QA report, report technical/extended) NON vanno registrati in SSOT_REGISTRY — sono record storici immutabili di mission, non SSOT con watch su codice. Coerenza istanza verificata: nessun doc mission precedente (M-013_*, HANDOFF_*) e registrato. Regola istanza: il registry mappa solo docs/ssot/*.",
+      "timestamp": "2026-06-11T22:25:00Z"
+    }
+  ],
+  "batch_substitutive_resolution": "2 azioni substitutive (commercial-claims pre-approvata dal chiamante; seo fact-refresh su conteggio verificato ls). Applicate in batch atomico; diff disponibili in diffs/ per review operatore prima del commit di chiusura mission — il working tree non e committato, ogni rigetto e reversibile con git checkout."
+}

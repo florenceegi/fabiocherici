@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-015",
+  "generated_by": "doc_sync_v2",
+  "version": "2.2.0",
+  "status": "skipped",
+  "reason": "RAG_SCHEMA non configurato (assente in CLAUDE.md istanza e in env ORACODE_RAG_SCHEMA) — modalita LSO ridotto: Step 3 discovery laterale skip. Fallback manuale: grep dei concetti chiave (epp.png, anomal, softwarehouse) sugli 8 SSOT del registry non ha prodotto SSOT laterali oltre i 4 diretti.",
+  "impacted": []
+}
