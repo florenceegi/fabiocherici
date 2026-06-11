@@ -194,6 +194,27 @@
       "verified_in_mission": "M-013",
       "last_drift_score": 0,
       "verification_mode": "registry_only"
+    },
+    {
+      "ssot_id": "commercial-claims",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "title": "SSOT Commerciale — claim citabili/vietati, 3 linee offerta, narrativa Oracode Nexus→LSO",
+      "organ": "fabiocherici.com",
+      "doc_type": "content-ssot",
+      "priority": "critical",
+      "check_frequency": "on_commit",
+      "watches": {
+        "repos": [
+          "fabiocherici.com"
+        ],
+        "paths": [
+          "app/[locale]/softwarehouse/page.tsx",
+          "messages/it.json"
+        ]
+      },
+      "registered_by": "M-014",
+      "last_verified": "2026-06-11",
+      "verification_mode": "registry_only"
     }
   ]
 }

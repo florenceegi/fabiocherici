@@ -10,8 +10,75 @@
     "level": 3,
     "organ_type": "LSO mono-organo"
   },
-  "counter": 13,
+  "counter": 14,
   "missions": [
+    {
+      "id": "M-014",
+      "title": "SSOT Commerciale softwarehouse — claim citabili/vietati, 3 linee offerta, narrativa Oracode Nexus→LSO",
+      "trigger_matrix": 1,
+      "status": "closed",
+      "date_open": "2026-06-11",
+      "date_close": "2026-06-11",
+      "scope_hash": "7729e94790f64b3ad1cc86947b2c79daef3fc7cb311af507905d24fbf1d580e5",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-11T19:34:06.442Z",
+      "ssot_waiver": {
+        "reason": "Mission CREA l'SSOT mancante (commercial-claims): fonte",
+        "at": "2026-06-11T19:27:02.190Z",
+        "by": "supervisor"
+      },
+      "report_technical": "docs/missions/M-014_SSOT_COMMERCIALE_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-014_SSOT_COMMERCIALE_REPORT_EXTENDED.md",
+      "organs": [
+        "EGI-DOC",
+        "EGI"
+      ],
+      "stats": {
+        "total_commits": 3,
+        "lines_added": 342,
+        "lines_deleted": 5,
+        "lines_net": 337,
+        "lines_touched": 347,
+        "files_touched": 8,
+        "weighted_commits": 3.8,
+        "cognitive_load": 2.57,
+        "productivity_index": 27.87,
+        "tags_breakdown": {
+          "FIX": 2,
+          "DOC": 1
+        },
+        "commit_hashes": [
+          "3832d27c44b1051c8a14376180e0f06fd4aee5ed",
+          "71bb23906d9540c80bf92019651aabae506b39c2",
+          "ef5accf1a8ce0a177baeee0185f3d5a80a80c6fd"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/EGI",
+            "date": "2026-04-05",
+            "commits": 2,
+            "lines_added": 25,
+            "lines_deleted": 4,
+            "files_touched": 3,
+            "tags": {
+              "FIX": 2
+            }
+          },
+          {
+            "repo": "florenceegi/EGI-DOC",
+            "date": "2026-04-06",
+            "commits": 1,
+            "lines_added": 317,
+            "lines_deleted": 1,
+            "files_touched": 5,
+            "tags": {
+              "DOC": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-11"
+      }
+    },
     {
       "id": "M-013",
       "title": "Home page provvisoria 3 porte: Softwarehouse + Florence EGI + EPP (SEO sr-only intatto)",
@@ -36,21 +103,23 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 2,
-        "lines_added": 469,
-        "lines_deleted": 10,
-        "lines_net": 459,
-        "lines_touched": 479,
-        "files_touched": 9,
-        "weighted_commits": 2.0,
-        "cognitive_load": 2.6,
-        "productivity_index": 25.39,
+        "total_commits": 3,
+        "lines_added": 627,
+        "lines_deleted": 15,
+        "lines_net": 612,
+        "lines_touched": 642,
+        "files_touched": 15,
+        "weighted_commits": 2.8,
+        "cognitive_load": 2.77,
+        "productivity_index": 32.19,
         "tags_breakdown": {
-          "FEAT": 2
+          "FEAT": 2,
+          "DOC": 1
         },
         "commit_hashes": [
           "0c0c3ccef3edc9a3bf68a2d876b79cd4c3e522ab",
-          "6614acdb23023363dacb976daa34deda7ee3d8e1"
+          "6614acdb23023363dacb976daa34deda7ee3d8e1",
+          "bc50b7b2bec88c84b47ea6b954d604043408da8c"
         ],
         "by_repo_day": [
           {
@@ -67,11 +136,12 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-06-11",
-            "commits": 1,
-            "lines_added": 50,
-            "lines_deleted": 9,
-            "files_touched": 3,
+            "commits": 2,
+            "lines_added": 208,
+            "lines_deleted": 14,
+            "files_touched": 9,
             "tags": {
+              "DOC": 1,
               "FEAT": 1
             }
           }
