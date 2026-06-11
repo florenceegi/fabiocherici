@@ -90,3 +90,19 @@
 
 **Reasoning**: drift empirico rilevato su M-015 (unknown/EGI-DOC, EGI, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
 
+### M-016 — 2026-06-11 [retrofit post-mortem] — unknown / EGI-DOC, fabiocherici
+
+**Severity**: minor | **Stato**: pending
+**always_loaded esclusi**: 3 file
+
+**loaded_unused** (pre-allocati mai consultati):
+- (nessuno)
+
+**used_unloaded** (consultati ma non pre-allocati):
+- `oracode/docs/paradigm/standards/WEB_PAGE_QUALITY_GATE.md`
+
+**Proposta**:
+- `by_mission_type.unknown` o `by_organ`: consider adding 1 file
+
+**Reasoning**: drift empirico rilevato su M-016 (unknown/EGI-DOC, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
+

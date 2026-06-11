@@ -13,6 +13,74 @@
   "counter": 267,
   "missions": [
     {
+      "id": "M-016",
+      "title": "Fix post-deploy /softwarehouse: CSP connect-src per dati live cantiere + rimozione screenshot demo advisor (chat reale rimandata a mission M-EGI)",
+      "trigger_matrix": 1,
+      "status": "closed",
+      "date_open": "2026-06-11",
+      "date_close": "2026-06-11",
+      "scope_hash": "f7cbf6f65f26ed5363a1357968f803ed8c36fc9d0377336ba8b7bca205411819",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-11T22:53:54.252Z",
+      "ssot_waiver": {
+        "reason": "Remediation di defect su output M-015 gia approvato e gated; nessun nuovo claim/contenuto: rimozione asset visivo (screenshot) su istruzione CEO esplicita + fix CSP infra. SSOT commercial-claims gia letto e applicato in M-015.",
+        "at": "2026-06-11T22:44:52.505Z",
+        "by": "supervisor"
+      },
+      "report_technical": "docs/missions/M-016_FIX_POSTDEPLOY_SOFTWAREHOUSE_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-016_FIX_POSTDEPLOY_SOFTWAREHOUSE_REPORT_EXTENDED.md",
+      "organs": [
+        "EGI-DOC",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 283,
+        "lines_deleted": 38,
+        "lines_net": 245,
+        "lines_touched": 321,
+        "files_touched": 9,
+        "weighted_commits": 2.3,
+        "cognitive_load": 2.53,
+        "productivity_index": 18.78,
+        "tags_breakdown": {
+          "DOC": 1,
+          "FIX": 1
+        },
+        "commit_hashes": [
+          "b6bf5c3294b293c63034f311e0c512f4f68bc148",
+          "fe75e31660c557503e1d97ed07e4fdcf928f4ba6"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/EGI-DOC",
+            "date": "2026-04-06",
+            "commits": 1,
+            "lines_added": 156,
+            "lines_deleted": 6,
+            "files_touched": 4,
+            "tags": {
+              "DOC": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-12",
+            "commits": 1,
+            "lines_added": 127,
+            "lines_deleted": 32,
+            "files_touched": 5,
+            "tags": {
+              "FIX": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-12"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-11T22:54:07Z"
+    },
+    {
       "id": "M-015",
       "title": "Rewrite pagina /softwarehouse — risk-reversal + Oracode Nexus→LSO, 3 card offerta, widget cantiere live, chat advisor, 7 lingue",
       "trigger_matrix": 3,
