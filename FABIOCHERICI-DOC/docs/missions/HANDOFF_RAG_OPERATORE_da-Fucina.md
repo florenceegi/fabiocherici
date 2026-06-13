@@ -19,6 +19,39 @@ eseguile o costruisci sopra.
 
 ---
 
+## 0-bis. ⚠️ LE COSE SONO CAMBIATE — questo SUPERA il tuo M-015 (leggi PRIMA di tutto)
+
+Hai chiesto: *"il chat/RAG/endpoint è roba EGI non fabiocherici? La M-017 che ho aperto per il pool è
+nel posto sbagliato?"* — citando "l'handoff §5/§8". **Chiarimento doppio:**
+
+1. **Errore di attribuzione.** Quella frase ("route EGI `fabiocherici/advisor/chat`, riusa
+   `SigilloAdvisorController`/`RagSearchService`, proiezione SSOT, aprire mission M-EGI-xxx") **NON è in
+   questo handoff** — è nel TUO `M-015_DESIGN_SOFTWAREHOUSE.md §5` (2026-06-11). Questo handoff dice
+   l'opposto. Non confonderli.
+
+2. **Decisione CEO (2026-06-13): il piano M-015 è SUPERATO.** Ci si basa sulle decisioni prese in
+   sessione Fucina questa notte, NON sul disegno vecchio di fabiocherici. Cosa cambia, in concreto:
+
+   | Aspetto | M-015 (vecchio, SUPERATO) | ORA (decisione CEO, governa) |
+   |---|---|---|
+   | RAG dell'advisor/operatore | riusa il RAG di EGI (`RagSearchService` su RDS FlorenceEGI) | **RAG DEDICATO di fabiocherici**, DB separato — **MAI sul RDS FlorenceEGI** |
+   | Backend chat | route EGI, mission `M-EGI-xxx` | **runtime di fabiocherici** (dove → decisione D-1, tua) |
+   | Chi possiede il pezzo | EGI (fabiocherici = solo widget frontend) | **fabiocherici possiede operatore + RAG**; EGI non c'entra |
+   | La tua M-017 (pool) | "andrebbe spostata in M-EGI-xxx" | **resta in fabiocherici** — è il posto giusto col nuovo modello |
+
+   **Perché è cambiato:** il CEO ha deciso che l'operatore di fabiocherici non è più un widget-advisor che
+   riusa EGI, ma un **operatore AI evolutissimo** che guida le PMI nel discovery dei progetti (in prospettiva:
+   inizializzare un project da qui) — knowledge vastissimo, e soprattutto **isolamento per costruzione**: un
+   RAG pubblico che gira sul RDS dei clienti FlorenceEGI è il rischio di contaminazione che il CEO ha vietato
+   esplicitamente ("le AI fanno casini, l'errore deve morire all'autenticazione"). Tre edifici separati, non
+   uno condiviso.
+
+   **Conseguenza operativa:** NON aprire/spostare il pool come `M-EGI-xxx`. NON riusare `SigilloAdvisorController`
+   né il RAG di EGI. Il pool, l'ingest, l'endpoint e il RAG vivono in **fabiocherici** (con D-1 da decidere). Usa
+   lo stampo collaudato (vedi §2-§4 sotto), non l'infrastruttura EGI.
+
+---
+
 ## 1. Il modello a TRE RAG (ADR firmato — M-FUC-031)
 
 L'ecosistema ha tre RAG DB **fisicamente separati** (isolamento per costruzione, non per disciplina —
