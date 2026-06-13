@@ -52,6 +52,48 @@ nel posto sbagliato?"* — citando "l'handoff §5/§8". **Chiarimento doppio:**
 
 ---
 
+## 0-ter. ✅ UPSTREAM PRONTO + D-1 DECISA (aggiornamento 2026-06-13 — leggi prima di partire)
+
+Il CEO ha chiesto di verificare che "a monte" (registry/export del corpus) fosse a posto prima che tu
+costruissi. **Fatto (M-FUC-036).** Stato:
+
+1. **Il tuo organismo è ora censito** nel sistema Nexus (FABIOCHERICI-DOC = 9° registry). Prima non c'era:
+   i tuoi SSOT non sarebbero mai entrati in nessun corpus. Corretto + corretto il bug del check che non
+   vedeva i registry annidati come il tuo.
+2. **Corpus pubblico pronto e verificato**: `export-ssot --audience public` → **137 file, 0 segreti**
+   (gitleaks bloccante). È il corpus base del tuo RAG (paradigma Oracode + FlorenceEGI divulgativo).
+3. **D-1 DECISA dal CEO: opzione (b) — macchina dedicata.** L'operatore e il suo Postgres vivono su una
+   macchina propria (EC2 piccola / Lightsail), NON sulla EC2 dei siti FlorenceEGI. Isolamento fisico totale
+   per il pezzo più esposto. → puoi procedere col provisioning.
+
+### ⚠️ Un pezzo di CONTENUTO che è TUO (non plumbing, non lo fa Fucina)
+
+I tuoi 8 SSOT (`commercial-claims`, `seo`, `design-tokens`, `fonts`, i18n, scene3d, animation) sono stati
+classificati **`internal`** — sono config-build del sito + il `commercial-claims` che ha `visibility:internal`
+e contiene i **claim VIETATI** (cosa NON dire). Quindi **NON entrano** nel corpus pubblico così come sono, ed
+è giusto: l'operatore non deve avere la lista dei claim vietati né i font del sito.
+
+MA l'operatore, per parlare dell'offerta software-house alle PMI, ha bisogno dei **claim CITABILI**. Serve
+quindi un **nuovo SSOT "proiezione pubblica dei claim"** — solo i claim citabili (commercial-claims §3/§5),
+zero vietati — marcato `public`. Lo prevedeva già il tuo M-015 §5. **Questo lo crei TU** (è contenuto tuo,
+non infrastruttura). Quando esiste e lo classifichi public, entra automaticamente nel corpus pubblico via
+il filo (`rag-distribute`).
+
+### Sequenza operativa per te (ora sbloccata)
+
+1. Crea l'SSOT `commercial-claims-public.md` (proiezione pubblica: solo claim citabili) → classificalo `public`
+   (lo aggiungo io a `ssot-sensitivity.json` quando mi dici che è pronto, o lo fai tu via la stessa pipeline).
+2. Provisioning **macchina dedicata** (D-1=b) + Postgres dedicato + ruolo least-privilege (stampo:
+   `os3-matrix/sql/rag_nexus_schema.sql`).
+3. `export-ssot --audience public` → backfill nel tuo DB via `rag_reindex.py` (137 + la tua proiezione claim).
+4. Passa il tuo store `rag_fabiocherici` da `planned` ad `active` nell'indice (con env_ref, mai credenziali).
+5. Difesa operatore PRIMA del go-live (decisione CEO ⑥): OWASP LLM Top-10 + red-team; zero tool di
+   rete/DB oltre il RAG, zero credenziali nel contesto (anti-prompt-injection).
+
+**La M-017 che avevi aperto resta in fabiocherici** — vedi §0-bis. Non spostarla in EGI.
+
+---
+
 ## 1. Il modello a TRE RAG (ADR firmato — M-FUC-031)
 
 L'ecosistema ha tre RAG DB **fisicamente separati** (isolamento per costruzione, non per disciplina —
