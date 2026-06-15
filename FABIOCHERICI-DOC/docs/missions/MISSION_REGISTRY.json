@@ -3,7 +3,7 @@
     "description": "Mission Registry — tracking delle mission del progetto fabiocherici.com",
     "version": "1.0.0",
     "created": "2026-05-26",
-    "updated": "2026-06-11",
+    "updated": "2026-06-15",
     "author": "Claude (Oracode) for Fabio Cherici",
     "purpose": "Registro SSOT delle mission. Ogni modifica strutturale passa da qui.",
     "project": "fabiocherici.com",
@@ -12,6 +12,89 @@
   },
   "counter": 267,
   "missions": [
+    {
+      "id": "M-017",
+      "title": "Chat AI advisor fabiocherici — strato commerciale SSOT pulito + pool agenti su 148 SSOT EGI per >",
+      "trigger_matrix": 3,
+      "status": "closed",
+      "date_open": "2026-06-12",
+      "date_close": "2026-06-15",
+      "scope_hash": "5c6c9ae8dc198fcf8221e5253eaa1bcc838b342fb2c9126059dbbe08c83aabaa",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-15T23:11:53.489Z",
+      "design_waiver": {
+        "reason": "Proiezione meccanica di claim gia approvati dal CEO (commercial-claims §3 citabili + §5 linguaggio LSO) verso un doc classificato public; esclude vietati e interni. Nessun design di dominio. Design infra operatore/RAG e fase A4 successiva post D-1, governata da HANDOFF_RAG_OPERATORE.",
+        "at": "2026-06-13T05:42:14.586Z",
+        "by": "supervisor"
+      },
+      "ssot_first_evidence": {
+        "path": "fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+        "ts": "2026-06-13T05:40:57Z"
+      },
+      "report_technical": "docs/missions/M-017_OPERATORE_NEXUS_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-017_OPERATORE_NEXUS_REPORT_EXTENDED.md",
+      "doc_sync_executed": true,
+      "doc_sync_log": {
+        "agent": "doc-sync-v2",
+        "tool_use_id": "toolu_01JAd2yA9Pi1ne7o3x6mcp9C",
+        "output_hash": "0cd22283573a665d3bfc2808f2c26b4a3d083df65a5411c9f93eff190ad946cf",
+        "date": "2026-06-15T23:11:53.486Z",
+        "outcome": "success"
+      },
+      "organs": [
+        "EGI-DOC",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 3,
+        "lines_added": 6931,
+        "lines_deleted": 182,
+        "lines_net": 6749,
+        "lines_touched": 7113,
+        "files_touched": 66,
+        "weighted_commits": 3.3,
+        "cognitive_load": 3.41,
+        "productivity_index": 68.33,
+        "tags_breakdown": {
+          "DOC": 1,
+          "FIX": 1,
+          "FEAT": 1
+        },
+        "commit_hashes": [
+          "1a0b510541720ba0d95e5f207afcfefb5f57229f",
+          "a10363a5fee1165c62d88e00b9463c9675fb8602",
+          "c2f65b54ecdf1d7eac56fbc3f1de29b4397b91e8"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/EGI-DOC",
+            "date": "2026-04-06",
+            "commits": 1,
+            "lines_added": 384,
+            "lines_deleted": 93,
+            "files_touched": 10,
+            "tags": {
+              "DOC": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-16",
+            "commits": 2,
+            "lines_added": 6547,
+            "lines_deleted": 89,
+            "files_touched": 56,
+            "tags": {
+              "FIX": 1,
+              "FEAT": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-16"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-15T23:12:13Z"
+    },
     {
       "id": "M-016",
       "title": "Fix post-deploy /softwarehouse: CSP connect-src per dati live cantiere + rimozione screenshot demo advisor (chat reale rimandata a mission M-EGI)",
@@ -34,20 +117,21 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 2,
-        "lines_added": 283,
+        "total_commits": 3,
+        "lines_added": 299,
         "lines_deleted": 38,
-        "lines_net": 245,
-        "lines_touched": 321,
-        "files_touched": 9,
-        "weighted_commits": 2.3,
-        "cognitive_load": 2.53,
-        "productivity_index": 18.78,
+        "lines_net": 261,
+        "lines_touched": 337,
+        "files_touched": 10,
+        "weighted_commits": 3.8,
+        "cognitive_load": 2.6,
+        "productivity_index": 24.64,
         "tags_breakdown": {
           "DOC": 1,
-          "FIX": 1
+          "FIX": 2
         },
         "commit_hashes": [
+          "640f08b2c8d2a1c36e99aa591dfa1b707d695929",
           "b6bf5c3294b293c63034f311e0c512f4f68bc148",
           "fe75e31660c557503e1d97ed07e4fdcf928f4ba6"
         ],
@@ -66,16 +150,16 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-06-12",
-            "commits": 1,
-            "lines_added": 127,
+            "commits": 2,
+            "lines_added": 143,
             "lines_deleted": 32,
-            "files_touched": 5,
+            "files_touched": 6,
             "tags": {
-              "FIX": 1
+              "FIX": 2
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:54:07Z"
@@ -187,7 +271,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:32:18Z"
@@ -280,7 +364,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:43:21Z"
@@ -352,7 +436,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "doc_sync_executed": true,
       "doc_sync_outcome": "success",
@@ -434,7 +518,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "organs": [
         "EGI-DOC",
@@ -500,7 +584,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       }
     },
     {
@@ -567,7 +651,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       }
     },
     {
@@ -658,7 +742,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "organs": [
         "os3-matrix",
@@ -788,7 +872,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:26Z",
@@ -878,7 +962,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:24Z",
@@ -966,7 +1050,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:22Z",
@@ -1071,7 +1155,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-12"
+        "calculated_at": "2026-06-16"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:21Z",

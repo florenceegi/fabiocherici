@@ -106,3 +106,28 @@
 
 **Reasoning**: drift empirico rilevato su M-016 (unknown/EGI-DOC, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
 
+### M-017 — 2026-06-15 [retrofit post-mortem] — unknown / EGI-DOC, fabiocherici
+
+**Severity**: major | **Stato**: pending
+**always_loaded esclusi**: 3 file
+
+**loaded_unused** (pre-allocati mai consultati):
+- (nessuno)
+
+**used_unloaded** (consultati ma non pre-allocati):
+- `EGI-DOC/docs/aws/infrastructure.md`
+- `Fucina/docs/missions/m-fuc-031/SECURITY_MODEL-tre-rag.md`
+- `docs/ssot`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/missions/HANDOFF_M-015_SOFTWAREHOUSE_REWRITE.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/missions/HANDOFF_RAG_OPERATORE_da-Fucina.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/missions/M-017_DESIGN_WIDGET_NEXUS.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/missions/M-017_SECURITY_REVIEW_OPERATORE.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/commercial-claims.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/discovery-questions.md`
+
+**Proposta**:
+- `by_mission_type.unknown` o `by_organ`: consider adding 10 file
+
+**Reasoning**: drift empirico rilevato su M-017 (unknown/EGI-DOC, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
+

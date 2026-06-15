@@ -1,0 +1,44 @@
+{
+  "mission_id": "M-017",
+  "rag_mode": "skipped_no_schema",
+  "actions": [
+    {
+      "ssot_id": "commercial-claims",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "auto_additive",
+      "justification": "§3 claim 'Mente interrogabile reale' aggiornato con STATO M-017 (operatore Padmin LIVE). §7 'Chat AI advisor': aggiunto [STATO M-017] REALIZZATA (lo STATO M-015 'non realizzato' resta come riferimento storico, superato additivamente). §9 tabella: chat da SLOT a LIVE. Nuova §10 stato operatore AI. Front-matter version 1.1.0->1.2.0, changelog riga M-017. Nessuna decisione CEO riscritta (additivo).",
+      "timestamp": "2026-06-13T00:00:00Z",
+      "diff_path": "diffs/commercial-claims.md"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "auto_additive",
+      "justification": "Aggiunto namespace 'nexus' alla lista namespace + cronologia (36 chiavi/locale, parita 7 lingue verificata). Cronologia 'softwarehouse' estesa M-017 (4 chiavi padmin). Nuova sotto-sezione 'privacy' M-017 (5 chiavi: 6(1)(f), OpenAI sub-processor, retention 30gg, IP pseudonimizzato). last_sync 2026-06-12->2026-06-13, last_verified_mission M-015->M-017. Solo aggiunta cronologica, nessun namespace esistente riscritto.",
+      "timestamp": "2026-06-13T00:00:00Z",
+      "diff_path": "diffs/i18n-messages.md"
+    },
+    {
+      "ssot_id": "commercial-claims-public",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "register_new_ssot",
+      "justification": "SSOT nuovo creato dalla mission (front-matter completo, visibility:public). Registrato in SSOT_REGISTRY come content-ssot critical con watch sui file operatore (prompt.py, rag.py, operator.py). Contenuto non modificato dal doc-sync (gia' coerente).",
+      "timestamp": "2026-06-13T00:00:00Z"
+    },
+    {
+      "ssot_id": "discovery-questions",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/discovery-questions.md",
+      "mode": "additive",
+      "status": "applied",
+      "resolution_method": "register_new_ssot",
+      "justification": "SSOT nuovo creato dalla mission (front-matter completo, visibility:public). Registrato in SSOT_REGISTRY come content-ssot high con watch su prompt.py + operator.py. Contenuto non modificato dal doc-sync.",
+      "timestamp": "2026-06-13T00:00:00Z"
+    }
+  ]
+}

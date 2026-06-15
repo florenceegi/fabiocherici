@@ -1,0 +1,24 @@
+{
+  "mission_id": "M-017",
+  "matched_at": "2026-06-13T00:00:00Z",
+  "impacted": [
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "impact_type": "pattern_match",
+      "matched_files": ["messages/it.json", "messages/en.json", "messages/de.json", "messages/es.json", "messages/fr.json", "messages/pt.json", "messages/zh.json"],
+      "matched_watch": "messages/*.json"
+    },
+    {
+      "ssot_id": "commercial-claims",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "impact_type": "direct_watcher",
+      "matched_files": ["app/[locale]/softwarehouse/page.tsx", "components/softwarehouse/AdvisorSlot.tsx", "components/softwarehouse/nexus/*.tsx", "messages/it.json"],
+      "matched_watch": ["app/[locale]/softwarehouse/page.tsx", "components/softwarehouse/*.tsx", "messages/it.json"]
+    }
+  ],
+  "new_ssots_to_register": [
+    {"ssot_id": "commercial-claims-public", "reason": "creato dalla mission con front-matter completo, non presente in registry"},
+    {"ssot_id": "discovery-questions", "reason": "creato dalla mission con front-matter completo, non presente in registry"}
+  ]
+}

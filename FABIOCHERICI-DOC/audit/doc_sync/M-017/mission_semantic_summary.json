@@ -1,0 +1,27 @@
+{
+  "mission_id": "M-017",
+  "instance_root": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC",
+  "analyzed_at": "2026-06-13T00:00:00Z",
+  "commits": ["c2f65b5", "1a0b510"],
+  "summary": "Operatore AI 'Padmin' (Nexus): RAG dedicato fabiocherici + microservizio FastAPI + widget pubblico + go-live. Lo slot chat predisposto in M-015 e' stato riempito da un operatore proprietario dedicato (non dal pattern EGI). Il sito ora tratta dati personali quando l'utente usa l'operatore.",
+  "new_components": [
+    "nexus-operator/ (FastAPI microservizio: chat SSE, RAG pgvector dedicato, vision gpt-4o, /showcase proxy, rate-limit pseudonimizzato)",
+    "components/softwarehouse/nexus/* (widget chat Padmin: PadminChat, ChatInput, ChatMessage, ImageAttach, EgiShowcase, WisdomTicker, NexusWidget, useNexusStream)",
+    "lib/nexus/* (types, sse-parser, markdown, image-validation)"
+  ],
+  "modified_behaviors": [
+    "app/[locale]/softwarehouse/page.tsx: widget Padmin spostato IN CIMA alla pagina (correzione CEO M-017), sezione LSO ora richiama il widget via #padmin",
+    "components/softwarehouse/AdvisorSlot.tsx: innesto v2 env-driven (widget live con env / fallback statico senza)",
+    "messages/*.json x7: nuovo namespace 'nexus' (36 chiavi/locale), estensione namespace 'softwarehouse' (4 chiavi padmin), estensione namespace 'privacy' (5 chiavi: IP pseudonimizzato, base 6(1)(f), retention 30gg, OpenAI sub-processor)"
+  ],
+  "new_ssots_created": [
+    "docs/ssot/commercial-claims-public.md (proiezione pubblica claim citabili, visibility:public, cibo RAG operatore)",
+    "docs/ssot/discovery-questions.md (sistema domande discovery + mappa fasce calibrata EGI-STAT)"
+  ],
+  "facts_to_propagate": [
+    "Il RAG di fabiocherici ORA ESISTE: RAG dedicato (modello tre-RAG ADR M-FUC-031), Postgres+pgvector EC2 isolata da EGI. Nessun residuo testuale 'no RAG' negli SSOT (verificato grep).",
+    "commercial-claims.md §3/§7/§9: chat advisor da slot-predisposto a operatore LIVE.",
+    "Privacy: il sito tratta dati personali via operatore (gestito nei messages, non in SSOT-doc).",
+    "Coverage: nexus components + microservizio coperti aggiungendo watch a commercial-claims + nuovi SSOT."
+  ]
+}

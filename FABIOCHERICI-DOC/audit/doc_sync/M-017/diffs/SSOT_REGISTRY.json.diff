@@ -1,0 +1,98 @@
+diff --git a/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json b/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
+index 21e3ae4..3b54636 100644
+--- a/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
++++ b/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
+@@ -1,9 +1,9 @@
+ {
+   "_meta": {
+     "description": "SSOT Registry — mapping documenti SSOT e file codebase per fabiocherici.com",
+-    "version": "1.0.0",
++    "version": "1.1.0",
+     "created": "2026-05-26",
+-    "updated": "2026-06-12",
++    "updated": "2026-06-13",
+     "author": "Claude (Oracode) for Fabio Cherici",
+     "purpose": "Layer 0 MIELINA: ogni entry mappa un documento SSOT ai file sorgente che descrive.",
+     "project": "fabiocherici.com",
+@@ -189,9 +189,9 @@
+         ]
+       },
+       "registered_by": "M-001",
+-      "last_verified": "2026-06-12",
++      "last_verified": "2026-06-13",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-015",
++      "verified_in_mission": "M-017",
+       "last_drift_score": 0,
+       "verification_mode": "registry_only"
+     },
+@@ -210,14 +210,67 @@
+         "paths": [
+           "app/[locale]/softwarehouse/page.tsx",
+           "components/softwarehouse/*.tsx",
++          "components/softwarehouse/nexus/*.tsx",
++          "nexus-operator/app/prompt.py",
+           "messages/it.json"
+         ]
+       },
+       "registered_by": "M-014",
+-      "last_verified": "2026-06-12",
++      "last_verified": "2026-06-13",
+       "verification_mode": "registry_only",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-015",
++      "verified_in_mission": "M-017",
++      "last_drift_score": 0
++    },
++    {
++      "ssot_id": "commercial-claims-public",
++      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
++      "title": "Proiezione pubblica claim commerciali — corpus operatore AI fabiocherici",
++      "organ": "fabiocherici.com",
++      "doc_type": "content-ssot",
++      "priority": "critical",
++      "check_frequency": "on_commit",
++      "visibility": "public",
++      "watches": {
++        "repos": [
++          "fabiocherici.com"
++        ],
++        "paths": [
++          "nexus-operator/app/prompt.py",
++          "nexus-operator/app/rag.py",
++          "nexus-operator/app/operator.py"
++        ]
++      },
++      "registered_by": "M-017",
++      "last_verified": "2026-06-13",
++      "verification_mode": "registry_only",
++      "last_verified_by": "doc_sync_v2",
++      "verified_in_mission": "M-017",
++      "last_drift_score": 0
++    },
++    {
++      "ssot_id": "discovery-questions",
++      "path": "FABIOCHERICI-DOC/docs/ssot/discovery-questions.md",
++      "title": "Sistema domande discovery + mappa fasce — operatore AI fabiocherici",
++      "organ": "fabiocherici.com",
++      "doc_type": "content-ssot",
++      "priority": "high",
++      "check_frequency": "on_commit",
++      "visibility": "public",
++      "watches": {
++        "repos": [
++          "fabiocherici.com"
++        ],
++        "paths": [
++          "nexus-operator/app/prompt.py",
++          "nexus-operator/app/operator.py"
++        ]
++      },
++      "registered_by": "M-017",
++      "last_verified": "2026-06-13",
++      "verification_mode": "registry_only",
++      "last_verified_by": "doc_sync_v2",
++      "verified_in_mission": "M-017",
+       "last_drift_score": 0
+     }
+   ]
