@@ -631,6 +631,55 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Nexus widget — Padmin (M-017)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Markdown-subset prose delle risposte AI */
+.nexus-prose p { margin: 0; }
+.nexus-prose p + p { margin-top: 0.6em; }
+.nexus-prose code {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+.nexus-prose pre {
+  margin: 0.6em 0;
+  padding: 0.75rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.nexus-prose pre code { background: none; padding: 0; color: var(--text-primary); }
+.nexus-prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Wisdom ticker — crossfade CSS-only, compositor-friendly (opacity) */
+.nexus-ticker__item {
+  opacity: 0;
+  animation: nexus-ticker-fade var(--cycle) linear infinite;
+  animation-delay: var(--qd);
+}
+
+@keyframes nexus-ticker-fade {
+  0% { opacity: 0; }
+  3%, 12% { opacity: 1; }
+  15%, 100% { opacity: 0; }
+}
+
+/* Showcase crossfade su cambio immagine (transform/opacity, no layout shift) */
+@media (prefers-reduced-motion: no-preference) {
+  .nexus-showcase__img { animation: nexus-fade-in 0.5s ease-out; }
+}
+
+@keyframes nexus-fade-in {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════
    Reduced motion — show everything immediately
    ═══════════════════════════════════════════════════════════ */
 
@@ -675,5 +724,16 @@ body {
   }
   .navbar-quotes span:first-child {
     opacity: 1;
+  }
+  /* Nexus ticker: ferma il crossfade, mostra solo la prima pillola */
+  .nexus-ticker__item {
+    animation: none;
+    opacity: 0;
+  }
+  .nexus-ticker__item:first-child {
+    opacity: 1;
+  }
+  .nexus-showcase__img {
+    animation: none;
   }
 }

@@ -1,0 +1,10 @@
+# Test/dev virtualenv locale (mai versionato)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Env reale con segreti — MAI committare (CWE-798). Solo .env.example e' versionato.
+.env
+operator.env

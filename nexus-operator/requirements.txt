@@ -1,0 +1,19 @@
+# Nexus Operator — runtime dependencies
+# Pin allineati alle versioni REALI nel venv del progetto (M-017: drift risolto
+# tra manifest e installato). Range >=,< ragionevoli: minor fissato dove l'API
+# e' stabile, upper bound al major successivo. Build dal manifest sul box.
+fastapi>=0.137,<0.138
+uvicorn[standard]>=0.30,<0.35
+pydantic>=2.13,<3
+openai>=2.41,<3
+psycopg2-binary>=2.9,<3
+# httpx: usato dal proxy vetrina (showcase.py) per la fetch server-side.
+httpx>=0.28,<0.29
+# Pillow: decode dimensioni pixel immagine per la guard decompression-bomb
+# (M-017 punto 4, app/image.py). Tipizzato (py.typed) -> niente override mypy.
+Pillow>=11,<12
+
+# Dev/test (installate nel venv locale di test):
+pytest>=9,<10
+mypy>=2,<3
+bandit>=1.9,<2

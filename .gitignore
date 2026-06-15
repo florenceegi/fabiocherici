@@ -3,3 +3,4 @@ out/
 node_modules/
 dist/
 scripts/.font-cache/
+tsconfig.tsbuildinfo

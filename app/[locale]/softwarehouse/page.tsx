@@ -189,6 +189,25 @@ export default async function SoftwarehousePage({
       {/* ── 1. Hero — claim risk-reversal + 3D ambient (unico Canvas) ── */}
       <SoftwarehouseHero />
 
+      {/* ── 1b. Padmin — PRIMA cosa interattiva (correzione CEO M-017 #3):
+              "la chat va all'inizio, alla gente piace interagire". Il widget
+              (con env) o il fallback statico onesto (senza env) vive qui in cima,
+              subito dopo il claim hero. Le altre sezioni scorrono SOTTO. ── */}
+      <section id="padmin" className="py-20 bg-[var(--bg)]" aria-labelledby="padmin-heading">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className={labelClass}>{t('padmin_section_label')}</p>
+          <h2 id="padmin-heading" className={`${titleClass} mb-4`}>{t('padmin_section_title')}</h2>
+          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10 max-w-3xl">
+            {t('padmin_section_intro')}
+          </p>
+          <AdvisorSlot
+            demoCaption={t('lso_demo_caption')}
+            ctaLabel={t('lso_chat_cta')}
+            opensNewTabLabel={tf('opens_new_tab')}
+          />
+        </div>
+      </section>
+
       {/* ── 2. Cantiere aperto LIVE ── */}
       <section id="cantiere" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="cantiere-heading">
         <div className="mx-auto max-w-5xl px-6">
@@ -256,13 +275,14 @@ export default async function SoftwarehousePage({
             {t('lso_proof')}
           </p>
           <LsoTraits ariaLabel={t('lso_label')} traits={lsoTraits} />
-          <p className="reveal mt-10 mb-12 text-lg sm:text-xl text-[var(--accent)] italic leading-relaxed">
+          <p className="reveal mt-10 mb-8 text-lg sm:text-xl text-[var(--accent)] italic leading-relaxed">
             {t('lso_closing')}
           </p>
-          <AdvisorSlot
-            demoCaption={t('lso_demo_caption')}
-            ctaLabel={t('lso_chat_cta')}
-          />
+          {/* Il widget Padmin si è spostato in cima alla pagina (M-017 #3):
+              qui resta solo un richiamo narrativo verso la chat. */}
+          <p className="reveal mb-12 text-base text-[var(--text-secondary)]">
+            <a href="#padmin" className={linkClass}>{t('lso_talk_above')}</a>
+          </p>
           <SectionCta text={t('cta_mid_lso')} href="#demo" />
         </div>
       </section>

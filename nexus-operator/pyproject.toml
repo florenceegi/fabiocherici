@@ -1,0 +1,21 @@
+[project]
+name = "nexus-operator"
+version = "1.0.0"
+description = "AI operator microservice for fabiocherici.com (Nexus)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["app", "tests"]
+
+# psycopg2-binary non fornisce stub PEP 561 (types-psycopg2 e' un pacchetto
+# separato non installato sul box). Confiniamo l'untyped al solo modulo db.py,
+# che e' un wrapper sottile; il dominio dipende dalla porta DbCursor, non da psycopg2.
+[[tool.mypy.overrides]]
+module = "psycopg2"
+ignore_missing_imports = true
