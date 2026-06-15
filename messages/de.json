@@ -766,7 +766,7 @@
     "purpose_title": "Zweck der Verarbeitung",
     "purpose_body": "Da keine Daten auf Servern erhoben werden, findet keine automatisierte Verarbeitung statt. Die einzige Verarbeitung erfolgt, wenn der Nutzer freiwillig eine E-Mail über seinen eigenen E-Mail-Client versendet. In diesem Fall beschränkt sich die Verarbeitung auf die direkte E-Mail-Korrespondenz zwischen dem Nutzer und dem Verantwortlichen.",
     "legal_basis_title": "Rechtsgrundlage",
-    "legal_basis_body": "Einwilligung der betroffenen Person (Art. 6(1)(a) DSGVO) — erteilt durch ausdrückliche Zustimmung im Kontaktformular vor dem Absenden.",
+    "legal_basis_body": "Einwilligung der betroffenen Person (Art. 6(1)(a) DSGVO) — erteilt durch ausdrückliche Zustimmung im Kontaktformular vor dem Absenden. Die Verarbeitung der pseudonymisierten Kennung zur Missbrauchsbegrenzung des KI-Assistenten beruht auf dem berechtigten Interesse des Verantwortlichen (Art. 6 Abs. 1 lit. f DSGVO).",
     "storage_title": "Datenspeicherung",
     "storage_body": "Die Seite speichert keine personenbezogenen Daten auf Servern. Über das Kontaktformular empfangene E-Mails werden im E-Mail-Postfach des Inhabers gemäß den Aufbewahrungsrichtlinien des E-Mail-Anbieters aufbewahrt. Es werden keine zusätzlichen Kopien oder Archive erstellt. Die vom KI-Assistenten zur Missbrauchsbegrenzung verwendete pseudonymisierte Kennung wird höchstens 30 Tage gespeichert und dann automatisch gelöscht.",
     "local_storage_title": "Im Browser gespeicherte Daten",

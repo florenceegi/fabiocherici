@@ -766,7 +766,7 @@
     "purpose_title": "Finalità del trattamento",
     "purpose_body": "Non essendoci raccolta di dati su server, non esiste un trattamento automatizzato. L'unico trattamento avviene se l'utente decide volontariamente di inviare un'email tramite il proprio client di posta. In quel caso, il trattamento è limitato alla corrispondenza email diretta tra l'utente e il titolare.",
     "legal_basis_title": "Base giuridica",
-    "legal_basis_body": "Consenso dell'interessato (Art. 6(1)(a) GDPR) — espresso attraverso il consenso esplicito nel modulo di contatto prima dell'invio.",
+    "legal_basis_body": "Consenso dell'interessato (Art. 6(1)(a) GDPR) — espresso attraverso il consenso esplicito nel modulo di contatto prima dell'invio. Il trattamento dell'identificativo pseudonimizzato a fini di limitazione degli abusi dell'assistente AI si fonda sul legittimo interesse del titolare (Art. 6(1)(f) GDPR).",
     "storage_title": "Conservazione dei dati",
     "storage_body": "Il sito non conserva dati personali su server. Le email ricevute tramite il modulo di contatto sono conservate nella casella email del titolare secondo le politiche di conservazione del provider email. Non vengono effettuate copie o archiviazioni aggiuntive. L'identificativo pseudonimizzato usato dall'assistente AI per il limite anti-abuso è conservato al massimo 30 giorni, poi cancellato automaticamente.",
     "local_storage_title": "Dati memorizzati nel browser",

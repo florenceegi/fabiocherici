@@ -679,6 +679,15 @@ body {
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Showcase auto-rotazione: tutte le celle impilate nella stessa grid-cell,
+   crossfade gestito via opacity inline (compositor, no layout shift). */
+.nexus-showcase__stack {
+  display: grid;
+}
+.nexus-showcase__cell {
+  list-style: none;
+}
+
 /* ═══════════════════════════════════════════════════════════
    Reduced motion — show everything immediately
    ═══════════════════════════════════════════════════════════ */

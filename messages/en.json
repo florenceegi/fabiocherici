@@ -766,7 +766,7 @@
     "purpose_title": "Purpose of Processing",
     "purpose_body": "Since no data is collected on servers, there is no automated processing. The only processing occurs if the user voluntarily decides to send an email through their own email client. In that case, processing is limited to direct email correspondence between the user and the controller.",
     "legal_basis_title": "Legal Basis",
-    "legal_basis_body": "Consent of the data subject (Art. 6(1)(a) GDPR) — expressed through explicit consent in the contact form before submission.",
+    "legal_basis_body": "Consent of the data subject (Art. 6(1)(a) GDPR) — expressed through explicit consent in the contact form before submission. The processing of the pseudonymized identifier to limit abuse of the AI assistant is based on the controller's legitimate interest (Art. 6(1)(f) GDPR).",
     "storage_title": "Data Retention",
     "storage_body": "The site does not store personal data on servers. Emails received via the contact form are stored in the owner's email inbox according to the email provider's retention policies. No additional copies or archives are made. The pseudonymized identifier used by the AI assistant for abuse-limiting is kept for at most 30 days, then deleted automatically.",
     "local_storage_title": "Data Stored in the Browser",

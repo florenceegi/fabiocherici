@@ -766,7 +766,7 @@
     "purpose_title": "Finalidade do tratamento",
     "purpose_body": "Não existindo recolha de dados em servidores, não há tratamento automatizado. O único tratamento ocorre se o utilizador decidir voluntariamente enviar um email através do seu próprio cliente de correio. Nesse caso, o tratamento limita-se à correspondência direta por email entre o utilizador e o responsável.",
     "legal_basis_title": "Base jurídica",
-    "legal_basis_body": "Consentimento do titular dos dados (Art. 6(1)(a) RGPD) — expresso através do consentimento explícito no formulário de contato antes do envio.",
+    "legal_basis_body": "Consentimento do titular dos dados (Art. 6(1)(a) RGPD) — expresso através do consentimento explícito no formulário de contato antes do envio. O tratamento do identificador pseudonimizado para limitar abusos do assistente de IA baseia-se no interesse legítimo do responsável (art. 6.º(1)(f) RGPD).",
     "storage_title": "Conservação dos dados",
     "storage_body": "O site não armazena dados pessoais em servidores. Os emails recebidos através do formulário de contato são armazenados na caixa de entrada do titular conforme as políticas de retenção do provedor de email. Não são feitas cópias ou arquivos adicionais. O identificador pseudonimizado usado pelo assistente de IA para limitar abusos é conservado no máximo 30 dias e depois eliminado automaticamente.",
     "local_storage_title": "Dados armazenados no navegador",
