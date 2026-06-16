@@ -1,0 +1,48 @@
+{
+  "mission_id": "M-018",
+  "doc_sync_version": "2.3.0",
+  "actions": [
+    {
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "0ffd6707a1397f60558a280f512fd10239576db63f798ca380552f0eb4d753c0",
+      "diff_path": "diffs/i18n-messages.md.diff",
+      "justification": "Nuovo entry cronologia namespace softwarehouse (M-018: de-gergo 56 stringhe MVP→prima versione funzionante + hero_trust) e namespace nexus (M-018: prompt-seed seed_intro/seed_1/2/3). Bump last_sync/last_verified_mission. Contenuto preesistente non errato → additive.",
+      "resolution_method": "auto",
+      "timestamp": "2026-06-16"
+    },
+    {
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "9200587622d6285d469771538d5bd038469ff3d3f9053ad446fa2903acbd2637",
+      "diff_path": "diffs/seo.md.diff",
+      "justification": "Nuova nota trappola [M-018]: meta.softwarehouse_description de-gergoizzata (≤160 chars OK), titolo invariato → OG non da rigenerare; hero attention-first + 3D rimosso non impattano i builder lib/seo.ts (metadata/hreflang/canonical/JSON-LD invariati). Bump last_sync/mission.",
+      "resolution_method": "auto",
+      "timestamp": "2026-06-16"
+    },
+    {
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "mode": "additive",
+      "status": "applied",
+      "ssot_content_hash_before": "cc989d0351df14778b9cba08043ec30ffa9cf2742c4d58d234f330e0a2540322",
+      "diff_path": "diffs/commercial-claims.md.diff",
+      "justification": "Nuova §11 stato attuazione attention-first (hero split Padmin sopra la piega, prompt-seed, 3D rimosso da /softwarehouse, una sola CTA primaria) + changelog 1.3.0. Termine interno 'MVP' INVARIATO per decisione CEO (regola jargon §1: MVP = termine tecnico interno, mai col cliente). Contenuto preesistente corretto → additive, nessuna sostituzione.",
+      "resolution_method": "auto",
+      "timestamp": "2026-06-16"
+    },
+    {
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "ssot_content_hash_before": "9d47b6242e18a76ec93642c6ae394d9be415b6ae9bcc217633940145e2e4deef",
+      "diff_path": "diffs/commercial-claims-public.md.diff",
+      "justification": "De-gergo MVP→prima versione funzionante: il CONTENUTO era già sostituito nel commit 475543e (verificato: 0 residui MVP). DOC-SYNC ha allineato il front-matter mancante (version 1.0.0→1.1.0, date/last_sync→2026-06-16, mission M-017→M-018) per riflettere l'edit. Proiezione pubblica coerente con i18n cliente.",
+      "resolution_method": "auto",
+      "timestamp": "2026-06-16"
+    }
+  ],
+  "no_change": [],
+  "rewrite_flagged": []
+}

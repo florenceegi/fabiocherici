@@ -3,7 +3,7 @@
     "description": "Mission Registry — tracking delle mission del progetto fabiocherici.com",
     "version": "1.0.0",
     "created": "2026-05-26",
-    "updated": "2026-06-15",
+    "updated": "2026-06-16",
     "author": "Claude (Oracode) for Fabio Cherici",
     "purpose": "Registro SSOT delle mission. Ogni modifica strutturale passa da qui.",
     "project": "fabiocherici.com",
@@ -12,6 +12,81 @@
   },
   "counter": 267,
   "missions": [
+    {
+      "id": "M-018",
+      "title": "Attention-first /softwarehouse: hero conversazionale Opzione A (Padmin sopra la piega) + rimozione 3D (era solo homepage) + de-gergo MVP nella copy cliente",
+      "trigger_matrix": 2,
+      "status": "closed",
+      "date_open": "2026-06-16",
+      "date_close": "2026-06-16",
+      "scope_hash": "29700c70fed7b3f276c814c22ec68c04846574be8f0022a26389c9109025c73b",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-16T08:32:58.119Z",
+      "ssot_first_evidence": {
+        "path": "fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
+        "ts": "2026-06-16T07:58:08Z"
+      },
+      "report_technical": "docs/missions/M-018_ATTENTION_HERO_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-018_ATTENTION_HERO_REPORT_EXTENDED.md",
+      "doc_sync_executed": true,
+      "doc_sync_log": {
+        "agent": "doc-sync-v2",
+        "tool_use_id": "toolu_01SYtj3VRmEUtZGo9xusP6no",
+        "output_hash": "c0e045a30c164df10c8ea7eade4b7fc2da3d31535c6c6fb571fbe558547ab269",
+        "date": "2026-06-16T08:32:58.117Z",
+        "outcome": "success"
+      },
+      "organs": [
+        "EGI-DOC",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 1181,
+        "lines_deleted": 97,
+        "lines_net": 1084,
+        "lines_touched": 1278,
+        "files_touched": 13,
+        "weighted_commits": 1.8,
+        "cognitive_load": 2.82,
+        "productivity_index": 44.9,
+        "tags_breakdown": {
+          "DOC": 1,
+          "FEAT": 1
+        },
+        "commit_hashes": [
+          "475543e8d90943f9201f366e1e0e799019812eac",
+          "f80a481c592d4ab89712d723aed16d346e7f8ccf"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/EGI-DOC",
+            "date": "2026-04-06",
+            "commits": 1,
+            "lines_added": 612,
+            "lines_deleted": 4,
+            "files_touched": 4,
+            "tags": {
+              "DOC": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-16",
+            "commits": 1,
+            "lines_added": 569,
+            "lines_deleted": 93,
+            "files_touched": 9,
+            "tags": {
+              "FEAT": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-16"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-16T08:33:04Z"
+    },
     {
       "id": "M-017",
       "title": "Chat AI advisor fabiocherici — strato commerciale SSOT pulito + pool agenti su 148 SSOT EGI per >",
@@ -46,22 +121,23 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 3,
-        "lines_added": 6931,
-        "lines_deleted": 182,
-        "lines_net": 6749,
-        "lines_touched": 7113,
-        "files_touched": 66,
-        "weighted_commits": 3.3,
-        "cognitive_load": 3.41,
-        "productivity_index": 68.33,
+        "total_commits": 4,
+        "lines_added": 7371,
+        "lines_deleted": 190,
+        "lines_net": 7181,
+        "lines_touched": 7561,
+        "files_touched": 74,
+        "weighted_commits": 4.1,
+        "cognitive_load": 3.48,
+        "productivity_index": 69.33,
         "tags_breakdown": {
-          "DOC": 1,
+          "DOC": 2,
           "FIX": 1,
           "FEAT": 1
         },
         "commit_hashes": [
           "1a0b510541720ba0d95e5f207afcfefb5f57229f",
+          "51a760a7fa275ac93b82469f06b40e35eef62388",
           "a10363a5fee1165c62d88e00b9463c9675fb8602",
           "c2f65b54ecdf1d7eac56fbc3f1de29b4397b91e8"
         ],
@@ -80,11 +156,12 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-06-16",
-            "commits": 2,
-            "lines_added": 6547,
-            "lines_deleted": 89,
-            "files_touched": 56,
+            "commits": 3,
+            "lines_added": 6987,
+            "lines_deleted": 97,
+            "files_touched": 64,
             "tags": {
+              "DOC": 1,
               "FIX": 1,
               "FEAT": 1
             }

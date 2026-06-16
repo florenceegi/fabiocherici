@@ -190,6 +190,27 @@ Nuovi SSOT introdotti da M-017 (registrati in SSOT_REGISTRY):
 - `commercial-claims-public.md` — proiezione pubblica dei claim citabili (§3+§5 di questo doc), `visibility: public`, cibo del RAG operatore.
 - `discovery-questions.md` — sistema domande di discovery + mappa fasce (calibrata su EGI-STAT), istruisce l'operatore in modalità discovery.
 
+## 11. Stato di attuazione attention-first (M-018 — 2026-06-16)
+
+Rework di `/softwarehouse` per mettere l'**attenzione prima di tutto**: l'azione
+n.1 non è un bottone, è **interagire con Padmin**.
+
+| Decisione M-018 | Esito |
+|---|---|
+| Hero split sopra la piega | promessa (claim §3 da SSOT) a sx + **widget Padmin** a dx nel primo viewport (`SoftwarehouseHero.tsx` riscritto split) |
+| Prompt-seed | 3-4 prompt cliccabili che avviano Padmin (i18n `nexus.seed_*`), prop `seeds` su `PadminChat`/`NexusWidget`/`AdvisorSlot` |
+| **3D rimosso da /softwarehouse** | era inteso solo per la homepage; nessun `Scene3DSwitch` né Canvas above-the-fold; LCP = H1 testo server-rendered, no CLS |
+| CTA | **una sola CTA primaria** (Padmin); email/WhatsApp degradati a sola CTA finale |
+| De-gergo MVP nella copy CLIENTE | "MVP" → "prima versione funzionante" su 56 stringhe i18n `softwarehouse.*` + `commercial-claims-public.md`. **Questo SSOT interno resta INVARIATO**: "MVP" è il termine **interno/tecnico** (regola jargon §1 + nota claim §3 r.4); il termine non si usa mai col cliente. |
+| Nuova chiave trust | `softwarehouse.hero_trust` ("Cantiere live · GitHub pubblico") |
+
+Nota terminologica (decisione CEO M-018): la **regola jargon** del §1 viene
+rafforzata e applicata alla copy esistente — l'acronimo inglese di "minimum
+viable product" non è comprensibile alle PMI. La proiezione pubblica
+(`commercial-claims-public.md` v1.1.0) e tutte le stringhe cliente usano "prima
+versione funzionante"; questo documento e i suoi razionali interni continuano a
+usare "MVP" come nome tecnico del concetto.
+
 ## Changelog
 
 | Versione | Data | Mission | Cambiamento |
@@ -197,3 +218,4 @@ Nuovi SSOT introdotti da M-017 (registrati in SSOT_REGISTRY):
 | 1.0.0 | 2026-06-11 | M-014 | Creazione SSOT commerciale |
 | 1.1.0 | 2026-06-12 | M-015 (DOC-SYNC) | Stato endpoint EGI-STAT §3 (costruito), note di stato §7 (stats attive, chat slot-only), sezione 9 stato attuazione |
 | 1.2.0 | 2026-06-13 | M-017 (DOC-SYNC) | Chat advisor §3/§7/§9 da slot-predisposto → operatore "Padmin" LIVE (RAG dedicato, microservizio nexus-operator, widget in cima a /softwarehouse + nexus.fabiocherici.com); nuova §10 stato operatore AI; 2 nuovi SSOT figli registrati (commercial-claims-public, discovery-questions); privacy IP-pseudonimizzato/OpenAI/6(1)(f) |
+| 1.3.0 | 2026-06-16 | M-018 (DOC-SYNC) | Nuova §11 stato attuazione attention-first: hero split (Padmin sopra la piega), prompt-seed, **3D rimosso da /softwarehouse**, una sola CTA primaria. Regola jargon §1 rafforzata: "MVP" de-gergoizzato nella copy cliente (56 stringhe i18n + commercial-claims-public v1.1.0) → "prima versione funzionante"; **termine interno MVP INVARIATO** in questo doc per decisione CEO. |

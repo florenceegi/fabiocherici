@@ -3,8 +3,8 @@ ssot_id: seo
 title: SEO — Canonical URL + hreflang alternates + Schema.org helpers
 organ: fabiocherici.com
 source: lib/seo.ts
-last_sync: 2026-06-12
-last_verified_mission: M-015
+last_sync: 2026-06-16
+last_verified_mission: M-018
 ---
 
 # SEO SSOT
@@ -61,4 +61,5 @@ Helper SEO per fabiocherici.com:
 - [CICATRICE M-011] Quando si aggiunge contenuto narrativo a una pagina gia attiva (es. nuova sezione widget) e il contenuto NON e FAQ-shape (Q&A esplicita): NON forzare `buildFaqSchema` — il payload semantico HTML del nextintl render e sufficiente per i crawler. `FaqSchema` va riservato a domanda/risposta strutturate (vedi widget fiscalita_individuali/aziende M-009). Estensione narrativa lato EPP (M-011: noprofit + azienda) ha intentionally skipped FaqSchema/ItemListSchema — registrazione esplicita per evitare drift futuri.
 - [SPIEGATO M-015] PNG OG identici tra i 7 locali per la stessa pagina NON sono un bug: accade quando `meta.{page}_title` ha lo stesso valore in tutte le 7 lingue (caso `epp.png` ×7 — titolo identico nei 7 locali → lo script rasterizza lo stesso testo). Anomalia osservata in M-015 alla rigenerazione OG e spiegata: nessuna azione richiesta. Diventa un bug SOLO se i titoli nei locale differiscono e i PNG restano identici.
 - [M-015] Rewrite `/softwarehouse`: `meta.softwarehouse_title` → "Softwarehouse — Vedi prima, decidi dopo" e `meta.softwarehouse_description` aggiornati nei 7 locali (≤160 chars, cicatrice M-010 rispettata); OG `softwarehouse.png` generata per i 7 locali.
+- [M-018] De-gergo `meta.softwarehouse_description` nei 7 locali: "un MVP funzionante" → "una prima versione funzionante" (decisione CEO, copy cliente). Soglia ≤160 chars ancora rispettata (la frase si allunga di pochi caratteri). `meta.softwarehouse_title` invariato → **NON serve rigenerare OG** (lo script rasterizza il titolo, non la description). Hero `/softwarehouse` ristrutturato attention-first (Padmin sopra la piega) e **3D rimosso** dalla pagina: cambia il rendering client (LCP = H1 server-rendered, no Canvas above-the-fold) ma metadata/hreflang/canonical/JSON-LD invariati — nessun impatto sui builder di `lib/seo.ts`.
 - [DECISIONE M-013] Home provvisoria a 3 porte visibili (softwarehouse, egi, epp — `DOORS` in `app/[locale]/page.tsx` @version 3.0.0): il blocco SEO `sr-only` resta INTATTO con tutti i 9 link sezione (`seo_section_*`: softwarehouse, oracode, scrittore, ainous, egi, epp, numeri, ecosistema, contatti) per i crawler. Metadata, hreflang e JSON-LD invariati. NON rimuovere i link sr-only delle porte non visibili (oracode/scrittore/ai-nous) pensando che siano dead code: sono deliberati — preservano l'indicizzazione delle sezioni durante la home provvisoria; le porte torneranno visibili post-rework Oracode Nexus. Test di guardia: `tests/m-013/test_home_3_doors.sh`.

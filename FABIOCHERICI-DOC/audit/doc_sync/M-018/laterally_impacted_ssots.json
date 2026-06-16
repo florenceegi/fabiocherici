@@ -1,0 +1,6 @@
+{
+  "mission_id": "M-018",
+  "rag_mode": "skipped_no_schema",
+  "reason": "Nessun RAG_SCHEMA dichiarato nel CLAUDE.md istanza né env ORACODE_RAG_SCHEMA. Istanza opera in modalità LSO ridotto (Step 3 discovery laterale skip, Step 5 re-indexing skip). RAG istanza assente confermato dal chiamante.",
+  "impacted": []
+}

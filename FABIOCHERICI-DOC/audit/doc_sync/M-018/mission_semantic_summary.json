@@ -1,0 +1,53 @@
+{
+  "mission_id": "M-018",
+  "title": "/softwarehouse attention-first — hero conversazionale (Padmin sopra la piega) + rimozione 3D + de-gergo MVP",
+  "commit": "475543e8d90943f9201f366e1e0e799019812eac",
+  "doc_only": false,
+  "new_functions_classes": [],
+  "removed_functions": [],
+  "behaviors_modified": [
+    {
+      "area": "page-structure",
+      "file": "app/[locale]/softwarehouse/page.tsx",
+      "change": "Hero ristrutturato split (promessa SSOT a sx + widget Padmin a dx) nel primo viewport; rimosso Scene3DSwitch (no 3D above-the-fold); AdvisorSlot non piu sezione separata (Padmin promosso in cima); LCP = H1 testo server-rendered"
+    },
+    {
+      "area": "components",
+      "file": "components/softwarehouse/SoftwarehouseHero.tsx | nexus/PadminChat.tsx | nexus/NexusWidget.tsx | AdvisorSlot.tsx",
+      "change": "Hero riscritto split senza 3D; prop seeds aggiunta a PadminChat/NexusWidget/AdvisorSlot per 3-4 prompt-seed cliccabili che avviano Padmin"
+    }
+  ],
+  "narrative_content_changes": [
+    {
+      "concept": "de-gergo MVP",
+      "decision": "CEO: 'MVP' eliminato dalla copy CLIENTE (gergo non comprensibile alle PMI) -> 'prima versione funzionante'. Internal commercial-claims.md INVARIATO (MVP resta termine interno/tecnico).",
+      "scope": "messages/*.json x7 (56 stringhe softwarehouse: process_*, pricing_label_deposit, hero_sub, offer_1_desc, meta.softwarehouse_description, process_phase_3_label, ecc.); FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md (gia editato nel commit)"
+    },
+    {
+      "concept": "nuove chiavi i18n",
+      "keys": ["softwarehouse.hero_trust", "nexus.seed_intro", "nexus.seed_1", "nexus.seed_2", "nexus.seed_3"],
+      "scope": "messages/*.json x7 (parita 7 lingue)"
+    },
+    {
+      "concept": "3D non su /softwarehouse",
+      "decision": "3D era inteso solo per la homepage; rimosso da /softwarehouse"
+    },
+    {
+      "concept": "hero attention-first",
+      "decision": "Padmin (operatore AI) promosso sopra la piega come azione n.1; una sola CTA primaria (Padmin); email/WhatsApp solo CTA finale"
+    }
+  ],
+  "files_modified": [
+    "app/[locale]/softwarehouse/page.tsx",
+    "components/softwarehouse/SoftwarehouseHero.tsx",
+    "components/softwarehouse/AdvisorSlot.tsx",
+    "components/softwarehouse/nexus/NexusWidget.tsx",
+    "components/softwarehouse/nexus/PadminChat.tsx",
+    "components/softwarehouse/nexus/PadminChat.test.tsx",
+    "messages/it.json", "messages/en.json", "messages/de.json", "messages/es.json",
+    "messages/fr.json", "messages/pt.json", "messages/zh.json",
+    "FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
+    "FABIOCHERICI-DOC/docs/missions/ATTENTION_HERO_RECOMMENDATION.md",
+    "tests/m-018/test_attention_hero.sh"
+  ]
+}

@@ -3,8 +3,8 @@ ssot_id: i18n-messages
 title: i18n Messages — Stringhe localizzate 7 lingue
 organ: fabiocherici.com
 source: messages/*.json
-last_sync: 2026-06-13
-last_verified_mission: M-017
+last_sync: 2026-06-16
+last_verified_mission: M-018
 ---
 
 # i18n Messages SSOT
@@ -49,6 +49,17 @@ Top-level keys per pagina/area (ordine alfabetico):
   widget operatore AI: `padmin_section_label`, `padmin_section_title`,
   `padmin_section_intro`, `lso_talk_above` (richiamo "Parla con Padmin qui
   sopra ↑" dalla sezione LSO verso il widget spostato in cima). 7 lingue.
+- **M-018**: hero attention-first + **de-gergo "MVP" nella copy CLIENTE**.
+  Sostituzione di "MVP" → "prima versione funzionante" su **56 stringhe**
+  `softwarehouse.*` nei 7 file (es. `hero_sub`, `offer_1_desc`, `process_step_5`,
+  `process_step_6` ("Fino a 3 MVP" → "Fino a 3 cicli"), `process_closing`,
+  `process_phase_3_label` ("VALIDAZIONE MVP" → "VALIDAZIONE PRIMA VERSIONE"),
+  `pricing_label_deposit` ("Caparra MVP" → "Caparra prima versione"),
+  `meta.softwarehouse_description`). Decisione CEO: l'acronimo inglese non è
+  comprensibile alle PMI; il termine tecnico **non si usa mai col cliente**. Lo
+  SSOT INTERNO `commercial-claims.md` resta INVARIATO (MVP = termine interno).
+  Nuova chiave `softwarehouse.hero_trust` ("Cantiere live · GitHub pubblico").
+  Parità strutturale 7 lingue mantenuta.
 
 ### Namespace `nexus` (M-017)
 
@@ -60,6 +71,11 @@ messaggio rate-limit, errori generici, allega/rimuovi immagine + errori immagine
 CTA FlorenceEGI), ticker `wisdom_*` (label + 7 massime dal paradigma Oracode).
 **36 chiavi/locale, parità strutturale 7 lingue verificata** (it en de es fr pt zh).
 Consumato da `components/softwarehouse/nexus/*` via `useTranslations('nexus')`.
+
+- **M-018**: namespace `nexus` esteso con i **prompt-seed** del hero
+  attention-first (3-4 prompt cliccabili che avviano Padmin nel primo viewport):
+  `seed_intro` ("Non sai da dove iniziare? Prova:"), `seed_1`, `seed_2`, `seed_3`.
+  Consumati via prop `seeds` di `PadminChat`/`NexusWidget`/`AdvisorSlot`. 7 lingue.
 
 ### Namespace `privacy` (M-017 — trattamento dati operatore AI)
 

@@ -1,0 +1,42 @@
+{
+  "mission_id": "M-018",
+  "method": "deterministic glob match (fnmatch) of files_modified against watches.paths",
+  "impacted": [
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "impact_type": "pattern_match",
+      "matched_files": ["messages/it.json","messages/en.json","messages/de.json","messages/es.json","messages/fr.json","messages/pt.json","messages/zh.json"],
+      "registry_index": 6
+    },
+    {
+      "ssot_id": "commercial-claims",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "impact_type": "direct_watcher+pattern_match",
+      "matched_files": ["messages/it.json","app/[locale]/softwarehouse/page.tsx","components/softwarehouse/SoftwarehouseHero.tsx","components/softwarehouse/AdvisorSlot.tsx","components/softwarehouse/nexus/NexusWidget.tsx","components/softwarehouse/nexus/PadminChat.tsx"],
+      "registry_index": 7
+    },
+    {
+      "ssot_id": "seo",
+      "path": "FABIOCHERICI-DOC/docs/ssot/seo.md",
+      "impact_type": "pattern_match",
+      "matched_files": ["app/[locale]/softwarehouse/page.tsx"],
+      "registry_index": 5
+    },
+    {
+      "ssot_id": "commercial-claims-public",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md",
+      "impact_type": "self_edited_in_commit",
+      "note": "Watched source paths (nexus-operator/app/*.py) NOT modified by mission. The SSOT FILE was directly edited in commit 475543e (de-gergo MVP). Treated as applied; consistency verified.",
+      "matched_files": [],
+      "registry_index": 9
+    }
+  ],
+  "not_impacted_but_checked": [
+    {"ssot_id": "scene3d-ids", "reason": "3D rimosso da /softwarehouse, ma scene3d-ids.md documenta solo gli ID/scene Three.js e i file watchati (lib/scene3d.ts, components/three/*) NON modificati dalla mission. Nessuna affermazione 'scena X e su /softwarehouse' presente nel doc -> nessun drift da correggere (fact #2 verificato negativo)."},
+    {"ssot_id": "design-tokens", "reason": "nessun file watchato (globals.css, theme-context) toccato"},
+    {"ssot_id": "i18n-config", "reason": "lib/i18n/* non toccato"},
+    {"ssot_id": "animation-presets", "reason": "lib/animation*, ScrollReveal non toccati"},
+    {"ssot_id": "fonts", "reason": "lib/fonts.ts, layout non toccati"}
+  ]
+}

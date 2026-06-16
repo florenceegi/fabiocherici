@@ -131,3 +131,24 @@
 
 **Reasoning**: drift empirico rilevato su M-017 (unknown/EGI-DOC, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
 
+### M-018 — 2026-06-16 [retrofit post-mortem] — unknown / EGI-DOC, fabiocherici
+
+**Severity**: major | **Stato**: pending
+**always_loaded esclusi**: 3 file
+
+**loaded_unused** (pre-allocati mai consultati):
+- (nessuno)
+
+**used_unloaded** (consultati ma non pre-allocati):
+- `"$ROOT/FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md`
+- `docs/ssot/commercial-claims-public.md`
+- `docs/ssot/discovery-questions.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/missions/ATTENTION_HERO_RECOMMENDATION.md`
+- `fabiocherici.com/FABIOCHERICI-DOC/docs/ssot/commercial-claims-public.md`
+- `oracode/docs/paradigm/standards/WEB_PAGE_QUALITY_GATE.md`
+
+**Proposta**:
+- `by_mission_type.unknown` o `by_organ`: consider adding 6 file
+
+**Reasoning**: drift empirico rilevato su M-018 (unknown/EGI-DOC, fabiocherici). Singola osservazione — CEO valuta se pattern ricorrente o specifico di questa mission.
+

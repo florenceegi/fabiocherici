@@ -4,12 +4,12 @@ ssot_id: commercial-claims-public
 slug: commercial-claims-public
 organ: fabiocherici.com
 doc_type: content-ssot
-version: 1.0.0
+version: 1.1.0
 status: current
-date: '2026-06-13'
-last_sync: '2026-06-13'
+date: '2026-06-16'
+last_sync: '2026-06-16'
 author: Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
-mission: M-017
+mission: M-018
 scope:
 - fabiocherici.com
 - operatore-ai

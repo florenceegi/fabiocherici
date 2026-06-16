@@ -1,0 +1,63 @@
+diff --git a/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json b/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
+index 3b54636..b88bfbd 100644
+--- a/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
++++ b/FABIOCHERICI-DOC/docs/lso/SSOT_REGISTRY.json
+@@ -3,7 +3,7 @@
+     "description": "SSOT Registry — mapping documenti SSOT e file codebase per fabiocherici.com",
+     "version": "1.1.0",
+     "created": "2026-05-26",
+-    "updated": "2026-06-13",
++    "updated": "2026-06-16",
+     "author": "Claude (Oracode) for Fabio Cherici",
+     "purpose": "Layer 0 MIELINA: ogni entry mappa un documento SSOT ai file sorgente che descrive.",
+     "project": "fabiocherici.com",
+@@ -160,9 +160,9 @@
+         ]
+       },
+       "registered_by": "M-001",
+-      "last_verified": "2026-06-12",
++      "last_verified": "2026-06-16",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-015",
++      "verified_in_mission": "M-018",
+       "last_drift_score": 0,
+       "verification_mode": "registry_only"
+     },
+@@ -189,9 +189,9 @@
+         ]
+       },
+       "registered_by": "M-001",
+-      "last_verified": "2026-06-13",
++      "last_verified": "2026-06-16",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-017",
++      "verified_in_mission": "M-018",
+       "last_drift_score": 0,
+       "verification_mode": "registry_only"
+     },
+@@ -216,10 +216,10 @@
+         ]
+       },
+       "registered_by": "M-014",
+-      "last_verified": "2026-06-13",
++      "last_verified": "2026-06-16",
+       "verification_mode": "registry_only",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-017",
++      "verified_in_mission": "M-018",
+       "last_drift_score": 0
+     },
+     {
+@@ -242,10 +242,10 @@
+         ]
+       },
+       "registered_by": "M-017",
+-      "last_verified": "2026-06-13",
++      "last_verified": "2026-06-16",
+       "verification_mode": "registry_only",
+       "last_verified_by": "doc_sync_v2",
+-      "verified_in_mission": "M-017",
++      "verified_in_mission": "M-018",
+       "last_drift_score": 0
+     },
+     {
