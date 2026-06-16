@@ -97,23 +97,7 @@
     "desc_scrittore": "一部科幻史诗——技术化为叙事，叙事化为代码。",
     "desc_ai-nous": "我对一种在人类心智与人工智能之间架起桥梁的字母表的研究。",
     "desc_egi": "让任何人都能将自己的智慧成果转化为认证资产并获得回报的系统。个人 market maker，永续版税。",
-    "desc_epp": "认证、衡量并使每项专业能力可验证的协议。",
-    "seo_who": "Fabio Cherici 是一位来自意大利佛罗伦萨的企业家和自学开发者。他没有学术学位——从1995年起，他从代码开始构建一切。作为 FlorenceEGI S.R.L. 的创始人，他创建了 Oracode，一个用于管理软件生态系统的正式范式，其中 AI 代理编写生产代码。最初是 Magicsoft（面向中小企业的商业软件），如今是一个由九个互联平台组成的生产级生态系统，超过 826,000 行应用源代码由一个人借助受其自有范式管控的 AI 编写。",
-    "seo_what": "本站通过六个板块展示 Fabio Cherici 的工作：创作（自 1995 年以来的作品集与职业历程）、Oracode（包含六大支柱、P0 规则和审计系统的软件范式）、作家（以 Padmin D. Curtis 为主角的科幻传奇）、AI-Nous（一种正在形成的语言，服务于人类智识与人工智能之间的协作）、EGI（Florence EGI，拥有九个生产级器官的软件生态系统）、EPP（专业能力认证协议）。",
-    "seo_ecosystem": "Florence EGI 是一个软件生态系统，由以下部分组成：EGI（基于 Algorand 区块链的创作者平台）、EGI-HUB（配置大脑）、NATAN_LOC（面向公共管理的 AI 助手）、EGI-Credential（认证技能钱包）、La Bottega（艺术家工具）、Sigillo（区块链文件认证）、EGI-INFO（公共信息站）、CREATOR-STAGING（创作者网站配置器）、EGI-STAT（生产力仪表板）。超过 826,000 行源代码，14个代码库，由 Oracode 管理，配备 153 份 SSOT 文档、20 个钩子和 8 个专门代理。",
-    "seo_nav_label": "站点地图",
-    "seo_section_softwarehouse": "Softwarehouse — 面向意大利中小企业的定制软件:企业级品质、亲民成本、直接支持、透明流程、公开定价、20 个测量项目的作品集。",
-    "seo_section_creazioni": "创作——作品集与职业历程：Magicsoft（1995-2003）、跋涉期（2003-2021）、FlorenceEGI（2021至今）。五个产品在生产运行中。",
-    "seo_section_oracode": "Oracode——面向 AI 治理软件的形式化范式。六大支柱、阻断性 P0 规则、审计系统、自动安全轨道。可验证数据见「数据」页面。",
-    "seo_section_scrittore": "作家——一部科幻传奇，Padmin D. Curtis 既是主角，也是真实开发中的 AI CTO。",
-    "seo_section_ainous": "AI-Nous——一种正在形成的语言，为人类智识与人工智能之间的协作而优化。词汇表、对话片段、诗篇 Ti di no bi uda。",
-    "seo_section_egi": "EGI——Florence EGI，为每位创作者、企业和机构提供专属区块链 market maker 的系统。4.5% 永续版税，法律认证，结构性环境影响。三类受众：创作者、共创者、企业。",
-    "seo_section_epp": "EPP — Environment Protection Programs。Florence EGI 上每笔交易的 20% 用于环境。三个项目：APR、ARF、BPE。",
-    "seo_section_numeri": "数字 — 可验证数据：826,336 行应用源代码，其中 749,724 行从零编写，14个代码库，5个生产产品，约 190 小时跨越 48 天，全部由一个人借助 Oracode 管控的 AI 构建。",
-    "seo_section_ecosistema": "生态系统——FlorenceEGI 器官完整地图，含角色、URL 与生产状态。",
-    "seo_section_contatti": "联系——用于合作、咨询和提案的联系表单。",
-    "seo_proof": "本站每一项声明都可以用真实数据验证。数字页面包含证据：14个代码库中的 826,336 行应用源代码，其中 749,724 行从2024年12月起从零编写，5个产品在生产环境运行，约 190 小时经验证的开发时间跨越 48 天——全部由一个人借助 Oracode 范式管控的 AI 构建。代码行数用 cloc 在干净代码库上统计，时间从 commit 时间戳测量。",
-    "seo_experience": "本网站提供完全可定制的体验。用户可以配置：视觉主题（深色、浅色或环境模式——根据时间自动切换）、动画风格（极简、电影感、活力、编辑式、流畅或无动画）、3D背景场景（极光、变形球体、水晶、噪声地形、烟雾、丝带流动、波浪网格、粒子球体或无场景）。无障碍设置包括三种文字大小、高对比度模式、阅读障碍字体和减少动态效果。首页呈现六扇门环绕TU（你）一词排列成圆形——每扇门通向网站的一个版块。背景是使用Three.js实时渲染的交互式3D场景。"
+    "desc_epp": "认证、衡量并使每项专业能力可验证的协议。"
   },
   "under_construction": {
     "subtitle": "建设中",
@@ -1140,5 +1124,23 @@
     "seed_1": "重做我的管理软件要花多少钱?",
     "seed_2": "我发你一张我 Excel 的截图,告诉我你的看法",
     "seed_3": "怎么运作:我付款之前能先看到吗?"
+  },
+  "seo": {
+    "seo_who": "Fabio Cherici 是一位来自意大利佛罗伦萨的企业家和自学开发者。他没有学术学位——从1995年起，他从代码开始构建一切。作为 FlorenceEGI S.R.L. 的创始人，他创建了 Oracode，一个用于管理软件生态系统的正式范式，其中 AI 代理编写生产代码。最初是 Magicsoft（面向中小企业的商业软件），如今是一个由九个互联平台组成的生产级生态系统，超过 826,000 行应用源代码由一个人借助受其自有范式管控的 AI 编写。",
+    "seo_what": "本站通过六个板块展示 Fabio Cherici 的工作：创作（自 1995 年以来的作品集与职业历程）、Oracode（包含六大支柱、P0 规则和审计系统的软件范式）、作家（以 Padmin D. Curtis 为主角的科幻传奇）、AI-Nous（一种正在形成的语言，服务于人类智识与人工智能之间的协作）、EGI（Florence EGI，拥有九个生产级器官的软件生态系统）、EPP（专业能力认证协议）。",
+    "seo_ecosystem": "Florence EGI 是一个软件生态系统，由以下部分组成：EGI（基于 Algorand 区块链的创作者平台）、EGI-HUB（配置大脑）、NATAN_LOC（面向公共管理的 AI 助手）、EGI-Credential（认证技能钱包）、La Bottega（艺术家工具）、Sigillo（区块链文件认证）、EGI-INFO（公共信息站）、CREATOR-STAGING（创作者网站配置器）、EGI-STAT（生产力仪表板）。超过 826,000 行源代码，14个代码库，由 Oracode 管理，配备 153 份 SSOT 文档、20 个钩子和 8 个专门代理。",
+    "seo_nav_label": "站点地图",
+    "seo_section_softwarehouse": "Softwarehouse — 面向意大利中小企业的定制软件:企业级品质、亲民成本、直接支持、透明流程、公开定价、20 个测量项目的作品集。",
+    "seo_section_creazioni": "创作——作品集与职业历程：Magicsoft（1995-2003）、跋涉期（2003-2021）、FlorenceEGI（2021至今）。五个产品在生产运行中。",
+    "seo_section_oracode": "Oracode——面向 AI 治理软件的形式化范式。六大支柱、阻断性 P0 规则、审计系统、自动安全轨道。可验证数据见「数据」页面。",
+    "seo_section_scrittore": "作家——一部科幻传奇，Padmin D. Curtis 既是主角，也是真实开发中的 AI CTO。",
+    "seo_section_ainous": "AI-Nous——一种正在形成的语言，为人类智识与人工智能之间的协作而优化。词汇表、对话片段、诗篇 Ti di no bi uda。",
+    "seo_section_egi": "EGI——Florence EGI，为每位创作者、企业和机构提供专属区块链 market maker 的系统。4.5% 永续版税，法律认证，结构性环境影响。三类受众：创作者、共创者、企业。",
+    "seo_section_epp": "EPP — Environment Protection Programs。Florence EGI 上每笔交易的 20% 用于环境。三个项目：APR、ARF、BPE。",
+    "seo_section_numeri": "数字 — 可验证数据：826,336 行应用源代码，其中 749,724 行从零编写，14个代码库，5个生产产品，约 190 小时跨越 48 天，全部由一个人借助 Oracode 管控的 AI 构建。",
+    "seo_section_ecosistema": "生态系统——FlorenceEGI 器官完整地图，含角色、URL 与生产状态。",
+    "seo_section_contatti": "联系——用于合作、咨询和提案的联系表单。",
+    "seo_proof": "本站每一项声明都可以用真实数据验证。数字页面包含证据：14个代码库中的 826,336 行应用源代码，其中 749,724 行从2024年12月起从零编写，5个产品在生产环境运行，约 190 小时经验证的开发时间跨越 48 天——全部由一个人借助 Oracode 范式管控的 AI 构建。代码行数用 cloc 在干净代码库上统计，时间从 commit 时间戳测量。",
+    "seo_experience": "本网站提供完全可定制的体验。用户可以配置：视觉主题（深色、浅色或环境模式——根据时间自动切换）、动画风格（极简、电影感、活力、编辑式、流畅或无动画）、3D背景场景（极光、变形球体、水晶、噪声地形、烟雾、丝带流动、波浪网格、粒子球体或无场景）。无障碍设置包括三种文字大小、高对比度模式、阅读障碍字体和减少动态效果。首页呈现六扇门环绕TU（你）一词排列成圆形——每扇门通向网站的一个版块。背景是使用Three.js实时渲染的交互式3D场景。"
   }
 }

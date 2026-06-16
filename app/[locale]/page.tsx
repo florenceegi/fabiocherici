@@ -38,6 +38,7 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('home');
+  const tSeo = await getTranslations('seo'); // namespace SEO server-only (non nel bundle client)
   const tm = await getTranslations({ locale, namespace: 'meta' });
 
   const pageSchema = buildPageSchema({
@@ -52,24 +53,24 @@ export default async function HomePage({
         <HeroScene />
       </div>
 
-      <div className="sr-only" role="region" aria-label={t('seo_nav_label')}>
-        <h2>{t('seo_nav_label')}</h2>
-        <p>{t('seo_who')}</p>
-        <p>{t('seo_what')}</p>
-        <p>{t('seo_ecosystem')}</p>
-        <p><strong><Link href={`/${locale}/i-numeri`}>{t('seo_proof')}</Link></strong></p>
-        <p>{t('seo_experience')}</p>
+      <div className="sr-only" role="region" aria-label={tSeo('seo_nav_label')}>
+        <h2>{tSeo('seo_nav_label')}</h2>
+        <p>{tSeo('seo_who')}</p>
+        <p>{tSeo('seo_what')}</p>
+        <p>{tSeo('seo_ecosystem')}</p>
+        <p><strong><Link href={`/${locale}/i-numeri`}>{tSeo('seo_proof')}</Link></strong></p>
+        <p>{tSeo('seo_experience')}</p>
         <nav>
           <ul>
-            <li><Link href={`/${locale}/softwarehouse`}>{t('seo_section_softwarehouse')}</Link></li>
-            <li><Link href={`/${locale}/oracode`}>{t('seo_section_oracode')}</Link></li>
-            <li><Link href={`/${locale}/scrittore`}>{t('seo_section_scrittore')}</Link></li>
-            <li><Link href={`/${locale}/ai-nous`}>{t('seo_section_ainous')}</Link></li>
-            <li><Link href={`/${locale}/egi`}>{t('seo_section_egi')}</Link></li>
-            <li><Link href={`/${locale}/epp`}>{t('seo_section_epp')}</Link></li>
-            <li><Link href={`/${locale}/i-numeri`}>{t('seo_section_numeri')}</Link></li>
-            <li><Link href={`/${locale}/ecosistema`}>{t('seo_section_ecosistema')}</Link></li>
-            <li><Link href={`/${locale}/contatti`}>{t('seo_section_contatti')}</Link></li>
+            <li><Link href={`/${locale}/softwarehouse`}>{tSeo('seo_section_softwarehouse')}</Link></li>
+            <li><Link href={`/${locale}/oracode`}>{tSeo('seo_section_oracode')}</Link></li>
+            <li><Link href={`/${locale}/scrittore`}>{tSeo('seo_section_scrittore')}</Link></li>
+            <li><Link href={`/${locale}/ai-nous`}>{tSeo('seo_section_ainous')}</Link></li>
+            <li><Link href={`/${locale}/egi`}>{tSeo('seo_section_egi')}</Link></li>
+            <li><Link href={`/${locale}/epp`}>{tSeo('seo_section_epp')}</Link></li>
+            <li><Link href={`/${locale}/i-numeri`}>{tSeo('seo_section_numeri')}</Link></li>
+            <li><Link href={`/${locale}/ecosistema`}>{tSeo('seo_section_ecosistema')}</Link></li>
+            <li><Link href={`/${locale}/contatti`}>{tSeo('seo_section_contatti')}</Link></li>
           </ul>
         </nav>
       </div>

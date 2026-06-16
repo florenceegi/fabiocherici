@@ -383,7 +383,13 @@ export default async function SoftwarehousePage({
               <span className="sr-only"> ({tf('opens_new_tab')})</span>
             </a>
           </div>
-          <p className="reveal mt-10 text-base text-[var(--text-secondary)]">
+          {/* Contatto SEMPRE raggiungibile (anche senza client mail): indirizzo visibile/copiabile */}
+          <p className="reveal mt-8 font-mono text-sm text-[var(--text-secondary)]">
+            <a href={EMAIL_HREF} className={linkClass}>fabio@florenceegi.com</a>
+            <span className="mx-3 text-[var(--text-muted)]" aria-hidden="true">·</span>
+            <span className="text-[var(--text-primary)]">+39 338 835 0412</span>
+          </p>
+          <p className="reveal mt-6 text-base text-[var(--text-secondary)]">
             <a href="#padmin" className={linkClass}>{t('cta_final_padmin')}</a>
           </p>
         </div>
