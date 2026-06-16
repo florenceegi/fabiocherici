@@ -30,6 +30,10 @@ export interface NexusWidgetProps {
   showcaseEndpoint?: string;
   /** Label "apre in nuova scheda" (i18n footer), passata a EgiShowcase. */
   opensNewTabLabel: string;
+  /** Prompt-seed cliccabili (M-018), inoltrati a PadminChat. Click = invio. */
+  seeds?: readonly string[];
+  /** Micro-invito sopra i seed (i18n nexus.seed_intro). */
+  seedIntro?: string;
 }
 
 /** Deriva {base}/showcase dallo stesso origin del chat (Nexus proxy). */
@@ -44,6 +48,8 @@ export default function NexusWidget({
   chatEndpoint,
   showcaseEndpoint,
   opensNewTabLabel,
+  seeds,
+  seedIntro,
 }: NexusWidgetProps) {
   const resolvedShowcase = deriveShowcaseEndpoint(chatEndpoint, showcaseEndpoint);
 
@@ -54,7 +60,7 @@ export default function NexusWidget({
         className="rounded-2xl border p-4 shadow-lg sm:p-6"
         style={{ borderColor: 'var(--border-accent)', backgroundColor: 'var(--bg-elevated)' }}
       >
-        <PadminChat endpoint={chatEndpoint} />
+        <PadminChat endpoint={chatEndpoint} seeds={seeds} seedIntro={seedIntro} />
       </div>
 
       {/* Fascia secondaria: ticker pillole + vetrina opere reali (strisce) */}

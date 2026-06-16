@@ -9,7 +9,11 @@
  *          reader, MDN aria live regions). Streaming ancorato in fondo: il
  *          contenuto sopra non si sposta → no CLS (web.dev/cls). Feedback
  *          immediato al next-paint (INP): bolla utente + typing prima della rete.
- * @mission M-017
+ *          M-018: prompt-seed cliccabili nell'empty-state. Cliccare un seed
+ *          INVIA subito il messaggio a Padmin (riusa handleSend) — azzera
+ *          l'attrito "campo vuoto" (NN/g #6 recognition over recall). I seed sono
+ *          veri <button> con label esplicita (a11y), wrappabili, tap-target ≥44px.
+ * @mission M-018
  */
 
 'use client';
@@ -35,9 +39,13 @@ function newSessionId(): string {
 
 export interface PadminChatProps {
   endpoint: string;
+  /** Prompt-seed cliccabili mostrati nell'empty-state (M-018). Click = invio. */
+  seeds?: readonly string[];
+  /** Micro-invito sopra i seed (i18n nexus.seed_intro). */
+  seedIntro?: string;
 }
 
-export default function PadminChat({ endpoint }: PadminChatProps) {
+export default function PadminChat({ endpoint, seeds, seedIntro }: PadminChatProps) {
   const t = useTranslations('nexus');
   const { send } = useNexusStream(endpoint);
 
@@ -154,7 +162,31 @@ export default function PadminChat({ endpoint }: PadminChatProps) {
         style={{ minHeight: '22rem', maxHeight: '60vh' }}
       >
         {messages.length === 0 ? (
-          <p className="text-sm text-[var(--text-secondary)]">{t('empty_prompt')}</p>
+          <div className="space-y-4">
+            <p className="text-sm text-[var(--text-secondary)]">{t('empty_prompt')}</p>
+            {seeds && seeds.length > 0 ? (
+              <div>
+                {seedIntro ? (
+                  <p className="mb-2 text-xs text-[var(--text-muted)]">{seedIntro}</p>
+                ) : null}
+                <ul className="flex flex-wrap gap-2">
+                  {seeds.map((seed) => (
+                    <li key={seed}>
+                      <button
+                        type="button"
+                        onClick={() => handleSend(seed)}
+                        disabled={isStreaming || remaining <= 0}
+                        className="inline-flex min-h-11 items-center rounded-full border px-4 py-2 text-left text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-50"
+                        style={{ borderColor: 'var(--border-accent)' }}
+                      >
+                        {seed}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         ) : (
           messages.map((m) => <ChatMessage key={m.id} message={m} />)
         )}

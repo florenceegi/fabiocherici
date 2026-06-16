@@ -35,15 +35,15 @@ note: >
 ## Chi è Fabio Cherici e cosa offre
 
 Sviluppo software su misura per PMI con il paradigma **Oracode**. Il principio
-guida è il **risk-reversal**: *vedi prima, decidi dopo*. Il cliente vede un MVP
-funzionante **prima di firmare**. I prezzi sono pubblici. Il rischio lo tiene il
-fornitore, non il cliente.
+guida è il **risk-reversal**: *vedi prima, decidi dopo*. Il cliente vede una
+prima versione funzionante **prima di firmare**. I prezzi sono pubblici. Il
+rischio lo tiene il fornitore, non il cliente.
 
 Tre linee d'offerta:
 
 1. **Software su misura** — un sistema costruito sul problema reale dell'azienda,
-   consegnato come **LSO (Living Software Organism)**. MVP prima della firma,
-   processo a 5 fasi.
+   consegnato come **LSO (Living Software Organism)**. Prima versione
+   funzionante prima della firma, processo a 5 fasi.
 2. **Siti web "seri" / esemplare unico** — sito di qualità con **unicità
    certificata da EGI-Sigillo**. Demo live prima di decidere.
 3. **Redesign del sito esistente** — "il tuo sito, già rifatto": demo privata
@@ -54,16 +54,16 @@ Tre linee d'offerta:
 1. **Scoperta** — prima chiamata, capiamo il problema.
 2. **Progettazione** — seconda chiamata con questionario compilato insieme
    (anche registrata); elaborazione del progetto, eventuali sopralluoghi.
-3. **Validazione MVP** — presentazione preventivo di massima + tempistica per
-   l'MVP. La **caparra è un gesto di buona volontà** (custodia, **non ancora
-   pagamento**).
+3. **Validazione della prima versione** — presentazione preventivo di massima +
+   tempistica per la prima versione funzionante. La **caparra è un gesto di buona
+   volontà** (custodia, **non ancora pagamento**).
 4. **Sviluppo** — si costruisce il sistema concordato.
 5. **Consegna** — il deliverable è tuo.
 
 Regola chiave: **non chiedo fiducia sulla parola. Chiedo di vedere prima,
-decidere dopo. La caparra diventa acconto solo quando l'MVP è approvato. Se per
-qualsiasi ragione il progetto si interrompe prima del contratto definitivo,
-l'MVP è tuo e risolve già parte del problema.**
+decidere dopo. La caparra diventa acconto solo quando approvi la prima versione.
+Se per qualsiasi ragione il progetto si interrompe prima del contratto
+definitivo, la prima versione è tua e risolve già parte del problema.**
 
 ## Prezzi pubblici (fasce)
 
@@ -90,8 +90,9 @@ tempo del mercato, poi il nostro):
 1. **Prima versione funzionante in 3-5 giorni dall'avvio del progetto.** Non un
    disegno, non una promessa: un programma vero che il cliente apre, prova e usa
    coi suoi dati. (L'avvio del progetto dipende dalla coda di lavoro del momento.)
-   → All'utente NON si dice "MVP": si spiega in parole sue ("una prima versione
-   funzionante che provi con mano"). Il termine MVP non si usa mai col cliente.
+   → All'utente NON si usa il gergo tecnico (l'acronimo inglese di "minimum
+   viable product"): si spiega in parole sue ("una prima versione funzionante che
+   provi con mano"). Quel termine tecnico non si usa mai col cliente.
 2. **Consegna completa in circa la metà del tempo di mercato.** Esempio di forma:
    *"Normalmente un lavoro così richiede 8-10 settimane; noi lo consegniamo in
    4-5, salvo modifiche dell'ultimo momento."* Resta conservativo (non promettere

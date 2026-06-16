@@ -3,13 +3,14 @@
  * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
  * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
  * @date 2026-06-11
- * @purpose Softwarehouse page — rewrite M-015: 8 sezioni risk-reversal +
- *          Oracode Nexus→LSO (SSOT commercial-claims v1.0.0, P0-FC-6).
- *          Hero "Vedi il tuo software funzionare. Poi decidi." + cantiere
- *          aperto LIVE + 3 card offerta + processo 5 fasi (riuso M-008) +
- *          specie nuova LSO + demo toccabili + prezzi invariati + CTA calda.
+ * @purpose Softwarehouse page — rewrite M-015 + attention-first M-018: hero
+ *          conversazionale "split" (Padmin sopra la piega, prompt-seed, una sola
+ *          CTA, NIENTE 3D — era solo per la home) + cantiere aperto LIVE + 3 card
+ *          offerta + processo 5 fasi (riuso M-008) + specie nuova LSO + demo
+ *          toccabili + prezzi invariati + CTA calda. SSOT commercial-claims-public
+ *          (P0-FC-6, copy de-gergata: "prima versione funzionante" non "MVP").
  *          Server component: tutto il testo nell'HTML statico (P0-FC-2).
- * @mission M-015
+ * @mission M-018
  */
 
 import type { Metadata } from 'next';
@@ -23,7 +24,6 @@ import PortfolioCard from '@/components/infographics/PortfolioCard';
 import SoftwarehouseHero from '@/components/softwarehouse/SoftwarehouseHero';
 import LiveSiteStats from '@/components/softwarehouse/LiveSiteStats';
 import LsoTraits from '@/components/softwarehouse/LsoTraits';
-import AdvisorSlot from '@/components/softwarehouse/AdvisorSlot';
 import SectionCta from '@/components/softwarehouse/SectionCta';
 
 export async function generateMetadata({
@@ -186,27 +186,15 @@ export default async function SoftwarehousePage({
         }}
       />
 
-      {/* ── 1. Hero — claim risk-reversal + 3D ambient (unico Canvas) ── */}
-      <SoftwarehouseHero />
-
-      {/* ── 1b. Padmin — PRIMA cosa interattiva (correzione CEO M-017 #3):
-              "la chat va all'inizio, alla gente piace interagire". Il widget
-              (con env) o il fallback statico onesto (senza env) vive qui in cima,
-              subito dopo il claim hero. Le altre sezioni scorrono SOTTO. ── */}
-      <section id="padmin" className="py-20 bg-[var(--bg)]" aria-labelledby="padmin-heading">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className={labelClass}>{t('padmin_section_label')}</p>
-          <h2 id="padmin-heading" className={`${titleClass} mb-4`}>{t('padmin_section_title')}</h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10 max-w-3xl">
-            {t('padmin_section_intro')}
-          </p>
-          <AdvisorSlot
-            demoCaption={t('lso_demo_caption')}
-            ctaLabel={t('lso_chat_cta')}
-            opensNewTabLabel={tf('opens_new_tab')}
-          />
-        </div>
-      </section>
+      {/* ── 1. Hero conversazionale "split" (M-018, Opzione A): la promessa a
+              sinistra (H1 risk-reversal, LCP testo), l'azione a destra (widget
+              Padmin + prompt-seed). L'hero È la sezione #padmin: la chat è SOPRA
+              la piega, prima cosa interattiva. Niente 3D (era solo per la home).
+              L'ancora #padmin vive qui (target del link "parla con Padmin" della
+              sezione LSO). Le altre sezioni scorrono SOTTO. ── */}
+      <div id="padmin">
+        <SoftwarehouseHero locale={locale} />
+      </div>
 
       {/* ── 2. Cantiere aperto LIVE ── */}
       <section id="cantiere" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="cantiere-heading">
