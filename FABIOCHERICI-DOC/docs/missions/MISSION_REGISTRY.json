@@ -16,17 +16,21 @@
       "id": "M-020",
       "title": "Operatore Padmin: memoria permanente dei file — estrazione testo immagine + persistenza per sessione + valutazione congiunta di tutti i file inviati",
       "trigger_matrix": 2,
-      "status": "executing",
+      "status": "closed_with_debt",
       "date_open": "2026-06-16",
-      "date_close": null,
+      "date_close": "2026-06-16",
       "scope_hash": "8fba1aef866afb4826cae3060801e2661982152eba018239a3035ba2dc19becc",
       "synced_by_engine": true,
-      "last_engine_sync": "2026-06-16T09:14:39.436Z",
+      "last_engine_sync": "2026-06-16T22:16:31.166Z",
       "ssot_waiver": {
         "reason": "Feature backend operatore (memoria file di sessione): nessun SSOT di dominio; il requisito e del CEO in chat. Privacy policy aggiornata in chiusura.",
         "at": "2026-06-16T09:14:39.433Z",
         "by": "supervisor"
-      }
+      },
+      "report_technical": "docs/missions/M-020_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-020_REPORT_EXTENDED.md",
+      "doc_sync_debt": true,
+      "debt_reason": "DOC-SYNC e audit rinviati per direttiva CEO 2026-06-16: mission pre-esistente con test verde, lavoro gia rivisto oggi; chiusura amministrativa per non lasciarla sospesa."
     },
     {
       "id": "M-019",
@@ -92,7 +96,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:41:18Z"
@@ -169,7 +173,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:33:04Z"
@@ -254,7 +258,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-15T23:12:13Z"
@@ -323,7 +327,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:54:07Z"
@@ -435,7 +439,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:32:18Z"
@@ -528,7 +532,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:43:21Z"
@@ -600,7 +604,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "doc_sync_executed": true,
       "doc_sync_outcome": "success",
@@ -682,7 +686,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "organs": [
         "EGI-DOC",
@@ -748,7 +752,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       }
     },
     {
@@ -815,7 +819,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       }
     },
     {
@@ -906,7 +910,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "organs": [
         "os3-matrix",
@@ -926,14 +930,101 @@
       ],
       "priority": "P1",
       "trigger_matrix": 3,
-      "status": "executing",
+      "status": "closed_with_debt",
       "date_open": "2026-05-27",
-      "date_close": null,
+      "date_close": "2026-06-16",
       "file": "docs/missions/M-008_SOFTWAREHOUSE_PAGE.md",
       "found_by": "CEO brief — pagina commerciale dedicata Softwarehouse",
       "scope_hash": "f2f4ac512a8edc8372ce50a69955aa983063ea81b9b5e476e990805f253f7679",
       "estimated_hours": "28-53",
-      "sprint_current": 1
+      "sprint_current": 1,
+      "report_technical": "docs/missions/M-008_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-008_REPORT_EXTENDED.md",
+      "last_engine_sync": "2026-06-16T22:16:26.173Z",
+      "synced_by_engine": true,
+      "doc_sync_debt": true,
+      "debt_reason": "DOC-SYNC e audit rinviati per direttiva CEO 2026-06-16: mission pre-esistente con test verde, lavoro gia rivisto oggi; chiusura amministrativa per non lasciarla sospesa.",
+      "organs": [
+        "EGI-DOC",
+        "EGI",
+        "pinocapasso",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 9,
+        "lines_added": 3027,
+        "lines_deleted": 116,
+        "lines_net": 2911,
+        "lines_touched": 3143,
+        "files_touched": 32,
+        "weighted_commits": 8.3,
+        "cognitive_load": 3.31,
+        "productivity_index": 85.53,
+        "tags_breakdown": {
+          "FEAT": 7,
+          "UNTAGGED": 1,
+          "DOC": 1
+        },
+        "commit_hashes": [
+          "0544be34d9b829c22fa2f3e5702eee2df4246074",
+          "0c0c3ccef3edc9a3bf68a2d876b79cd4c3e522ab",
+          "5648f67bb3f4ce4593351d1eb0dccd166ed6ef7e",
+          "61476d447fe353f3f95ac0e35533fb1ae40138b8",
+          "9da33738afcc05f6306d9f40aa6d8724956d9435",
+          "a7eda03183f51df064ed68645ad231402da8f69f",
+          "ab2177eb0e9d2cce5e4eb860df9e0eea3b6db1b4",
+          "d027baec0569fc58b517822611ed082fd54b9e7e",
+          "ee32c6a67461611a54ce24dbcf14aaf0214eefe2"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/EGI",
+            "date": "2026-04-05",
+            "commits": 1,
+            "lines_added": 1306,
+            "lines_deleted": 2,
+            "files_touched": 13,
+            "tags": {
+              "FEAT": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-05-27",
+            "commits": 6,
+            "lines_added": 1478,
+            "lines_deleted": 58,
+            "files_touched": 13,
+            "tags": {
+              "FEAT": 5,
+              "UNTAGGED": 1
+            }
+          },
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-11",
+            "commits": 1,
+            "lines_added": 50,
+            "lines_deleted": 9,
+            "files_touched": 3,
+            "tags": {
+              "FEAT": 1
+            }
+          },
+          {
+            "repo": "florenceegi/pinocapasso",
+            "date": "2026-06-03",
+            "commits": 1,
+            "lines_added": 193,
+            "lines_deleted": 47,
+            "files_touched": 4,
+            "tags": {
+              "DOC": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-17"
+      }
     },
     {
       "id": "M-007",
@@ -1036,7 +1127,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:26Z",
@@ -1126,7 +1217,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:24Z",
@@ -1214,7 +1305,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:22Z",
@@ -1253,22 +1344,23 @@
         "i18n-messages"
       ],
       "stats": {
-        "total_commits": 5,
+        "total_commits": 6,
         "lines_added": 2628,
         "lines_deleted": 155,
         "lines_net": 2473,
         "lines_touched": 2783,
         "files_touched": 32,
-        "weighted_commits": 7.4,
-        "cognitive_load": 3.2,
-        "productivity_index": 76.98,
+        "weighted_commits": 8.4,
+        "cognitive_load": 3.23,
+        "productivity_index": 79.16,
         "tags_breakdown": {
-          "FEAT": 1,
+          "FEAT": 2,
           "ARCH": 4
         },
         "commit_hashes": [
           "21cf2a02227f6a5d6606ce5970c77aabb8c36874",
           "4236475e9aeaaade6dc692bc16aaa422ad00a206",
+          "46ac438fbe8f6378a501cb2aaeaa5fd0fb57c644",
           "54150528737f2e17cffc17d224cb33c0b2106988",
           "cfb088541e3b3525708f34a89917fdbe1ba808bd",
           "fa4a76f5822a0cddea36a466b4eb1e83c77c6106"
@@ -1317,9 +1409,20 @@
             "tags": {
               "ARCH": 1
             }
+          },
+          {
+            "repo": "florenceegi/os3-matrix",
+            "date": "2026-06-16",
+            "commits": 1,
+            "lines_added": 0,
+            "lines_deleted": 0,
+            "files_touched": 0,
+            "tags": {
+              "FEAT": 1
+            }
           }
         ],
-        "calculated_at": "2026-06-16"
+        "calculated_at": "2026-06-17"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:21Z",
