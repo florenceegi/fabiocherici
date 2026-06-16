@@ -491,7 +491,9 @@
     "nexus_ours_label": "Oracode Nexus（我们）",
     "nexus_ours_1": "AI 来写，但严格的规则检查每一行。",
     "nexus_ours_2": "不正确、不整洁、无文档的，一律不通过。",
-    "nexus_ours_3": "生产级代码，扎实，经得起时间。"
+    "nexus_ours_3": "生产级代码，扎实，经得起时间。",
+    "cta_telegram": "通过 Telegram 联系我们",
+    "cta_telegram_aria": "打开 Telegram 联系我们"
   },
   "ecosistema": {
     "title": "生态系统",

@@ -491,7 +491,9 @@
     "nexus_ours_label": "Oracode Nexus (us)",
     "nexus_ours_1": "AI writes, but strict rules check every line.",
     "nexus_ours_2": "Nothing passes unless it's correct, tidy and documented.",
-    "nexus_ours_3": "Production-grade code, solid, that lasts."
+    "nexus_ours_3": "Production-grade code, solid, that lasts.",
+    "cta_telegram": "Message us on Telegram",
+    "cta_telegram_aria": "Open Telegram to message us"
   },
   "ecosistema": {
     "title": "Ecosystem",

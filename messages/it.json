@@ -491,7 +491,9 @@
     "nexus_ours_label": "Oracode Nexus (noi)",
     "nexus_ours_1": "L'AI scrive, ma regole ferree controllano ogni riga.",
     "nexus_ours_2": "Niente passa se non è corretto, ordinato e documentato.",
-    "nexus_ours_3": "Codice di produzione, solido, che dura nel tempo."
+    "nexus_ours_3": "Codice di produzione, solido, che dura nel tempo.",
+    "cta_telegram": "Scrivici su Telegram",
+    "cta_telegram_aria": "Apri Telegram per scriverci"
   },
   "ecosistema": {
     "title": "Ecosistema",

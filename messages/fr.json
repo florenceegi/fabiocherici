@@ -491,7 +491,9 @@
     "nexus_ours_label": "Oracode Nexus (nous)",
     "nexus_ours_1": "L'IA écrit, mais des règles strictes vérifient chaque ligne.",
     "nexus_ours_2": "Rien ne passe si ce n'est correct, propre et documenté.",
-    "nexus_ours_3": "Du code de production, solide, qui dure."
+    "nexus_ours_3": "Du code de production, solide, qui dure.",
+    "cta_telegram": "Écrivez-nous sur Telegram",
+    "cta_telegram_aria": "Ouvrir Telegram pour nous écrire"
   },
   "ecosistema": {
     "title": "Écosystème",

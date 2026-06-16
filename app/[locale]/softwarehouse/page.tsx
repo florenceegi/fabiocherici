@@ -74,6 +74,7 @@ const linkClass =
   'text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4 transition-colors';
 
 const WHATSAPP_URL = 'https://wa.me/393388350412';
+const TELEGRAM_URL = 'https://t.me/CHEFAB007';
 const EMAIL_HREF = 'mailto:fabio@florenceegi.com?subject=Softwarehouse';
 
 export default async function SoftwarehousePage({
@@ -382,12 +383,26 @@ export default async function SoftwarehousePage({
               {t('cta_whatsapp')}
               <span className="sr-only"> ({tf('opens_new_tab')})</span>
             </a>
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('cta_telegram_aria')}
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] px-8 py-3 text-base font-semibold text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+            >
+              {t('cta_telegram')}
+              <span className="sr-only"> ({tf('opens_new_tab')})</span>
+            </a>
           </div>
           {/* Contatto SEMPRE raggiungibile (anche senza client mail): indirizzo visibile/copiabile */}
           <p className="reveal mt-8 font-mono text-sm text-[var(--text-secondary)]">
             <a href={EMAIL_HREF} className={linkClass}>fabio@florenceegi.com</a>
             <span className="mx-3 text-[var(--text-muted)]" aria-hidden="true">·</span>
             <span className="text-[var(--text-primary)]">+39 338 835 0412</span>
+            <span className="mx-3 text-[var(--text-muted)]" aria-hidden="true">·</span>
+            <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              @CHEFAB007<span className="sr-only"> ({tf('opens_new_tab')})</span>
+            </a>
           </p>
           <p className="reveal mt-6 text-base text-[var(--text-secondary)]">
             <a href="#padmin" className={linkClass}>{t('cta_final_padmin')}</a>

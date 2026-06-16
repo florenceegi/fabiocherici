@@ -491,7 +491,9 @@
     "nexus_ours_label": "Oracode Nexus (wir)",
     "nexus_ours_1": "Die KI schreibt, aber strenge Regeln prüfen jede Zeile.",
     "nexus_ours_2": "Nichts geht durch, was nicht korrekt, sauber und dokumentiert ist.",
-    "nexus_ours_3": "Produktionsreifer Code, solide, der hält."
+    "nexus_ours_3": "Produktionsreifer Code, solide, der hält.",
+    "cta_telegram": "Schreiben Sie uns auf Telegram",
+    "cta_telegram_aria": "Telegram öffnen, um uns zu schreiben"
   },
   "ecosistema": {
     "title": "Ökosystem",
