@@ -13,6 +13,75 @@
   "counter": 267,
   "missions": [
     {
+      "id": "M-019",
+      "title": "Hotfix operatore Padmin: visione immagini — usa sempre l'immagine allegata, mai negare la capacita, chiedi di riallegare se non in vista",
+      "trigger_matrix": 1,
+      "status": "closed",
+      "date_open": "2026-06-16",
+      "date_close": "2026-06-16",
+      "scope_hash": "e62b78465796e35f1eebdc0464416b9a33ef5a2a29a62a717d38aa664023641b",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-16T08:40:58.147Z",
+      "ssot_waiver": {
+        "reason": "Hotfix comportamentale del prompt operatore (visione immagini): nessun SSOT di dominio coinvolto, e bugfix su capacita gia esistente e testata.",
+        "at": "2026-06-16T08:33:30.711Z",
+        "by": "supervisor"
+      },
+      "report_technical": "docs/missions/M-019_VISION_HOTFIX_REPORT_TECHNICAL.md",
+      "report_extended": "docs/missions/M-019_VISION_HOTFIX_REPORT_EXTENDED.md",
+      "organs": [
+        "EGI-DOC",
+        "pinocapasso",
+        "fabiocherici"
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 1073,
+        "lines_deleted": 41,
+        "lines_net": 1032,
+        "lines_touched": 1114,
+        "files_touched": 16,
+        "weighted_commits": 2.3,
+        "cognitive_load": 2.82,
+        "productivity_index": 44.68,
+        "tags_breakdown": {
+          "FIX": 1,
+          "DOC": 1
+        },
+        "commit_hashes": [
+          "3cb6a52d6ebbe8b8d198de76aa9f0791ff8ee77c",
+          "e83859060282933bc7ddcf5e38e18db061a6c536"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-16",
+            "commits": 1,
+            "lines_added": 75,
+            "lines_deleted": 0,
+            "files_touched": 4,
+            "tags": {
+              "FIX": 1
+            }
+          },
+          {
+            "repo": "florenceegi/pinocapasso",
+            "date": "2026-06-04",
+            "commits": 1,
+            "lines_added": 998,
+            "lines_deleted": 41,
+            "files_touched": 12,
+            "tags": {
+              "DOC": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-16"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-16T08:41:18Z"
+    },
+    {
       "id": "M-018",
       "title": "Attention-first /softwarehouse: hero conversazionale Opzione A (Padmin sopra la piega) + rimozione 3D (era solo homepage) + de-gergo MVP nella copy cliente",
       "trigger_matrix": 2,
@@ -41,20 +110,21 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 2,
-        "lines_added": 1181,
-        "lines_deleted": 97,
-        "lines_net": 1084,
-        "lines_touched": 1278,
-        "files_touched": 13,
-        "weighted_commits": 1.8,
-        "cognitive_load": 2.82,
-        "productivity_index": 44.9,
+        "total_commits": 3,
+        "lines_added": 1362,
+        "lines_deleted": 105,
+        "lines_net": 1257,
+        "lines_touched": 1467,
+        "files_touched": 20,
+        "weighted_commits": 2.6,
+        "cognitive_load": 2.95,
+        "productivity_index": 51.36,
         "tags_breakdown": {
-          "DOC": 1,
+          "DOC": 2,
           "FEAT": 1
         },
         "commit_hashes": [
+          "1105bda7512e4e986c1780a9cf6b555db1d48d9b",
           "475543e8d90943f9201f366e1e0e799019812eac",
           "f80a481c592d4ab89712d723aed16d346e7f8ccf"
         ],
@@ -73,11 +143,12 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-06-16",
-            "commits": 1,
-            "lines_added": 569,
-            "lines_deleted": 93,
-            "files_touched": 9,
+            "commits": 2,
+            "lines_added": 750,
+            "lines_deleted": 101,
+            "files_touched": 16,
             "tags": {
+              "DOC": 1,
               "FEAT": 1
             }
           }
