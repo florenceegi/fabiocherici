@@ -25,7 +25,7 @@ export interface ProcessStepperProps {
 
 export default function ProcessStepper({ steps }: ProcessStepperProps) {
   return (
-    <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <ol data-sw="stepper" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
       {steps.map((step, i) => (
         <li
           key={step.title}

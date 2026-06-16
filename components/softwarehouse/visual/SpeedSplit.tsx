@@ -36,7 +36,7 @@ export default function SpeedSplit({
   usDetail,
 }: SpeedSplitProps) {
   return (
-    <div className="reveal grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] md:grid-cols-2">
+    <div data-sw="split" className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] md:grid-cols-2">
       {/* Mercato — attenuato */}
       <div className="flex flex-col gap-2 bg-[var(--bg-card)] p-8 sm:p-10">
         <p className="text-sm font-mono uppercase tracking-widest text-[var(--text-muted)]">

@@ -33,6 +33,7 @@ import StatCard from '@/components/softwarehouse/visual/StatCard';
 import FactCard from '@/components/softwarehouse/visual/FactCard';
 import RepoPortfolio from '@/components/softwarehouse/RepoPortfolio';
 import Marquee from '@/components/softwarehouse/Marquee';
+import SoftwarehouseMotion from '@/components/softwarehouse/SoftwarehouseMotion';
 
 export async function generateMetadata({
   params,
@@ -161,6 +162,9 @@ export default async function SoftwarehousePage({
         }}
       />
 
+      {/* Motore animazioni GROSSE per-sezione (GSAP+ScrollTrigger, reduced-motion safe) */}
+      <SoftwarehouseMotion />
+
       {/* ── HERO — prodotto-vivo (#padmin nello Stadio 2) ── */}
       <SoftwarehouseHero locale={locale} primaryCtaHref="#contatto" />
 
@@ -169,7 +173,7 @@ export default async function SoftwarehousePage({
         <div className="mx-auto max-w-5xl px-6">
           <p className={labelClass}>{t('problem_label')}</p>
           <h2 id="problema-heading" className={`reveal ${titleClass}`}>{t('problem_title')}</h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <div data-sw="bento" className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {pains.map((p) => (
               <PainCard key={p.title} title={p.title} detail={p.detail} />
             ))}
@@ -214,7 +218,7 @@ export default async function SoftwarehousePage({
             usDetail={t('speed_us_detail')}
           />
 
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div data-sw="stagger" className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <StatCard
               value={t('speed_stat_1_value')}
               label={t('speed_stat_1_label')}
@@ -236,18 +240,20 @@ export default async function SoftwarehousePage({
           <p className={labelClass}>{t('pricing_label')}</p>
           <h2 id="prezzi-heading" className={`reveal ${titleClass}`}>{t('pricing_title')}</h2>
           <p className={`${introClass} mb-10 max-w-3xl`}>{t('pricing_intro')}</p>
-          <PricingMarketVsUs
-            rows={pricingRows}
-            usValue={t('pricing_us_value')}
-            labels={{
-              caption: t('pricing_aria'),
-              tier: t('pricing_col_tier'),
-              price: t('pricing_col_price'),
-              market: t('pricing_col_market'),
-              us: t('pricing_col_us'),
-              maintenance: t('pricing_col_maintenance'),
-            }}
-          />
+          <div data-sw="up">
+            <PricingMarketVsUs
+              rows={pricingRows}
+              usValue={t('pricing_us_value')}
+              labels={{
+                caption: t('pricing_aria'),
+                tier: t('pricing_col_tier'),
+                price: t('pricing_col_price'),
+                market: t('pricing_col_market'),
+                us: t('pricing_col_us'),
+                maintenance: t('pricing_col_maintenance'),
+              }}
+            />
+          </div>
           <p className="reveal mt-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)] italic">
             {t('pricing_caparra_note')}
           </p>
@@ -269,7 +275,7 @@ export default async function SoftwarehousePage({
           <p className="reveal mb-6 max-w-3xl font-[family-name:var(--font-display)] text-xl font-light leading-snug text-[var(--text-primary)] sm:text-2xl">
             {t('nexus_contrast_title')}
           </p>
-          <div className="reveal mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div data-sw="split" className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 opacity-70">
               <p className="mb-4 text-xs font-mono uppercase tracking-widest text-[var(--text-muted)]">
                 {t('nexus_vibe_label')}
@@ -301,11 +307,11 @@ export default async function SoftwarehousePage({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div data-sw="stagger" className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {[1, 2, 3].map((n) => (
               <div
                 key={n}
-                className="reveal flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition-transform hover:-translate-y-1"
+                className="flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition-transform hover:-translate-y-1"
               >
                 <span
                   aria-hidden="true"
@@ -342,7 +348,7 @@ export default async function SoftwarehousePage({
         <div className="mx-auto max-w-5xl px-6">
           <p className={labelClass}>{t('who_label')}</p>
           <h2 id="chi-siamo-heading" className={`reveal ${titleClass}`}>{t('who_title')}</h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <div data-sw="stagger" className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
             {whoFacts.map((f) => (
               <FactCard key={f.title} kicker={f.kicker} title={f.title} detail={f.detail} />
             ))}
