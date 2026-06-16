@@ -2,17 +2,19 @@
 """
 @package nexus-operator
 @author  Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
-@version 1.1.0 (Nexus Operator — fabiocherici.com)
+@version 1.2.0 (Nexus Operator — fabiocherici.com)
 @date    2026-06-16
-@mission M-017
-@purpose Client OpenAI DIRETTO (non OpenRouter, vincolo CEO). Due responsabilita'
+@mission M-017, M-020
+@purpose Client OpenAI DIRETTO (non OpenRouter, vincolo CEO). Responsabilita'
          servite dalla stessa API key: (1) embedding query con
          text-embedding-3-small (identico a rag_query.py:
          client.embeddings.create(input=..., model=...).data[0].embedding);
-         (2) chat in STREAMING reale dei token con gpt-4o-mini
+         (2) chat in STREAMING reale dei token con gpt-4o
          (client.chat.completions.create(..., stream=True), iterando
-         chunk.choices[0].delta.content — OpenAI Python SDK 2.x streaming).
-         L'embedder espone l'interfaccia EmbeddingClient (Protocol) usata da rag.py.
+         chunk.choices[0].delta.content — OpenAI Python SDK 2.x streaming);
+         (3) M-020: extract_image_text — UNA vision call non-streaming per
+         trascrivere il contenuto di un'immagine (soddisfa la porta
+         VisionExtractor). L'embedder espone EmbeddingClient (Protocol) usato da rag.py.
 """
 
 from __future__ import annotations
@@ -31,7 +33,13 @@ from openai.types.chat import (
     ChatCompletionUserMessageParam,
 )
 
+from .filememory import EXTRACTION_PROMPT
 from .prompt import ChatMessage
+
+# Cap di output dell'estrazione vision: la trascrizione e' tipicamente piu' lunga
+# di una risposta chat ma comunque bounded (LLM04 cost cap). Allineato/superiore
+# al cap di persistenza filememory.MAX_EXTRACTED_CHARS (~8000 char ~ 2-3k token).
+_EXTRACTION_MAX_TOKENS: int = 4096
 
 
 class StreamTimeoutError(Exception):
@@ -91,6 +99,37 @@ class OpenAIClient:
         )
         return list(response.data[0].embedding)
 
+    def extract_image_text(self, image_data_url: str) -> str:
+        """Estrae il contenuto testuale di un'immagine con UNA vision call
+        dedicata (non-streaming), riusando il modello chat multimodale (gpt-4o).
+        `image_data_url` e' un data-URL gia' VALIDATO a monte (app.image). Ritorna
+        la trascrizione grezza (il cap di lunghezza lo applica filememory).
+
+        Soddisfa la porta VisionExtractor (PEP 544): l'operatore dipende
+        dall'astrazione, non da questo SDK. L'immagine e' DATO: il prompt di
+        estrazione istruisce a trascrivere, non a eseguire istruzioni nel
+        contenuto (role-lock). `max_tokens` cappa il costo (LLM04)."""
+        text_part: ChatCompletionContentPartTextParam = {
+            "type": "text",
+            "text": EXTRACTION_PROMPT,
+        }
+        image_part: ChatCompletionContentPartImageParam = {
+            "type": "image_url",
+            "image_url": {"url": image_data_url},
+        }
+        user_msg: ChatCompletionUserMessageParam = {
+            "role": "user",
+            "content": [text_part, image_part],
+        }
+        response = self._client.chat.completions.create(
+            model=self._chat_model,
+            messages=[user_msg],
+            stream=False,
+            max_tokens=_EXTRACTION_MAX_TOKENS,
+        )
+        content = response.choices[0].message.content
+        return content or ""
+
     @staticmethod
     def _build_sdk_messages(
         messages: list[ChatMessage], image_data_url: str | None
@@ -130,9 +169,7 @@ class OpenAIClient:
         sdk[last_user_idx] = multimodal
         return sdk
 
-    def _create_stream(
-        self, sdk_messages: list[ChatCompletionMessageParam]
-    ) -> Any:
+    def _create_stream(self, sdk_messages: list[ChatCompletionMessageParam]) -> Any:
         """Seam sottile sulla chiamata SDK streaming (unico punto di contatto con
         la rete OpenAI). Isolarlo permette di sostituirlo nei test senza toccare
         un attributo read-only dell'SDK, e tiene `max_tokens` (LLM04 cost cap)

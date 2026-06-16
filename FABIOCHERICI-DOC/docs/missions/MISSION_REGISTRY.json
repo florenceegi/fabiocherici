@@ -13,6 +13,22 @@
   "counter": 267,
   "missions": [
     {
+      "id": "M-020",
+      "title": "Operatore Padmin: memoria permanente dei file — estrazione testo immagine + persistenza per sessione + valutazione congiunta di tutti i file inviati",
+      "trigger_matrix": 2,
+      "status": "executing",
+      "date_open": "2026-06-16",
+      "date_close": null,
+      "scope_hash": "8fba1aef866afb4826cae3060801e2661982152eba018239a3035ba2dc19becc",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-16T09:14:39.436Z",
+      "ssot_waiver": {
+        "reason": "Feature backend operatore (memoria file di sessione): nessun SSOT di dominio; il requisito e del CEO in chat. Privacy policy aggiornata in chiusura.",
+        "at": "2026-06-16T09:14:39.433Z",
+        "by": "supervisor"
+      }
+    },
+    {
       "id": "M-019",
       "title": "Hotfix operatore Padmin: visione immagini — usa sempre l'immagine allegata, mai negare la capacita, chiedi di riallegare se non in vista",
       "trigger_matrix": 1,
@@ -631,7 +647,7 @@
         "lines_net": 144,
         "lines_touched": 148,
         "files_touched": 5,
-        "weighted_commits": 2.0,
+        "weighted_commits": 2,
         "cognitive_load": 2.32,
         "productivity_index": 14.85,
         "tags_breakdown": {
@@ -843,7 +859,7 @@
         "lines_net": 2213,
         "lines_touched": 2825,
         "files_touched": 20,
-        "weighted_commits": 4.0,
+        "weighted_commits": 4,
         "cognitive_load": 3.06,
         "productivity_index": 78.36,
         "tags_breakdown": {

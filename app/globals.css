@@ -631,6 +631,134 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Softwarehouse hero — profondità ambientale (Linear/Vercel 2026)
+   Glow radiale STATICO dietro l'hero per dare peso visivo "prodotto-
+   eroe" senza WebGL (P0-FC-3) e senza layout shift (P0-FC-5: è un
+   pseudo-elemento in position:absolute, fuori dal flusso). Decorativo
+   → aria-hidden via pointer-events:none, nessun contenuto reale qui.
+   Usa SOLO i token esistenti (accent-glow/accent-muted): zero nuovo
+   sistema-colore. Statico (no animation) → niente da fermare con
+   prefers-reduced-motion.
+   ═══════════════════════════════════════════════════════════ */
+
+.sw-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.sw-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 50% 0%, var(--accent-glow) 0%, transparent 70%),
+    radial-gradient(40% 40% at 85% 10%, var(--accent-muted) 0%, transparent 60%);
+  opacity: 0.9;
+}
+
+/* Hairline bronzo sotto l'hero (separatore premium, non un bordo grezzo) */
+.sw-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  pointer-events: none;
+}
+
+/* Pillola "live" — pallino bronzo pulsante (tocco umano: operatore online).
+   Animazione SOLO opacity (compositor, P0-FC-5), spenta a reduced-motion. */
+.sw-live-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent-muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sw-live-dot { animation: sw-live-pulse 2.4s ease-in-out infinite; }
+}
+
+@keyframes sw-live-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--accent-muted); }
+  50% { opacity: 0.65; box-shadow: 0 0 0 4px transparent; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Hero art wall — la "DANZA" (richiesta CEO: esperienza in MOVIMENTO).
+   Muro di opere VERE dell'ecosistema che scorrono in colonne dietro il
+   titolo. Moto = transform translateY (compositor, no layout shift,
+   P0-FC-5). Decorativo (aria-hidden, pointer-events:none → non ruba i
+   click alla CTA). Mask top/bottom = dissolvenza ai bordi. Reduced-motion
+   → niente scorrimento (P0-FC-5 / WCAG 2.3.3): le opere restano ferme.
+   ═══════════════════════════════════════════════════════════ */
+.sw-artwall {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+
+.sw-artwall__col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sw-artwall__col { animation: sw-artwall-up 70s linear infinite; }
+  .sw-artwall__col--rev { animation: sw-artwall-down 85s linear infinite; }
+}
+
+@keyframes sw-artwall-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes sw-artwall-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+.sw-artwall__cell { flex: 0 0 auto; }
+
+.sw-artwall__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* Scrim "poster editoriale": l'arte DOMINA (tutta la larghezza, in alto),
+   il testo è leggibile nella fascia bassa che si scurisce. Velo globale
+   leggero per coesione, fondo pieno per la leggibilità del titolo. */
+.sw-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(0deg, var(--bg) 0%, var(--bg) 22%, color-mix(in srgb, var(--bg) 55%, transparent) 46%, transparent 68%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, transparent) 0%, transparent 22%),
+    color-mix(in srgb, var(--bg) 18%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════
    Nexus widget — Padmin (M-017)
    ═══════════════════════════════════════════════════════════ */
 
@@ -686,6 +814,68 @@ body {
 }
 .nexus-showcase__cell {
   list-style: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Marquee — nastro di testo scorrevole (softwarehouse portfolio)
+   Default: STATICO e leggibile (P0-FC-2). Lo scorrimento è enhancement
+   CSS-only, attivo SOLO sotto no-preference (P0-FC-5). transform translateX
+   = compositor, zero layout shift (P0-FC-5). Contenuto duplicato x2 nel
+   markup → loop continuo: ogni passata è 50% della larghezza totale.
+   ═══════════════════════════════════════════════════════════ */
+.sw-marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  padding-block: 0.85rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.sw-marquee__viewport {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.sw-marquee__track {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.sw-marquee__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sw-marquee__sep {
+  margin: 0 1.5rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sw-marquee__label {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sw-marquee__viewport {
+    animation: sw-marquee-scroll var(--sw-marquee-duration, 40s) linear infinite;
+  }
+}
+
+@keyframes sw-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* ═══════════════════════════════════════════════════════════

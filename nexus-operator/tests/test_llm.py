@@ -128,6 +128,76 @@ def test_stream_yields_content_then_done() -> None:
     assert out[-1].done is True
 
 
+# --- M-020: estrazione vision (extract_image_text) ---
+
+
+class _FakeMessage:
+    def __init__(self, content: str | None) -> None:
+        self.content = content
+
+
+class _FakeCompletionChoice:
+    def __init__(self, content: str | None) -> None:
+        self.message = _FakeMessage(content)
+
+
+class _FakeCompletion:
+    def __init__(self, content: str | None) -> None:
+        self.choices = [_FakeCompletionChoice(content)]
+
+
+class _FakeCompletions:
+    def __init__(self, content: str | None) -> None:
+        self._content = content
+        self.captured: dict[str, Any] = {}
+
+    def create(self, **kwargs: Any) -> _FakeCompletion:
+        self.captured = kwargs
+        return _FakeCompletion(self._content)
+
+
+class _FakeChat:
+    def __init__(self, completions: _FakeCompletions) -> None:
+        self.completions = completions
+
+
+class _FakeSDKClient:
+    def __init__(self, completions: _FakeCompletions) -> None:
+        self.chat = _FakeChat(completions)
+
+
+def _client_with_fake_completions(
+    content: str | None,
+) -> tuple[OpenAIClient, _FakeCompletions]:
+    client = OpenAIClient(
+        api_key="sk-test",
+        chat_model="gpt-4o",
+        embedding_model="text-embedding-3-small",
+    )
+    completions = _FakeCompletions(content)
+    # Inietta un SDK fake: nessuna rete. Accesso a un attributo privato giustificato
+    # dal test (non c'e' seam pubblico per la create non-streaming).
+    client._client = cast(Any, _FakeSDKClient(completions))  # noqa: SLF001
+    return client, completions
+
+
+def test_extract_image_text_returns_transcription_and_caps_tokens() -> None:
+    client, completions = _client_with_fake_completions("RIGA1 | RIGA2 | 42")
+    out = client.extract_image_text(_IMG)
+    assert out == "RIGA1 | RIGA2 | 42"
+    # Niente streaming + cap esplicito sui token (LLM04 cost cap).
+    assert completions.captured["stream"] is False
+    assert "max_tokens" in completions.captured
+    # Il messaggio e' multimodale: una text part (prompt estrazione) + image_url.
+    parts = completions.captured["messages"][0]["content"]
+    assert parts[1] == {"type": "image_url", "image_url": {"url": _IMG}}
+
+
+def test_extract_image_text_empty_content_returns_empty_string() -> None:
+    client, _ = _client_with_fake_completions(None)
+    assert client.extract_image_text(_IMG) == ""
+
+
 def test_stream_timeout_raises() -> None:
     # Clock che oltrepassa il timeout dopo il primo chunk -> StreamTimeoutError.
     ticks = iter([0.0, 0.0, 999.0, 999.0, 999.0])
@@ -135,8 +205,6 @@ def test_stream_timeout_raises() -> None:
     def fake_clock() -> float:
         return next(ticks)
 
-    client = _StubClient(
-        [_FakeChunk("a"), _FakeChunk("b")], time_source=fake_clock
-    )
+    client = _StubClient([_FakeChunk("a"), _FakeChunk("b")], time_source=fake_clock)
     with pytest.raises(StreamTimeoutError):
         list(client.stream_chat([{"role": "user", "content": "x"}]))

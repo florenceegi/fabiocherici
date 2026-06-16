@@ -1,30 +1,38 @@
 /**
- * @package fabiocherici.com — Softwarehouse Page
- * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici
- * @version 2.0.0 (FlorenceEGI — fabiocherici.com)
- * @date 2026-06-11
- * @purpose Softwarehouse page — rewrite M-015 + attention-first M-018: hero
- *          conversazionale "split" (Padmin sopra la piega, prompt-seed, una sola
- *          CTA, NIENTE 3D — era solo per la home) + cantiere aperto LIVE + 3 card
- *          offerta + processo 5 fasi (riuso M-008) + specie nuova LSO + demo
- *          toccabili + prezzi invariati + CTA calda. SSOT commercial-claims-public
- *          (P0-FC-6, copy de-gergata: "prima versione funzionante" non "MVP").
- *          Server component: tutto il testo nell'HTML statico (P0-FC-2).
- * @mission M-018
+ * @package fabiocherici.com — Softwarehouse Page (pagina di vendita VISIVA FlorenceEGI)
+ * @author FlorenceEGI (engineer-frontend) — fabiocherici.com
+ * @version 4.0.0 (riscrittura VISIVA 2026 — anti muro-di-testo, verdetto CEO)
+ * @date 2026-06-16
+ * @purpose Pagina di vendita /softwarehouse come ESPERIENZA visiva 2026, non
+ *          documento. Ogni sezione è resa scansionabile a moduli (bento grid,
+ *          stat-card, stepper, split mercato↔noi, fact-card, prodotto-vivo
+ *          interattivo) invece che a paragrafi. Copy CORTO = etichette/blocchi
+ *          brevi (P0-FC-4 i18n). FEDELTÀ SSOT: 8 piattaforme ovunque, caparra IN
+ *          CUSTODIA (zero %). I numeri-prova vengono dal portfolio reale (23
+ *          progetti · ore EGI-STAT). Voce "noi". Sequenza: Hero (prodotto-vivo) →
+ *          1 Problema (bento dolori) → 2 Come funziona (stepper) + risk-reversal
+ *          → 3 Velocità (split + stat) → 4 Prezzi (tabella) → 5 Prova (bento:
+ *          opere reali + Padmin + verifica) → 5b nastro cliente → 5c portfolio
+ *          raggruppato per categoria → 6 Cosa ricevi (tratti)
+ *          → 7 Chi siamo (fact-card) → 8 CTA finale. Server component: testo
+ *          nell'HTML statico (P0-FC-2), niente 3D (P0-FC-3), GSAP solo nei client
+ *          riusati via dynamic import (P0-FC-1).
  */
 
 import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { buildAlternates, buildOgImage, buildPageSchema } from '@/lib/seo';
-import IconGrid from '@/components/infographics/IconGrid';
-import FlowDiagram from '@/components/infographics/FlowDiagram';
-import PricingTiers from '@/components/infographics/PricingTiers';
-import PortfolioCard from '@/components/infographics/PortfolioCard';
 import SoftwarehouseHero from '@/components/softwarehouse/SoftwarehouseHero';
-import LiveSiteStats from '@/components/softwarehouse/LiveSiteStats';
-import LsoTraits from '@/components/softwarehouse/LsoTraits';
+import RiskReversalBox from '@/components/softwarehouse/RiskReversalBox';
+import PricingMarketVsUs from '@/components/softwarehouse/PricingMarketVsUs';
 import SectionCta from '@/components/softwarehouse/SectionCta';
+import PainCard from '@/components/softwarehouse/visual/PainCard';
+import ProcessStepper from '@/components/softwarehouse/visual/ProcessStepper';
+import SpeedSplit from '@/components/softwarehouse/visual/SpeedSplit';
+import StatCard from '@/components/softwarehouse/visual/StatCard';
+import FactCard from '@/components/softwarehouse/visual/FactCard';
+import RepoPortfolio from '@/components/softwarehouse/RepoPortfolio';
+import Marquee from '@/components/softwarehouse/Marquee';
 
 export async function generateMetadata({
   params,
@@ -52,27 +60,18 @@ export async function generateMetadata({
   };
 }
 
+const labelClass =
+  'reveal text-sm font-mono uppercase tracking-widest text-[var(--accent)] mb-4';
+
+const titleClass =
+  'font-[family-name:var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[var(--text-primary)] mb-6';
+
+const introClass =
+  'reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed';
+
 const linkClass =
   'text-[var(--accent)] hover:text-[var(--accent-hover)] underline underline-offset-4 transition-colors';
 
-const labelClass =
-  'reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4';
-
-const titleClass =
-  'reveal font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light tracking-tight text-[var(--text-primary)] mb-6';
-
-/* Icone card offerta — stesso stile stroke 1.5 del pattern M-008 */
-const OFFER_ICONS = [
-  // 1. Software su misura — layers
-  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>,
-  // 2. Esemplare unico (Sigillo) — award/seal
-  <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="8" r="6" /><path d="M15.5 13 17 22l-5-3-5 3 1.5-9" /></svg>,
-  // 3. Già rifatto — refresh
-  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" /></svg>,
-];
-
-const GITHUB_URL = 'https://github.com/florenceegi';
-const IDEALORO_LIVE_URL = 'https://preview.florenceegi.com';
 const WHATSAPP_URL = 'https://wa.me/393388350412';
 const EMAIL_HREF = 'mailto:fabio@florenceegi.com?subject=Softwarehouse';
 
@@ -99,15 +98,16 @@ export default async function SoftwarehousePage({
     ],
   });
 
+  // Provider = FlorenceEGI S.R.L. priceRange = fasce SSOT reali.
   const serviceSchema = {
     '@type': 'Service',
     '@id': `https://fabiocherici.com/${locale}/softwarehouse#service`,
-    name: 'Softwarehouse',
+    name: 'Software su misura per PMI',
     serviceType: 'Custom software development',
     provider: {
-      '@type': 'Person',
-      name: 'Fabio Cherici',
-      url: 'https://fabiocherici.com',
+      '@type': 'Organization',
+      name: 'FlorenceEGI S.R.L.',
+      url: 'https://florenceegi.com',
     },
     areaServed: { '@type': 'Country', name: 'Italy' },
     description: tm('softwarehouse_description'),
@@ -120,62 +120,37 @@ export default async function SoftwarehousePage({
     ],
   };
 
-  /* 3 card offerta — SSOT §2, beneficio PRIMA del nome proprietario (regola jargon §1) */
-  const offerItems = [
-    {
-      icon: OFFER_ICONS[0],
-      title: t('offer_1_title'),
-      description: t.rich('offer_1_desc', {
-        pricinglink: (chunks: ReactNode) => (
-          <a href="#prezzi" className={linkClass}>{chunks}</a>
-        ),
-      }),
-    },
-    {
-      icon: OFFER_ICONS[1],
-      title: t('offer_2_title'),
-      description: t.rich('offer_2_desc', {
-        demolink: (chunks: ReactNode) => (
-          <a href="#demo" className={linkClass}>{chunks}</a>
-        ),
-      }),
-    },
-    {
-      icon: OFFER_ICONS[2],
-      title: t('offer_3_title'),
-      description: t.rich('offer_3_desc', {
-        contactlink: (chunks: ReactNode) => (
-          <a href="#contatto" className={linkClass}>{chunks}</a>
-        ),
-      }),
-    },
-  ];
-
-  /* Processo 5 fasi — RIUSO INVARIATO M-008 (SSOT §3 r4: sancito, non si rinegozia) */
-  const flowPhases = [
-    { label: t('process_phase_1_label'), steps: [1, 2, 3] },
-    { label: t('process_phase_2_label'), steps: [4, 5] },
-    { label: t('process_phase_3_label'), steps: [6] },
-    { label: t('process_phase_4_label'), steps: [7, 8, 9] },
-    { label: t('process_phase_5_label'), steps: [10, 11] },
-  ].map((phase) => ({
-    label: phase.label,
-    steps: phase.steps.map((n) => ({ number: n, text: t(`process_step_${n}`) })),
+  /* Sez. 1 — i 4 dolori (bento, copy corto) */
+  const pains = [1, 2, 3, 4].map((n) => ({
+    title: t(`pain_${n}_title`),
+    detail: t(`pain_${n}_detail`),
   }));
 
-  /* Fasce INVARIATE (SSOT §8) */
-  const pricingTiers = [1, 2, 3, 4, 5].map((n) => ({
+  /* Sez. 2 — le 5 FASI del processo (SSOT commercial-claims-public §"processo a 5 fasi") */
+  const howSteps = [1, 2, 3, 4, 5].map((n) => ({
+    title: t(`how_step_${n}_title`),
+    desc: t(`how_step_${n}_desc`),
+  }));
+
+  /* Sez. 4 — prezzi: fasce SSOT reali, colonna mercato vs "circa la metà". */
+  const pricingRows = [1, 2, 3, 4, 5].map((n) => ({
     name: t(`pricing_tier_${n}_name`),
-    priceRange: t(`pricing_tier_${n}_price`),
-    timeline: t(`pricing_tier_${n}_timeline`),
+    price: t(`pricing_tier_${n}_price`),
+    market: t(`pricing_tier_${n}_market`),
     maintenance: t(`pricing_tier_${n}_maintenance`),
-    depositMvp: t(`pricing_tier_${n}_deposit`),
   }));
 
-  const lsoTraits = [1, 2, 3].map((n) => ({
-    title: t(`lso_trait_${n}_title`),
-    description: t(`lso_trait_${n}_desc`),
+  /* Sez. 7 — i 3 fatti di autorità (fact-card) */
+  const whoFacts = [1, 2, 3].map((n) => ({
+    kicker: t(`who_fact_${n}_kicker`),
+    title: t(`who_fact_${n}_title`),
+    detail: t(`who_fact_${n}_detail`),
   }));
+
+  const howBoxItems = [t('how_box_1'), t('how_box_2'), t('how_box_3')] as const;
+
+  /* Sez. 5b — nastro vivo in LINGUAGGIO CLIENTE (cosa costruiamo, non nomi-repo) */
+  const marqueeItems = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => t(`marquee_item_${n}`));
 
   return (
     <div>
@@ -186,153 +161,204 @@ export default async function SoftwarehousePage({
         }}
       />
 
-      {/* ── 1. Hero conversazionale "split" (M-018, Opzione A): la promessa a
-              sinistra (H1 risk-reversal, LCP testo), l'azione a destra (widget
-              Padmin + prompt-seed). L'hero È la sezione #padmin: la chat è SOPRA
-              la piega, prima cosa interattiva. Niente 3D (era solo per la home).
-              L'ancora #padmin vive qui (target del link "parla con Padmin" della
-              sezione LSO). Le altre sezioni scorrono SOTTO. ── */}
-      <div id="padmin">
-        <SoftwarehouseHero locale={locale} />
-      </div>
+      {/* ── HERO — prodotto-vivo (#padmin nello Stadio 2) ── */}
+      <SoftwarehouseHero locale={locale} primaryCtaHref="#contatto" />
 
-      {/* ── 2. Cantiere aperto LIVE ── */}
-      <section id="cantiere" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="cantiere-heading">
+      {/* ── 1. Il problema — BENTO di dolori brevi, non paragrafone ── */}
+      <section id="problema" className="py-24 bg-[var(--bg)]" aria-labelledby="problema-heading">
         <div className="mx-auto max-w-5xl px-6">
-          <p className={labelClass}>{t('live_label')}</p>
-          <h2 id="cantiere-heading" className={titleClass}>{t('live_title')}</h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10 max-w-3xl">
-            {t('live_intro')}
-          </p>
-          <LiveSiteStats />
-          <p className="reveal mt-8 text-sm sm:text-base">
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
-              {t('live_github_link')}
-              <span className="sr-only"> ({tf('opens_new_tab')})</span>
-            </a>
+          <p className={labelClass}>{t('problem_label')}</p>
+          <h2 id="problema-heading" className={`reveal ${titleClass}`}>{t('problem_title')}</h2>
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {pains.map((p) => (
+              <PainCard key={p.title} title={p.title} detail={p.detail} />
+            ))}
+          </div>
+          <p className="reveal mt-10 max-w-3xl text-xl leading-relaxed text-[var(--text-primary)] sm:text-2xl">
+            {t('problem_closing')}
           </p>
         </div>
       </section>
 
-      {/* ── 3. Le 3 linee d'offerta ── */}
-      <section id="offerta" className="py-24 bg-[var(--bg)]" aria-labelledby="offerta-heading">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className={labelClass}>{t('offer_label')}</p>
-          <h2 id="offerta-heading" className={`${titleClass} mb-12`}>{t('offer_title')}</h2>
-          <IconGrid ariaLabel={t('offer_label')} items={offerItems} columns={3} />
-          <SectionCta text={t('cta_mid_offer')} href="#contatto" />
-        </div>
-      </section>
-
-      {/* ── 4. Processo 5 fasi — riuso M-008 ── */}
-      <section id="processo" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="processo-heading">
+      {/* ── 2. Come funziona — STEPPER visivo + box risk-reversal ── */}
+      <section id="come-funziona" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="come-funziona-heading">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 id="processo-heading" className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-8">
-            {t('process_label')}
-          </h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
-            {t('process_intro_v2')}
-          </p>
-          <FlowDiagram ariaLabel={t('process_label')} phases={flowPhases} />
-          <p className="reveal mt-12 text-base sm:text-lg text-[var(--accent)] italic leading-relaxed max-w-3xl">
-            {t('process_closing')}
-          </p>
+          <p className={labelClass}>{t('how_label')}</p>
+          <h2 id="come-funziona-heading" className={`reveal ${titleClass}`}>{t('how_title')}</h2>
+          <div className="mt-8 mb-12">
+            <ProcessStepper steps={howSteps} />
+          </div>
+          <div className="mx-auto max-w-4xl">
+            <RiskReversalBox label={t('how_box_label')} items={howBoxItems} />
+            <p className="reveal mt-8 text-lg leading-relaxed text-[var(--accent)] sm:text-xl">
+              {t('how_closing')}
+            </p>
+            <SectionCta text={t('cta_mid_how')} href="#contatto" />
+          </div>
         </div>
       </section>
 
-      {/* ── 5. La specie nuova — Oracode Nexus → LSO ── */}
-      <section id="lso" className="py-32 bg-[var(--bg)]" aria-labelledby="lso-heading">
-        <div className="mx-auto max-w-3xl px-6">
-          <p className={labelClass}>{t('lso_label')}</p>
-          <h2 id="lso-heading" className={titleClass}>{t('lso_title')}</h2>
-          <div className="space-y-6 mb-10">
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('lso_p1')}
-            </p>
-            <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
-              {t('lso_p2')}
-            </p>
-          </div>
-          <div className="reveal my-10 text-center">
-            <p className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-light text-[var(--accent)]">
-              {t('lso_name')}
-            </p>
-            <p className="mt-2 text-sm text-[var(--text-muted)]">{t('lso_name_translation')}</p>
-          </div>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-10">
-            {t('lso_proof')}
-          </p>
-          <LsoTraits ariaLabel={t('lso_label')} traits={lsoTraits} />
-          <p className="reveal mt-10 mb-8 text-lg sm:text-xl text-[var(--accent)] italic leading-relaxed">
-            {t('lso_closing')}
-          </p>
-          {/* Il widget Padmin si è spostato in cima alla pagina (M-017 #3):
-              qui resta solo un richiamo narrativo verso la chat. */}
-          <p className="reveal mb-12 text-base text-[var(--text-secondary)]">
-            <a href="#padmin" className={linkClass}>{t('lso_talk_above')}</a>
-          </p>
-          <SectionCta text={t('cta_mid_lso')} href="#demo" />
-        </div>
-      </section>
-
-      {/* ── 6. Demo toccabili ── */}
-      <section id="demo" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="demo-heading">
+      {/* ── 3. Velocità — SPLIT mercato↔noi + stat (la leva) ── */}
+      <section id="velocita" className="py-24 bg-[var(--bg)]" aria-labelledby="velocita-heading">
         <div className="mx-auto max-w-5xl px-6">
-          <p className={labelClass}>{t('demos_label')}</p>
-          <h2 id="demo-heading" className={titleClass}>{t('demos_title')}</h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
-            {t('demos_intro')}
-          </p>
-          {/* Lista demo: aggiungere Capasso = aggiungere una card (SOLO al deploy
-              su pinocapasso.com — SSOT §3 r10), zero refactor. */}
-          <div className="reveal max-w-md">
-            <PortfolioCard
-              name={t('demos_idealoro_name')}
-              description={t('demos_idealoro_desc')}
-              liveUrl={IDEALORO_LIVE_URL}
-              liveLabel={t('demos_live_label')}
-              opensNewTabLabel={tf('opens_new_tab')}
+          <p className={labelClass}>{t('speed_label')}</p>
+          <h2 id="velocita-heading" className={`reveal ${titleClass}`}>{t('speed_title')}</h2>
+          <p className={`${introClass} mb-10 max-w-3xl`}>{t('speed_intro')}</p>
+
+          <SpeedSplit
+            marketLabel={t('speed_market_label')}
+            marketValue={t('speed_market_value')}
+            marketDetail={t('speed_market_detail')}
+            usLabel={t('speed_us_label')}
+            usValue={t('speed_us_value')}
+            usDetail={t('speed_us_detail')}
+          />
+
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <StatCard
+              value={t('speed_stat_1_value')}
+              label={t('speed_stat_1_label')}
+              variant="outline"
             />
+            <div className="reveal flex flex-col justify-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 sm:p-7">
+              <p className="text-sm font-mono uppercase tracking-widest text-[var(--accent)]">
+                {t('speed_why_label')}
+              </p>
+              <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{t('speed_why')}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 7. Prezzi — fasce INVARIATE ── */}
-      <section id="prezzi" className="py-24 bg-[var(--bg)]" aria-labelledby="prezzi-heading">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 id="prezzi-heading" className="reveal text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mb-4">
-            {t('pricing_label')}
-          </h2>
-          <p className="reveal text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-12 max-w-3xl">
-            {t('pricing_intro')}
-          </p>
-          <PricingTiers
-            ariaLabel={t('pricing_aria')}
-            tiers={pricingTiers}
+      {/* ── 4. Prezzi — tabella mercato vs con noi + auto-qualifica ── */}
+      <section id="prezzi" className="py-24 bg-[var(--bg-elevated)]" aria-labelledby="prezzi-heading">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={labelClass}>{t('pricing_label')}</p>
+          <h2 id="prezzi-heading" className={`reveal ${titleClass}`}>{t('pricing_title')}</h2>
+          <p className={`${introClass} mb-10 max-w-3xl`}>{t('pricing_intro')}</p>
+          <PricingMarketVsUs
+            rows={pricingRows}
+            usValue={t('pricing_us_value')}
             labels={{
-              timeline: t('pricing_label_timeline'),
-              maintenance: t('pricing_label_maintenance'),
-              depositMvp: t('pricing_label_deposit'),
+              caption: t('pricing_aria'),
+              tier: t('pricing_col_tier'),
+              price: t('pricing_col_price'),
+              market: t('pricing_col_market'),
+              us: t('pricing_col_us'),
+              maintenance: t('pricing_col_maintenance'),
             }}
           />
-          <p className="reveal mt-8 text-sm">
-            <a href={EMAIL_HREF} className={linkClass}>
-              {t('pricing_uncertain_link')}
-            </a>
+          <p className="reveal mt-6 max-w-3xl text-sm leading-relaxed text-[var(--text-muted)] italic">
+            {t('pricing_caparra_note')}
+          </p>
+          <p className="reveal mt-4 max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)]">
+            {t('pricing_qualify')}
           </p>
           <SectionCta text={t('cta_mid_pricing')} href="#contatto" />
         </div>
       </section>
 
-      {/* ── 8. CTA calda ── */}
+      {/* ── 5. Oracode Nexus — il MOTORE, spiegato semplice (ex sezione "prova", doppione) ── */}
+      <section id="oracode-nexus" className="py-24 bg-[var(--bg)]" aria-labelledby="nexus-heading">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className={labelClass}>{t('nexus_label')}</p>
+          <h2 id="nexus-heading" className={`reveal ${titleClass}`}>{t('nexus_title')}</h2>
+          <p className={`${introClass} mb-10 max-w-3xl`}>{t('nexus_intro')}</p>
+
+          {/* Confronto: vibe coding ✕ vs Oracode Nexus ✓ — "un altro pianeta" sulla QUALITÀ del codice */}
+          <p className="reveal mb-6 max-w-3xl font-[family-name:var(--font-display)] text-xl font-light leading-snug text-[var(--text-primary)] sm:text-2xl">
+            {t('nexus_contrast_title')}
+          </p>
+          <div className="reveal mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 opacity-70">
+              <p className="mb-4 text-xs font-mono uppercase tracking-widest text-[var(--text-muted)]">
+                {t('nexus_vibe_label')}
+              </p>
+              <ul className="flex flex-col gap-3">
+                {[1, 2, 3].map((n) => (
+                  <li key={n} className="flex items-start gap-2.5 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    <span aria-hidden="true" className="mt-0.5 text-[var(--text-muted)]">✕</span>
+                    {t(`nexus_vibe_${n}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div
+              className="rounded-2xl border border-[var(--border-accent)] bg-[var(--bg-card)] p-6"
+              style={{ boxShadow: '0 0 0 1px var(--accent-muted)' }}
+            >
+              <p className="mb-4 text-xs font-mono uppercase tracking-widest text-[var(--accent)]">
+                {t('nexus_ours_label')}
+              </p>
+              <ul className="flex flex-col gap-3">
+                {[1, 2, 3].map((n) => (
+                  <li key={n} className="flex items-start gap-2.5 text-sm leading-relaxed text-[var(--text-primary)]">
+                    <span aria-hidden="true" className="mt-0.5 font-semibold text-[var(--accent)]">✓</span>
+                    {t(`nexus_ours_${n}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {[1, 2, 3].map((n) => (
+              <div
+                key={n}
+                className="reveal flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition-transform hover:-translate-y-1"
+              >
+                <span
+                  aria-hidden="true"
+                  className="font-[family-name:var(--font-display)] text-4xl font-light leading-none text-[var(--accent)]"
+                >
+                  0{n}
+                </span>
+                <h3 className="text-lg font-semibold leading-tight text-[var(--text-primary)]">
+                  {t(`nexus_${n}_title`)}
+                </h3>
+                <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                  {t(`nexus_${n}_desc`)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="reveal mt-10 max-w-3xl font-[family-name:var(--font-display)] text-xl font-light leading-snug text-[var(--text-primary)] sm:text-2xl">
+            {t('nexus_closing')}
+          </p>
+
+          <SectionCta text={t('cta_mid_proof')} href="#contatto" />
+        </div>
+      </section>
+
+      {/* ── 5b. Nastro vivo — cosa costruiamo, in linguaggio cliente ── */}
+      <Marquee items={marqueeItems} ariaLabel={t('marquee_aria')} durationSeconds={45} />
+
+      {/* ── 5c. Portfolio — i 23 progetti raggruppati per categoria + totali count-up ── */}
+      <RepoPortfolio />
+
+      {/* ── 7. Chi è FlorenceEGI — FACT-CARD, non paragrafone ── */}
+      <section id="chi-siamo" className="py-24 bg-[var(--bg)]" aria-labelledby="chi-siamo-heading">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={labelClass}>{t('who_label')}</p>
+          <h2 id="chi-siamo-heading" className={`reveal ${titleClass}`}>{t('who_title')}</h2>
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {whoFacts.map((f) => (
+              <FactCard key={f.title} kicker={f.kicker} title={f.title} detail={f.detail} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. CTA finale calda ── */}
       <section id="contatto" className="py-32 bg-[var(--bg-elevated)]" aria-labelledby="contatto-heading">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className={labelClass}>{t('cta_final_label')}</p>
-          <h2 id="contatto-heading" className={titleClass}>{t('cta_final_title')}</h2>
-          <p className="reveal text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed mb-12">
+          <h2 id="contatto-heading" className={`reveal ${titleClass}`}>{t('cta_final_title')}</h2>
+          <p className="reveal mb-12 text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl">
             {t('cta_final_paragraph')}
           </p>
-          <div className="reveal flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="reveal flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={EMAIL_HREF}
               aria-label={t('cta_email_aria')}
@@ -351,6 +377,9 @@ export default async function SoftwarehousePage({
               <span className="sr-only"> ({tf('opens_new_tab')})</span>
             </a>
           </div>
+          <p className="reveal mt-10 text-base text-[var(--text-secondary)]">
+            <a href="#padmin" className={linkClass}>{t('cta_final_padmin')}</a>
+          </p>
         </div>
       </section>
     </div>

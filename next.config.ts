@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Override opzionale della distDir via env: consente una build di verifica
+  // senza invalidare la cache .next del dev server attivo. Default invariato.
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
 };
 
 export default withNextIntl(nextConfig);

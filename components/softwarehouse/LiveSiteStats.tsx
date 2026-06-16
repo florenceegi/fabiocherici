@@ -261,16 +261,11 @@ export default function LiveSiteStats() {
             </div>
           </div>
 
-          {/* Riga 3 — SECONDARIA: righe nette, corpo minore, mai in apertura (SSOT §4.1) */}
-          <div className="border-t border-[var(--border)] pt-4">
-            <StatItem
-              label={t('live_lines_label')}
-              value={state.data.lines_net_total}
-              decimals={0}
-              locale={locale}
-              size="sm"
-            />
-          </div>
+          {/* Riga 3 (LOC) RIMOSSA dalla pagina di vendita: la metrica "righe nette
+              di codice" è gergo-fornitore senza beneficio per il compratore
+              (anti-gergo copy §5 "TOGLIERE", blueprint §4.3). Resta verificabile
+              nel git pubblico. La chiave i18n live_lines_label è conservata per
+              compat ma non renderizzata. */}
 
           {/* Footer — trasparenza del dato (NN/g #1: visibility of system status) */}
           <p className="text-xs text-[var(--text-muted)]">

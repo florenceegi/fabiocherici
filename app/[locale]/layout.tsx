@@ -28,6 +28,17 @@ export default async function LocaleLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
+  // Perf: al CLIENT spediamo SOLO i namespace usati da componenti client.
+  // Gli altri (epp/oracode/ainous/egi/… — solo pagine server-render) restano
+  // disponibili lato server via getTranslations, ma non gonfiano ogni pagina.
+  // Riduce il peso pagina ~70KB → sotto la soglia perf (P0-FC-5, web-quality-gate WS-1).
+  const CLIENT_NAMESPACES = [
+    'home', 'softwarehouse', 'nexus', 'contatti', 'preferences',
+    'nav', 'footer', 'navbar_quotes', 'under_construction', 'not_found',
+  ];
+  const clientMessages = Object.fromEntries(
+    Object.entries(messages).filter(([ns]) => CLIENT_NAMESPACES.includes(ns)),
+  ) as typeof messages;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
   return (
@@ -74,7 +85,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="bg-[var(--bg)] text-[var(--text-primary)] antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={clientMessages}>
           <Providers>
             <Navigation locale={locale} />
             <main id="main-content" className="min-h-screen">
