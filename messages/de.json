@@ -590,7 +590,9 @@
     "prove_description": "Überprüfbare Daten: über 826.000 Codezeilen, 14 Repositories, 5 Produkte in Produktion, von einer Person mit Oracode-KI gebaut.",
     "scrittore_description": "Fabio Cherici Schriftsteller — die Aura-Spei-Saga, Science-Fiction mit Padmin D. Curtis als Figur und echtem KI-CTO von FlorenceEGI.",
     "oracode_description": "Oracode — das Paradigma, das KI-Disziplin und menschliche Disziplin innerhalb von FlorenceEGI leitet. OSZ, OS3, OS4: drei Ebenen, ein lebendiges System.",
-    "privacy_description": "Datenschutzerklärung für fabiocherici.com. Keine Daten auf Servern erfasst, keine Cookies, kein Tracking. Nur localStorage für visuelle Einstellungen."
+    "privacy_description": "Datenschutzerklärung für fabiocherici.com. Keine Daten auf Servern erfasst, keine Cookies, kein Tracking. Nur localStorage für visuelle Einstellungen.",
+    "aitransparency_title": "KI-Transparenz — Padmin",
+    "aitransparency_description": "Wie Padmin, der KI-Assistent von fabiocherici.com, funktioniert: verwendete Modelle, Informationszweck, Dokumentenquellen, Fehlermeldung und Diensteanbieter."
   },
   "numeri": {
     "title": "Die Zahlen",
@@ -1144,5 +1146,17 @@
     "seo_section_contatti": "Kontakt — Kontaktformular für Zusammenarbeit, Anfragen und Vorschläge.",
     "seo_proof": "Jede Behauptung auf dieser Website ist mit realen Daten überprüfbar. Die Seite Die Zahlen enthält die Beweise: 826.336 Zeilen Anwendungs-Quellcode in 14 Repositories, davon 749.724 von Grund auf seit Dezember 2024 geschrieben, 5 Produkte in Produktion, ca. 190 verifizierte Entwicklungsstunden in 48 Tagen — alles von einer einzigen Person mit KI unter dem Oracode-Paradigma gebaut. Zeilen mit cloc auf sauberen Codebasen gezählt, Stunden aus Commit-Zeitstempeln gemessen.",
     "seo_experience": "Die Website bietet ein vollständig personalisierbares Erlebnis. Nutzer können konfigurieren: das visuelle Thema (dunkel, hell oder Ambiente — wechselt automatisch je nach Tageszeit), den Animationsstil (minimal, cinematisch, energetisch, editorial, fliessend oder keine Animation), die 3D-Hintergrundszene (Aurora, Morphsphäre, Kristall, Rauschterrain, Rauch, Bänderfluss, Wellengitter, Partikelsphäre oder keine Szene). Barrierefreiheitseinstellungen umfassen drei Textgrößen, Hochkontrastmodus, Legasthenieschrift und reduzierte Bewegung. Die Startseite zeigt sechs Türen, die kreisförmig um das Wort TU (DU) angeordnet sind — jede Tür führt zu einem Bereich der Website. Der Hintergrund ist eine interaktive 3D-Szene, die in Echtzeit mit Three.js gerendert wird."
+  },
+  "aiTransparency": {
+    "title": "Transparenz zur künstlichen Intelligenz",
+    "intro": "„Padmin“ ist ein Assistent auf Basis künstlicher Intelligenz. Seine Antworten beruhen auf den Projektdokumenten und können Fehler enthalten.",
+    "modelsHeading": "Verwendete Modelle",
+    "modelsBody": "Der Dienst nutzt Modelle künstlicher Intelligenz, um die Antworten zu erzeugen.",
+    "advisoryHeading": "Zweck und Grenzen",
+    "advisoryBody": "Die Antworten dienen nur zur Information und Unterstützung und ersetzen keine fachliche Beratung. Überprüfe wichtige Informationen stets.",
+    "reportHeading": "Eine falsche Antwort melden",
+    "reportBody": "Wenn du eine ungenaue oder irreführende Antwort erhältst, melde sie über die Kontaktseite.",
+    "contactHeading": "Diensteanbieter",
+    "contactBody": "Der Dienst wird von Fabio Cherici betrieben. Für Datenschutz und Kontakt siehe die entsprechenden Seiten."
   }
 }

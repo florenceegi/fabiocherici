@@ -1,0 +1,165 @@
+/*
+ * @package FlorenceEGI/kit-ai-act
+ * @author Padmin D. Curtis (AI Partner OS3.0) for Fabio Cherici (CEO) — M-DIM-003
+ * @version 1.1.0 (FlorenceEGI — Kit AI-Act · disclosure Art. 50(1) · CSS Module self-contained)
+ * @date 2026-06-19
+ * @purpose Stili CANONICI del <AiDisclosureBanner>, co-locati (CSS Module). ZERO dipendenza dal CSS
+ *          framework dell'host: nessun token CSS dell'app (--l-… / --c-…), nessuna utility Tailwind. Solo
+ *          valori espliciti → il componente è copiabile IDENTICO in repo con o senza Tailwind.
+ *          Le classi sono scoped dal CSS Module (hash per-file) → niente collisioni globali.
+ *
+ *          A11Y (valori verificati con formula WCAG SC 1.4.3, Level AA):
+ *            banner — testo #1e293b (slate-800) su #fffbeb (amber-50) ≈ 13.5:1; link #92400e
+ *                     (amber-800) su #fffbeb ≈ 7.0:1.
+ *            inline — testo #334155 (slate-700) su #ffffff ≈ 10.4:1; link #0369a1 (sky-700)
+ *                     su #ffffff ≈ 5.9:1.
+ *            dark   — testo #f1f5f9 (slate-100) su #0f172a (slate-900) ≈ 16.0:1; link #7dd3fc
+ *                     (sky-300) su #0f172a ≈ 9.7:1.
+ *          Link SEMPRE sottolineato (non solo colore — SC 1.4.1 Use of Color, Level A).
+ *          :focus-visible ring a 2px su link e dismiss (mai outline:none nudo — SC 2.4.7 Focus
+ *          Visible, Level AA). Dismiss: target ≥24×24px via min-width/min-height (SC 2.5.8 Target
+ *          Size (Minimum), Level AA — WCAG 2.2). Nessuna animazione di default (anti-CLS);
+ *          @media (prefers-reduced-motion: reduce) azzera comunque ogni transizione (MDN).
+ */
+
+/* ── Contenitore base (comune a tutte le varianti) ───────────────────────────────────────────── */
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.text {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+/* ── Link base ───────────────────────────────────────────────────────────────────────────────── */
+.link {
+  text-decoration: underline; /* non solo colore — SC 1.4.1, Level A */
+  font-weight: 500;
+  border-radius: 0.125rem;
+}
+
+.link:focus-visible {
+  outline: 2px solid transparent; /* fallback Windows High Contrast: l'outline resta percepibile */
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 2px var(--aidb-ring-offset),
+    0 0 0 4px var(--aidb-ring);
+}
+
+/* ── Bottone dismiss base ───────────────────────────────────────────────────────────────────── */
+.dismiss {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Target ≥24×24px — SC 2.5.8, Level AA. */
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0.25rem;
+  margin: -0.25rem -0.25rem -0.25rem 0; /* compensa il padding senza spostare il layout */
+  border: 0;
+  background: transparent;
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 0.125rem;
+  color: inherit;
+}
+
+.dismiss:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--aidb-ring);
+}
+
+/* ── Variante BANNER (default) — amber su crema chiara ───────────────────────────────────────── */
+.banner {
+  --aidb-ring: #b45309; /* amber-700 */
+  --aidb-ring-offset: #fffbeb; /* amber-50 */
+  border-color: #fcd34d; /* amber-300 */
+  background-color: #fffbeb; /* amber-50 */
+  color: #1e293b; /* slate-800 — ≈13.5:1 */
+}
+
+.banner .link {
+  color: #92400e; /* amber-800 — ≈7.0:1 */
+}
+
+.banner .link:hover {
+  color: #78350f; /* amber-900 */
+}
+
+.banner .dismiss {
+  color: #92400e; /* amber-800 */
+}
+
+.banner .dismiss:hover {
+  color: #78350f; /* amber-900 */
+}
+
+/* ── Variante INLINE — neutra su bianco ─────────────────────────────────────────────────────── */
+.inline {
+  --aidb-ring: #0369a1; /* sky-700 */
+  --aidb-ring-offset: #ffffff;
+  border-color: #e2e8f0; /* slate-200 */
+  background-color: #ffffff;
+  color: #334155; /* slate-700 — ≈10.4:1 */
+}
+
+.inline .link {
+  color: #0369a1; /* sky-700 — ≈5.9:1 */
+}
+
+.inline .link:hover {
+  color: #075985; /* sky-800 */
+}
+
+.inline .dismiss {
+  color: #64748b; /* slate-500 */
+}
+
+.inline .dismiss:hover {
+  color: #334155; /* slate-700 */
+}
+
+/* ── Variante DARK — chiaro su navy scuro ───────────────────────────────────────────────────── */
+.dark {
+  --aidb-ring: #7dd3fc; /* sky-300 */
+  --aidb-ring-offset: #0f172a; /* slate-900 */
+  border-color: #334155; /* slate-700 */
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9; /* slate-100 — ≈16.0:1 */
+}
+
+.dark .link {
+  color: #7dd3fc; /* sky-300 — ≈9.7:1 */
+}
+
+.dark .link:hover {
+  color: #bae6fd; /* sky-200 */
+}
+
+.dark .dismiss {
+  color: #cbd5e1; /* slate-300 */
+}
+
+.dark .dismiss:hover {
+  color: #ffffff;
+}
+
+/* ── Reduced motion: nessuna animazione di default, ma azzera ogni eventuale transizione ─────── */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .link,
+  .dismiss {
+    transition: none;
+  }
+}

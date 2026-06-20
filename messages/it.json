@@ -590,7 +590,9 @@
     "prove_description": "Dati verificabili: oltre 826.000 righe di codice, 14 repository, 5 prodotti in produzione, costruiti da una persona con AI Oracode.",
     "scrittore_description": "Fabio Cherici scrittore — la saga Aura Spei, fantascienza dove Padmin D. Curtis e personaggio e CTO AI dello sviluppo reale.",
     "oracode_description": "Oracode — il paradigma che guida la disciplina AI e la disciplina umana dentro FlorenceEGI. OSZ, OS3, OS4: tre livelli, un sistema vivente.",
-    "privacy_description": "Informativa sulla privacy di fabiocherici.com. Nessun dato raccolto su server, nessun cookie, nessun tracciamento. Solo localStorage per preferenze."
+    "privacy_description": "Informativa sulla privacy di fabiocherici.com. Nessun dato raccolto su server, nessun cookie, nessun tracciamento. Solo localStorage per preferenze.",
+    "aitransparency_title": "Trasparenza IA — Padmin",
+    "aitransparency_description": "Padmin, l'assistente IA di fabiocherici.com: modelli usati, finalità informativa, fonti documentali e come segnalare errori."
   },
   "numeri": {
     "title": "I numeri",
@@ -1142,5 +1144,17 @@
     "seo_section_numeri": "I numeri — Dati verificabili: 826.336 righe di codice sorgente applicativo, di cui 749.724 scritte ex novo, 14 repository, 5 prodotti in produzione, circa 190 ore in 48 giorni, tutto costruito da una persona con AI governata da Oracode.",
     "seo_section_ecosistema": "Ecosistema — Mappa completa degli organi FlorenceEGI con ruoli, URL e stato di produzione.",
     "seo_section_contatti": "Contatti — Modulo di contatto per collaborazioni, informazioni e proposte."
+  },
+  "aiTransparency": {
+    "title": "Trasparenza sull'intelligenza artificiale",
+    "intro": "«Padmin» è un assistente di intelligenza artificiale. Le sue risposte sono fondate sui documenti del progetto e possono contenere errori.",
+    "modelsHeading": "Modelli utilizzati",
+    "modelsBody": "Il servizio si avvale di modelli di intelligenza artificiale per generare le risposte.",
+    "advisoryHeading": "Finalità e limiti",
+    "advisoryBody": "Le risposte hanno finalità informativa e di supporto e non sostituiscono un parere professionale. Verifica sempre le informazioni importanti.",
+    "reportHeading": "Segnalare una risposta errata",
+    "reportBody": "Se ricevi una risposta inesatta o fuorviante, segnalalo tramite la pagina dei contatti.",
+    "contactHeading": "Titolare del servizio",
+    "contactBody": "Il servizio è gestito da Fabio Cherici. Per privacy e contatti consulta le pagine dedicate."
   }
 }

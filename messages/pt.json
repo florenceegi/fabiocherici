@@ -590,7 +590,9 @@
     "prove_description": "Dados verificaveis: mais de 826.000 linhas de código, 14 repositorios, 5 produtos em produção, construidos por uma pessoa com IA Oracode.",
     "scrittore_description": "Fabio Cherici escritor — a saga Aura Spei, ficção científica onde Padmin D. Curtis é personagem e CTO de IA real do ecossistema FlorenceEGI.",
     "oracode_description": "Oracode — o paradigma que guia a disciplina de IA e a disciplina humana dentro da FlorenceEGI. OSZ, OS3, OS4: três níveis, um sistema vivo.",
-    "privacy_description": "Política de privacidade de fabiocherici.com. Nenhum dado coletado em servidores, nenhum cookie, nenhum rastreamento. Apenas localStorage para preferências."
+    "privacy_description": "Política de privacidade de fabiocherici.com. Nenhum dado coletado em servidores, nenhum cookie, nenhum rastreamento. Apenas localStorage para preferências.",
+    "aitransparency_title": "Transparência de IA — Padmin",
+    "aitransparency_description": "Padmin, o assistente de IA do fabiocherici.com: modelos usados, finalidade informativa, fontes documentais e como reportar erros."
   },
   "numeri": {
     "title": "Os números",
@@ -1144,5 +1146,17 @@
     "seo_section_contatti": "Contacto — Formulario de contacto para colaborações, informações e propostas.",
     "seo_proof": "Cada afirmação neste site é verificável com dados reais. A página Os números contém as provas: 826.336 linhas de código-fonte aplicativo em 14 repositórios, das quais 749.724 escritas do zero desde dezembro de 2024, 5 produtos em produção, aproximadamente 190 horas de desenvolvimento verificadas em 48 dias — tudo construído por uma única pessoa com IA governada pelo paradigma Oracode. As linhas são contadas com cloc em codebases limpas, as horas medidas a partir dos timestamps dos commits.",
     "seo_experience": "O site oferece uma experiencia totalmente personalizavel. O utilizador pode configurar: o tema visual (escuro, claro ou ambiente — que muda automaticamente conforme a hora do dia), o estilo de animação (minimalista, cinematografico, energetico, editorial, fluido ou sem animação), a cena 3D de fundo (aurora, esfera morfologica, cristal, terreno de ruido, fumo, fluxo de fitas, grelha de ondas, esfera de particulas ou sem cena). As definicoes de acessibilidade incluem tres tamanhos de texto, modo de alto contraste, fonte para dislexia e movimento reduzido. A página inicial apresenta seis portas dispostas em circulo a volta da palavra TU — cada porta conduz a uma seccao do site. O fundo e uma cena 3D interativa renderizada em tempo real com Three.js."
+  },
+  "aiTransparency": {
+    "title": "Transparência sobre a inteligência artificial",
+    "intro": "«Padmin» é um assistente de inteligência artificial. As suas respostas baseiam-se nos documentos do projeto e podem conter erros.",
+    "modelsHeading": "Modelos utilizados",
+    "modelsBody": "O serviço utiliza modelos de inteligência artificial para gerar as respostas.",
+    "advisoryHeading": "Finalidade e limites",
+    "advisoryBody": "As respostas têm finalidade informativa e de apoio e não substituem um parecer profissional. Verifica sempre as informações importantes.",
+    "reportHeading": "Reportar uma resposta errada",
+    "reportBody": "Se receberes uma resposta inexata ou enganosa, reporta-a através da página de contacto.",
+    "contactHeading": "Responsável pelo serviço",
+    "contactBody": "O serviço é gerido por Fabio Cherici. Para privacidade e contacto, consulta as páginas dedicadas."
   }
 }

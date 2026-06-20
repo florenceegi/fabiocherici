@@ -590,7 +590,9 @@
     "prove_description": "Données vérifiables : plus de 826 000 lignes de code, 14 dépôts, 5 produits en production, construits par une seule personne avec l'IA Oracode.",
     "scrittore_description": "Fabio Cherici écrivain — la saga Aura Spei, science-fiction où Padmin D. Curtis est personnage et CTO IA réel de l'écosystème FlorenceEGI.",
     "oracode_description": "Oracode — le paradigme qui guide la discipline IA et la discipline humaine au sein de FlorenceEGI. OSZ, OS3, OS4 : trois niveaux, un système vivant.",
-    "privacy_description": "Politique de confidentialité de fabiocherici.com. Aucune donnée collectée sur serveur, aucun cookie, aucun suivi. Seul le localStorage pour les préférences."
+    "privacy_description": "Politique de confidentialité de fabiocherici.com. Aucune donnée collectée sur serveur, aucun cookie, aucun suivi. Seul le localStorage pour les préférences.",
+    "aitransparency_title": "Transparence IA — Padmin",
+    "aitransparency_description": "Padmin, l'assistant IA de fabiocherici.com : modèles utilisés, finalité informative, sources documentaires et signalement des erreurs."
   },
   "numeri": {
     "title": "Les chiffres",
@@ -1144,5 +1146,17 @@
     "seo_proof": "Chaque affirmation sur ce site est vérifiable avec des données réelles. La page Les chiffres contient les preuves : 826 336 lignes de code source applicatif dans 14 dépôts, dont 749 724 écrites de zéro depuis décembre 2024, 5 produits en production, environ 190 heures de développement vérifiées sur 48 jours — le tout construit par une seule personne avec une IA gouvernée par le paradigme Oracode. Les lignes sont comptées avec cloc sur des codebases propres, les heures mesurées à partir des timestamps de commits.",
     "seo_experience": "Le site offre une experience entièrement personnalisable. L'utilisateur peut configurer : le thème visuel (sombre, clair ou ambiant — qui change automatiquement selon l'heure de là journee), le style d'animation (minimal, cinématographique, énergétique, editorial, fluide ou aucune animation), la scène 3D d'arriere-plan (aurore, sphère morphologique, cristal, terrain de bruit, fumée, flux de rubans, grille d'ondes, sphère de particules ou aucune scène). Les paramètres d'accessibilité comprennent trois tailles de texte, le mode contraste élevé, la police pour dyslexie et les animations réduites. La page d'accueil présente six portes disposees en cercle autour du mot TU (TOI) — chaque porte mene a une section du site. L'arriere-plan est une scène 3D interactive rendue en temps réel avec Three.js.",
     "seo_section_softwarehouse": "Softwarehouse — logiciels et gestion sur mesure pour PME."
+  },
+  "aiTransparency": {
+    "title": "Transparence sur l'intelligence artificielle",
+    "intro": "« Padmin » est un assistant d'intelligence artificielle. Ses réponses sont fondées sur les documents du projet et peuvent contenir des erreurs.",
+    "modelsHeading": "Modèles utilisés",
+    "modelsBody": "Le service utilise des modèles d'intelligence artificielle pour générer les réponses.",
+    "advisoryHeading": "Finalité et limites",
+    "advisoryBody": "Les réponses ont une finalité d'information et de soutien et ne remplacent pas un avis professionnel. Vérifie toujours les informations importantes.",
+    "reportHeading": "Signaler une réponse erronée",
+    "reportBody": "Si tu reçois une réponse inexacte ou trompeuse, signale-la via la page de contact.",
+    "contactHeading": "Responsable du service",
+    "contactBody": "Le service est géré par Fabio Cherici. Pour la confidentialité et le contact, consulte les pages dédiées."
   }
 }

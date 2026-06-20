@@ -19,9 +19,10 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
+import { AiDisclosureBanner } from '@/components/ai-act/AiDisclosureBanner';
 import { useNexusStream } from './useNexusStream';
 import type { AttachedImage } from './ImageAttach';
 import type { ChatMessage as ChatMessageData, ConversationTurn, NexusErrorCode } from '@/lib/nexus/types';
@@ -47,6 +48,7 @@ export interface PadminChatProps {
 
 export default function PadminChat({ endpoint, seeds, seedIntro }: PadminChatProps) {
   const t = useTranslations('nexus');
+  const locale = useLocale();
   const { send } = useNexusStream(endpoint);
 
   const [messages, setMessages] = useState<ChatMessageData[]>([]);
@@ -150,7 +152,14 @@ export default function PadminChat({ endpoint, seeds, seedIntro }: PadminChatPro
           <p className="text-xs text-[var(--text-muted)]">{t('padmin_role')}</p>
         </div>
       </header>
-      <p className="mb-3 text-xs italic text-[var(--text-muted)]">{t('disclosure')}</p>
+      {/* AI Act Art. 50(1) — banner disclosure standard del kit (M-FABIOCHERICI-001), prima del primo input.
+          Sostituisce la disclosure ad-hoc precedente; variant inline, link a /{locale}/ai-transparency. */}
+      <AiDisclosureBanner
+        locale={locale}
+        variant="inline"
+        transparencyUrl={`/${locale}/ai-transparency`}
+        className="mb-3"
+      />
 
       {/* Log chat — live region (annuncio a completamento, non per carattere) */}
       <div

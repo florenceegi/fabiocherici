@@ -19,8 +19,11 @@ import userEvent from '@testing-library/user-event';
 import PadminChat from './PadminChat';
 
 // next-intl: traduzioni identità (la key torna come stringa).
+// useLocale aggiunto al wiring del banner AI Act (M-FABIOCHERICI-001): PadminChat
+// ora chiama useLocale() per costruire il link /{locale}/ai-transparency del banner.
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => key,
+  useLocale: () => 'it',
 }));
 
 // useNexusStream MOCKATO: catturiamo gli argomenti di send, senza toccare la rete.

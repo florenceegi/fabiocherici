@@ -145,4 +145,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fabiocherici.com/it/privacy"/>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://fabiocherici.com/it/ai-transparency</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fabiocherici.com/it/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fabiocherici.com/en/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fabiocherici.com/de/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fabiocherici.com/es/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fabiocherici.com/fr/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fabiocherici.com/pt/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://fabiocherici.com/zh/ai-transparency"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fabiocherici.com/it/ai-transparency"/>
+    <priority>0.3</priority>
+  </url>
 </urlset>

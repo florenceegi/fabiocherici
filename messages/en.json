@@ -590,7 +590,9 @@
     "prove_description": "Verifiable data: over 826,000 lines of code, 14 repositories, 5 products in production, built by one person with Oracode AI.",
     "scrittore_description": "Fabio Cherici writer — the Aura Spei saga, science fiction where Padmin D. Curtis is both a character and the real AI CTO of FlorenceEGI.",
     "oracode_description": "Oracode — the paradigm that guides AI discipline and human discipline within FlorenceEGI. OSZ, OS3, OS4: three levels, one living system.",
-    "privacy_description": "Privacy policy for fabiocherici.com. No data collected on servers, no cookies, no tracking. Only localStorage for visual preferences."
+    "privacy_description": "Privacy policy for fabiocherici.com. No data collected on servers, no cookies, no tracking. Only localStorage for visual preferences.",
+    "aitransparency_title": "AI Transparency — Padmin",
+    "aitransparency_description": "How Padmin, the AI assistant of fabiocherici.com, works: models used, informational purpose, document sources, how to report errors and the service owner."
   },
   "numeri": {
     "title": "The numbers",
@@ -1144,5 +1146,17 @@
     "seo_section_contatti": "Contact — Contact form for collaborations, enquiries and proposals.",
     "seo_proof": "Every claim on this site is verifiable with real data. The Numbers page contains the proof: 826,336 lines of application source code across 14 repositories, of which 749,724 written from scratch since December 2024, 5 products in production, approximately 190 development hours verified over 48 days — all built by one person with AI governed by the Oracode paradigm. Lines are counted with cloc on clean codebases, hours measured from commit timestamps.",
     "seo_experience": "The site offers a fully customizable experience. Users can configure: the visual theme (dark, light, or ambient — which changes automatically based on the time of day), the animation style (minimal, cinematic, energetic, editorial, fluid, or no animation), the 3D background scene (aurora, morph sphere, crystal, noise terrain, smoke, ribbon flow, wave grid, particle sphere, or no scene). Accessibility settings include three text sizes, high contrast mode, dyslexia font, and reduced motion. The homepage features six doors arranged in a circle around the word TU (YOU) — each door leads to a section of the site. The background is an interactive 3D scene rendered in real time with Three.js."
+  },
+  "aiTransparency": {
+    "title": "Artificial intelligence transparency",
+    "intro": "“Padmin” is an artificial intelligence assistant. Its answers are grounded on the project documents and may contain errors.",
+    "modelsHeading": "Models used",
+    "modelsBody": "The service uses artificial intelligence models to generate its answers.",
+    "advisoryHeading": "Purpose and limits",
+    "advisoryBody": "Answers are for information and support only and do not replace professional advice. Always verify important information.",
+    "reportHeading": "Report a wrong answer",
+    "reportBody": "If you receive an inaccurate or misleading answer, report it through the contact page.",
+    "contactHeading": "Service owner",
+    "contactBody": "The service is operated by Fabio Cherici. For privacy and contact details, see the dedicated pages."
   }
 }
