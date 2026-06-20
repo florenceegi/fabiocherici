@@ -1,0 +1,2206 @@
+{
+  "page": "ai-transparency",
+  "locales": [
+    "it",
+    "en",
+    "de",
+    "es",
+    "fr",
+    "pt",
+    "zh"
+  ],
+  "gate": "PASS",
+  "summary": {
+    "total": 273,
+    "pass": 273,
+    "fail": 0,
+    "warn": 0,
+    "gate": "PASS"
+  },
+  "checks": [
+    {
+      "id": "H-1:it",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:it",
+      "category": "HTML",
+      "description": "html lang=\"it\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:it",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:it",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:it",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:it",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:it",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:it",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:it",
+      "category": "SEO",
+      "description": "title present, 39 chars",
+      "status": "PASS",
+      "detail": "\"Trasparenza IA — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:it",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:it",
+      "category": "SEO",
+      "description": "meta description 124 chars (120-160)",
+      "status": "PASS",
+      "detail": "124 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:it",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:it",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:it",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:it",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:it:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:it:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:it:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:it:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:it",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:it",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:it",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:it",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:it",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:it",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:it",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:it",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:it",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:it",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:it",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:it",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:it",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:it",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:it",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:it",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:it",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:it",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:it",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:it",
+      "category": "Sustainability",
+      "description": "page weight 67KB (target <200KB)",
+      "status": "PASS",
+      "detail": "67.0KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:en",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:en",
+      "category": "HTML",
+      "description": "html lang=\"en\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:en",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:en",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:en",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:en",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:en",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:en",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:en",
+      "category": "SEO",
+      "description": "title present, 40 chars",
+      "status": "PASS",
+      "detail": "\"AI Transparency — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:en",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:en",
+      "category": "SEO",
+      "description": "meta description 154 chars (120-160)",
+      "status": "PASS",
+      "detail": "154 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:en",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:en",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:en",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:en",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:en:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:en:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:en:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:en:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:en",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:en",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:en",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:en",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:en",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:en",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:en",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:en",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:en",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:en",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:en",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:en",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:en",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:en",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:en",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:en",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:en",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:en",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:en",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:en",
+      "category": "Sustainability",
+      "description": "page weight 66KB (target <200KB)",
+      "status": "PASS",
+      "detail": "65.9KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:de",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:de",
+      "category": "HTML",
+      "description": "html lang=\"de\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:de",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:de",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:de",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:de",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:de",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:de",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:de",
+      "category": "SEO",
+      "description": "title present, 39 chars",
+      "status": "PASS",
+      "detail": "\"KI-Transparenz — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:de",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:de",
+      "category": "SEO",
+      "description": "meta description 157 chars (120-160)",
+      "status": "PASS",
+      "detail": "157 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:de",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:de",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:de",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:de",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:de:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:de:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:de:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:de:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:de",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:de",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:de",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:de",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:de",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:de",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:de",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:de",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:de",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:de",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:de",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:de",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:de",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:de",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:de",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:de",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:de",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:de",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:de",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:de",
+      "category": "Sustainability",
+      "description": "page weight 68KB (target <200KB)",
+      "status": "PASS",
+      "detail": "68.0KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:es",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:es",
+      "category": "HTML",
+      "description": "html lang=\"es\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:es",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:es",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:es",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:es",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:es",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:es",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:es",
+      "category": "SEO",
+      "description": "title present, 44 chars",
+      "status": "PASS",
+      "detail": "\"Transparencia de IA — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:es",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:es",
+      "category": "SEO",
+      "description": "meta description 132 chars (120-160)",
+      "status": "PASS",
+      "detail": "132 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:es",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:es",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:es",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:es",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:es:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:es:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:es:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:es:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:es",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:es",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:es",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:es",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:es",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:es",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:es",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:es",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:es",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:es",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:es",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:es",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:es",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:es",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:es",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:es",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:es",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:es",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:es",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:es",
+      "category": "Sustainability",
+      "description": "page weight 68KB (target <200KB)",
+      "status": "PASS",
+      "detail": "67.6KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:fr",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:fr",
+      "category": "HTML",
+      "description": "html lang=\"fr\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:fr",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:fr",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:fr",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:fr",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:fr",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:fr",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:fr",
+      "category": "SEO",
+      "description": "title present, 40 chars",
+      "status": "PASS",
+      "detail": "\"Transparence IA — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:fr",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:fr",
+      "category": "SEO",
+      "description": "meta description 134 chars (120-160)",
+      "status": "PASS",
+      "detail": "134 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:fr",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:fr",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:fr",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:fr",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:fr:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:fr:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:fr:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:fr:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:fr",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:fr",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:fr",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:fr",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:fr",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:fr",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:fr",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:fr",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:fr",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:fr",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:fr",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:fr",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:fr",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:fr",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:fr",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:fr",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:fr",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:fr",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:fr",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:fr",
+      "category": "Sustainability",
+      "description": "page weight 67KB (target <200KB)",
+      "status": "PASS",
+      "detail": "66.9KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:pt",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:pt",
+      "category": "HTML",
+      "description": "html lang=\"pt\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:pt",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:pt",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:pt",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:pt",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:pt",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:pt",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:pt",
+      "category": "SEO",
+      "description": "title present, 44 chars",
+      "status": "PASS",
+      "detail": "\"Transparência de IA — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:pt",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:pt",
+      "category": "SEO",
+      "description": "meta description 129 chars (120-160)",
+      "status": "PASS",
+      "detail": "129 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:pt",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:pt",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:pt",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:pt",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:pt:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:pt:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:pt:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:pt:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:pt",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:pt",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:pt",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:pt",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:pt",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:pt",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:pt",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:pt",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:pt",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:pt",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:pt",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:pt",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:pt",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:pt",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:pt",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:pt",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:pt",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:pt",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:pt",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:pt",
+      "category": "Sustainability",
+      "description": "page weight 67KB (target <200KB)",
+      "status": "PASS",
+      "detail": "67.1KB",
+      "mandatory": false
+    },
+    {
+      "id": "H-1:zh",
+      "category": "HTML",
+      "description": "DOCTYPE present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-2:zh",
+      "category": "HTML",
+      "description": "html lang=\"zh\"",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-3:zh",
+      "category": "HTML",
+      "description": "charset utf-8",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-4:zh",
+      "category": "HTML",
+      "description": "viewport meta",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-5:zh",
+      "category": "HTML",
+      "description": "single H1 (found 1)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7a:zh",
+      "category": "HTML",
+      "description": "<main> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-7b:zh",
+      "category": "HTML",
+      "description": "<nav> landmark",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "H-9:zh",
+      "category": "HTML",
+      "description": "zero escaped HTML tags (found 0)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-1:zh",
+      "category": "SEO",
+      "description": "title present, 31 chars",
+      "status": "PASS",
+      "detail": "\"AI 透明度 — Padmin | Fabio Cherici\"",
+      "mandatory": true
+    },
+    {
+      "id": "S-2:zh",
+      "category": "SEO",
+      "description": "title no duplication",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-3:zh",
+      "category": "SEO",
+      "description": "meta description 88 chars (50-160)",
+      "status": "PASS",
+      "detail": "88 chars",
+      "mandatory": true
+    },
+    {
+      "id": "S-4:zh",
+      "category": "SEO",
+      "description": "canonical present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-5:zh",
+      "category": "SEO",
+      "description": "hreflang tags: 8 (need 8)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-6:zh",
+      "category": "SEO",
+      "description": "x-default hreflang",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "S-9:zh",
+      "category": "SEO",
+      "description": "no noindex",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:zh:name",
+      "category": "Schema.org",
+      "description": "WebPage.name present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:zh:description",
+      "category": "Schema.org",
+      "description": "WebPage.description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:zh:url",
+      "category": "Schema.org",
+      "description": "WebPage.url present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-2:zh:inLanguage",
+      "category": "Schema.org",
+      "description": "WebPage.inLanguage present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-3:zh",
+      "category": "Schema.org",
+      "description": "isPartOf present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-4:zh",
+      "category": "Schema.org",
+      "description": "about @type: Thing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-1:zh",
+      "category": "Schema.org",
+      "description": "WebPage schema present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "SD-6:zh",
+      "category": "Schema.org",
+      "description": "all JSON-LD valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:title:zh",
+      "category": "OpenGraph",
+      "description": "og:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:description:zh",
+      "category": "OpenGraph",
+      "description": "og:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:type:zh",
+      "category": "OpenGraph",
+      "description": "og:type present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-og:locale:zh",
+      "category": "OpenGraph",
+      "description": "og:locale present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-3:zh",
+      "category": "OpenGraph",
+      "description": "og:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-7:zh",
+      "category": "OpenGraph",
+      "description": "twitter:card present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:title:zh",
+      "category": "OpenGraph",
+      "description": "twitter:title present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-twitter:description:zh",
+      "category": "OpenGraph",
+      "description": "twitter:description present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "OG-9:zh",
+      "category": "OpenGraph",
+      "description": "twitter:image present",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-1:zh",
+      "category": "Accessibility",
+      "description": "img alt: 2 imgs, 0 missing",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-2:zh",
+      "category": "Accessibility",
+      "description": "skip-to-content link",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-7:zh",
+      "category": "Accessibility",
+      "description": "aria-label on icon elements",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "A-11:zh",
+      "category": "Accessibility",
+      "description": "target=_blank screen reader indicator (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "I-7:zh",
+      "category": "i18n",
+      "description": "JSON valid",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "F-6:zh",
+      "category": "Functionality",
+      "description": "target=_blank with noopener (0 missing)",
+      "status": "PASS",
+      "detail": "",
+      "mandatory": true
+    },
+    {
+      "id": "WS-1:zh",
+      "category": "Sustainability",
+      "description": "page weight 66KB (target <200KB)",
+      "status": "PASS",
+      "detail": "65.6KB",
+      "mandatory": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"mission_id":"M-FABIOCHERICI-001","rag_mode":"skipped_no_schema","reason":"No RAG_SCHEMA / ORACODE_RAG_SCHEMA configured; rag-distribute + Nexus index not present at engine paths. LSO ridotto.","files":[],"rag_chunks_reindexed":null}

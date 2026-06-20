@@ -1,0 +1,10 @@
+{
+  "mission_id": "M-FABIOCHERICI-001",
+  "commit": "97c31f3",
+  "type": "additive (Strategia Delta) — Trigger Matrix Type 3 (nuova rotta) + Type 4 (compliance AI-Act)",
+  "new_components": ["components/ai-act/AiDisclosureBanner.tsx (+module.css, test, README, ai-disclosure-i18n.ts) — kit canonico verbatim M-DIM-003", "app/[locale]/ai-transparency/page.tsx (Next/next-intl, SSG, JSON-LD)"],
+  "modified_behaviors": ["PadminChat.tsx: disclosure ad-hoc -> <AiDisclosureBanner variant=inline transparencyUrl=/{locale}/ai-transparency>"],
+  "new_i18n": ["namespace aiTransparency, 10 chiavi × 7 lingue (zh presente)"],
+  "infra": ["public/sitemap.xml += /ai-transparency con alternates hreflang 7 locale + x-default"],
+  "concepts": ["AI Act Art.50(1) transparency obligation", "AI disclosure banner", "trasparenza AI", "kit AI-Act"]
+}

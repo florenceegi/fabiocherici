@@ -1,0 +1,14 @@
+{
+  "mission_id": "M-FABIOCHERICI-001",
+  "method": "deterministic_watch_match (fnmatch glob, no LLM)",
+  "impacted": [
+    {"ssot_id": "i18n-messages", "match_type": "direct_watcher", "matched_paths": ["messages/it.json","messages/en.json","messages/de.json","messages/es.json","messages/fr.json","messages/pt.json","messages/zh.json"]},
+    {"ssot_id": "commercial-claims", "match_type": "pattern_match", "matched_paths": ["messages/it.json","components/softwarehouse/nexus/*.tsx (PadminChat.tsx)"]},
+    {"ssot_id": "seo", "match_type": "pattern_match", "matched_paths": ["app/[locale]/**/page.tsx (app/[locale]/ai-transparency/page.tsx)"]}
+  ],
+  "not_impacted_checked": [
+    {"ssot_id": "commercial-claims-public", "reason": "watches only nexus-operator/app/* — not touched by mission"},
+    {"ssot_id": "discovery-questions", "reason": "watches nexus-operator/app/* — not touched"},
+    {"ssot_id": "animation-presets|scene3d-ids|i18n-config|design-tokens|fonts", "reason": "no watch path matched mission files"}
+  ]
+}

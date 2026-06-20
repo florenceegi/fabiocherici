@@ -1,0 +1,8 @@
+{
+  "mission_id": "M-FABIOCHERICI-001",
+  "actions": [
+    {"ssot_path": "docs/ssot/i18n-messages.md", "mode": "additive", "status": "applied", "ssot_content_hash_before": "f7aa57b621ee56e7fb858cfd3096b31de1e7dc817e97c93d5120d0849273fce6", "diff_path": "diffs/i18n-messages.md", "justification": "Nuovo namespace aiTransparency (10 chiavi × 7 lingue) + banner kit AI-Act in PadminChat. Aggiunto a lista namespace top-level e nuova subsection cronologia. Additivo: nessun namespace esistente cambia significato.", "resolution_method": "auto"},
+    {"ssot_path": "docs/ssot/seo.md", "mode": "additive", "status": "applied", "ssot_content_hash_before": "8cdd38c535fd3846e317d88be39466839ff81134ef839b06d5ef7dc2eade85c8", "diff_path": "diffs/seo.md", "justification": "Nuova rotta pubblica indicizzabile /ai-transparency (7 locale, SSG+JSON-LD, in sitemap). Aggiunta a consumer list + nota trappola M-FABIOCHERICI-001 (OG opzionale). Builder lib/seo.ts invariati.", "resolution_method": "auto"},
+    {"ssot_path": "docs/ssot/commercial-claims.md", "mode": "additive", "status": "applied", "ssot_content_hash_before": "d41fc6dc523c8415fa93ada376f602ddaf383531ea5975c5dda831669a413629", "diff_path": "diffs/commercial-claims.md", "justification": "Nuova §12 trasparenza AI Art.50(1) AI Act (banner + pagina), complementare al privacy/GDPR §10 (M-017). Version front-matter 1.2.0->1.4.0 (riallineo drift pregresso col changelog 1.3.0) + nuova riga changelog. Gap SSOT compliance-AI registrato, NON creato (REGOLA ZERO).", "resolution_method": "auto"}
+  ]
+}

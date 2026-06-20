@@ -1,0 +1,6 @@
+{
+  "mission_id": "M-FABIOCHERICI-001",
+  "rag_mode": "skipped_no_schema",
+  "note": "No RAG_SCHEMA configured in CLAUDE.md (root or DOC) nor ORACODE_RAG_SCHEMA env. rag_query.py not invoked. LSO ridotto: registry+audit, no RAG discovery.",
+  "lateral": []
+}
