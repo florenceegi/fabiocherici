@@ -1,0 +1,35 @@
+{
+  "mission_id": "M-FABIOCHERICI-002",
+  "instance_root": "/home/fabio/fabiocherici.com/FABIOCHERICI-DOC",
+  "organ": "fabiocherici",
+  "trigger_matrix_type": 5,
+  "trigger_matrix_label": "Naming — rinomina di un'entità di dominio (dominio pubblico advisor) documentata come fatto negli SSOT",
+  "files_modified": [
+    { "path": ".env.production", "type": "modified", "lines": 1 }
+  ],
+  "change_description": "NEXT_PUBLIC_ADVISOR_CHAT_ENDPOINT cambiato da https://nexus.fabiocherici.com al nome canonico https://oracode.fabiocherici.com. Cambio build-time (Next static export). La chat-advisor 'Padmin' della pagina /[locale]/softwarehouse punta ora a oracode.fabiocherici.com. nexus.fabiocherici.com resta attivo: fa 301 verso oracode e continua a servire le API legacy. Deploy CI completato e verificato live.",
+  "new_functions": [],
+  "removed_functions": [],
+  "behavior_changes": [
+    {
+      "what": "Endpoint pubblico dell'operatore AI Padmin",
+      "from": "https://nexus.fabiocherici.com",
+      "to": "https://oracode.fabiocherici.com (canonico); nexus.fabiocherici.com fa 301 + serve ancora API legacy"
+    }
+  ],
+  "narrative_content_changes": [
+    "Gli SSOT commercial-claims.md e i18n-messages.md dichiarano come fatto corrente che l'advisor è 'live su nexus.fabiocherici.com'. Dopo il rename, il nome canonico è oracode.fabiocherici.com. Le occorrenze di stato-corrente vanno aggiornate; la riga changelog 1.2.0 (storico M-017) NON va riscritta."
+  ],
+  "key_concepts": [
+    "advisor chat endpoint",
+    "Padmin operatore AI",
+    "nexus.fabiocherici.com",
+    "oracode.fabiocherici.com",
+    "rename vetrina",
+    "softwarehouse"
+  ],
+  "notes": [
+    "instance_root reale risolto da .oracode/project.json = /home/fabio/fabiocherici.com/FABIOCHERICI-DOC (il registry DOC vive dentro il repo). Il prompt indicava la root del repo /home/fabio/fabiocherici.com; convenzione descrittore prevale (REGOLA ZERO: verificato alla fonte, non assunto).",
+    "Il file .env.production NON è coperto da alcun watch nel SSOT_REGISTRY (Step 2 deterministico = 0 SSOT diretti). L'impatto è LATERALE/semantico via grep dei concetti (RAG non configurato per questa istanza → discovery laterale fatta via grep deterministico sul contenuto SSOT, non vettoriale)."
+  ]
+}

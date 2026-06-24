@@ -1,0 +1,7 @@
+{
+  "mission_id": "M-FABIOCHERICI-002",
+  "method": "deterministic glob match (fnmatch) su watches.paths/patterns di SSOT_REGISTRY",
+  "files_modified": [".env.production"],
+  "directly_impacted": [],
+  "note": "Nessun SSOT nel registry watcha .env.production. I watch coprono lib/*, app/*, components/*, messages/*, nexus-operator/*. Step 2 deterministico → 0 SSOT diretti."
+}

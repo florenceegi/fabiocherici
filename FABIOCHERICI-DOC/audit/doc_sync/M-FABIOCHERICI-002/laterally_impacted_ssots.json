@@ -1,0 +1,24 @@
+{
+  "mission_id": "M-FABIOCHERICI-002",
+  "rag_mode": "skipped_no_schema",
+  "rag_note": "Nessun RAG_SCHEMA configurato per fabiocherici (CLAUDE.md non dichiara RAG_SCHEMA; nessuna env ORACODE_RAG_SCHEMA). Discovery laterale eseguita in modalità ridotta via grep deterministico dei concetti chiave (nexus.fabiocherici.com / oracode.fabiocherici.com / advisor endpoint) sul contenuto dei doc SSOT registrati.",
+  "laterally_impacted": [
+    {
+      "ssot_id": "commercial-claims",
+      "path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "concept": "endpoint pubblico advisor Padmin",
+      "occurrences_current_state": [67, 139, 170, 179],
+      "occurrences_historical_preserve": [246],
+      "reason": "Documenta come fatto corrente che l'advisor è live su nexus.fabiocherici.com; il rename rende stale il nome canonico."
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "concept": "endpoint pubblico advisor Padmin (namespace nexus)",
+      "occurrences_current_state": [67],
+      "reason": "Descrive il widget Padmin 'in cima a /softwarehouse + nexus.fabiocherici.com'."
+    }
+  ],
+  "validated": true,
+  "validation_note": "Validazione LLM: entrambi gli SSOT sono semanticamente impattati — citano l'endpoint advisor come fatto pubblico corrente, ora rinominato."
+}

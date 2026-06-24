@@ -1,0 +1,32 @@
+{
+  "mission_id": "M-FABIOCHERICI-002",
+  "actions": [
+    {
+      "ssot_id": "commercial-claims",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/commercial-claims.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "ssot_content_hash_pre": "f9027f18cb04503b0b5419e7d8f7bed449b00eb4cc7f840a83b8ea47292a369e",
+      "ssot_content_hash_post": "4f978fed2167744bc67488711fa8d11e10bc63f006365129c11f24bdb6183f35",
+      "diff_path": "diffs/commercial-claims.md",
+      "justification": "Trigger Matrix type 5 (Naming). Il doc dichiarava come fatto corrente l'advisor live su nexus.fabiocherici.com in 4 punti di stato (§3 r.67, §7, §9, §10). Il rename M-FABIOCHERICI-002 sposta il nome canonico su oracode.fabiocherici.com. Sostituite le 4 occorrenze correnti; aggiunta nota che nexus.fabiocherici.com fa 301→oracode + API legacy. Riga changelog 1.2.0 (storico M-017) PRESERVATA. Front-matter 1.4.0→1.5.0; nuova riga changelog 1.5.0; last_sync 2026-06-20→2026-06-25.",
+      "resolution_method": "auto_applied_substitutive",
+      "timestamp": "2026-06-25"
+    },
+    {
+      "ssot_id": "i18n-messages",
+      "ssot_path": "FABIOCHERICI-DOC/docs/ssot/i18n-messages.md",
+      "mode": "substitutive",
+      "status": "applied",
+      "ssot_content_hash_pre": "85eff3a1be6e5e7859de2170cc5223d57948d675ce3f885588fca8b295cdf0f0",
+      "ssot_content_hash_post": "ffcd91c7dd3542a6ccd15fe5649a073f68fc159f3257ba35edc765ccaeae78ca",
+      "diff_path": "diffs/i18n-messages.md",
+      "justification": "Aside descrittivo del namespace nexus citava 'in cima a /softwarehouse + nexus.fabiocherici.com'. Aggiornato al nome canonico oracode.fabiocherici.com (ex nexus, 301→oracode). Front-matter last_sync 2026-06-16→2026-06-25, last_verified_mission M-018→M-FABIOCHERICI-002. Doc senza campo version/changelog: non introdotto (REGOLA ZERO — non si inventa struttura).",
+      "resolution_method": "auto_applied_substitutive",
+      "timestamp": "2026-06-25"
+    }
+  ],
+  "approvals_required": 0,
+  "approvals_received": 0,
+  "approval_note": "Rename di un nome-dominio di stato corrente verso il nome canonico verificato live (deploy CI completato e confermato dal CEO nel brief). Aggiornamento fattuale di coerenza, non riscrittura di razionale/pricing/claim § interni. Nessuna sezione sections_manual_only toccata. Applicato direttamente."
+}
