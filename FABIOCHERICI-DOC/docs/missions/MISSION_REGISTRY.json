@@ -3,7 +3,7 @@
     "description": "Mission Registry — tracking delle mission del progetto fabiocherici.com",
     "version": "1.0.0",
     "created": "2026-05-26",
-    "updated": "2026-06-20",
+    "updated": "2026-06-26",
     "author": "Claude (Oracode) for Fabio Cherici",
     "purpose": "Registro SSOT delle mission. Ogni modifica strutturale passa da qui.",
     "project": "fabiocherici.com",
@@ -12,6 +12,89 @@
   },
   "counter": 267,
   "missions": [
+    {
+      "id": "M-FABIOCHERICI-003",
+      "title": "doc-sync runtime drop nodejs20→22",
+      "trigger_matrix": 1,
+      "stats_counted": true,
+      "status": "executing",
+      "date_open": "2026-06-26",
+      "date_close": null,
+      "scope_hash": "168499c2e56c4f305d1200f42b397e7d0d66adc70301e868d6b3c48e4f24d1a8",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-26T20:03:14.872Z",
+      "ssot_first_evidence": {
+        "path": "fabiocherici.com/FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json",
+        "ts": "2026-06-26T19:49:19Z"
+      }
+    },
+    {
+      "id": "M-FABIOCHERICI-002",
+      "title": "Chat softwarehouse: endpoint -> oracode.fabiocherici.com (rename vetrina, lato sito)",
+      "trigger_matrix": 2,
+      "stats_counted": true,
+      "status": "closed",
+      "date_open": "2026-06-24",
+      "date_close": "2026-06-24",
+      "scope_hash": "0e4c6a14f80aadaafcf93ff787c03d93babc48e8b644f7512df58dca553d3d5c",
+      "synced_by_engine": true,
+      "last_engine_sync": "2026-06-24T23:04:13.105Z",
+      "ssot_waiver": {
+        "reason": "Nessun SSOT impattato: solo valore endpoint in .env.production; architettura del sito invariata.",
+        "at": "2026-06-24T22:47:20.819Z",
+        "by": "supervisor"
+      },
+      "organs": [
+        "EGI-DOC",
+        "egi-credential",
+        "fabiocherici",
+        "dimostralo"
+      ],
+      "stats": {
+        "total_commits": 2,
+        "lines_added": 181,
+        "lines_deleted": 9,
+        "lines_net": 172,
+        "lines_touched": 190,
+        "files_touched": 5,
+        "weighted_commits": 1.5,
+        "cognitive_load": 2.36,
+        "productivity_index": 13.66,
+        "tags_breakdown": {
+          "DOC": 1,
+          "CONFIG": 1
+        },
+        "commit_hashes": [
+          "2c759d3544097ae6884db7335b1a426fa14a4c81",
+          "734d994f679ca2acc95144e4add1d59a842e8f78"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-25",
+            "commits": 2,
+            "lines_added": 181,
+            "lines_deleted": 9,
+            "files_touched": 5,
+            "tags": {
+              "DOC": 1,
+              "CONFIG": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-25"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-24T23:04:56Z",
+      "doc_sync_executed": true,
+      "doc_sync_log": {
+        "agent": "doc-sync-v2",
+        "tool_use_id": "toolu_01GH6Xo87gJsNfudzk9PQJrj",
+        "output_hash": "7d570c9e9eb3d3f7d23a2b01095995b9b30c1c88e98281dcb306dba0fead99de",
+        "date": "2026-06-24T23:04:13.102Z",
+        "outcome": "success"
+      }
+    },
     {
       "id": "M-FABIOCHERICI-001",
       "title": "Kit AI-Act — banner disclosure Art.50(1) su chat Padmin + /ai-transparency (propagazione canonico)",
@@ -48,22 +131,24 @@
         "fabiocherici"
       ],
       "stats": {
-        "total_commits": 3,
-        "lines_added": 1523,
-        "lines_deleted": 12,
-        "lines_net": 1511,
-        "lines_touched": 1535,
-        "files_touched": 20,
-        "weighted_commits": 4.2,
-        "cognitive_load": 2.96,
-        "productivity_index": 65.21,
+        "total_commits": 4,
+        "lines_added": 1793,
+        "lines_deleted": 15,
+        "lines_net": 1778,
+        "lines_touched": 1808,
+        "files_touched": 27,
+        "weighted_commits": 5,
+        "cognitive_load": 3.07,
+        "productivity_index": 74.11,
         "tags_breakdown": {
           "ARCH": 2,
+          "DOC": 1,
           "FEAT": 1
         },
         "commit_hashes": [
           "97c31f34eb00b6044fd8035ccc429f2c745dc4b5",
           "cfb088541e3b3525708f34a89917fdbe1ba808bd",
+          "e9a356ded27bc49ae61bf1499deb53244c64bd67",
           "fa4a76f5822a0cddea36a466b4eb1e83c77c6106"
         ],
         "by_repo_day": [
@@ -81,16 +166,17 @@
           {
             "repo": "florenceegi/fabiocherici",
             "date": "2026-06-20",
-            "commits": 1,
-            "lines_added": 724,
-            "lines_deleted": 2,
-            "files_touched": 9,
+            "commits": 2,
+            "lines_added": 994,
+            "lines_deleted": 5,
+            "files_touched": 18,
             "tags": {
+              "DOC": 1,
               "FEAT": 1
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-20T21:45:04Z"
@@ -122,12 +208,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1.0,
+        "cognitive_load": 1,
         "productivity_index": 0,
         "tags_breakdown": {},
         "by_repo_day": [],
         "commit_hashes": [],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       }
     },
     {
@@ -181,7 +267,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:41:18Z"
@@ -258,7 +344,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:33:04Z"
@@ -343,7 +429,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-15T23:12:13Z"
@@ -412,7 +498,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:54:07Z"
@@ -512,21 +598,10 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:32:18Z"
-    },
-    {
-      "id": "M-267",
-      "title": "Fix M-266: VITE_API_BASE_URL punta a host sslip morto — dashboard vuota su stat.florenceegi.com",
-      "trigger_matrix": 1,
-      "status": "planned",
-      "date_open": "2026-06-11",
-      "date_close": null,
-      "scope_hash": "f57159b9d85bd8193b9f9502be9741de287799f33ced5c238581e12100815bf9",
-      "synced_by_engine": true,
-      "last_engine_sync": "2026-06-11T20:17:00.000Z"
     },
     {
       "id": "M-014",
@@ -605,7 +680,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:43:21Z"
@@ -677,7 +752,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "doc_sync_executed": true,
       "doc_sync_outcome": "success",
@@ -746,7 +821,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "organs": [
         "EGI-DOC",
@@ -791,12 +866,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1.0,
-        "productivity_index": 0.0,
+        "cognitive_load": 1,
+        "productivity_index": 0,
         "tags_breakdown": {},
         "commit_hashes": [],
         "by_repo_day": [],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       }
     },
     {
@@ -842,12 +917,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1.0,
-        "productivity_index": 0.0,
+        "cognitive_load": 1,
+        "productivity_index": 0,
         "tags_breakdown": {},
         "commit_hashes": [],
         "by_repo_day": [],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       }
     },
     {
@@ -891,7 +966,7 @@
         "lines_net": 1877,
         "lines_touched": 1917,
         "files_touched": 16,
-        "weighted_commits": 1.0,
+        "weighted_commits": 1,
         "cognitive_load": 2.85,
         "productivity_index": 69.43,
         "tags_breakdown": {
@@ -913,7 +988,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "organs": [
         "os3-matrix",
@@ -1014,7 +1089,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       }
     },
     {
@@ -1104,7 +1179,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:26Z",
@@ -1192,7 +1267,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:24Z",
@@ -1265,7 +1340,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:22Z",
@@ -1333,7 +1408,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-20"
+        "calculated_at": "2026-06-25"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:21Z",

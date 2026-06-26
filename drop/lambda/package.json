@@ -5,6 +5,6 @@
   "type": "module",
   "main": "index.mjs",
   "private": true,
-  "comment": "Le dipendenze @aws-sdk/* sono PRE-INSTALLATE nel runtime Lambda nodejs20.x — nessun bundle richiesto.",
-  "engines": { "node": ">=20" }
+  "comment": "Le dipendenze @aws-sdk/* sono PRE-INSTALLATE nel runtime Lambda nodejs22.x — nessun bundle richiesto.",
+  "engines": { "node": ">=22" }
 }
