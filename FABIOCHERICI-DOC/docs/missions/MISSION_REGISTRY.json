@@ -17,16 +17,57 @@
       "title": "doc-sync runtime drop nodejs20→22",
       "trigger_matrix": 1,
       "stats_counted": true,
-      "status": "executing",
+      "status": "closed",
       "date_open": "2026-06-26",
-      "date_close": null,
+      "date_close": "2026-06-26",
       "scope_hash": "168499c2e56c4f305d1200f42b397e7d0d66adc70301e868d6b3c48e4f24d1a8",
       "synced_by_engine": true,
-      "last_engine_sync": "2026-06-26T20:03:14.872Z",
+      "last_engine_sync": "2026-06-26T20:07:12.681Z",
       "ssot_first_evidence": {
         "path": "fabiocherici.com/FABIOCHERICI-DOC/docs/missions/MISSION_REGISTRY.json",
         "ts": "2026-06-26T19:49:19Z"
-      }
+      },
+      "organs": [
+        "EGI-DOC",
+        "egi-credential",
+        "EGI-SIGILLO",
+        "la-bottega",
+        "fabiocherici",
+        "dimostralo"
+      ],
+      "stats": {
+        "total_commits": 1,
+        "lines_added": 1,
+        "lines_deleted": 1,
+        "lines_net": 0,
+        "lines_touched": 2,
+        "files_touched": 1,
+        "weighted_commits": 0.8,
+        "cognitive_load": 1.41,
+        "productivity_index": 5.66,
+        "tags_breakdown": {
+          "DOC": 1
+        },
+        "commit_hashes": [
+          "b2c1cf556cd764b56b7ba9b8e8a814ac1b0c92fc"
+        ],
+        "by_repo_day": [
+          {
+            "repo": "florenceegi/fabiocherici",
+            "date": "2026-06-26",
+            "commits": 1,
+            "lines_added": 1,
+            "lines_deleted": 1,
+            "files_touched": 1,
+            "tags": {
+              "DOC": 1
+            }
+          }
+        ],
+        "calculated_at": "2026-06-26"
+      },
+      "retrospective_executed": true,
+      "retrospective_executed_at": "2026-06-26T20:07:32Z"
     },
     {
       "id": "M-FABIOCHERICI-002",
@@ -82,7 +123,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-24T23:04:56Z",
@@ -137,7 +178,7 @@
         "lines_net": 1778,
         "lines_touched": 1808,
         "files_touched": 27,
-        "weighted_commits": 5,
+        "weighted_commits": 5.0,
         "cognitive_load": 3.07,
         "productivity_index": 74.11,
         "tags_breakdown": {
@@ -176,7 +217,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-20T21:45:04Z"
@@ -208,12 +249,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1,
+        "cognitive_load": 1.0,
         "productivity_index": 0,
         "tags_breakdown": {},
         "by_repo_day": [],
         "commit_hashes": [],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       }
     },
     {
@@ -267,7 +308,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:41:18Z"
@@ -344,7 +385,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-16T08:33:04Z"
@@ -429,7 +470,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-15T23:12:13Z"
@@ -498,7 +539,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:54:07Z"
@@ -598,7 +639,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T22:32:18Z"
@@ -680,7 +721,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:43:21Z"
@@ -752,7 +793,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "doc_sync_executed": true,
       "doc_sync_outcome": "success",
@@ -821,7 +862,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "organs": [
         "EGI-DOC",
@@ -866,12 +907,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1,
-        "productivity_index": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0.0,
         "tags_breakdown": {},
         "commit_hashes": [],
         "by_repo_day": [],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       }
     },
     {
@@ -917,12 +958,12 @@
         "lines_touched": 0,
         "files_touched": 0,
         "weighted_commits": 0,
-        "cognitive_load": 1,
-        "productivity_index": 0,
+        "cognitive_load": 1.0,
+        "productivity_index": 0.0,
         "tags_breakdown": {},
         "commit_hashes": [],
         "by_repo_day": [],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       }
     },
     {
@@ -966,7 +1007,7 @@
         "lines_net": 1877,
         "lines_touched": 1917,
         "files_touched": 16,
-        "weighted_commits": 1,
+        "weighted_commits": 1.0,
         "cognitive_load": 2.85,
         "productivity_index": 69.43,
         "tags_breakdown": {
@@ -988,7 +1029,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "organs": [
         "os3-matrix",
@@ -1089,7 +1130,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       }
     },
     {
@@ -1179,7 +1220,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:26Z",
@@ -1267,7 +1308,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:24Z",
@@ -1340,7 +1381,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:22Z",
@@ -1408,7 +1449,7 @@
             }
           }
         ],
-        "calculated_at": "2026-06-25"
+        "calculated_at": "2026-06-26"
       },
       "retrospective_executed": true,
       "retrospective_executed_at": "2026-06-11T20:45:21Z",
