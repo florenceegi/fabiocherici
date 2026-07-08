@@ -30,5 +30,11 @@
       "docs/missions/MISSION_REGISTRY.json"
     ],
     "_meta": "M-015 (fix regressione M-FUC-021): i glob sono relativi a instance_root (bin/mission r693-699 compone <instance_root rel HOME>/<glob>); il prefisso FABIOCHERICI-DOC/ li doppiava → gate sempre RED. Verificato contro path reali del read-log."
-  }
+  },
+  "stats_refresh_cmd": [
+    "bash",
+    "/home/fabio/EGI-STAT/deploy/push-stats-nexus.sh"
+  ],
+  "doc_sync_v3": true,
+  "doc_sync_v3_live": true
 }
