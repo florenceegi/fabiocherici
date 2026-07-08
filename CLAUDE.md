@@ -1,3 +1,5 @@
+@CLAUDE_ORACODE_CORE.md
+
 @/home/fabio/NATAN_LOC/CLAUDE_ECOSYSTEM_CORE.md
 
 # fabiocherici.com — Sito Personale (Oracode OS3)
