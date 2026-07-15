@@ -18,6 +18,23 @@ Regola immutabile: OSZ è verità assoluta. OS3 e OS4 si aggiornano per allinear
 
 ---
 
+## Glossario — i 6 ruoli della gerarchia (decisione CEO 2026-07-08/11)
+
+I ruoli si nominano con PAROLE, mai con numeri di livello:
+- **Paradigma** — le regole, la legge: oracode (MIT).
+- **Softwarehouse** — l'azienda con licenza (es. Florence EGI S.R.L.), SOPRA tutti i clienti. A questo
+  livello vivono le **Librerie LSO** e l'**attuazione del paradigma** (librerie, imbrigliamento, hook — repo os3-matrix).
+- **Libreria LSO** — repo di proprietà della software house, al servizio di tutti i lavori, nessun
+  cliente committente (DeepDebug, Fucina, Cockpit, EGI-STAT, SNC).
+- **Progetto** — un LSO mono-organo (es. Capasso).
+- **Organismo** — un LSO multi-organo (es. FlorenceEGI; repo-centro EGI-DOC).
+- **Organo** — un LSO che appartiene a un Organismo (es. EGI, EGI-HUB).
+
+Regole: nessun termine nuovo senza definizione alla prima occorrenza · MAI rinominare termini
+consolidati senza permesso CEO. Dettaglio: `LSO_NOMENCLATURE_INDEX.md` §0/§1bis. (M-OS3-144 D27)
+
+---
+
 ## REGOLA ZERO — Principio fondante
 
 **Mai dedurre. Mai completare lacune. Se non sai, chiedi.**
@@ -465,5 +482,5 @@ Quando un report torna con flag → VERIFICA alla fonte prima di agire.
 ---
 
 *Oracode System — paradigma di sviluppo software AI-native.*
-*Versione template: 1.3.1 — Data: 2026-06-21 (M-OS3-112: registry = record alla chiusura, coppia report non più obbligatoria — potatura)*
+*Versione template: 2.1.0 — Data: 2026-07-12 (M-OS3-144: RIPRISTINO INTEGRALE del testo pre-dieta su decisione CEO — i tagli v1.4-2.0 sono ANNULLATI; resta il glossario 6 ruoli. Storia: commit oracode 646a00b..2b7a7b2)*
 *Licenza: MIT*
