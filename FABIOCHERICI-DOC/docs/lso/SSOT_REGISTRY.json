@@ -39,7 +39,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-001",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "animation-presets",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il sistema di movimento dell'interfaccia — 6 preset GSAP nominati (minimal…none) che governano hero, scrollReveal, pageTransition, hoverScale, easing e velocità, scelti dall'utente e persistiti in localStorage.",
+          "nearest_neighbor": "scene3d-ids",
+          "responsibility_mine": "Possedere COME si muove il sito: la tassonomia dei preset, i loro parametri temporali e il contratto `AnimationId` rispettato da context, ScrollReveal e PreferencesPanel.",
+          "delta_not_covered": "Il vicino possiede quali mondi 3D esistono e come si caricano; non copre parametri di easing/durata del movimento 2D, né il ciclo re-osserva-`.reveal` (cicatrice P0-FC), né la mappa preset→i18n `ANIMATION_NAMES`.",
+          "falsifier": "Se il movimento diventasse una proprietà interna di ogni scena 3D (deciso per-scena, nessun sistema trasversale a preset), questa responsabilità collasserebbe in scene3d-ids e i due doc andrebbero fusi."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "scene3d-ids",
@@ -65,7 +80,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-001",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "scene3d-ids",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il catalogo chiuso delle 9 scene Three.js (`SceneId`), il loro caricamento dinamico e i vincoli di sopravvivenza: il sito funziona con `none` (P0-FC-3), geometria con tetto anti-lag (P0-FC-5), stato localStorage-only per l'export statico.",
+          "nearest_neighbor": "animation-presets",
+          "responsibility_mine": "Possedere COSA può apparire come sfondo 3D e a quali condizioni di performance/opzionalità.",
+          "delta_not_covered": "Il vicino governa la coreografia 2D dell'interfaccia; non copre il set delle scene, il dynamic loader, né i vincoli WebGL (IcosahedronGeometry detail max 5).",
+          "falsifier": "Se restasse un'unica scena fissa senza switch utente, il catalogo sparirebbe e i vincoli residui migrerebbero nel sistema-preset → fusione nel vicino."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "i18n-config",
@@ -90,7 +120,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-001",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "i18n-config",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "La struttura linguistica del sito: il set chiuso delle 7 locales, default/fallback, nomi nativi e routing next-intl (prefix always) — l'insieme che ogni altra superficie multilingue eredita.",
+          "nearest_neighbor": "i18n-messages",
+          "responsibility_mine": "Decidere QUALI lingue esistono e come si instradano — struttura, non testo.",
+          "delta_not_covered": "Il vicino possiede le stringhe per chiave nelle 7 lingue ma non decide l'insieme delle lingue, il fallback né il routing; aggiungere una lingua parte da qui e solo a valle tocca i messages.",
+          "falsifier": "Se next-intl derivasse le locales automaticamente dai file `messages/*.json` presenti (config implicita), la responsabilità-struttura evaporerebbe dentro i18n-messages."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "design-tokens",
@@ -114,7 +159,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-015",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "design-tokens",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il vocabolario cromatico e di superficie: palette grafite+bronzo, i 3 temi (dark/light/ambient × 7 slot), i token CSS (`--bg`, `--accent`, …) e le regole di switch via `data-theme`, incluse le cicatrici `:has()` sulle porte della home.",
+          "nearest_neighbor": "fonts",
+          "responsibility_mine": "Possedere colore, temi e superfici — ogni componente consuma `var(--token)` senza conoscere i valori né le 9 combinazioni da verificare.",
+          "delta_not_covered": "Il vicino governa la tipografia (pipeline di caricamento e le due variabili `--font-*`); non copre palette, temi, slot ambient né i selettori di stato del tema.",
+          "falsifier": "Se un rebrand unificasse colore e tipografia sotto un'unica ragione-di-cambiare (un solo attore \"identità visiva\" che modifica sempre entrambi insieme), i due SSOT andrebbero fusi in uno."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "fonts",
@@ -139,7 +199,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-001",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "fonts",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "La tipografia come infrastruttura: definizione centralizzata next/font/google (fetch a build, no CDN runtime), esposizione di `--font-display`/`--font-body` condivise tra root layout e layout per-locale, con vincolo LCP <2s.",
+          "nearest_neighbor": "design-tokens",
+          "responsibility_mine": "Possedere il caricamento dei font e la loro condivisione tra i layout — un problema di pipeline e performance, non di valori estetici.",
+          "delta_not_covered": "Il vicino possiede i valori visivi (colori/temi); non copre la meccanica next/font, il rischio preload/latency né la duplicazione root/per-locale dei layout. (Onestà: è la capacità più sottile del registro — regge perché ha una ragione-di-cambiare propria, la performance di caricamento.)",
+          "falsifier": "Se la pipeline next/font sparisse (font di sistema dichiarati in due righe di `globals.css`), la tipografia diventerebbe due token tra gli altri → fusione in design-tokens."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "seo",
@@ -164,7 +239,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-FABIOCHERICI-001",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "seo",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "La fabbrica dei metadati per i crawler: canonical assoluti, hreflang 7 locali + x-default, pipeline OG (91 immagini, 13 pagine × 7), builder JSON-LD (WebPage/Breadcrumb/FAQ/ItemList) e le regole d'uso codificate (≤160 chars M-010, quando NON usare FaqSchema M-011, blocco sr-only della home M-013).",
+          "nearest_neighbor": "i18n-config",
+          "responsibility_mine": "Possedere come il sito si presenta all'indicizzazione, con le cicatrici operative che disciplinano i builder.",
+          "delta_not_covered": "Il vicino fornisce l'elenco delle lingue che gli alternates consumano; non possiede canonical, la pipeline OG, i builder JSON-LD né le soglie/decisioni SEO.",
+          "falsifier": "Se i metadati diventassero derivazione automatica 1:1 dalla config linguistica, senza builder né regole proprie, questo SSOT collasserebbe nel vicino."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "i18n-messages",
@@ -193,7 +283,22 @@
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-FABIOCHERICI-002",
       "last_drift_score": 0,
-      "verification_mode": "registry_only"
+      "verification_mode": "registry_only",
+      "capability": {
+        "slug": "i18n-messages",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il corpus testuale del sito: tutte le stringhe UI nelle 7 lingue, i namespace per pagina/area con la loro cronologia normativa (rewrite M-015 202→112 chiavi, de-gergo MVP M-018 su 56 stringhe) e la disciplina di parità strutturale 7-lingue.",
+          "nearest_neighbor": "i18n-config",
+          "responsibility_mine": "Possedere COSA dice il sito in ogni lingua e la parità per-chiave come obbligo editoriale.",
+          "delta_not_covered": "Il vicino decide l'insieme delle lingue e il routing; non contiene alcuna stringa, alcun namespace né le decisioni di copy (es. \"il termine tecnico non si usa mai col cliente\").",
+          "falsifier": "Se le stringhe fossero generate a build da traduzione automatica di un'unica lingua sorgente, la parità come responsabilità editoriale sparirebbe e il doc si ridurrebbe ad appendice della config."
+        },
+        "pre_existing": true,
+        "ruolo": "progetto"
+      }
     },
     {
       "ssot_id": "commercial-claims",
@@ -220,7 +325,23 @@
       "verification_mode": "registry_only",
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-FABIOCHERICI-002",
-      "last_drift_score": 0
+      "last_drift_score": 0,
+      "capability": {
+        "slug": "commercial-claims",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "La legge commerciale del sito: claim citabili con fonte e frame obbligatorio, claim vietati per sempre, le 3 linee d'offerta coi parametri riservati, il linguaggio LSO per il cliente e il protocollo demo — \"ciò che non è in questo documento NON va in pagina\".",
+          "nearest_neighbor": "commercial-claims-public",
+          "responsibility_mine": "Essere la fonte interna e completa della verità commerciale, incluso ciò che NON si dice: vietati, pricing di outreach (70-80%), razionali delle decisioni CEO.",
+          "delta_not_covered": "Il vicino è la proiezione dicibile in pubblico; non contiene i vietati, i parametri interni né i razionali — cioè non possiede il potere normativo di decidere cosa è citabile, lo eredita.",
+          "falsifier": "Se ogni sezione interna venisse promossa pubblica, i due documenti coinciderebbero e uno dei due diventerebbe doppione dell'altro."
+        },
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-06-11",
+        "first_concluded_in": "M-014"
+      }
     },
     {
       "ssot_id": "commercial-claims-public",
@@ -246,7 +367,23 @@
       "verification_mode": "registry_only",
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-018",
-      "last_drift_score": 0
+      "last_drift_score": 0,
+      "capability": {
+        "slug": "commercial-claims-public",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il perimetro di parola dell'operatore AI pubblico: corpus dei soli claim citabili riscritti in lingua-cliente, con norme di enunciazione proprie (tempi sempre comparativi mercato-vs-noi; differenziatore velocità, fonte CEO 2026-06-15) — \"l'operatore non deve aggiungere nulla che non sia qui\".",
+          "nearest_neighbor": "commercial-claims",
+          "responsibility_mine": "Definire cosa un canale automatico pubblico (RAG dell'operatore, `visibility:public`) può affermare e in quale forma.",
+          "delta_not_covered": "Il vicino governa la pagina e le decisioni interne ma è `visibility:internal` — non ingeribile nel RAG pubblico — e (nelle sezioni lette) non contiene le regole di enunciazione comparativa né la sezione Velocità. NON è doppione per giurisprudenza ratificata: è un digest CON contenuto normativo proprio, non una fotocopia.",
+          "falsifier": "Se la proiezione diventasse estrazione meccanica (export automatico delle sole sezioni citabili, zero norme proprie), degraderebbe a DOPPIONE-DI commercial-claims e andrebbe generata, non autorata."
+        },
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-06-15",
+        "first_concluded_in": "M-017"
+      }
     },
     {
       "ssot_id": "discovery-questions",
@@ -271,7 +408,23 @@
       "verification_mode": "registry_only",
       "last_verified_by": "doc_sync_v2",
       "verified_in_mission": "M-017",
-      "last_drift_score": 0
+      "last_drift_score": 0,
+      "capability": {
+        "slug": "discovery-questions",
+        "state": "stabile",
+        "owner": null,
+        "provisional_since": null,
+        "contrast": {
+          "capability": "Il metodo di discovery dell'operatore AI: 4 principi groundati (Torres/Blank/Ulwick), il sistema di domande conversazionali che risale dalla soluzione-in-testa al problema, la collocazione nelle 5 fasce come set chiuso e la calibrazione EGI-STAT (fasce ancorate-su-reale vs stima-prudente).",
+          "nearest_neighbor": "commercial-claims-public",
+          "responsibility_mine": "Possedere COME l'operatore scopre il problema del visitatore e lo colloca in fascia — il processo interrogativo e la mappa scoping→fascia.",
+          "delta_not_covered": "Il vicino fornisce i claim e le fasce come fatti dicibili; non contiene domande, metodo di risalita, principi di elicitazione né la distinzione di certezza delle fasce.",
+          "falsifier": "Se la discovery si riducesse a esporre la tabella fasce senza domande né metodo, il contenuto residuo starebbe già tutto nel vicino → doppione."
+        },
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-06-15",
+        "first_concluded_in": "M-017"
+      }
     }
   ]
 }
