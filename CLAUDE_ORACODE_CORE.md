@@ -225,20 +225,21 @@ Dettaglio architetturale, piano mission (E1–E6) e dottrina: charter `EGI-DOC/d
 
 ---
 
-## Trigger Matrix DOC-SYNC
+## Trigger Matrix DOC-SYNC — le categorie si dicono per NOME
 
-Non tutte le modifiche hanno lo stesso impatto. Classifica PRIMA di agire.
+Classifica PRIMA di agire, **per PAROLA** (canone M-FUC-040: i numeri fingono un ordine che per
+metà non c'è). Il numero è alias legacy: `--trigger=architetturale` ≡ `--trigger=3`.
 
-| Tipo | Impatto | DOC-SYNC |
-|------|---------|----------|
-| 1 — Locale | Fix puntuale, output invariato | NO |
-| 2 — Comportamentale | Cambia output, API, behavior visibile | SI |
-| 3 — Architetturale | Nuovo endpoint, model, service | SI + boot context |
-| 4 — Contrattuale | Tocca GDPR, normative, compliance | SI + approvazione CEO PRIMA |
-| 5 — Naming | Rinomina entità del dominio | SI + grep cross-progetto |
-| 6 — Cross-project | Impatta schemi condivisi o altri organi | SI + approvazione CEO |
+| Categoria | Impatto | DOC-SYNC |
+|-----------|---------|----------|
+| **locale** *(1)* | Fix puntuale, output invariato | NO |
+| **comportamentale** *(2)* | Cambia output, API, behavior visibile | SI |
+| **architetturale** *(3)* | Nuovo endpoint, model, service | SI + boot context |
+| **contrattuale** *(4)* | Tocca GDPR, normative, compliance | SI + approvazione CEO PRIMA |
+| **naming** *(5)* | Rinomina entità del dominio | SI + grep cross-progetto |
+| **cross-progetto** *(6)* | Impatta schemi condivisi o altri organi | SI + approvazione CEO |
 
-Dubbio tra tipo 1 e 2 → tratta come 2.
+Dubbio tra «locale» e «comportamentale» → tratta come «comportamentale».
 
 ---
 
@@ -300,7 +301,7 @@ Prima di rispondere o scrivere codice, verifica:
 4. Sto assumendo qualcosa?         SI → DICHIARA e CHIEDI
 5. File legacy?                    SI → piano con approvazione CEO
 6. i18n tutte le lingue target?    NO → STOP (P0-9)
-7. Tipo modifica [1-6]?             ? → classifica con Trigger Matrix
+7. Categoria della modifica?        ? → classifica con la Trigger Matrix (per NOME)
 8. DOC-SYNC fatto?                 NO → non chiudere la task (P0-11)
 9. Info deploy/infra?              SI → verifica dalla fonte (P0-12)
 ```
@@ -482,5 +483,5 @@ Quando un report torna con flag → VERIFICA alla fonte prima di agire.
 ---
 
 *Oracode System — paradigma di sviluppo software AI-native.*
-*Versione template: 2.1.0 — Data: 2026-07-12 (M-OS3-144: RIPRISTINO INTEGRALE del testo pre-dieta su decisione CEO — i tagli v1.4-2.0 sono ANNULLATI; resta il glossario 6 ruoli. Storia: commit oracode 646a00b..2b7a7b2)*
+*Versione template: 2.2.0 — Data: 2026-07-15 (M-OS3-150: Trigger Matrix per NOME — categorie-parola primarie, numeri alias legacy, canone M-FUC-040. Storia: v2.1.0 = M-OS3-144 ripristino integrale pre-dieta + glossario 6 ruoli, commit oracode 646a00b..2b7a7b2)*
 *Licenza: MIT*
