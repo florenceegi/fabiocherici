@@ -52,8 +52,9 @@
           "delta_not_covered": "Il vicino possiede quali mondi 3D esistono e come si caricano; non copre parametri di easing/durata del movimento 2D, né il ciclo re-osserva-`.reveal` (cicatrice P0-FC), né la mappa preset→i18n `ANIMATION_NAMES`.",
           "falsifier": "Se il movimento diventasse una proprietà interna di ogni scena 3D (deciso per-scena, nessun sistema trasversale a preset), questa responsabilità collasserebbe in scene3d-ids e i due doc andrebbero fusi."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -93,8 +94,9 @@
           "delta_not_covered": "Il vicino governa la coreografia 2D dell'interfaccia; non copre il set delle scene, il dynamic loader, né i vincoli WebGL (IcosahedronGeometry detail max 5).",
           "falsifier": "Se restasse un'unica scena fissa senza switch utente, il catalogo sparirebbe e i vincoli residui migrerebbero nel sistema-preset → fusione nel vicino."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -133,8 +135,9 @@
           "delta_not_covered": "Il vicino possiede le stringhe per chiave nelle 7 lingue ma non decide l'insieme delle lingue, il fallback né il routing; aggiungere una lingua parte da qui e solo a valle tocca i messages.",
           "falsifier": "Se next-intl derivasse le locales automaticamente dai file `messages/*.json` presenti (config implicita), la responsabilità-struttura evaporerebbe dentro i18n-messages."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -172,8 +175,9 @@
           "delta_not_covered": "Il vicino governa la tipografia (pipeline di caricamento e le due variabili `--font-*`); non copre palette, temi, slot ambient né i selettori di stato del tema.",
           "falsifier": "Se un rebrand unificasse colore e tipografia sotto un'unica ragione-di-cambiare (un solo attore \"identità visiva\" che modifica sempre entrambi insieme), i due SSOT andrebbero fusi in uno."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -212,8 +216,9 @@
           "delta_not_covered": "Il vicino possiede i valori visivi (colori/temi); non copre la meccanica next/font, il rischio preload/latency né la duplicazione root/per-locale dei layout. (Onestà: è la capacità più sottile del registro — regge perché ha una ragione-di-cambiare propria, la performance di caricamento.)",
           "falsifier": "Se la pipeline next/font sparisse (font di sistema dichiarati in due righe di `globals.css`), la tipografia diventerebbe due token tra gli altri → fusione in design-tokens."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -252,8 +257,9 @@
           "delta_not_covered": "Il vicino fornisce l'elenco delle lingue che gli alternates consumano; non possiede canonical, la pipeline OG, i builder JSON-LD né le soglie/decisioni SEO.",
           "falsifier": "Se i metadati diventassero derivazione automatica 1:1 dalla config linguistica, senza builder né regole proprie, questo SSOT collasserebbe nel vicino."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
@@ -296,8 +302,9 @@
           "delta_not_covered": "Il vicino decide l'insieme delle lingue e il routing; non contiene alcuna stringa, alcun namespace né le decisioni di copy (es. \"il termine tecnico non si usa mai col cliente\").",
           "falsifier": "Se le stringhe fossero generate a build da traduzione automatica di un'unica lingua sorgente, la parità come responsabilità editoriale sparirebbe e il doc si ridurrebbe ad appendice della config."
         },
-        "pre_existing": true,
-        "ruolo": "progetto"
+        "ruolo": "progetto",
+        "first_concluded_at": "2026-05-26",
+        "first_concluded_in": "M-001"
       }
     },
     {
